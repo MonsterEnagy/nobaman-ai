@@ -83,12 +83,14 @@ client.on('message', async message => {
 		unknow = []; //知らないフラグ
 		know = []; //知ってるフラグ
 
-		} else if(know[0] === message.channel.id) {
+		} else if(know[0] === message.channel.id && message.content === "違うよ") {
 			console.log("知ってる分岐点" + `${know},${unknow}`)
 			message.channel.send("ええええ、違ったの！？じゃあ、間違ってない知識を教えてくれませんか・・・(懇願)\n `チュートリアル:この後に意味を書くとのばまんが覚えてくれます。`");
 			unknow = []; //知らないフラグ
 			know = [message.channel.id , know[1]　, "flag"]; //知ってるフラグ
-		}
+		} else if(know[0] === message.channel.id && message.content !== "違うよ") {
+      message.channel.send("なんだ、よかった")
+    }
 	}
 
 	if (message.content.indexOf("って知ってる？")　!= "-1" && message.content.indexOf("のばまん、") != "-1") {
@@ -117,3 +119,10 @@ client.on('message', async message => {
 
 
 client.login(process.env.token); 
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000)
