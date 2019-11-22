@@ -7,7 +7,11 @@ const tisiki = require('./nobaman.json');
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
-
+function tisikilength(message) {
+        if(Object.keys(tisiki).length == 10) {
+         message.channel.send("のばまんくんの知識が10を超えたよ！")
+      }
+}
 
 client.on('ready', () => {
   console.log('I\'m ready!');
@@ -32,7 +36,6 @@ client.on('message', async message => {
 				hito  :message.author.tag,
 				server:message.guild.name
 			}
-
 		unknow = []; //知らないフラグ
 		know = []; //知ってるフラグ
 
@@ -42,13 +45,13 @@ client.on('message', async message => {
 			へぇ~！\n\`\`\`${message.content}\`\`\`\nって意味なんだ！のばまんまた覚えるよ！\n\
 			\`チュートリアル:のばまんは${know[1]}を覚えました。\`
 			`)
-
+      
 			tisiki[know[1]] = {
 				imi   :message.content,
 				hito  :message.author.tag,
 				server:message.guild.name
 			}
-
+      
 		unknow = []; //知らないフラグ
 		know = []; //知ってるフラグ
 
