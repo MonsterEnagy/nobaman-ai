@@ -1,0 +1,16 @@
+{
+  "name": "nobaman.toro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nobaman.js",
+  "scripts": {
+    "start": "node nobaman.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "kuromoji": "^0.1.2"
+  }
+}
