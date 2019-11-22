@@ -8,8 +8,35 @@ var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
 function tisikilength(message) {
-        if(Object.keys(tisiki).length == 10) {
-         message.channel.send("のばまんくんの知識が10を超えたよ！")
+        if(Object.keys(tisiki).length == 15) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 20) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 25) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 30) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 35) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 40) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 45) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 50) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 55) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
+      }
+          if(Object.keys(tisiki).length == 60) {
+         message.channel.send("のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！")
       }
 }
 
@@ -36,6 +63,7 @@ client.on('message', async message => {
 				hito  :message.author.tag,
 				server:message.guild.name
 			}
+    tisikilength(message);
 		unknow = []; //知らないフラグ
 		know = []; //知ってるフラグ
 
@@ -51,7 +79,7 @@ client.on('message', async message => {
 				hito  :message.author.tag,
 				server:message.guild.name
 			}
-      
+      tisikilength(message);
 		unknow = []; //知らないフラグ
 		know = []; //知ってるフラグ
 
