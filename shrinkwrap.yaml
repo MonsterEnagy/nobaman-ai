@@ -1,17 +1,10 @@
 dependencies:
   discord.js: 11.5.1
-  kuromoji: 0.1.2
 packages:
   /async-limiter/1.0.1:
     dev: false
     resolution:
       integrity: sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
-  /async/2.6.3:
-    dependencies:
-      lodash: 4.17.15
-    dev: false
-    resolution:
-      integrity: sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
   /discord.js/11.5.1:
     dependencies:
       long: 4.0.0
@@ -32,22 +25,6 @@ packages:
       sodium: ^2.0.3
     resolution:
       integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
-  /doublearray/0.0.2:
-    dev: false
-    resolution:
-      integrity: sha1-Yxhv6NNEEydtNiH2qg7F954ifvk=
-  /kuromoji/0.1.2:
-    dependencies:
-      async: 2.6.3
-      doublearray: 0.0.2
-      zlibjs: 0.3.1
-    dev: false
-    resolution:
-      integrity: sha512-V0dUf+C2LpcPEXhoHLMAop/bOht16Dyr+mDiIE39yX3vqau7p80De/koFqpiTcL1zzdZlc3xuHZ8u5gjYRfFaQ==
-  /lodash/4.17.15:
-    dev: false
-    resolution:
-      integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
   /long/4.0.0:
     dev: false
     resolution:
@@ -71,13 +48,8 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
-  /zlibjs/0.3.1:
-    dev: false
-    resolution:
-      integrity: sha1-UBl+2yihxCymWcyLTmqd3W1ERVQ=
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   discord.js: ^11.5.1
-  kuromoji: ^0.1.2
