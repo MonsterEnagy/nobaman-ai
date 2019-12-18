@@ -225,6 +225,41 @@ client.on("message", async message => {
   });
   } if (command === "wiki") {
     require("./command/wiki.js").run(client,message,kekka)
+  } if (command === "y") {
+        const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
+  const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+  if (!member) return message.reply("Please provide a vaild Mention or USER ID");
+  let bot;
+  if (member.user.bot === true) {
+    bot = "はい";
+  } else {
+    bot = "いいえ";
+  }
+  function formatDate(date) {
+   const y = date.getFullYear()
+   const m = date.getMonth() + 1
+   const d = date.getDate();
+   const h = date.getHours()
+   const min = date.getMinutes();
+   const sec = date.getSeconds();
+   const day = '日月火水木金土'.charAt(date.getDay());
+   return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
+  }
+  const avatar = message.mentions.users.first() || message.author;
+  const embed = new Discord.MessageEmbed()
+    .setColor(randomColor)
+    .setAuthor(`${member.user.tag} (${member.id})`)
+    .setThumbnail(avatar.avatarURL)
+    .addField("ニックネーム:", `${member.nickname !== null ? `${member.nickname}` : "ニックネームなし"}`, true)
+    .addField("Botですか？", `${bot}`, true)
+    .addField("プレイング", `${member.user.presence.game ? `${member.user.presence.game.name}` : "プレイしていない"}`, true)
+    .addField("役職", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "無職"}`, true)
+    .addField("この鯖に入った時の時間",formatDate(member.user.createdAt), true)
+    .addField("アカウント作った時の時間",formatDate(member.joinetAt), true)
+    .addField("ステータス",member.presence.status, true)
+    .addField("最後のメッセージ" , member.lastMessage || member.user.lastMessage)
+      message.channel.send(embed);
+      return;
   }
 });
 
