@@ -32,7 +32,7 @@ client.on("ready", () => {
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(`${know}\n${unknow}`);
-  console.log(`${message.guild.name}:${message.channel.name}:${message.author.username}:message.content`);
+  console.log(`${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`);
   if (message.content.startsWith("のばまんの知ってること教えて")) {
     const array = [];
     const array2 = [];
@@ -43,32 +43,20 @@ client.on("message", async message => {
       array.push(item);
       
     }
+   
 array.reduce((total, data) => {
  const length = total + data.length;
   if(length >= 2000) {
-var arrList = divideArrIntoPieces(array, 20);
+   var arrList = divideArrIntoPieces(array, 10);
+    for(var i = 0; arrList.length > i; i++) {
+  message.channel.send(`\`\`\`${arrList[i]}\`\`\``)
+}
+    message.channel.send(`のばまんの現在の知識の数は\`${Object.keys(tisiki).length}\`だよ！`);
+  } else {
+    message.channel.send(array)
   }
 });
- /*     if(array.reduce) {
-        array2.push(item)
-        console.log(array.length + "array1")
-      }
-         else if(array2.length <= 10) {
-        array3.push(item)
-           console.log(array2.length + "array2")
-      }
-           else if(array3.length <= 15) {
-        array4.push(item)
-             console.log(array3.length + "array3")
-      }
-          else if(array4.length <= 15) {
-            console.log(array4.length + "array4")
-        break;
-      } */
-  if() {
-     
-     }
-    message.channel.send(`のばまんの現在の知識の数は\`${Object.keys(tisiki).length}\`だよ！`);
+
   }
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
