@@ -16,6 +16,16 @@ function tisikilength(message) {
   }
 }
 
+  function formatDate(date) {
+   const y = date.getFullYear()
+   const m = date.getMonth() + 1
+   const d = date.getDate();
+   const h = date.getHours()
+   const min = date.getMinutes();
+   const sec = date.getSeconds();
+   const day = '日月火水木金土'.charAt(date.getDay());
+   return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
+  }
 
 client.on("ready", () => {
   client.user.setActivity('!n help', { type: 'WATCHING' })
@@ -118,6 +128,7 @@ client.on("message", async message => {
     .addField("やることリスト(todo)" , "``!n help todo`って言ってみ？")
     .addField("メモ" , "`!n help memo` って言ってみ？")
     .addField("wiki" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
+    .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
     .setColor("#b9c42f")
     message.channel.send(embed)
     } else if(args[0] === "todo") {
@@ -228,25 +239,14 @@ client.on("message", async message => {
   } if (command === "y") {
         const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
   const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
-  if (!member) return message.reply("Please provide a vaild Mention or USER ID");
   let bot;
   if (member.user.bot === true) {
     bot = "はい";
   } else {
     bot = "いいえ";
   }
-  function formatDate(date) {
-   const y = date.getFullYear()
-   const m = date.getMonth() + 1
-   const d = date.getDate();
-   const h = date.getHours()
-   const min = date.getMinutes();
-   const sec = date.getSeconds();
-   const day = '日月火水木金土'.charAt(date.getDay());
-   return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
-  }
   const avatar = message.mentions.users.first() || message.author;
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
     .setColor(randomColor)
     .setAuthor(`${member.user.tag} (${member.id})`)
     .setThumbnail(avatar.avatarURL)
@@ -255,7 +255,7 @@ client.on("message", async message => {
     .addField("プレイング", `${member.user.presence.game ? `${member.user.presence.game.name}` : "プレイしていない"}`, true)
     .addField("役職", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "無職"}`, true)
     .addField("この鯖に入った時の時間",formatDate(member.user.createdAt), true)
-    .addField("アカウント作った時の時間",formatDate(member.joinetAt), true)
+    .addField("アカウント作った時の時間",formatDate(member.joinedAt), true)
     .addField("ステータス",member.presence.status, true)
     .addField("最後のメッセージ" , member.lastMessage || member.user.lastMessage)
       message.channel.send(embed);
