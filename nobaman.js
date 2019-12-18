@@ -7,6 +7,15 @@ const tisiki = require("./nobaman.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
+    function divideArrIntoPieces(arr,n){
+  var arrList = [];
+  var idx = 0;
+  while(idx < arr.length){
+      arrList.push(arr.splice(idx,idx+n));
+  }
+  return arrList;
+}
+
 function tisikilength(message) {
   if ((Object.keys(tisiki).length % 2 ) == 0) {
     message.channel.send(
@@ -32,7 +41,15 @@ client.on("message", async message => {
     for (var item in tisiki) {
       
       array.push(item);
-      if(array.length <= 15) {
+      
+    }
+array.reduce((total, data) => {
+ const length = total + data.length;
+  if(length >= 2000) {
+var arrList = divideArrIntoPieces(array, 20);
+  }
+});
+ /*     if(array.reduce) {
         array2.push(item)
         console.log(array.length + "array1")
       }
@@ -47,13 +64,10 @@ client.on("message", async message => {
           else if(array4.length <= 15) {
             console.log(array4.length + "array4")
         break;
-      }
-    }
-    
-    message.channel.send("```" + array.join("|") + "```");
-    message.channel.send("```" + array2.join("|") + "```");
-        message.channel.send("```" + array3.join("|") + "```");
-        message.channel.send("```" + array4.join("|") + "```");
+      } */
+  if() {
+     
+     }
     message.channel.send(`のばまんの現在の知識の数は\`${Object.keys(tisiki).length}\`だよ！`);
   }
   if (know.length != 0 || unknow.length != 0) {
