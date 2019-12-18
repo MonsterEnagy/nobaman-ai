@@ -115,12 +115,22 @@ client.on("message", async message => {
   
   const kekka = message.content.replace(/\s+/ , "").slice(prefix.length + command.length)
   if(command === "help") {
+    if(!args[0]) {
     let embed = new Discord.RichEmbed()
     .setTitle("nobaman aiにできること")
     .addField("知識の蓄え" , "のばまん、〇〇って知ってる？と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
-    .addField("やることリスト(todo)" , "かみぃんぐぅすぅぅぅう⤴⤴⤴んんんんん⤵ｗｗｗｗｗ")
+    .addField("やることリスト(todo)" , "!n help todoって言ってみ？")
     .setColor("#b9c42f")
     message.channel.send(embed)
+    } else if(args[0] === "todo") {
+    let embed = new Discord.RichEmbed()
+    .setTitle("New! Todo(やることリスト)機能説明！")
+    .addField("!n todo" , "Todoの作成/Todoの表示ができるコマンド")
+    .addField("!n todo create", "Todoの追加ができるコマンド")
+    .addField("!n todo delete" , "Todoの初期化ができるコマンド。")
+    .addField("!n todo clear (消したいTodoの番号)" , "Todoをクリアできるコマンド")
+    message.channel.send(embed)
+    }
   } if(command === "todo") {
     /*json構造
     id : {
@@ -148,6 +158,8 @@ client.on("message", async message => {
       .setDescription(`${todoList.join("\n")}`)
       message.channel.send(embed)
     }
+    } else if(todo[message.author.id].todo.length == 0) {
+      message.channel.send("todoがありません。todoを追加してね。");
     } else if(args[0] === "create") {
      const m = await message.channel.send(`${kekka.slice(7).trim()}をtodoに追加します・・・・`);
       todo[message.author.id].todo.push(kekka.slice(7).trim());
@@ -157,8 +169,9 @@ client.on("message", async message => {
       delete todo[message.author.id]
       m.edit("todoを初期化しました。");
     } else if(args[0] === "clear") {
+      if(!args[1]) return message.channel.send("消すTodoの番号がわかりません\n例(1番を消す場合) ``!n todo clear 1`")
       const m = await message.channel.send(`${args[1]}をクリアします。`)
-      todo[message.author.id].todo.splice((args[1] - 1)
+      todo[message.author.id].todo.splice((args[1] - 1) , 1);
       m.edit(`${args[1]}をクリアしました。`)
     }
     
