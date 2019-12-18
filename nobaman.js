@@ -118,8 +118,34 @@ client.on("message", async message => {
     let embed = new Discord.RichEmbed()
     .setTitle("nobaman aiにできること")
     .addField("知識の蓄え" , "のばまん、〇〇って知ってる？と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
+    .addField("やることリスト(todo)" , "かみぃんぐぅすぅぅぅう⤴⤴⤴んんんんん⤵ｗｗｗｗｗ")
     .setColor("#b9c42f")
     message.channel.send(embed)
+  } if(command === "todo") {
+    /*json構造
+    id : {
+    todo : []
+    }   
+    */
+    const todo = require("./database/todo.json");
+    if(!args[0]) {
+    if(!todo[message.author.id]) {
+      const m = await message.channel.send("todoがありません。作成しています...");
+      todo[message.author.id] = {
+        todo : []
+      }
+      m.edit("todoを作成しました。")
+    } else if(todo[message.author.id][todo].length === 0) {
+      message.channel.send("todoがありません。todoを追加してね。");
+    } else {
+      let embed = new Discord.RichEmbed()
+      .setTitle("やることリスト")
+      .setDescription(`${todo[message.author.id][todo].join("\n")}`)
+    }
+    } else if(args[0] === "create") {
+     const m = m message.channel.send(`${kekka}をtodoに追加します・・・・`)
+      todo[message.author.id][todo].push(kekka)
+    }
   }
 });
 
