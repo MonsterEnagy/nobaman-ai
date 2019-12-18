@@ -8,56 +8,12 @@ var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
 function tisikilength(message) {
-  if (Object.keys(tisiki).length == 15) {
+  if ((Object.keys(tisiki).length % 2 ) == 0) {
     message.channel.send(
       "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
     );
   }
-  if (Object.keys(tisiki).length == 20) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 25) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 30) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 35) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 40) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 45) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 50) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 55) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-  if (Object.keys(tisiki).length == 60) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
+
 }
 
 client.on("ready", () => {
@@ -70,12 +26,31 @@ client.on("message", async message => {
   console.log(message.content);
   if (message.content.startsWith("のばまんの知ってること教えて")) {
     const array = [];
+    const array2 = [];
+    const array3 = [];
+    const array4 = [];
     for (var item in tisiki) {
+      
       array.push(item);
+      if(array.length >= 25) {
+        array2.push(item)
+      }
+            if(array2.length >= 25) {
+        array3.push(item)
+      }
+            if(array3.length >= 25) {
+        array4.push(item)
+      }
+            if(array4.length >= 25) {
+        break;
+      }
     }
     console.log(array);
     
     message.channel.send("```" + array.join("|") + "```");
+    message.channel.send("```" + array2.join("|") + "```");
+        message.channel.send("```" + array3.join("|") + "```");
+        message.channel.send("```" + array4.join("|") + "```");
   }
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
