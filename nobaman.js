@@ -67,8 +67,16 @@ client.on("ready", () => {
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(`${know}\n${unknow}`);
-
-  if(message.content === "")
+  console.log(message.content);
+  if (message.content.startsWith("のばまんの知ってること教えて")) {
+    const array = [];
+    for (var item in tisiki) {
+      array.push(item);
+    }
+    console.log(array);
+    
+    message.channel.send("```" + array.join("|") + "```");
+  }
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
