@@ -194,8 +194,12 @@ client.on("message", async message => {
     */
     const todo = require("./database/memo.json");
     if(!args[0]) {
-      message.channel.send("メモ一覧 開発中")
-    } else if(todo[message.author.id][args[0]]) {
+      const array = [];
+      for (var item in todo) {
+      array.push(todo[message.author.id])
+      }
+      message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``)
+    } else if(typeof todo[message.author.id][args[0]] === "undefined") {
       message.channel.send("そんなメモがありません。");
     } else if(args[0] === "create") {
      const m = await message.channel.send(`${kekka.slice(7).trim()}をメモしました`);
@@ -205,8 +209,8 @@ client.on("message", async message => {
       const m = await message.channel.send("memoを消しています・・・");
       delete todo[message.author.id][args[0]]
       m.edit("memoを初期化しました。");
-    } else if(args[0]) {
-      
+    } else {
+      message.channel.send(`\`\`\`${todo[message.author.id][args[0]]}\`\`\``)
     }
   }
 });
