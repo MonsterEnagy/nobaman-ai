@@ -7,22 +7,21 @@ const tisiki = require("./nobaman.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
-    function divideArrIntoPieces(arr,n){
+function divideArrIntoPieces(arr, n) {
   var arrList = [];
   var idx = 0;
-  while(idx < arr.length){
-      arrList.push(arr.splice(idx,idx+n));
+  while (idx < arr.length) {
+    arrList.push(arr.splice(idx, idx + n));
   }
   return arrList;
 }
 
 function tisikilength(message) {
-  if ((Object.keys(tisiki).length % 2 ) == 0) {
+  if (Object.keys(tisiki).length % 2 == 0) {
     message.channel.send(
       "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
     );
   }
-
 }
 
 client.on("ready", () => {
@@ -32,39 +31,9 @@ client.on("ready", () => {
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(`${know}\n${unknow}`);
-  console.log(`${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`);
-  if (message.content.startsWith("のばまんの知ってること教えて")) {
-    const array = [];
-
-    for (var item in tisiki) {
-      
-      array.push(item);
-      
-    }
-   
-array.reduce((total, data) => {
- const length = data;
-  if(length >= 2000) {
-   var b      = array.length, // 26
-    cnt    = 3,              // いくつずつに分割するか
-    newArr = [];             // 新しく作る配列
-
-for(var i = 0; i < Math.ceil(b / cnt); i++) {
-  var j = i * cnt;
-  var p = array.slice(j, j + cnt); // i*cnt 番目から i*cnt+cnt 番目まで取得
-  newArr.push(p);                    // 取得したものを newArr に追加
-}
-    console.log(newArr)
-    for(var i = 0; newArr.length > i; i++) {
-  message.channel.send(`\`\`\`${newArr[i]}\`\`\``)
-}
-    message.channel.send(`のばまんの現在の知識の数は\`${Object.keys(tisiki).length}\`だよ！`);
-  } else {
-    message.channel.send("```" + array.join("|") + "```")
-  }
-});
-
-  }
+  console.log(
+    `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
+  );
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
@@ -137,6 +106,21 @@ for(var i = 0; i < Math.ceil(b / cnt); i++) {
   fs.writeFile("./nobaman.json", JSON.stringify(tisiki), err => {
     if (err) console.log(err);
   });
+  const prefix = "!n"
+  if(message.content.indexOf(prefix.trim()) !== 0 ) return;
+ 
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  
+  const command = args.shift().toLowerCase();
+   console.log("通った" + command)
+  const kekka = message.content.replace(/\s+/ , "").slice(prefix.length + command.length)
+  if(command === "help") {
+    let embed = new Discord.RichEmbed()
+    .setTitle("nobaman aiにできること")
+    .addField("知識の蓄え" , "のばまん、〇〇って知ってる？と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
+    .setColor("#b9c42f")
+    message.channel.send(embed)
+  }
 });
 
 client.login(process.env.token);
