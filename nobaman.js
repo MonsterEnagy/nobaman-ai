@@ -35,9 +35,7 @@ client.on("message", async message => {
   console.log(`${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`);
   if (message.content.startsWith("のばまんの知ってること教えて")) {
     const array = [];
-    const array2 = [];
-    const array3 = [];
-    const array4 = [];
+
     for (var item in tisiki) {
       
       array.push(item);
@@ -45,17 +43,24 @@ client.on("message", async message => {
     }
    
 array.reduce((total, data) => {
- const length = total + data.length;
-  console.log(length)
+ const length = data;
   if(length >= 2000) {
-   var arrList = divideArrIntoPieces(array, 1);
-    console.log(arrList)
-    for(var i = 0; arrList.length > i; i++) {
-  message.channel.send(`\`\`\`${arrList[i]}\`\`\``)
+   var b      = array.length, // 26
+    cnt    = 3,              // いくつずつに分割するか
+    newArr = [];             // 新しく作る配列
+
+for(var i = 0; i < Math.ceil(b / cnt); i++) {
+  var j = i * cnt;
+  var p = array.slice(j, j + cnt); // i*cnt 番目から i*cnt+cnt 番目まで取得
+  newArr.push(p);                    // 取得したものを newArr に追加
+}
+    console.log(newArr)
+    for(var i = 0; newArr.length > i; i++) {
+  message.channel.send(`\`\`\`${newArr[i]}\`\`\``)
 }
     message.channel.send(`のばまんの現在の知識の数は\`${Object.keys(tisiki).length}\`だよ！`);
   } else {
-    message.channel.send(array)
+    message.channel.send("```" + array.join("|") + "```")
   }
 });
 
