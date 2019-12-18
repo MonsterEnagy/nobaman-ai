@@ -46,8 +46,10 @@ client.on("message", async message => {
    
 array.reduce((total, data) => {
  const length = total + data.length;
+  console.log(length)
   if(length >= 2000) {
-   var arrList = divideArrIntoPieces(array, 10);
+   var arrList = divideArrIntoPieces(array, 1);
+    console.log(arrList)
     for(var i = 0; arrList.length > i; i++) {
   message.channel.send(`\`\`\`${arrList[i]}\`\`\``)
 }
