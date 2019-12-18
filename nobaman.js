@@ -186,6 +186,28 @@ client.on("message", async message => {
   fs.writeFile("./database/todo.json", JSON.stringify(todo), err => {
     if (err) console.log(err);
   });
+  } if(command === "memo") {
+      /*json構造
+    id : {
+    memo名前 : "memo内容"
+    }   
+    */
+    const todo = require("./database/memo.json");
+    if(!args[0]) {
+      message.channel.send("メモ一覧 開発中")
+    } else if(todo[message.author.id][args[0]]) {
+      message.channel.send("そんなメモがありません。");
+    } else if(args[0] === "create") {
+     const m = await message.channel.send(`${kekka.slice(7).trim()}をメモしました`);
+      todo[message.author.id]
+      m.edit(`${kekka.slice(7).trim()}を作りました。`);
+    } else if(args[0] === "delete") {
+      const m = await message.channel.send("memoを消しています・・・");
+      delete todo[message.author.id][args[0]]
+      m.edit("memoを初期化しました。");
+    } else if(args[0]) {
+      
+    }
   }
 });
 
