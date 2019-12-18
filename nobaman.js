@@ -112,7 +112,7 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   
   const command = args.shift().toLowerCase();
-   console.log("通った" + command)
+  
   const kekka = message.content.replace(/\s+/ , "").slice(prefix.length + command.length)
   if(command === "help") {
     let embed = new Discord.RichEmbed()
@@ -129,23 +129,29 @@ client.on("message", async message => {
     */
     const todo = require("./database/todo.json");
     if(!args[0]) {
+      
     if(!todo[message.author.id]) {
       const m = await message.channel.send("todoがありません。作成しています...");
       todo[message.author.id] = {
         todo : []
       }
       m.edit("todoを作成しました。")
-    } else if(!todo[message.author.id][todo]) {
+    } else if(todo[message.author.id].todo.length == 0) {
       message.channel.send("todoがありません。todoを追加してね。");
     } else {
       let embed = new Discord.RichEmbed()
       .setTitle("やることリスト")
-      .setDescription(`${todo[message.author.id][todo].join("\n")}`)
+      .setDescription(`${todo[message.author.id].todo.join("\n")}`)
+      message.channel.send(embed)
     }
     } else if(args[0] === "create") {
      const m = await message.channel.send(`${kekka.slice(7).trim()}をtodoに追加します・・・・`)
       todo[message.author.id].todo.push(kekka.slice(7).trim());
       m.edit(`${kekka.slice(7).trim()}をtodoに追加しました。`);
+    } else if(args[0] === "delete") {
+      const m = await message.channel.send("todoを初期化しています・・・");
+      delete todo[message.author.id]
+      m.edit("todoを初期化しました。")
     }
     
   fs.writeFile("./database/todo.json", JSON.stringify(todo), err => {
