@@ -68,6 +68,7 @@ client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(`${know}\n${unknow}`);
 
+  if(message.content === "")
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
