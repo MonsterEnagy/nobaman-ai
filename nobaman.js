@@ -116,15 +116,24 @@ client.on("message", async message => {
     .setTitle("nobaman aiにできること")
     .addField("知識の蓄え" , "のばまん、〇〇って知ってる？と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
     .addField("やることリスト(todo)" , "!n help todoって言ってみ？")
+    .addField("メモ" , "`!n help memo` って言ってみ？")
     .setColor("#b9c42f")
     message.channel.send(embed)
     } else if(args[0] === "todo") {
     let embed = new Discord.RichEmbed()
-    .setTitle("New! Todo(やることリスト)機能説明！")
+    .setTitle("Todo(やることリスト)機能説明！")
     .addField("!n todo" , "Todoの作成/Todoの表示ができるコマンド")
     .addField("!n todo create", "Todoの追加ができるコマンド")
     .addField("!n todo delete" , "Todoの初期化ができるコマンド。")
     .addField("!n todo clear (消したいTodoの番号)" , "Todoをクリアできるコマンド")
+    message.channel.send(embed)
+    } else if(args[0] === "memo") {
+    let embed = new Discord.RichEmbed()
+    .setTitle("New! メモ機能説明！")
+    .addField("!n memo" , "メモ一覧の表示ができるコマンド")
+    .addField("!n memo create (名前) (内容)", "メモの作成ができるコマンド")
+    .addField("!n memo delete (消したいメモの名前)" , "メモの削除ができるコマンド。")
+    .addField("!n memo (見たいメモの名前)" , "メモの閲覧ができるコマンド")
     message.channel.send(embed)
     }
   } if(command === "todo") {
@@ -185,15 +194,16 @@ client.on("message", async message => {
     }   
     */
     const todo = require("./database/memo.json");
-    console.log(todo[])
+    console.log(todo[message.author.id])
     if(!args[0]) {
       const array = [];
-      for (var item in todo) {
-      array.push(todo[message.author.id])
+      for (var item in todo[message.author.id]) {
+      array.push(item)
       }
       if(array.length === 0) return message.channel.send("メモが一つもありません")
       message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``)
     } else if(args[0] === "create") {
+      if(!args[2]) return message.channel.send("情報が足りません。 \n`明日やること`という名前のメモに`明日は何もしない`と書く場合の例\n!n memo create 明日やること 明日は何もしない")
      const m = await message.channel.send(`\`${kekka.slice(7 + args[1].length + 1).trim()}\`を\`${args[1]}\`にメモしました`);
       todo[message.author.id][args[1]] = kekka.slice(7 + args[1].length + 1).trim()
       m.edit(`${args[1]}を作りました。`);
