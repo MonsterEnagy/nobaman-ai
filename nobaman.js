@@ -7,14 +7,6 @@ const tisiki = require("./nobaman.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
-function divideArrIntoPieces(arr, n) {
-  var arrList = [];
-  var idx = 0;
-  while (idx < arr.length) {
-    arrList.push(arr.splice(idx, idx + n));
-  }
-  return arrList;
-}
 
 function tisikilength(message) {
   if (Object.keys(tisiki).length % 2 == 0) {
@@ -193,25 +185,28 @@ client.on("message", async message => {
     }   
     */
     const todo = require("./database/memo.json");
+    console.log(todo[])
     if(!args[0]) {
       const array = [];
       for (var item in todo) {
       array.push(todo[message.author.id])
       }
+      if(array.length === 0) return message.channel.send("メモが一つもありません")
       message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``)
-    } else if(typeof todo[message.author.id][args[0]] === "undefined") {
-      message.channel.send("そんなメモがありません。");
     } else if(args[0] === "create") {
-     const m = await message.channel.send(`${kekka.slice(7).trim()}をメモしました`);
-      todo[message.author.id]
-      m.edit(`${kekka.slice(7).trim()}を作りました。`);
+     const m = await message.channel.send(`\`${kekka.slice(7 + args[1].length + 1).trim()}\`を\`${args[1]}\`にメモしました`);
+      todo[message.author.id][args[1]] = kekka.slice(7 + args[1].length + 1).trim()
+      m.edit(`${args[1]}を作りました。`);
     } else if(args[0] === "delete") {
       const m = await message.channel.send("memoを消しています・・・");
-      delete todo[message.author.id][args[0]]
-      m.edit("memoを初期化しました。");
+      delete todo[message.author.id][args[1]]
+      m.edit(`${args[1]}を消しました`);
     } else {
       message.channel.send(`\`\`\`${todo[message.author.id][args[0]]}\`\`\``)
     }
+  fs.writeFile("./database/memo.json", JSON.stringify(todo), err => {
+    if (err) console.log(err);
+  });
   }
 });
 
