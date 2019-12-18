@@ -24,7 +24,11 @@ function tisikilength(message) {
   }
 }
 
+
 client.on("ready", () => {
+  client.user.setActivity('!n help', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  .catch(console.error);
   console.log("I'm ready!");
 });
 
@@ -158,8 +162,12 @@ client.on("message", async message => {
       .setDescription(`${todoList.join("\n")}`)
       message.channel.send(embed)
     }
-    } else if(todo[message.author.id].todo.length == 0) {
-      message.channel.send("todoがありません。todoを追加してね。");
+    } else if(!todo[message.author.id]) {
+      const m = await message.channel.send("todoがありません。作成しています...");
+      todo[message.author.id] = {
+        todo : []
+      }
+      m.edit("todoを作成しました。")
     } else if(args[0] === "create") {
      const m = await message.channel.send(`${kekka.slice(7).trim()}をtodoに追加します・・・・`);
       todo[message.author.id].todo.push(kekka.slice(7).trim());
