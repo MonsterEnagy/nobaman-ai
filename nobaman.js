@@ -135,7 +135,7 @@ client.on("message", async message => {
         todo : []
       }
       m.edit("todoを作成しました。")
-    } else if(todo[message.author.id][todo].length === 0) {
+    } else if(!todo[message.author.id][todo]) {
       message.channel.send("todoがありません。todoを追加してね。");
     } else {
       let embed = new Discord.RichEmbed()
@@ -143,9 +143,14 @@ client.on("message", async message => {
       .setDescription(`${todo[message.author.id][todo].join("\n")}`)
     }
     } else if(args[0] === "create") {
-     const m = m message.channel.send(`${kekka}をtodoに追加します・・・・`)
-      todo[message.author.id][todo].push(kekka)
+     const m = await message.channel.send(`${kekka.slice(7).trim()}をtodoに追加します・・・・`)
+      todo[message.author.id].todo.push(kekka.slice(7).trim());
+      m.edit(`${kekka.slice(7).trim()}をtodoに追加しました。`);
     }
+    
+  fs.writeFile("./database/todo.json", JSON.stringify(todo), err => {
+    if (err) console.log(err);
+  });
   }
 });
 
