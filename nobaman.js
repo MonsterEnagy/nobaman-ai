@@ -114,9 +114,10 @@ client.on("message", async message => {
     if(!args[0]) {
     let embed = new Discord.RichEmbed()
     .setTitle("nobaman aiにできること")
-    .addField("知識の蓄え" , "のばまん、〇〇って知ってる？と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
-    .addField("やることリスト(todo)" , "!n help todoって言ってみ？")
+    .addField("知識の蓄え" , "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
+    .addField("やることリスト(todo)" , "``!n help todo`って言ってみ？")
     .addField("メモ" , "`!n help memo` って言ってみ？")
+    .addField("wiki" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
     .setColor("#b9c42f")
     message.channel.send(embed)
     } else if(args[0] === "todo") {
@@ -203,6 +204,11 @@ client.on("message", async message => {
       if(array.length === 0) return message.channel.send("メモが一つもありません")
       message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``)
     } else if(args[0] === "create") {
+      if(!todo[message.author.id]) {
+        todo[message.author.id] = {
+          
+        }
+      }
       if(!args[2]) return message.channel.send("情報が足りません。 \n`明日やること`という名前のメモに`明日は何もしない`と書く場合の例\n!n memo create 明日やること 明日は何もしない")
      const m = await message.channel.send(`\`${kekka.slice(7 + args[1].length + 1).trim()}\`を\`${args[1]}\`にメモしました`);
       todo[message.author.id][args[1]] = kekka.slice(7 + args[1].length + 1).trim()
@@ -217,6 +223,8 @@ client.on("message", async message => {
   fs.writeFile("./database/memo.json", JSON.stringify(todo), err => {
     if (err) console.log(err);
   });
+  } if (command === "wiki") {
+    require("./command/wiki.js").run(client,message,kekka)
   }
 });
 
