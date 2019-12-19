@@ -260,6 +260,13 @@ client.on("message", async message => {
     .addField("最後のメッセージ" , member.lastMessage || member.user.lastMessage)
       message.channel.send(embed);
       return;
+  } if (command === "test") {
+    const axios = require("axios");
+    axios
+  .post('https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en')
+  .then(function (response) {
+    console.log(response.data);
+  });
   }
 });
 
