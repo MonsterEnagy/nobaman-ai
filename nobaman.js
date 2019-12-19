@@ -262,14 +262,21 @@ client.on("message", async message => {
       return;
   } if (command === "test") {
     const request = require("request");
-    //9697ac23-063a-47ba-8c79-d327222116f9
+   const key = "9697ac23-063a-47ba-8c79-d327222116f9";
     const options = {
       url:"https://api.fortnitetracker.com/v1/store" ,
       method:"get",
-      json:true
+      json:true,
+      headers : {'TRN-Api-Key' : key}
     }
     request(options, (error, response, body)  => { 
-      console.log(body)
+      for(var i = 0; i < body.length; i++) {
+        let embed = new Discord.RichEmbed()
+        .setImage(body[i].imageUrl)
+        .setTitle(body[i].name)
+        .setDescription(`値段:${body[i].vBucks}VBucks`)
+        message.channel.send(embed)
+        }
     })
   }
 });
