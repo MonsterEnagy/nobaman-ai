@@ -276,7 +276,7 @@ client.on("message", async message => {
       method:"get",
       json:true,
       headers : {'TRN-Api-Key' : key}
-    }
+    } 
     request(options, (error, response, body)  => { 
       for(var i = 0; i < body.length; i++) {
         let embed = new Discord.RichEmbed()
@@ -294,6 +294,7 @@ client.on("message", async message => {
       headers : {'TRN-Api-Key' : key}
     }
     request(options, (error, response, body)  => { 
+          console.log(body)
       let embed = new Discord.RichEmbed()
       .setTitle(args[1])
       .setDescription(`id:${body.accountId}`)
