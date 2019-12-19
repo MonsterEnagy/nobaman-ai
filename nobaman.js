@@ -244,7 +244,6 @@ client.on("message", async message => {
   } if (command === "wiki") {
     require("./command/wiki.js").run(client,message,kekka)
   } if (command === "y") {
-        const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
   const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
   let bot;
   if (member.user.bot === true) {
@@ -254,17 +253,17 @@ client.on("message", async message => {
   }
   const avatar = message.mentions.users.first() || message.author;
   const embed = new Discord.RichEmbed()
-    .setColor(randomColor)
+    .setColor("#b9c42f")
     .setAuthor(`${member.user.tag} (${member.id})`)
     .setThumbnail(avatar.avatarURL)
     .addField("ニックネーム:", `${member.nickname !== null ? `${member.nickname}` : "ニックネームなし"}`, true)
-    .addField("Botですか？", `${bot}`, true)
+    .addField("Bot", `${bot}`, true)
     .addField("プレイング", `${member.user.presence.game ? `${member.user.presence.game.name}` : "プレイしていない"}`, true)
     .addField("役職", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "無職"}`, true)
-    .addField("この鯖に入った時の時間",formatDate(member.user.createdAt), true)
-    .addField("アカウント作った時の時間",formatDate(member.joinedAt), true)
-    .addField("ステータス",member.presence.status, true)
-    .addField("最後のメッセージ" , member.lastMessage || member.user.lastMessage)
+    .addField("アカウント作成時",formatDate(member.user.createdAt), true)
+    .addField("入室時",formatDate(member.joinedAt), true)
+    .addField("状態",member.presence.status, true)
+    .addField("ラストメッセージ" , member.lastMessage || member.user.lastMessage)
       message.channel.send(embed);
       return;
   } if (command === "fortnite") {
