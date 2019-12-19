@@ -261,12 +261,16 @@ client.on("message", async message => {
       message.channel.send(embed);
       return;
   } if (command === "test") {
-    const axios = require("axios");
-    axios
-  .post('https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en')
-  .then(function (response) {
-    console.log(response.data);
-  });
+    const request = require("request");
+    //9697ac23-063a-47ba-8c79-d327222116f9
+    const options = {
+      url:"https://api.fortnitetracker.com/v1/store" ,
+      method:"get",
+      json:true
+    }
+    request(options, (error, response, body)  => { 
+      console.log(body)
+    })
   }
 });
 
