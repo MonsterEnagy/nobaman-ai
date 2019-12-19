@@ -129,8 +129,15 @@ client.on("message", async message => {
     .addField("メモ" , "`!n help memo` って言ってみ？")
     .addField("wiki" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
     .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
+    .addField("Fortnite" , "`!n help fortnite`って言ってみ？")
     .setColor("#b9c42f")
     message.channel.send(embed)
+    }else if (args[0] === "fortnite") {
+      let embed = new Discord.RichEmbed()
+      .setTitle("New! Fortnite機能説明")
+      .addField("!n fortnite shop" , "Fortniteのショップが見れます。(通知注意)")
+      .addField("!n fortnite stats (名前)" , "Fortniteのユーザー情報が見れます")
+      message.channel.send(embed)
     } else if(args[0] === "todo") {
     let embed = new Discord.RichEmbed()
     .setTitle("Todo(やることリスト)機能説明！")
@@ -141,7 +148,7 @@ client.on("message", async message => {
     message.channel.send(embed)
     } else if(args[0] === "memo") {
     let embed = new Discord.RichEmbed()
-    .setTitle("New! メモ機能説明！")
+    .setTitle("メモ機能説明！")
     .addField("!n memo" , "メモ一覧の表示ができるコマンド")
     .addField("!n memo create (名前) (内容)", "メモの作成ができるコマンド")
     .addField("!n memo delete (消したいメモの名前)" , "メモの削除ができるコマンド。")
@@ -260,7 +267,7 @@ client.on("message", async message => {
     .addField("最後のメッセージ" , member.lastMessage || member.user.lastMessage)
       message.channel.send(embed);
       return;
-  } if (command === "test") {
+  } if (command === "fortnite") {
     const request = require("request");
     const key = "9697ac23-063a-47ba-8c79-d327222116f9";
     if(!args[0]) return message.channel.send("情報が足りません\n`!n help`で使い方を確認してね");
@@ -288,12 +295,15 @@ client.on("message", async message => {
       headers : {'TRN-Api-Key' : key}
     }
     request(options, (error, response, body)  => { 
-      console.log(body)
       let embed = new Discord.RichEmbed()
       .setTitle(args[1])
       .setDescription(`id:${body.accountId}`)
-      .addField("ビクロイ数" , body.lifeTimeStats[9].value)
-      .addField('勝率' , bof)
+      .addField("ビクロイ数" , body.lifeTimeStats[8].value)
+      .addField('勝率' , body.lifeTimeStats[9].value)
+      .addField("キル数" , body.lifeTimeStats[10].value)
+      .addField("K/D" , body.lifeTimeStats[11].value)
+      .addField("マッチ回数" , body.lifeTimeStats[7].value)
+      message.channel.send(embed)
     })
     }
   }
