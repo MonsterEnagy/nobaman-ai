@@ -262,7 +262,9 @@ client.on("message", async message => {
       return;
   } if (command === "test") {
     const request = require("request");
-   const key = "9697ac23-063a-47ba-8c79-d327222116f9";
+    const key = "9697ac23-063a-47ba-8c79-d327222116f9";
+    if(!args[0]) return message.channel.send("情報が足りません\n`!n help`で使い方を確認してね");
+    else if(args[0] === "shop") {
     const options = {
       url:"https://api.fortnitetracker.com/v1/store" ,
       method:"get",
@@ -278,6 +280,22 @@ client.on("message", async message => {
         message.channel.send(embed)
         }
     })
+    } else if(args[0] === "stats") {
+    const options = {
+      url:`https://api.fortnitetracker.com/v1/profile/pc/${args[1]}`  ,
+      method:"get",
+      json:true,
+      headers : {'TRN-Api-Key' : key}
+    }
+    request(options, (error, response, body)  => { 
+      console.log(body)
+      let embed = new Discord.RichEmbed()
+      .setTitle(args[1])
+      .setDescription(`id:${body.accountId}`)
+      .addField("ビクロイ数" , body.lifeTimeStats[9].value)
+      .addField('勝率' , bof)
+    })
+    }
   }
 });
 
