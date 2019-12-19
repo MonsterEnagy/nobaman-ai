@@ -36,14 +36,13 @@ client.on("ready", () => {
 
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
-  console.log(`${know}\n${unknow}`);
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
   if (know.length != 0 || unknow.length != 0) {
     console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
-      console.log("知らない分岐点" + `${know},${unknow}`);
+      //console.log("知らない分岐点" + `${know},${unknow}`);
       message.channel.send(`
 			へぇ~！\n\`\`\`${message.content}\`\`\`\nって意味なんだ！のばまん覚えるよ！\n\
 			\`チュートリアル:のばまんは${unknow[1]}を覚えました。\`
@@ -58,7 +57,7 @@ client.on("message", async message => {
       unknow = []; //知らないフラグ
       know = []; //知ってるフラグ
     } else if (know[0] === message.channel.id && know[2] === "flag") {
-      console.log("知ってる分岐点2" + `${know},${unknow}`);
+      //console.log("知ってる分岐点2" + `${know},${unknow}`);
       message.channel.send(`
 			へぇ~！\n\`\`\`${
         message.content
@@ -94,7 +93,6 @@ client.on("message", async message => {
   ) {
     var tango = message.content.slice(5, -7);
 
-    console.log(tango);
     if (!tisiki[tango]) {
       message.channel.send(
         `\`${tango}\`ってなんですか？教えてくれえぇぇぇ！(魂の解放)\n\`チュートリアル:この後に意味を書くとのばまんが覚えてくれます。\``
@@ -294,7 +292,6 @@ client.on("message", async message => {
       headers : {'TRN-Api-Key' : key}
     }
     request(options, (error, response, body)  => { 
-          console.log(body)
       let embed = new Discord.RichEmbed()
       .setTitle(args[1])
       .setDescription(`id:${body.accountId}`)
