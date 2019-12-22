@@ -304,8 +304,7 @@ client.on("message", async message => {
     })
     }
   } if (command === "server") {
-    //message.channel.send(client.guilds.map(m => m.name))
-    message.channel.send(client.guilds.forEach(m=> m.members.map(m=>m.name)))
+    message.channel.send(client.guilds.find(m => m.name === "君の目的はを殺すこと 3攻略").members.map(m => m.user.username))
   }
 });
 
