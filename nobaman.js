@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 
-const tisiki = require("./nobaman.json");
+const tisiki = require("./database/nobaman.json");
 
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
@@ -303,6 +303,9 @@ client.on("message", async message => {
       message.channel.send(embed)
     })
     }
+  } if (command === "server") {
+    //message.channel.send(client.guilds.map(m => m.name))
+    message.channel.send(client.guilds.forEach(m=> m.members.map(m=>m.name)))
   }
 });
 
