@@ -304,7 +304,7 @@ client.on("message", async message => {
     })
     }
   } if (command === "server") {
-    message.channel.send(client.guilds.find(m => m.name === "君の目的はを殺すこと 3攻略").members.map(m => m.user.username))
+    message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
   }
 });
 
