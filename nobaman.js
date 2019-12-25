@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 
 const tisiki = require("./database/nobaman.json");
-
+const chat = require("./database/chat.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
@@ -110,6 +110,18 @@ client.on("message", async message => {
   fs.writeFile("./nobaman.json", JSON.stringify(tisiki), err => {
     if (err) console.log(err);
   });
+    if (
+    message.content.indexOf("って何？") != "-1" &&
+    message.content.indexOf("のばまん、") != "-1"
+  ) {
+    require("./command/wiki.js").run(client,message,message.content.slice(5, -4));
+    }
+  
+  if(chat[message.channel.id]) {
+    require("./command/nobamanchat.js").run(client , message)
+  }
+     
+     
   const prefix = "!n"
   if(message.content.indexOf(prefix.trim()) !== 0 ) return;
  
@@ -125,7 +137,7 @@ client.on("message", async message => {
     .addField("知識の蓄え" , "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
     .addField("やることリスト(todo)" , "``!n help todo`って言ってみ？")
     .addField("メモ" , "`!n help memo` って言ってみ？")
-    .addField("知識の引き出し" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
+    .addField("知識の引き出し" , "``〇〇って何？`と言うと博識のばまんが教えてくれます")
     .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
     .addField("Fortnite" , "`!n help fortnite`って言ってみ？")
     .setColor("#b9c42f")
@@ -239,8 +251,6 @@ client.on("message", async message => {
   fs.writeFile("./database/memo.json", JSON.stringify(todo), err => {
     if (err) console.log(err);
   });
-  } if (command === "wiki") {
-    require("./command/wiki.js").run(client,message,kekka)
   } if (command === "y") {
   const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
   let bot;
@@ -305,6 +315,16 @@ client.on("message", async message => {
     }
   } if (command === "server") {
     message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
+  } if(command === "test") {
+    if(!chat[message.channel.id]) {
+      chat[message.channel.id] = {
+        
+      }
+      message.channel.send("登録しました");
+    } else {
+      delete chat[message.channel.id]
+      message.channel.send("登録を解除しました");
+    }
   }
 });
 

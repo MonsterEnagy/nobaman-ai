@@ -5,7 +5,7 @@ const wiki = require('wikijs').default({
   (async() => {
     const page = await wiki.page(kekka);
     const content = await page.summary();
-    message.channel.send("\`\`\`" +content + "\`\`\`")
+    message.channel.send("\`\`\`" +content + "\nだよ。\`\`\`")
   })()
   .catch(error => message.channel.send('私は知らない'))
   }
