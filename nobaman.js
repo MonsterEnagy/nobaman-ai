@@ -320,6 +320,7 @@ client.on("message", async message => {
       chat[message.channel.id] = {
         
       }
+      message.channel.createWebhook("のばまんchat用webhook")
       message.channel.send("登録しました");
     } else {
       delete chat[message.channel.id]
