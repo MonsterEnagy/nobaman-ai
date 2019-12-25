@@ -1,4 +1,5 @@
-module.exports.run = (client, message) => {
+module.exports.run = (client, message , args) => {
+  const fs = require("fs")
   const Discord = require("discord.js");
   const chat = require("../database/chat.json");
   if (message.content.startsWith("!n") && message.content.startsWith("のばまん、")) return;
@@ -9,6 +10,9 @@ module.exports.run = (client, message) => {
     );
     return;
   }
+  chat[args[1]]  = {
+    
+  }
     const rannsuu = Math.floor(Math.random() * 99999)
   chat["id"][rannsuu] = {
    "サーバーの名前" : message.guild.name,
@@ -18,9 +22,12 @@ module.exports.run = (client, message) => {
     "ID" : message.author.id,
     "内容" : message.content
   }
+     fs.writeFile("./database/chat.json", JSON.stringify(chat), (err) => {
+                     if(err) console.log(err)
+                });
   //のばまんchat用webhook
   const option = {
-    username: `${message.author.tag} ID:rannsuu`,
+    username: `${message.author.tag} ID:${rannsuu}`,
     avatarURL: message.author.avatarURL
   };
   if (message.attachments.first()) {

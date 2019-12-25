@@ -126,7 +126,7 @@ client.on("message", async message => {
   }
 
   if (chat[message.channel.id]) {
-    require("./command/nobamanchat.js").run(client, message);
+    require("./command/nobamanchat.js").run(client, message , args);
   }
 
   const prefix = "!n";
@@ -406,11 +406,10 @@ client.on("message", async message => {
     );
   }
   if (command === "chat") {
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
     if (!args[0]) {
+          if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
       if (!chat[message.channel.id]) {
-        chat[message.channel.id] = {
-        };
+        chat[message.channel.id] = {};
         message.channel.createWebhook("のばまんchat用webhook");
         message.channel.send("登録しました");
       } else {
@@ -430,15 +429,17 @@ client.on("message", async message => {
       });
       message.channel.send(array.join("\n"));
     } else if (args[0] === "ban") {
-      if (chat[args[1]].ban) {
-        chat[args[1]] = {
+          if (message.author.id !== "551421671332904960") return;
+      console.log("通ってる")
+      if (chat["ban"][args[1]].ban == true) {
+        chat["ban"][args[1]] = {
           ban: false
         };
         message.channel.send(
           `${client.users.get(args[1]).username}のbanを解除しました`
         );
       } else {
-        chat[args[1]] = {
+        chat["ban"][args[1]] = {
           ban: true
         };
         message.channel.send(
@@ -459,11 +460,11 @@ client.on("message", async message => {
       else {
         message.channel.send(
           `
-          サーバーの名前 : ${chat["id"][args[1]]["サーバーの名前"]}
-          サーバーのID : ${chat["id"][args[1]]["サーバーのID"]}
-          名前 : ${chat["id"][args[1]]["名前"]}
-          ID : ${chat["id"][args[1]]["ID"]} 
-          内容 : ${chat["id"][args[1]]["内容"]}
+サーバーの名前 : ${chat["id"][args[1]]["サーバーの名前"]}
+サーバーのID : ${chat["id"][args[1]]["サーバーのID"]}
+名前 : ${chat["id"][args[1]]["名前"]}
+ID : ${chat["id"][args[1]]["ID"]} 
+内容 : ${chat["id"][args[1]]["内容"]}
           `
         );
       }
