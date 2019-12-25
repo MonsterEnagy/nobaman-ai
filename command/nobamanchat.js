@@ -1,7 +1,7 @@
 module.exports.run = (client, message) => {
   const Discord = require("discord.js");
   const chat = require("../database/chat.json")
-  if (message.content.startsWith("!n")) return;
+  if (message.content.startsWith("!n") && message.content.startsWith("のばまん、")) return;
   if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) {
     message.reply(
       "`ウェブフックの管理(ロールからのばまんに権限を上げてね)`を送ってくれー!"
@@ -19,7 +19,6 @@ module.exports.run = (client, message) => {
   client.channels.forEach(async c => {
     if (!c.guild.me.hasPermission("MANAGE_WEBHOOKS")) return;
      if (!chat[c.id]) return;
-    console.log(c.name);
     const hook = await c.fetchWebhooks();
     if (hook.size === 0) {
       if (c.id === message.channel.id) {

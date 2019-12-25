@@ -318,6 +318,7 @@ client.on("message", async message => {
     message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
   } if(command === "chat") {
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    if(!args[0]) {
     if(!chat[message.channel.id]) {
       chat[message.channel.id] = {
         
@@ -329,6 +330,14 @@ client.on("message", async message => {
       message.channel.send("登録を解除しました");
       message.channel.fetchWebhooks()
       .then(hook => hook.find(hooks => hooks.name === "のばまんchat用webhook").delete())
+    }
+    } else if(args[0] === "list") {
+      const array = [];
+        client.channels.forEach(async c => {
+               if (!chat[c.id]) return;
+          array.push(c.name)
+        })
+      message.channel.send(array.join("\n"))
     }
       fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
     if (err) console.log(err);
