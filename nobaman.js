@@ -317,7 +317,7 @@ client.on("message", async message => {
   } if (command === "server") {
     message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
   } if(command === "chat") {
-    if(message.member.hasPermission("MANAGE_CHANNELS"))
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return;
     if(!chat[message.channel.id]) {
       chat[message.channel.id] = {
         
