@@ -140,11 +140,12 @@ client.on("message", async message => {
     .addField("知識の引き出し" , "``〇〇って何？`と言うと博識のばまんが教えてくれます")
     .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
     .addField("Fortnite" , "`!n help fortnite`って言ってみ？")
+    .addField("のばまんチャット" , "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ")
     .setColor("#b9c42f")
     message.channel.send(embed)
     }else if (args[0] === "fortnite") {
       let embed = new Discord.RichEmbed()
-      .setTitle("New! Fortnite機能説明")
+      .setTitle(" Fortnite機能説明")
       .addField("!n fortnite shop" , "Fortniteのショップが見れます。(通知注意)")
       .addField("!n fortnite stats (名前)" , "Fortniteのユーザー情報が見れます")
       message.channel.send(embed)
@@ -315,7 +316,8 @@ client.on("message", async message => {
     }
   } if (command === "server") {
     message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
-  } if(command === "test") {
+  } if(command === "chat") {
+    if(message.member.permission)
     if(!chat[message.channel.id]) {
       chat[message.channel.id] = {
         
@@ -325,7 +327,12 @@ client.on("message", async message => {
     } else {
       delete chat[message.channel.id]
       message.channel.send("登録を解除しました");
+      message.channel.fetchWebhooks()
+      .then(hook => hook.find(hooks => hooks.name === "のばまんchat用webhook").delete())
     }
+      fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
+    if (err) console.log(err);
+  });
   }
 });
 
