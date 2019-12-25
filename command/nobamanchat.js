@@ -3,14 +3,14 @@ module.exports.run = (client, message , args) => {
   const Discord = require("discord.js");
   const chat = require("../database/chat.json");
   if (message.content.startsWith("!n") && message.content.startsWith("のばまん、")) return;
-  if(chat[message.channel.id].ban) return message.channel.send("あなたはBANされています");
+  if(chat["ban"][message.author.id].ban == true) return message.channel.send("あなたはBANされています");
   if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) {
     message.reply(
       "`ウェブフックの管理(ロールからのばまんに権限を上げてね)`を送ってくれー!"
     );
     return;
   }
-  chat[args[1]]  = {
+  chat["ban"][args[1]]  = {
     
   }
     const rannsuu = Math.floor(Math.random() * 99999)

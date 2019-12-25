@@ -125,10 +125,6 @@ client.on("message", async message => {
     );
   }
 
-  if (chat[message.channel.id]) {
-    require("./command/nobamanchat.js").run(client, message , args);
-  }
-
   const prefix = "!n";
   if (message.content.indexOf(prefix.trim()) !== 0) return;
 
@@ -142,6 +138,11 @@ client.on("message", async message => {
   const kekka = message.content
     .replace(/\s+/, "")
     .slice(prefix.length + command.length);
+  
+    if (chat[message.channel.id]) {
+    require("./command/nobamanchat.js").run(client, message , args);
+  }
+
   if (command === "help") {
     if (!args[0]) {
       let embed = new Discord.RichEmbed()
@@ -431,6 +432,7 @@ client.on("message", async message => {
     } else if (args[0] === "ban") {
           if (message.author.id !== "551421671332904960") return;
       console.log("通ってる")
+      try {
       if (chat["ban"][args[1]].ban == true) {
         chat["ban"][args[1]] = {
           ban: false
@@ -445,6 +447,13 @@ client.on("message", async message => {
         message.channel.send(
           `${client.users.get(args[1]).username}をbanしました`
         );
+      }
+      } catch(e) {
+        message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`)
+        chat["ban"][args[1]] = {
+          
+        }
+        
       }
     } else if (args[0] === "id") {
       /*
