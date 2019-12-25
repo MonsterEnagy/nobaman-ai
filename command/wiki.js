@@ -7,5 +7,5 @@ const wiki = require('wikijs').default({
     const content = await page.summary();
     message.channel.send("\`\`\`" +content + "\`\`\`")
   })()
-  .catch(error => message.channel.send('記事が見つかりませんでした'))
+  .catch(error => message.channel.send('私は知らない'))
   }

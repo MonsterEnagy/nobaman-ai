@@ -125,7 +125,7 @@ client.on("message", async message => {
     .addField("知識の蓄え" , "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
     .addField("やることリスト(todo)" , "``!n help todo`って言ってみ？")
     .addField("メモ" , "`!n help memo` って言ってみ？")
-    .addField("wiki" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
+    .addField("知識の引き出し" , "!n wiki (調べたいもの)`と打つと、のばまんが直接wikiまで言って内容を教えてくれます")
     .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
     .addField("Fortnite" , "`!n help fortnite`って言ってみ？")
     .setColor("#b9c42f")
