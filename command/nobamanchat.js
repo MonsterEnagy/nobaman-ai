@@ -9,10 +9,18 @@ module.exports.run = (client, message) => {
     );
     return;
   }
-    var rannsuu = Math.floor(Math.random() * 99999)
+    const rannsuu = Math.floor(Math.random() * 99999)
+  chat["id"][rannsuu] = {
+   "サーバーの名前" : message.guild.name,
+    "サーバーのID" : message.guild.id,
+    "チャンネル" : message.channel.id,
+    "名前" : message.author.tag,
+    "ID" : message.author.id,
+    "内容" : message.content
+  }
   //のばまんchat用webhook
   const option = {
-    username: `${message.author.tag}`,
+    username: `${message.author.tag} ID:rannsuu`,
     avatarURL: message.author.avatarURL
   };
   if (message.attachments.first()) {

@@ -7,7 +7,6 @@ const chat = require("./database/chat.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
-
 function tisikilength(message) {
   if (Object.keys(tisiki).length % 2 == 0) {
     message.channel.send(
@@ -16,21 +15,26 @@ function tisikilength(message) {
   }
 }
 
-  function formatDate(date) {
-   const y = date.getFullYear()
-   const m = date.getMonth() + 1
-   const d = date.getDate();
-   const h = date.getHours()
-   const min = date.getMinutes();
-   const sec = date.getSeconds();
-   const day = '日月火水木金土'.charAt(date.getDay());
-   return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
-  }
+function formatDate(date) {
+  const y = date.getFullYear();
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  const h = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
+  const day = "日月火水木金土".charAt(date.getDay());
+  return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
+}
 
 client.on("ready", () => {
-  client.user.setActivity('!n help', { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
-  .catch(console.error);
+  client.user
+    .setActivity("!n help", { type: "WATCHING" })
+    .then(presence =>
+      console.log(
+        `Activity set to ${presence.game ? presence.game.name : "none"}`
+      )
+    )
+    .catch(console.error);
   console.log("I'm ready!");
 });
 
@@ -110,261 +114,375 @@ client.on("message", async message => {
   fs.writeFile("./database/nobaman.json", JSON.stringify(tisiki), err => {
     if (err) console.log(err);
   });
-    if (
+  if (
     message.content.indexOf("って何？") != "-1" &&
     message.content.indexOf("のばまん、") != "-1"
   ) {
-    require("./command/wiki.js").run(client,message,message.content.slice(5, -4));
-    }
-  
-  if(chat[message.channel.id]) {
-    require("./command/nobamanchat.js").run(client , message)
+    require("./command/wiki.js").run(
+      client,
+      message,
+      message.content.slice(5, -4)
+    );
   }
-     
-     
-  const prefix = "!n"
-  if(message.content.indexOf(prefix.trim()) !== 0 ) return;
- 
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  
+
+  if (chat[message.channel.id]) {
+    require("./command/nobamanchat.js").run(client, message);
+  }
+
+  const prefix = "!n";
+  if (message.content.indexOf(prefix.trim()) !== 0) return;
+
+  const args = message.content
+    .slice(prefix.length)
+    .trim()
+    .split(/ +/g);
+
   const command = args.shift().toLowerCase();
-  
-  const kekka = message.content.replace(/\s+/ , "").slice(prefix.length + command.length)
-  if(command === "help") {
-    if(!args[0]) {
-    let embed = new Discord.RichEmbed()
-    .setTitle("nobaman aiにできること")
-    .addField("知識の蓄え" , "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます")
-    .addField("やることリスト(todo)" , "``!n help todo`って言ってみ？")
-    .addField("メモ" , "`!n help memo` って言ってみ？")
-    .addField("知識の引き出し" , "``〇〇って何？`と言うと博識のばまんが教えてくれます")
-    .addField("ユーザー情報" , "!n yと書くと自分の情報が見られます。")
-    .addField("Fortnite" , "`!n help fortnite`って言ってみ？")
-    .addField("のばまんチャット" , "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ")
-    .setColor("#b9c42f")
-    message.channel.send(embed)
-    }else if (args[0] === "fortnite") {
+
+  const kekka = message.content
+    .replace(/\s+/, "")
+    .slice(prefix.length + command.length);
+  if (command === "help") {
+    if (!args[0]) {
       let embed = new Discord.RichEmbed()
-      .setTitle(" Fortnite機能説明")
-      .addField("!n fortnite shop" , "Fortniteのショップが見れます。(通知注意)")
-      .addField("!n fortnite stats (名前)" , "Fortniteのユーザー情報が見れます")
-      message.channel.send(embed)
-    } else if(args[0] === "todo") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("Todo(やることリスト)機能説明！")
-    .addField("!n todo" , "Todoの作成/Todoの表示ができるコマンド")
-    .addField("!n todo create", "Todoの追加ができるコマンド")
-    .addField("!n todo delete" , "Todoの初期化ができるコマンド。")
-    .addField("!n todo clear (消したいTodoの番号)" , "Todoをクリアできるコマンド")
-    message.channel.send(embed)
-    } else if(args[0] === "memo") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("メモ機能説明！")
-    .addField("!n memo" , "メモ一覧の表示ができるコマンド")
-    .addField("!n memo create (名前) (内容)", "メモの作成ができるコマンド")
-    .addField("!n memo delete (消したいメモの名前)" , "メモの削除ができるコマンド。")
-    .addField("!n memo (見たいメモの名前)" , "メモの閲覧ができるコマンド")
-    message.channel.send(embed)
+        .setTitle("nobaman aiにできること")
+        .addField(
+          "知識の蓄え",
+          "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます"
+        )
+        .addField("やることリスト(todo)", "``!n help todo`って言ってみ？")
+        .addField("メモ", "`!n help memo` って言ってみ？")
+        .addField(
+          "知識の引き出し",
+          "``〇〇って何？`と言うと博識のばまんが教えてくれます"
+        )
+        .addField("ユーザー情報", "!n yと書くと自分の情報が見られます。")
+        .addField("Fortnite", "`!n help fortnite`って言ってみ？")
+        .addField(
+          "のばまんチャット",
+          "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ"
+        )
+        .setColor("#b9c42f");
+      message.channel.send(embed);
+    } else if (args[0] === "fortnite") {
+      let embed = new Discord.RichEmbed()
+        .setTitle(" Fortnite機能説明")
+        .addField(
+          "!n fortnite shop",
+          "Fortniteのショップが見れます。(通知注意)"
+        )
+        .addField(
+          "!n fortnite stats (名前)",
+          "Fortniteのユーザー情報が見れます"
+        );
+      message.channel.send(embed);
+    } else if (args[0] === "todo") {
+      let embed = new Discord.RichEmbed()
+        .setTitle("Todo(やることリスト)機能説明！")
+        .addField("!n todo", "Todoの作成/Todoの表示ができるコマンド")
+        .addField("!n todo create", "Todoの追加ができるコマンド")
+        .addField("!n todo delete", "Todoの初期化ができるコマンド。")
+        .addField(
+          "!n todo clear (消したいTodoの番号)",
+          "Todoをクリアできるコマンド"
+        );
+      message.channel.send(embed);
+    } else if (args[0] === "memo") {
+      let embed = new Discord.RichEmbed()
+        .setTitle("メモ機能説明！")
+        .addField("!n memo", "メモ一覧の表示ができるコマンド")
+        .addField("!n memo create (名前) (内容)", "メモの作成ができるコマンド")
+        .addField(
+          "!n memo delete (消したいメモの名前)",
+          "メモの削除ができるコマンド。"
+        )
+        .addField("!n memo (見たいメモの名前)", "メモの閲覧ができるコマンド");
+      message.channel.send(embed);
     }
-  } if(command === "todo") {
+  }
+  if (command === "todo") {
     /*json構造
     id : {
     todo : []
     }   
     */
     const todo = require("./database/todo.json");
-    if(!args[0]) {
-      
-    if(!todo[message.author.id]) {
-      const m = await message.channel.send("todoがありません。作成しています...");
+    if (!args[0]) {
+      if (!todo[message.author.id]) {
+        const m = await message.channel.send(
+          "todoがありません。作成しています..."
+        );
+        todo[message.author.id] = {
+          todo: []
+        };
+        m.edit("todoを作成しました。");
+      } else if (todo[message.author.id].todo.length == 0) {
+        message.channel.send("todoがありません。todoを追加してね。");
+      } else {
+        const todoList = [];
+        for (var i = 0; i < todo[message.author.id].todo.length; i++) {
+          todoList.push(i + 1 + "." + todo[message.author.id].todo[i]);
+        }
+        let embed = new Discord.RichEmbed()
+          .setTitle("やることリスト")
+          .setDescription(`${todoList.join("\n")}`);
+        message.channel.send(embed);
+      }
+    } else if (!todo[message.author.id]) {
+      const m = await message.channel.send(
+        "todoがありません。作成しています..."
+      );
       todo[message.author.id] = {
-        todo : []
-      }
-      m.edit("todoを作成しました。")
-    } else if(todo[message.author.id].todo.length == 0) {
-      message.channel.send("todoがありません。todoを追加してね。");
-    } else {
-      const todoList = [];
-      for(var i = 0; i < todo[message.author.id].todo.length; i++){
-        todoList.push((i + 1) + "." +todo[message.author.id].todo[i]);
-      }
-      let embed = new Discord.RichEmbed()
-      .setTitle("やることリスト")
-      .setDescription(`${todoList.join("\n")}`)
-      message.channel.send(embed)
-    }
-    } else if(!todo[message.author.id]) {
-      const m = await message.channel.send("todoがありません。作成しています...");
-      todo[message.author.id] = {
-        todo : []
-      }
-      m.edit("todoを作成しました。")
-    } else if(args[0] === "create") {
-     const m = await message.channel.send(`${kekka.slice(7).trim()}をtodoに追加します・・・・`);
+        todo: []
+      };
+      m.edit("todoを作成しました。");
+    } else if (args[0] === "create") {
+      const m = await message.channel.send(
+        `${kekka.slice(7).trim()}をtodoに追加します・・・・`
+      );
       todo[message.author.id].todo.push(kekka.slice(7).trim());
       m.edit(`${kekka.slice(7).trim()}をtodoに追加しました。`);
-    } else if(args[0] === "delete") {
+    } else if (args[0] === "delete") {
       const m = await message.channel.send("todoを初期化しています・・・");
-      delete todo[message.author.id]
+      delete todo[message.author.id];
       m.edit("todoを初期化しました。");
-    } else if(args[0] === "clear") {
-      if(!args[1]) return message.channel.send("消すTodoの番号がわかりません\n例(1番を消す場合) ``!n todo clear 1`")
-      const m = await message.channel.send(`${args[1]}をクリアします。`)
-      todo[message.author.id].todo.splice((args[1] - 1) , 1);
-      m.edit(`${args[1]}をクリアしました。`)
+    } else if (args[0] === "clear") {
+      if (!args[1])
+        return message.channel.send(
+          "消すTodoの番号がわかりません\n例(1番を消す場合) ``!n todo clear 1`"
+        );
+      const m = await message.channel.send(`${args[1]}をクリアします。`);
+      todo[message.author.id].todo.splice(args[1] - 1, 1);
+      m.edit(`${args[1]}をクリアしました。`);
     }
-    
-  fs.writeFile("./database/todo.json", JSON.stringify(todo), err => {
-    if (err) console.log(err);
-  });
-  } if(command === "memo") {
-      /*json構造
+
+    fs.writeFile("./database/todo.json", JSON.stringify(todo), err => {
+      if (err) console.log(err);
+    });
+  }
+  if (command === "memo") {
+    /*json構造
     id : {
     memo名前 : "memo内容"
     }   
     */
     const todo = require("./database/memo.json");
-    console.log(todo[message.author.id])
-    if(!args[0]) {
+    console.log(todo[message.author.id]);
+    if (!args[0]) {
       const array = [];
       for (var item in todo[message.author.id]) {
-      array.push(item)
+        array.push(item);
       }
-      if(array.length === 0) return message.channel.send("メモが一つもありません")
-      message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``)
-    } else if(args[0] === "create") {
-      if(!todo[message.author.id]) {
-        todo[message.author.id] = {
-          
-        }
+      if (array.length === 0)
+        return message.channel.send("メモが一つもありません");
+      message.channel.send("メモ一覧" + `\n\`\`\`${array}\`\`\``);
+    } else if (args[0] === "create") {
+      if (!todo[message.author.id]) {
+        todo[message.author.id] = {};
       }
-      if(!args[2]) return message.channel.send("情報が足りません。 \n`明日やること`という名前のメモに`明日は何もしない`と書く場合の例\n!n memo create 明日やること 明日は何もしない")
-     const m = await message.channel.send(`\`${kekka.slice(7 + args[1].length + 1).trim()}\`を\`${args[1]}\`にメモしました`);
-      todo[message.author.id][args[1]] = kekka.slice(7 + args[1].length + 1).trim()
+      if (!args[2])
+        return message.channel.send(
+          "情報が足りません。 \n`明日やること`という名前のメモに`明日は何もしない`と書く場合の例\n!n memo create 明日やること 明日は何もしない"
+        );
+      const m = await message.channel.send(
+        `\`${kekka.slice(7 + args[1].length + 1).trim()}\`を\`${
+          args[1]
+        }\`にメモしました`
+      );
+      todo[message.author.id][args[1]] = kekka
+        .slice(7 + args[1].length + 1)
+        .trim();
       m.edit(`${args[1]}を作りました。`);
-    } else if(args[0] === "delete") {
+    } else if (args[0] === "delete") {
       const m = await message.channel.send("memoを消しています・・・");
-      delete todo[message.author.id][args[1]]
+      delete todo[message.author.id][args[1]];
       m.edit(`${args[1]}を消しました`);
     } else {
-      message.channel.send(`\`\`\`${todo[message.author.id][args[0]]}\`\`\``)
+      message.channel.send(`\`\`\`${todo[message.author.id][args[0]]}\`\`\``);
     }
-  fs.writeFile("./database/memo.json", JSON.stringify(todo), err => {
-    if (err) console.log(err);
-  });
-  } if (command === "y") {
-  const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
-  let bot;
-  if (member.user.bot === true) {
-    bot = "はい";
-  } else {
-    bot = "いいえ";
+    fs.writeFile("./database/memo.json", JSON.stringify(todo), err => {
+      if (err) console.log(err);
+    });
   }
-  const avatar = message.mentions.users.first() || message.author;
-  const embed = new Discord.RichEmbed()
-    .setColor("#b9c42f")
-    .setAuthor(`${member.user.tag} (${member.id})`)
-    .setThumbnail(avatar.avatarURL)
-    .addField("ニックネーム:", `${member.nickname !== null ? `${member.nickname}` : "ニックネームなし"}`, true)
-    .addField("Bot", `${bot}`, true)
-    .addField("プレイング", `${member.user.presence.game ? `${member.user.presence.game.name}` : "プレイしていない"}`, true)
-    .addField("役職", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "無職"}`, true)
-    .addField("アカウント作成時",formatDate(member.user.createdAt), true)
-    .addField("入室時",formatDate(member.joinedAt), true)
-    .addField("状態",member.presence.status, true)
-    .addField("ラストメッセージ" , member.lastMessage || member.user.lastMessage)
-      message.channel.send(embed);
-      return;
-  } if (command === "fortnite") {
+  if (command === "y") {
+    const member =
+      message.mentions.members.first() ||
+      message.guild.members.get(args[0]) ||
+      message.member;
+    let bot;
+    if (member.user.bot === true) {
+      bot = "はい";
+    } else {
+      bot = "いいえ";
+    }
+    const avatar = message.mentions.users.first() || message.author;
+    const embed = new Discord.RichEmbed()
+      .setColor("#b9c42f")
+      .setAuthor(`${member.user.tag} (${member.id})`)
+      .setThumbnail(avatar.avatarURL)
+      .addField(
+        "ニックネーム:",
+        `${
+          member.nickname !== null ? `${member.nickname}` : "ニックネームなし"
+        }`,
+        true
+      )
+      .addField("Bot", `${bot}`, true)
+      .addField(
+        "プレイング",
+        `${
+          member.user.presence.game
+            ? `${member.user.presence.game.name}`
+            : "プレイしていない"
+        }`,
+        true
+      )
+      .addField(
+        "役職",
+        `${member.roles
+          .filter(r => r.id !== message.guild.id)
+          .map(roles => `\`${roles.name}\``)
+          .join(" **|** ") || "無職"}`,
+        true
+      )
+      .addField("アカウント作成時", formatDate(member.user.createdAt), true)
+      .addField("入室時", formatDate(member.joinedAt), true)
+      .addField("状態", member.presence.status, true)
+      .addField(
+        "ラストメッセージ",
+        member.lastMessage || member.user.lastMessage
+      );
+    message.channel.send(embed);
+    return;
+  }
+  if (command === "fortnite") {
     const request = require("request");
     const key = "9697ac23-063a-47ba-8c79-d327222116f9";
-    if(!args[0]) return message.channel.send("情報が足りません\n`!n help`で使い方を確認してね");
-    else if(args[0] === "shop") {
-    const options = {
-      url:"https://api.fortnitetracker.com/v1/store" ,
-      method:"get",
-      json:true,
-      headers : {'TRN-Api-Key' : key}
-    } 
-    request(options, (error, response, body)  => { 
-      for(var i = 0; i < body.length; i++) {
-        let embed = new Discord.RichEmbed()
-        .setImage(body[i].imageUrl)
-        .setTitle(body[i].name)
-        .setDescription(`値段:${body[i].vBucks}VBucks`)
-        message.channel.send(embed)
+    if (!args[0])
+      return message.channel.send(
+        "情報が足りません\n`!n help`で使い方を確認してね"
+      );
+    else if (args[0] === "shop") {
+      const options = {
+        url: "https://api.fortnitetracker.com/v1/store",
+        method: "get",
+        json: true,
+        headers: { "TRN-Api-Key": key }
+      };
+      request(options, (error, response, body) => {
+        for (var i = 0; i < body.length; i++) {
+          let embed = new Discord.RichEmbed()
+            .setImage(body[i].imageUrl)
+            .setTitle(body[i].name)
+            .setDescription(`値段:${body[i].vBucks}VBucks`);
+          message.channel.send(embed);
         }
-    })
-    } else if(args[0] === "stats") {
-    const options = {
-      url:`https://api.fortnitetracker.com/v1/profile/pc/${args[1]}`  ,
-      method:"get",
-      json:true,
-      headers : {'TRN-Api-Key' : key}
+      });
+    } else if (args[0] === "stats") {
+      const options = {
+        url: `https://api.fortnitetracker.com/v1/profile/pc/${args[1]}`,
+        method: "get",
+        json: true,
+        headers: { "TRN-Api-Key": key }
+      };
+      request(options, (error, response, body) => {
+        let embed = new Discord.RichEmbed()
+          .setTitle(args[1])
+          .setDescription(`id:${body.accountId}`)
+          .addField("ビクロイ数", body.lifeTimeStats[8].value)
+          .addField("勝率", body.lifeTimeStats[9].value)
+          .addField("キル数", body.lifeTimeStats[10].value)
+          .addField("K/D", body.lifeTimeStats[11].value)
+          .addField("マッチ回数", body.lifeTimeStats[7].value);
+        message.channel.send(embed);
+      });
     }
-    request(options, (error, response, body)  => { 
-      let embed = new Discord.RichEmbed()
-      .setTitle(args[1])
-      .setDescription(`id:${body.accountId}`)
-      .addField("ビクロイ数" , body.lifeTimeStats[8].value)
-      .addField('勝率' , body.lifeTimeStats[9].value)
-      .addField("キル数" , body.lifeTimeStats[10].value)
-      .addField("K/D" , body.lifeTimeStats[11].value)
-      .addField("マッチ回数" , body.lifeTimeStats[7].value)
-      message.channel.send(embed)
-    })
-    }
-  } if (command === "server") {
-    message.channel.send(client.guilds.find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁").members.map(m => m.user.username))
-  } if(command === "chat") {
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return;
-    if(!args[0]) {
-    if(!chat[message.channel.id]) {
-      chat[message.channel.id] = {
-        ban : false
-      }
-      message.channel.createWebhook("のばまんchat用webhook")
-      message.channel.send("登録しました");
-    } else {
-      delete chat[message.channel.id]
-      message.channel.send("登録を解除しました");
-      message.channel.fetchWebhooks()
-      .then(hook => hook.find(hooks => hooks.name === "のばまんchat用webhook").delete())
-    }
-    } else if(args[0] === "list") {
-      const array = [];
-        client.channels.forEach(async c => {
-               if (!chat[c.id]) return;
-          array.push(c.name)
-        })
-      message.channel.send(array.join("\n"))
-    } else if(args[0] === "ban") {
-      if(chat[args[1]].ban) {
-    chat[args[1]] = {
-        ban : false
-      }
-          message.channel.send(`${client.users.get(args[1]).username}のbanを解除しました`);
+  }
+  if (command === "server") {
+    message.channel.send(
+      client.guilds
+        .find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁")
+        .members.map(m => m.user.username)
+    );
+  }
+  if (command === "chat") {
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    if (!args[0]) {
+      if (!chat[message.channel.id]) {
+        chat[message.channel.id] = {
+        };
+        message.channel.createWebhook("のばまんchat用webhook");
+        message.channel.send("登録しました");
       } else {
-      chat[args[1]] = {
-        ban : true
+        delete chat[message.channel.id];
+        message.channel.send("登録を解除しました");
+        message.channel
+          .fetchWebhooks()
+          .then(hook =>
+            hook.find(hooks => hooks.name === "のばまんchat用webhook").delete()
+          );
       }
-      message.channel.send(`${client.users.get(args[1]).username}をbanしました`);
+    } else if (args[0] === "list") {
+      const array = [];
+      client.channels.forEach(async c => {
+        if (!chat[c.id]) return;
+        array.push(c.name);
+      });
+      message.channel.send(array.join("\n"));
+    } else if (args[0] === "ban") {
+      if (chat[args[1]].ban) {
+        chat[args[1]] = {
+          ban: false
+        };
+        message.channel.send(
+          `${client.users.get(args[1]).username}のbanを解除しました`
+        );
+      } else {
+        chat[args[1]] = {
+          ban: true
+        };
+        message.channel.send(
+          `${client.users.get(args[1]).username}をbanしました`
+        );
+      }
+    } else if (args[0] === "id") {
+      /*
+         "サーバーの名前" : message.guild.name,
+    "サーバーのID" : message.guild.id,
+    "チャンネル" : message.channel.id,
+    "名前" : message.author.tag,
+    "ID" : message.author.id,
+    "内容"
+    */
+      if (!chat["id"][args[1]])
+        return message.channel.send("IDを確認できませんでした");
+      else {
+        message.channel.send(
+          `
+          サーバーの名前 : ${chat["id"][args[1]]["サーバーの名前"]}
+          サーバーのID : ${chat["id"][args[1]]["サーバーのID"]}
+          名前 : ${chat["id"][args[1]]["名前"]}
+          ID : ${chat["id"][args[1]]["ID"]} 
+          内容 : ${chat["id"][args[1]]["内容"]}
+          `
+        );
       }
     }
-      fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
-    if (err) console.log(err);
-  });
-  } if(command === "eval") {
-      if(message.author.id !== "551421671332904960") return;
-       try{
-       message.channel.send(eval(kekka))
-       } catch(e){
-        message.react('❌')
-         message.reply(e.message)
-        return;
-       } 
-   message.react("✅")
-return;
+    fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
+      if (err) console.log(err);
+    });
+  }
+  if (command === "eval") {
+    if (message.author.id !== "551421671332904960") return;
+    try {
+      message.channel.send(eval(kekka));
+    } catch (e) {
+      message.react("❌");
+      message.reply(e.message);
+      return;
+    }
+    message.react("✅");
+    return;
   }
 });
 
