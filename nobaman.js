@@ -333,6 +333,17 @@ client.on("message", async message => {
       fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
     if (err) console.log(err);
   });
+  } if(command === "eval") {
+      if(message.author.id !== "551421671332904960") return;
+       try{
+       message.channel.send(eval(kekka))
+       } catch(e){
+        message.react('❌')
+         message.reply(e.message)
+        return;
+       } 
+   message.react("✅")
+return;
   }
 });
 
