@@ -107,7 +107,7 @@ client.on("message", async message => {
     }
   }
 
-  fs.writeFile("./nobaman.json", JSON.stringify(tisiki), err => {
+  fs.writeFile("./database/nobaman.json", JSON.stringify(tisiki), err => {
     if (err) console.log(err);
   });
     if (
@@ -321,7 +321,7 @@ client.on("message", async message => {
     if(!args[0]) {
     if(!chat[message.channel.id]) {
       chat[message.channel.id] = {
-        
+        ban : false
       }
       message.channel.createWebhook("のばまんchat用webhook")
       message.channel.send("登録しました");
@@ -338,6 +338,18 @@ client.on("message", async message => {
           array.push(c.name)
         })
       message.channel.send(array.join("\n"))
+    } else if(args[0] === "ban") {
+      if(chat[args[1]].ban) {
+    chat[args[1]] = {
+        ban : false
+      }
+          message.channel.send(`${client.users.get(args[1]).username}のbanを解除しました`);
+      } else {
+      chat[args[1]] = {
+        ban : true
+      }
+      message.channel.send(`${client.users.get(args[1]).username}をbanしました`);
+      }
     }
       fs.writeFile("./database/chat.json", JSON.stringify(chat), err => {
     if (err) console.log(err);

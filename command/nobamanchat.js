@@ -1,13 +1,15 @@
 module.exports.run = (client, message) => {
   const Discord = require("discord.js");
-  const chat = require("../database/chat.json")
+  const chat = require("../database/chat.json");
   if (message.content.startsWith("!n") && message.content.startsWith("のばまん、")) return;
+  if(chat[message.channel.id].ban) return message.channel.send("あなたはBANされています");
   if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) {
     message.reply(
       "`ウェブフックの管理(ロールからのばまんに権限を上げてね)`を送ってくれー!"
     );
     return;
   }
+    var rannsuu = Math.floor(Math.random() * 99999)
   //のばまんchat用webhook
   const option = {
     username: `${message.author.tag}`,
