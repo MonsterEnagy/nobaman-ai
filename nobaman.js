@@ -177,6 +177,8 @@ client.on("message", async message => {
           "のばまんチャット",
           "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ"
         )
+      .addField("New! クイズ" , "!n quiz`と言うとクイズができます。")
+      .addFIeld("天気" , "`!n weather (場所)`で天気を確認できます。")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {

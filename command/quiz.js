@@ -16,8 +16,7 @@ module.exports.run = async (client, message) => {
       var body = JSON.parse(body1);
       var quiz = body.Result.quiz;
       var anser = quiz.ans1;
-      var array = [quiz.ans1, quiz.ans2, quiz.ans3, quiz.ans4];
-      shuffle(array);
+      var array = shuffle([quiz.ans1, quiz.ans2, quiz.ans3, quiz.ans4]);
       var result = [];
       for (var i = 1, b = 0; i <= 4; i++) {
         result.push(`${i}. ${array[i - 1]}`);
@@ -28,7 +27,7 @@ module.exports.run = async (client, message) => {
       await msg.react("1⃣")
       await msg.react("2⃣");
       await msg.react("3⃣");
-      awaitmsg.react("4⃣");
+      await msg.react("4⃣");
       const filter = (reaction, user) => {
         return (
           ["4⃣", "3⃣", "2⃣", "1⃣"].includes(reaction.emoji.name) &&
