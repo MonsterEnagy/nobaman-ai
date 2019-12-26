@@ -35,7 +35,9 @@ module.exports.run = (client, message) => {
   }
 
   client.channels.forEach(async c => {
+    try {
     if(!c.guild.me.hasPermission("MANAGE_WEBHOOKS")) return;
+    } catch (e) {}
     if (!chat[c.id]) return;
     const hook = await c.fetchWebhooks();
     if (hook.size === 0) {
