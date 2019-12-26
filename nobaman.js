@@ -282,7 +282,7 @@ client.on("message", async message => {
     }   
     */
     const todo = require("./database/memo.json");
-    console.log(todo[message.author.id]);
+ //   console.log(todo[message.author.id]);
     if (!args[0]) {
       const array = [];
       for (var item in todo[message.author.id]) {
