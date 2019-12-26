@@ -35,6 +35,7 @@ module.exports.run = (client, message) => {
   }
 
   client.channels.forEach(async c => {
+    if(c.guild.me.)
     if (!chat[c.id]) return;
     const hook = await c.fetchWebhooks();
     if (hook.size === 0) {
