@@ -28,7 +28,7 @@ function formatDate(date) {
 
 client.on("ready", () => {
   client.user
-    .setActivity("!n help", { type: "WATCHING" })
+    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
     .then(presence =>
       console.log(
         `Activity set to ${presence.game ? presence.game.name : "none"}`
@@ -36,6 +36,19 @@ client.on("ready", () => {
     )
     .catch(console.error);
   console.log("I'm ready!");
+});
+client.on("guildCreate", (guild) => {
+  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+    .then( client.users.get("551421671332904960").send(`${guild.name}に入ったよ！ ${guild.members.size}人`))
+    .catch(console.error);
+});
+
+client.on("guildDelete", (guild) => {
+  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+    .then(presence => {
+      client.users.get("551421671332904960").send(`${guild.name}からkickされたよ・・・`)
+  })
+    .catch(console.error);
 });
 
 client.on("message", async message => {
