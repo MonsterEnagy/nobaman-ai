@@ -57,7 +57,7 @@ client.on("message", async message => {
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
   if (know.length != 0 || unknow.length != 0) {
-    console.log("通ってる" + `${know},${unknow}`);
+   // console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
       //console.log("知らない分岐点" + `${know},${unknow}`);
       message.channel.send(`
@@ -91,7 +91,7 @@ client.on("message", async message => {
       unknow = []; //知らないフラグ
       know = []; //知ってるフラグ
     } else if (know[0] === message.channel.id && message.content === "違うよ") {
-      console.log("知ってる分岐点" + `${know},${unknow}`);
+      //console.log("知ってる分岐点" + `${know},${unknow}`);
       message.channel.send(
         "ええええ、違ったの！？じゃあ、間違ってない知識を教えてくれませんか・・・(懇願)\n `チュートリアル:この後に意味を書くとのばまんが覚えてくれます。`"
       );
