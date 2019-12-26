@@ -140,6 +140,7 @@ client.on("message", async message => {
     .slice(prefix.length + command.length);
 
   if (chat[message.channel.id]) {
+    const chat = require("./database/chat.json");
     require("./command/nobamanchat.js").run(client, message);
     console.log("aaa") //659316698309984281
   }
@@ -409,9 +410,11 @@ client.on("message", async message => {
   }
   if (command === "chat") {
     if (!args[0]) {
-      if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+      if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("チャンネル管理の権限を持っていない人はこのコマンドを使用できません")
       if (!chat[message.channel.id]) {
-        chat[message.channel.id] = {};
+        chat[message.channel.id] = {
+          "ok" : "ok"
+        };
         message.channel.createWebhook("のばまんchat用webhook");
         message.channel.send("登録しました");
       } else {
