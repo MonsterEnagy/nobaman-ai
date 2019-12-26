@@ -138,9 +138,13 @@ client.on("message", async message => {
   const kekka = message.content
     .replace(/\s+/, "")
     .slice(prefix.length + command.length);
-  
-    if (chat[message.channel.id]) {
-    require("./command/nobamanchat.js").run(client, message , args);
+
+  if (chat[message.channel.id]) {
+    if (!chat["ban"][message.author.id]) {
+      chat["ban"][args[1]] = {};
+    }
+    if (chat.ban[message.author.id].ban == true) return message.channel.send("あなたはBANされています");
+    require("./command/nobamanchat.js").run(client, message, args);
   }
 
   if (command === "help") {
@@ -408,7 +412,7 @@ client.on("message", async message => {
   }
   if (command === "chat") {
     if (!args[0]) {
-          if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+      if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
       if (!chat[message.channel.id]) {
         chat[message.channel.id] = {};
         message.channel.createWebhook("のばまんchat用webhook");
@@ -430,30 +434,27 @@ client.on("message", async message => {
       });
       message.channel.send(array.join("\n"));
     } else if (args[0] === "ban") {
-          if (message.author.id !== "551421671332904960") return;
-      console.log("通ってる")
+      if (message.author.id !== "551421671332904960") return;
+      console.log("通ってる");
       try {
-      if (chat["ban"][args[1]].ban == true) {
-        chat["ban"][args[1]] = {
-          ban: false
-        };
-        message.channel.send(
-          `${client.users.get(args[1]).username}のbanを解除しました`
-        );
-      } else {
-        chat["ban"][args[1]] = {
-          ban: true
-        };
-        message.channel.send(
-          `${client.users.get(args[1]).username}をbanしました`
-        );
-      }
-      } catch(e) {
-        message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`)
-        chat["ban"][args[1]] = {
-          
+        if (chat["ban"][args[1]].ban == true) {
+          chat["ban"][args[1]] = {
+            ban: false
+          };
+          message.channel.send(
+            `${client.users.get(args[1]).username}のbanを解除しました`
+          );
+        } else {
+          chat["ban"][args[1]] = {
+            ban: true
+          };
+          message.channel.send(
+            `${client.users.get(args[1]).username}をbanしました`
+          );
         }
-        
+      } catch (e) {
+        message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`);
+        chat["ban"][args[1]] = {};
       }
     } else if (args[0] === "id") {
       /*
