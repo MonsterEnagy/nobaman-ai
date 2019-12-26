@@ -505,6 +505,10 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
     message.react("✅");
     return;
+  } if (command === "weather") {
+    require("./command/weather.js").run(client , message , kekka)
+  } if(command === "quiz") {
+      require("./command/quiz.js").run(client , message)
   }
 });
 
