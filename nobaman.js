@@ -138,13 +138,15 @@ client.on("message", async message => {
   const kekka = message.content
     .replace(/\s+/, "")
     .slice(prefix.length + command.length);
-
-  if (chat[message.channel.id]) {
+  if (!message.content.startsWith("!n") || !message.content.startsWith("のばまん、")) {
+  if (chat[message.channel.id]["ok"] === "ok") {
+    console.log("aaaaa")
     const chat = require("./database/chat.json");
     require("./command/nobamanchat.js").run(client, message);
     console.log("aaa") //659316698309984281
   }
-
+  }
+  
   if (command === "help") {
     if (!args[0]) {
       let embed = new Discord.RichEmbed()
@@ -426,6 +428,9 @@ client.on("message", async message => {
             hook.find(hooks => hooks.name === "のばまんchat用webhook").delete()
           );
       }
+           fs.writeFile("./database/chat.json", JSON.stringify(chat), (err) => {
+                     if(err) console.log(err)
+                });
     } else if (args[0] === "list") {
       const array = [];
       client.channels.forEach(async c => {
