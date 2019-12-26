@@ -37,17 +37,25 @@ client.on("ready", () => {
     .catch(console.error);
   console.log("I'm ready!");
 });
-client.on("guildCreate", (guild) => {
-  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
-    .then( client.users.get("551421671332904960").send(`${guild.name}に入ったよ！ ${guild.members.size}人`))
+client.on("guildCreate", guild => {
+  client.user
+    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+    .then(
+      client.users
+        .get("551421671332904960")
+        .send(`${guild.name}に入ったよ！ ${guild.members.size}人`)
+    )
     .catch(console.error);
 });
 
-client.on("guildDelete", (guild) => {
-  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+client.on("guildDelete", guild => {
+  client.user
+    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
     .then(presence => {
-      client.users.get("551421671332904960").send(`${guild.name}からkickされたよ・・・`)
-  })
+      client.users
+        .get("551421671332904960")
+        .send(`${guild.name}からkickされたよ・・・`);
+    })
     .catch(console.error);
 });
 
@@ -57,7 +65,7 @@ client.on("message", async message => {
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
   if (know.length != 0 || unknow.length != 0) {
-   // console.log("通ってる" + `${know},${unknow}`);
+    // console.log("通ってる" + `${know},${unknow}`);
     if (unknow[0] === message.channel.id) {
       //console.log("知らない分岐点" + `${know},${unknow}`);
       message.channel.send(`
@@ -139,8 +147,8 @@ client.on("message", async message => {
   }
 
   const prefix = "!n";
-  
-    if (chat[message.channel.id]) {
+
+  if (chat[message.channel.id]) {
     require("./command/nobamanchat.js").run(client, message);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;
@@ -155,8 +163,7 @@ client.on("message", async message => {
   const kekka = message.content
     .replace(/\s+/, "")
     .slice(prefix.length + command.length);
-  
-  
+
   if (command === "help") {
     if (!args[0]) {
       let embed = new Discord.RichEmbed()
@@ -177,9 +184,10 @@ client.on("message", async message => {
           "のばまんチャット",
           "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ"
         )
-      .addField("クイズ" , "!n quiz`と言うとクイズができます。")
-      .addField("天気" , "`!n weather (場所)`で天気を確認できます。")
-      .addField("ニュース" , "`!n news`ニュースが見れます")
+        .addField("クイズ", "!n quiz`と言うとクイズができます。")
+        .addField("天気", "`!n weather (場所)`で天気を確認できます。")
+        .addField("ニュース", "`!n news`ニュースが見れます")
+        .addField("new!画像検索", "`!n img (キーワード)`で画像を検索できます。")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
@@ -285,7 +293,7 @@ client.on("message", async message => {
     }   
     */
     const todo = require("./database/memo.json");
- //   console.log(todo[message.author.id]);
+    //   console.log(todo[message.author.id]);
     if (!args[0]) {
       const array = [];
       for (var item in todo[message.author.id]) {
@@ -425,10 +433,12 @@ client.on("message", async message => {
   }
   if (command === "chat") {
     if (!args[0]) {
-      if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("チャンネル管理の権限を持っていない人はこのコマンドを使用できません")
+      if (!message.member.hasPermission("MANAGE_CHANNELS"))
+        return message.channel.send(
+          "チャンネル管理の権限を持っていない人はこのコマンドを使用できません"
+        );
       if (!chat[message.channel.id]) {
-        chat[message.channel.id] = {
-        };
+        chat[message.channel.id] = {};
         message.channel.createWebhook("のばまんchat用webhook");
         message.channel.send("登録しました");
       } else {
@@ -470,7 +480,9 @@ client.on("message", async message => {
         message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`);
         chat["ban"][args[1]] = {};
       }
-    } */else if (args[0] === "id") {
+    } */ else if (
+      args[0] === "id"
+    ) {
       /*
          "サーバーの名前" : message.guild.name,
     "サーバーのID" : message.guild.id,
@@ -508,16 +520,21 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
     message.react("✅");
     return;
-  } if (command === "weather") {
-    require("./command/weather.js").run(client , message , kekka)
-  } if(command === "quiz") {
-      require("./command/quiz.js").run(client , message)
-  } if(command === "icon") {
-    require("./command/icon.js").run(client , message , args)
-  } if(command === "news") {
-    require("./command/news.js").run(client , message)
-  } if(command === "img") {
-    require("./command/img.js")
+  }
+  if (command === "weather") {
+    require("./command/weather.js").run(client, message, kekka);
+  }
+  if (command === "quiz") {
+    require("./command/quiz.js").run(client, message);
+  }
+  if (command === "icon") {
+    require("./command/icon.js").run(client, message, args);
+  }
+  if (command === "news") {
+    require("./command/news.js").run(client, message);
+  }
+  if (command === "img") {
+    require("./command/img.js").run(client, message, kekka);
   }
 });
 
