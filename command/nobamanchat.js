@@ -1,16 +1,16 @@
-module.exports.run = (client, message , args) => {
+module.exports.run = (client, message ) => {
   const fs = require("fs")
   const Discord = require("discord.js");
   const chat = require("../database/chat.json");
-  if (message.content.startsWith("!n") && message.content.startsWith("のばまん、")) return;
-
+  if (message.content.startsWith("!n") || message.content.startsWith("のばまん、")) return;
+console.log("通ってる")
   if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) {
     message.reply(
       "`ウェブフックの管理(ロールからのばまんに権限を上げてね)`を送ってくれー!"
     );
     return;
   }
-
+console.log("通ってる")
     const rannsuu = Math.floor(Math.random() * 99999)
   chat["id"][rannsuu] = {
    "サーバーの名前" : message.guild.name,
@@ -31,6 +31,7 @@ module.exports.run = (client, message , args) => {
   if (message.attachments.first()) {
     option.file = message.attachments.first().url;
   }
+  console.log("通ってる")
   client.channels.forEach(async c => {
     if (!c.guild.me.hasPermission("MANAGE_WEBHOOKS")) return;
      if (!chat[c.id]) return;

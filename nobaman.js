@@ -140,11 +140,8 @@ client.on("message", async message => {
     .slice(prefix.length + command.length);
 
   if (chat[message.channel.id]) {
-    if (!chat["ban"][message.author.id]) {
-      chat["ban"][args[1]] = {};
-    }
-    if (chat.ban[message.author.id].ban == true) return message.channel.send("あなたはBANされています");
-    require("./command/nobamanchat.js").run(client, message, args);
+    require("./command/nobamanchat.js").run(client, message);
+    console.log("aaa") //659316698309984281
   }
 
   if (command === "help") {
@@ -430,10 +427,10 @@ client.on("message", async message => {
       const array = [];
       client.channels.forEach(async c => {
         if (!chat[c.id]) return;
-        array.push(c.name);
+        array.push(client.guilds.find(m => m.name === c.name).name);
       });
       message.channel.send(array.join("\n"));
-    } else if (args[0] === "ban") {
+    } /*else if (args[0] === "ban") {
       if (message.author.id !== "551421671332904960") return;
       console.log("通ってる");
       try {
@@ -456,7 +453,7 @@ client.on("message", async message => {
         message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`);
         chat["ban"][args[1]] = {};
       }
-    } else if (args[0] === "id") {
+    } */else if (args[0] === "id") {
       /*
          "サーバーの名前" : message.guild.name,
     "サーバーのID" : message.guild.id,
