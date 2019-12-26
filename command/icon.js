@@ -1,10 +1,11 @@
 module.exports.run = (client , message, args) => {
-  const Discord = require("discord.js")
+ /* const Discord = require("discord.js")
 let user;
 const id = client.users.get(args[0])
 const name = client.users.find(m=>m.username === args.join(" "));
 const mention = message.mentions.users.first()
- if(!args[0] && !message.mentions.user) {
+console.log("通ってる")
+ if(!args[0] && !message.mentions.users) {
 user = client.users.get(message.author.id);
 } else if(message.mentions.user) {
   user = mention
@@ -28,5 +29,6 @@ user = client.users.get(message.author.id);
   .setAuthor(`${user.username}`)
   .setImage(user.avatarURL)
   message.channel.send(embed)
- }
+ } */
+  message.channel.send("開発中")
 }

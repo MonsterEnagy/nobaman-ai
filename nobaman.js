@@ -177,8 +177,9 @@ client.on("message", async message => {
           "のばまんチャット",
           "`!n chat`と言うとのばまんチャットに登録/解除できて、違うチャンネルの間で会話ができるようになるよ"
         )
-      .addField("New! クイズ" , "!n quiz`と言うとクイズができます。")
-      .addFIeld("天気" , "`!n weather (場所)`で天気を確認できます。")
+      .addField("クイズ" , "!n quiz`と言うとクイズができます。")
+      .addField("天気" , "`!n weather (場所)`で天気を確認できます。")
+      .addField("ニュース" , "`!n news`ニュースが見れます")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
@@ -513,6 +514,10 @@ ID : ${chat["id"][args[1]]["ID"]}
       require("./command/quiz.js").run(client , message)
   } if(command === "icon") {
     require("./command/icon.js").run(client , message , args)
+  } if(command === "news") {
+    require("./command/news.js").run(client , message)
+  } if(command === "img") {
+    require("./command/img.js")
   }
 });
 
