@@ -4,6 +4,7 @@ dependencies:
   discord.js: 11.5.1
   express: 4.17.1
   g-i-s: 2.1.3
+  mecab-async: 0.1.2
   request: 2.88.0
   shuffle-array: 2.0.0
   weather-js: 2.0.0
@@ -630,6 +631,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
+  /mecab-async/0.1.2:
+    dependencies:
+      shell-quote: 1.7.2
+    dev: false
+    resolution:
+      integrity: sha512-/hruCkDWB+jM1bYMFM53HLzG6ENKVtC3n45qD1qxQUW99pz3rrsU4HKEqlYPVCr+/wv0ErBR0vNlVwAv92f2Wg==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -881,6 +888,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
+  /shell-quote/1.7.2:
+    dev: false
+    resolution:
+      integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
   /shuffle-array/2.0.0:
     dev: false
     resolution:
@@ -1067,6 +1078,7 @@ specifiers:
   discord.js: ^11.5.1
   express: ^4.16.4
   g-i-s: ^2.1.3
+  mecab-async: ^0.1.2
   request: ^2.88.0
   shuffle-array: 2.0.0
   weather-js: ^2.0.0

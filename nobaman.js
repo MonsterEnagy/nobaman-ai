@@ -4,6 +4,12 @@ const fs = require("fs");
 
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
+const shiritori = require('./lib/shiritori');
+const command = require('./lib/command');
+const Message = require('./models/message');
+const Channel = require('./models/channel');
+Message.sync();
+Channel.sync();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
@@ -102,7 +108,32 @@ client.on("guildDelete", guild => {
     })
     .catch(console.error);
 });
-
+client.on('message', message=>{
+  /* bot自身の発言を無視 */
+  if(message.author.bot) return;
+  /* しりとり用チャンネル以外の発言を無視 */
+  Channel.findOne({
+    where: {
+      id: message.channel.id
+    }
+  }).then(channel=>{
+    /* しりとりチャンネルでの発言の場合 */
+    if(channel !== null){
+      /* '//'から始まる発言を無視 */
+      if(message.content.startsWith('//')) return;
+      /* 最新の単語の最初の文字が'!'の場合 コマンド実行 */
+      if(message.content.startsWith('!')){
+        command(message);
+        return;
+      }
+      shiritori(message);
+    }else
+    /* 最新の単語の最初の文字が'!add'の場合 コマンド実行 */
+    if(message.content.startsWith('!add')){
+      command(message);
+    }
+  });
+});
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(
