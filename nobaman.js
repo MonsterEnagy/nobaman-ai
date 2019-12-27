@@ -71,22 +71,7 @@ client.on("message", async message => {
   }
 });
 
-client.on("message", async message => {
-  if (message.author.bot || !message.guild) return;
-    if (message.channel.name !== "のばまんとしりとりしよう") return;
-    require("./command/siritori.js").run(client,message)
-});
-client.on("ready", () => {
-  client.user
-    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
-    .then(presence =>
-      console.log(
-        `Activity set to ${presence.game ? presence.game.name : "none"}`
-      )
-    )
-    .catch(console.error);
-  console.log("I'm ready!");
-});
+
 client.on("guildCreate", guild => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
@@ -108,32 +93,7 @@ client.on("guildDelete", guild => {
     })
     .catch(console.error);
 });
-client.on('message', message=>{
-  /* bot自身の発言を無視 */
-  if(message.author.bot) return;
-  /* しりとり用チャンネル以外の発言を無視 */
-  Channel.findOne({
-    where: {
-      id: message.channel.id
-    }
-  }).then(channel=>{
-    /* しりとりチャンネルでの発言の場合 */
-    if(channel !== null){
-      /* '//'から始まる発言を無視 */
-      if(message.content.startsWith('//')) return;
-      /* 最新の単語の最初の文字が'!'の場合 コマンド実行 */
-      if(message.content.startsWith('!')){
-        command(message);
-        return;
-      }
-      shiritori(message);
-    }else
-    /* 最新の単語の最初の文字が'!add'の場合 コマンド実行 */
-    if(message.content.startsWith('!add')){
-      command(message);
-    }
-  });
-});
+
 client.on("message", async message => {
   if (message.author.bot || !message.guild) return;
   console.log(
