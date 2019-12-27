@@ -8,6 +8,7 @@ function logResults(error, results) {
     console.log(error);
   }
   else {
+    if(results.length === 0) return message.channel.send("画像が見つかりませんでした")
     let embed = new Discord.RichEmbed()
     .setImage(results[0].url)
    message.channel.send(embed)
