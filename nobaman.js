@@ -22,6 +22,11 @@ function koukoku(message) {
 }
 setInterval(koukoku , 3600000)
 
+function bump() {
+  client.channels.get("660081591187537931").send("Bumpよろしく！")
+}
+
+setInterval(bump , (3600000 * 2))
 function formatDate(date) {
   const y = date.getFullYear();
   const m = date.getMonth() + 1;
