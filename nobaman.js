@@ -544,7 +544,7 @@ ID : ${chat["id"][args[1]]["ID"]}
     require("./command/icon.js").run(client, message, args);
   }
   if (command === "news") {
-    require("./command/news.js").run(client, message);
+    require("./command/news.js").run(client, message , args);
   }
   if (command === "img") {
     require("./command/img.js").run(client, message, kekka);
