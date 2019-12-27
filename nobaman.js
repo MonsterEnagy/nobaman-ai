@@ -145,12 +145,7 @@ client.on("message", async message => {
       message.content.slice(5, -4)
     );
   }
-    if (
-    message.content.indexOf("辞典出して") != "-1" &&
-    message.content.indexOf("のばまん、") != "-1"
-  ) {
-      require("./command/jiten.js").run(client , message)
-    }
+
 
   const prefix = "!n";
 
