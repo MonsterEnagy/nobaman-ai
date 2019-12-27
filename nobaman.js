@@ -15,18 +15,20 @@ function tisikilength(message) {
   }
 }
 function koukoku(message) {
-    client.channels.forEach(async c => {
+  client.channels.forEach(async c => {
     if (!chat[c.id]) return;
-      c.send("----------------広告----------------\nのばまんAIの開発者`MonsterEnergy`のサーバーができました！\n気ままに会話できるサーバーを目指すのでぜひ入ってください！\nhttps://discord.gg/v3rHCGx")
+    c.send(
+      "----------------広告----------------\nのばまんAIの開発者`MonsterEnergy`のサーバーができました！\n気ままに会話できるサーバーを目指すのでぜひ入ってください！\nhttps://discord.gg/v3rHCGx"
+    );
   });
 }
-setInterval(koukoku , 3600000)
+setInterval(koukoku, 3600000);
 
 function bump() {
-  client.channels.get("660081591187537931").send("Bumpよろしく！")
+  client.channels.get("660081591187537931").send("Bumpよろしく！");
 }
 
-setInterval(bump , (3600000 * 2))
+setInterval(bump, 3600000 * 2);
 function formatDate(date) {
   const y = date.getFullYear();
   const m = date.getMonth() + 1;
@@ -37,6 +39,36 @@ function formatDate(date) {
   const day = "日月火水木金土".charAt(date.getDay());
   return `${y}年${m}月${d}日${h}時${min}分${sec}秒 (${day})`;
 }
+function AIrequest(content, message) {
+  const request = require("request");
+  request(
+    {
+      url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
+        process.env.nobyapi
+      }&text=${encodeURIComponent(content)}&study=1&persona=0`,
+      method: "GET",
+      json: true
+    },
+    (err, response, body) => {
+      if (response.statusCode !== 200 || err) throw new Error();
+      else {
+        message.channel.send(body.text);
+      }
+    }
+  );
+}
+client.on("message", async message => {
+  if (message.author.bot || !message.guild) return;
+  if (message.content.indexOf("!nn") !== 0) {
+    if (message.channel.name !== "のばまんとお話しよう") return;
+  }
+  if (message.channel.name !== "のばまんとお話しよう") {
+    AIrequest(message.content.replace(/\s+/, "").slice(3), message);
+    return;
+  } else {
+    AIrequest(message.content, message);
+  }
+});
 
 client.on("ready", () => {
   client.user
@@ -157,7 +189,6 @@ client.on("message", async message => {
       message.content.slice(5, -4)
     );
   }
-
 
   const prefix = "!n";
 
@@ -544,7 +575,7 @@ ID : ${chat["id"][args[1]]["ID"]}
     require("./command/icon.js").run(client, message, args);
   }
   if (command === "news") {
-    require("./command/news.js").run(client, message , args);
+    require("./command/news.js").run(client, message, args);
   }
   if (command === "img") {
     require("./command/img.js").run(client, message, kekka);
