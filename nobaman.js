@@ -4,12 +4,7 @@ const fs = require("fs");
 
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
-const shiritori = require('./lib/shiritori');
-const command = require('./lib/command');
-const Message = require('./models/message');
-const Channel = require('./models/channel');
-Message.sync();
-Channel.sync();
+
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
@@ -76,6 +71,11 @@ client.on("message", async message => {
   }
 });
 
+client.on("message", async message => {
+  if (message.author.bot || !message.guild) return;
+    if (message.channel.name !== "のばまんとしりとりしよう") return;
+    require("./command/siritori.js").run(client,message)
+});
 client.on("ready", () => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
