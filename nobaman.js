@@ -14,6 +14,13 @@ function tisikilength(message) {
     );
   }
 }
+function koukoku(message) {
+    client.channels.forEach(async c => {
+    if (!chat[c.id]) return;
+      c.send("----------------広告----------------\nのばまんAIの開発者`MonsterEnergy`のサーバーができました！\n気ままに会話できるサーバーを目指すのでぜひ入ってください！\nhttps://discord.gg/v3rHCGx")
+  });
+}
+setInterval(koukoku , 3600000)
 
 function formatDate(date) {
   const y = date.getFullYear();
