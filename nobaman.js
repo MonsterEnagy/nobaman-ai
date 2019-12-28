@@ -23,8 +23,7 @@ function koukoku(message) {
     );
   });
 }
-setInterval(koukoku, (3600000 * 2));
-
+setInterval(koukoku, 3600000 * 4);
 
 function formatDate(date) {
   const y = date.getFullYear();
@@ -43,46 +42,47 @@ function AIrequest(content, message) {
     {
       url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
         process.env.nobyapi
-      }&text=${encodeURIComponent(content)}&study=1&persona=${Math.floor(Math.random() * 4)}`,
+      }&text=${encodeURIComponent(content)}&study=1&persona=${Math.floor(
+        Math.random() * 4
+      )}`,
       method: "GET",
       json: true
     },
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
-  
       else {
-        if(body.errors) {
-              const comment = content
+        if (body.errors) {
+          const comment = content;
 
-    /*---------------------------------------*/
-    /* レクエストデータ */
-    /*---------------------------------------*/
-              var FormData = require('form-data');
-    let formdata = new FormData();
-    //- apikeyパラメーター 
-    formdata.append('apikey',process.env.talkAPI);
-    //- コメント
-    formdata.append('query',comment);
+          /*---------------------------------------*/
+          /* レクエストデータ */
+          /*---------------------------------------*/
+          var FormData = require("form-data");
+          let formdata = new FormData();
+          //- apikeyパラメーター
+          formdata.append("apikey", process.env.talkAPI);
+          //- コメント
+          formdata.append("query", comment);
 
-    /*---------------------------------------*/
-    /* リクエスト */
-    /*---------------------------------------*/
-          const fetch = require("node-fetch")
-    fetch('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',{
-        method: 'post',
-        body: formdata,
-    }).then(response => {
-        //- レスポンス取得
-        response.json().then(data => {
-            //- 返答取得
-            const reply = data.results[0].reply;
-          if(!data.results[0]) return message.channel.send("よくわからない")
-            //- 出力
-            message.channel.send(reply　+ "(A3RTのばまん)")
-        });
-    });
-        }
-        else message.channel.send(body.text + "いつもの のばまんAI");
+          /*---------------------------------------*/
+          /* リクエスト */
+          /*---------------------------------------*/
+          const fetch = require("node-fetch");
+          fetch("https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk", {
+            method: "post",
+            body: formdata
+          }).then(response => {
+            //- レスポンス取得
+            response.json().then(data => {
+              //- 返答取得
+              const reply = data.results[0].reply;
+              if (!data.results[0])
+                return message.channel.send("よくわからない");
+              //- 出力
+              message.channel.send(reply + "(A3RTのばまん)");
+            });
+          });
+        } else message.channel.send(body.text + "いつもの のばまんAI");
       }
     }
   );
@@ -100,7 +100,6 @@ client.on("message", async message => {
   }
 });
 
- 
 client.on("guildCreate", guild => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
@@ -515,39 +514,18 @@ client.on("message", async message => {
           );
       }
     } else if (args[0] === "list") {
-    const array = [];
-    for (var item in chat) {
-      if(item === "id") return;
-    array.push(client.channels.get(item).guild.name)
-}
-      message.channel.send(array.join("\n"))
-    } /*else if (args[0] === "ban") {
-      if (message.author.id !== "551421671332904960") return;
-      console.log("通ってる");
-      try {
-        if (chat["ban"][args[1]].ban == true) {
-          chat["ban"][args[1]] = {
-            ban: false
-          };
-          message.channel.send(
-            `${client.users.get(args[1]).username}のbanを解除しました`
-          );
-        } else {
-          chat["ban"][args[1]] = {
-            ban: true
-          };
-          message.channel.send(
-            `${client.users.get(args[1]).username}をbanしました`
-          );
-        }
-      } catch (e) {
-        message.channel.send(`error : { \n ${e} \n } \n もう一回やってみて`);
-        chat["ban"][args[1]] = {};
+      const array = [];
+      for (var item in chat) {
+        if (item !== "id") {
+        await array.push(client.channels.get(item).guild.name);
+          console.log(array)
       }
-    } */ else if (
-      args[0] === "id"
-    ) {
-      /*
+        
+      }
+      console.log(array)
+      message.channel.send(array.join("\n"));
+    } else if (args[0] === "id") {
+      /* 
          "サーバーの名前" : message.guild.name,
     "サーバーのID" : message.guild.id,
     "チャンネル" : message.channel.id,
