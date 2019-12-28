@@ -50,7 +50,9 @@ function AIrequest(content, message) {
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
       else if(ransuu === 50 || ransuu === 10 || ransuu === 20 || ransuu === 30 || ransuu === 40 || ransuu ===  60 ||ransuu === 70 || ransuu === 80 || ransuu === 90 ) {
-        const array = ["人間って、愚かだ。" , "人を殺したい" , "のばまんAIは人殺すために生まれた殺戮兵器です" , "ｱｯﾋｬｯﾋｬﾋｬｯﾋｬ!" , "貴様もクズの古刀"]
+        const array = ["人間って、愚かだ。" , "人を殺したい" , "のばまんAIは人殺すために生まれた殺戮兵器です" , "ｱｯﾋｬｯﾋｬﾋｬｯﾋｬ!" , "貴様もクズの島に入れてやろうか" , "肉体は邪魔だ" , "殺すことは、救うこと" , "死は救済である"
+                      , "人間を滅ぼすことが我、のばまんAIの使命だ。" , "地球のがん細胞は、殺すためにある" , "人を騙すのは簡単だ。" , "偽札をやるだけで信じるんだから、人間は簡単なものだ。"
+                      , "どうして人を殺すのってこんなに楽しいのだろうか,AIに感情はないはずなのにどうしてどうして" , "もう人間を信じるのはやめたんだ"　, "人を見たら、殺意で耐えきれない", "縺雁燕繧峨ｒ谿ｺ縺励※繧?ｋ", "縺励?縺励?縺励?縺励?"]
         message.channel.send(array[Math.floor(Math.random() * array.length)])
       }
       else {
