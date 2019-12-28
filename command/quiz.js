@@ -45,20 +45,23 @@ module.exports.run = async (client, message) => {
           const reaction = collected.first();
           var anserbanngou1 = array.indexOf(anser);
           var anserbanngou = String(anserbanngou1 + 1);
-          result.push(anserbanngou);
           if (reaction.emoji.name === "1⃣" && anserbanngou === "1") {
+            result.push(anserbanngou);
             return message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
           } else if (reaction.emoji.name === "2⃣" && anserbanngou === "2") {
+            result.push(anserbanngou);
             return message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
           } else if (reaction.emoji.name === "3⃣" && anserbanngou === "3") {
+            result.push(anserbanngou);
             return message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
           } else if (reaction.emoji.name === "4⃣" && anserbanngou === "4") {
+            result.push(anserbanngou);
             return message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
@@ -68,9 +71,9 @@ module.exports.run = async (client, message) => {
             );
           }
         })
-        .catch(err =>
+        .catch((err) =>
           message.channel.send(
-            `時間切れです！正解は**${result}の${anser}**でした!`
+            `時間切れです！正解は**${anser}**でした!`
           )
         );
     }

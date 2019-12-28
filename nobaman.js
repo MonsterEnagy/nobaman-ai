@@ -76,6 +76,7 @@ function AIrequest(content, message) {
         response.json().then(data => {
             //- 返答取得
             const reply = data.results[0].reply;
+          if(!data.results[0]) return message.channel.send("よくわからない")
             //- 出力
             message.channel.send(reply　+ "(A3RTのばまん)")
         });
