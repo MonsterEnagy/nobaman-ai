@@ -51,7 +51,35 @@ function AIrequest(content, message) {
       if (response.statusCode !== 200 || err) throw new Error();
   
       else {
-        message.channel.send(body.text);
+        if(body.errors) {
+              const comment = content
+
+    /*---------------------------------------*/
+    /* レクエストデータ */
+    /*---------------------------------------*/
+    let formdata = new FormData();
+    //- apikeyパラメーター 
+    formdata.append('apikey',process.env.talkAPI);
+    //- コメント
+    formdata.append('query',comment);
+
+    /*---------------------------------------*/
+    /* リクエスト */
+    /*---------------------------------------*/
+    fetch('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',{
+        method: 'post',
+        body: formdata,
+    }).then(response => {
+        //- レスポンス取得
+        response.json().then(data => {
+            //- 返答取得
+            const reply = data.results[0].reply;
+            //- 出力
+            message.channel.send(reply)
+        });
+    });
+        }
+        else message.channel.send(body.text);
       }
     }
   );
