@@ -578,7 +578,14 @@ ID : ${chat["id"][args[1]]["ID"]}
   }
   if (command === "img") {
     require("./command/img.js").run(client, message, kekka);
-  }
+  } if(command === "test") {
+  const option = {
+    username: `裁判官`,
+  avatarURL:"https://cdn.discordapp.com/attachments/558560629045329920/660409646149795847/9k.png"
+  };
+const hook = await client.channels.get("660406564120690700").fetchWebhooks();
+hook.first().send("裁判官だよー", option);
+}
 });
 
 client.login(process.env.token);
