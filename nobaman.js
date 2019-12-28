@@ -51,18 +51,7 @@ function AIrequest(content, message) {
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
       else if(ransuu === 50 || ransuu === 10 || ransuu === 20 || ransuu === 30 || ransuu === 40 || ransuu ===  60 ||ransuu === 70 || ransuu === 80 || ransuu === 90 ) {
-        message.channel.send("とんかつ大合戦ーーーーあだお＠いｄｈじゃおｐどあｐｈだおｆはｆぺんちきｗｗｗｗｗうんぱかぱっかんよっこいしょらぁああああｗｗｗｗｗｗｗｗ^\nどんちきどんちき！\nあああああああああああああああああああああああああああああああ！！！！！！！！！！！（ﾌﾞﾘﾌﾞﾘﾌﾞﾘﾌﾞﾘｭﾘｭﾘｭﾘｭﾘｭﾘｭ！！！！！！ﾌ ﾞﾂﾁﾁﾌﾞﾌﾞﾌﾞﾁﾁﾁﾁﾌﾞﾘﾘｲﾘﾌﾞﾌﾞﾌﾞ!\nあ❗️ スーモ❗️🌚ダン💥ダン💥ダン💥シャーン🎶スモ🌝スモ🌚スモ🌝スモ🌚スモ🌝スモ🌚ス〜〜〜モ⤴スモ🌚スモ🌝スモ🌚スモ🌝スモ🌚スモ🌝ス～～～モ⤵🌞 \nごめんね～ｗｗｗ\nとんとんとんとんヒノノニトン\n")
-        message.channel.send(`
-代用千手観音MODOKI
-:left_facing_fist: :expressionless: :hugging: :expressionless: :right_facing_fist: 
-:left_facing_fist: :point_left: :radioactive: :point_right: :right_facing_fist: 
-:raised_hand: :point_left: :handshake: :point_right: :raised_back_of_hand: 
-:point_left: :raised_hand: :handshake: :raised_back_of_hand: :point_right: 
-:left_facing_fist: :open_hands: :pray: :open_hands: :right_facing_fist: 
-:left_facing_fist: :raised_hand: :vibration_mode: :ok_hand: :right_facing_fist: 
-そして元祖
-:raised_hand: :expressionless: :ok_hand:
-`)
+        message.channel.send("人間って、愚かだ。")
       }
       else {
         message.channel.send(body.text);
