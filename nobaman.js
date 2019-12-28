@@ -39,7 +39,6 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
-  console.log(ransuu)
   request(
     {
       url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
@@ -51,7 +50,8 @@ function AIrequest(content, message) {
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
       else if(ransuu === 50 || ransuu === 10 || ransuu === 20 || ransuu === 30 || ransuu === 40 || ransuu ===  60 ||ransuu === 70 || ransuu === 80 || ransuu === 90 ) {
-        message.channel.send("人間って、愚かだ。")
+        const array = ["人間って、愚かだ。" , "人を殺したい" , "のばまんAIは人殺すために生まれた殺戮兵器です" , "ｱｯﾋｬｯﾋｬﾋｬｯﾋｬ!" , "貴様もクズの古刀"]
+        message.channel.send(array[Math.floor(Math.random() * array.length)])
       }
       else {
         message.channel.send(body.text);
