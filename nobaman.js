@@ -23,7 +23,7 @@ function koukoku(message) {
     );
   });
 }
-setInterval(koukoku, 3600000);
+setInterval(koukoku, (3600000 * 2));
 
 
 function formatDate(date) {
