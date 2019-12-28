@@ -99,7 +99,11 @@ client.on("message", async message => {
     AIrequest(message.content, message);
   }
 });
-
+client.on('ready', () => {
+  console.log('I am ready!');
+    client.user
+    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+});
 client.on("guildCreate", guild => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
