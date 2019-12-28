@@ -43,7 +43,7 @@ function AIrequest(content, message) {
     {
       url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
         process.env.nobyapi
-      }&text=${encodeURIComponent(content)}&study=1&persona=1`,
+      }&text=${encodeURIComponent(content)}&study=1&persona=${Math.floor(Math.random() * 4)}`,
       method: "GET",
       json: true
     },
