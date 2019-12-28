@@ -57,6 +57,7 @@ function AIrequest(content, message) {
     /*---------------------------------------*/
     /* レクエストデータ */
     /*---------------------------------------*/
+              var FormData = require('form-data');
     let formdata = new FormData();
     //- apikeyパラメーター 
     formdata.append('apikey',process.env.talkAPI);
@@ -66,6 +67,7 @@ function AIrequest(content, message) {
     /*---------------------------------------*/
     /* リクエスト */
     /*---------------------------------------*/
+          const fetch = require("node-fetch")
     fetch('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',{
         method: 'post',
         body: formdata,
@@ -75,11 +77,11 @@ function AIrequest(content, message) {
             //- 返答取得
             const reply = data.results[0].reply;
             //- 出力
-            message.channel.send(reply)
+            message.channel.send(reply　+ "(A3RTのばまん)")
         });
     });
         }
-        else message.channel.send(body.text);
+        else message.channel.send(body.text + "いつもの のばまんAI");
       }
     }
   );
