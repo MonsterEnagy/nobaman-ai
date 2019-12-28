@@ -48,6 +48,9 @@ function AIrequest(content, message) {
     },
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
+      else if((Math.floor(Math.random() * 100) + 1) === 1) {
+        message.channel.send("うんぱかぱっかんよっこいしょらぁああああｗｗｗｗｗｗｗｗ^\nどんちきどんちき！\n脱糞")
+      }
       else {
         message.channel.send(body.text);
       }
