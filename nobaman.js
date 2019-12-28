@@ -514,16 +514,17 @@ client.on("message", async message => {
           );
       }
     } else if (args[0] === "list") {
-      const array = [];
+     /* const array = [];
       for (var item in chat) {
-        if (item !== "id") {
+        if (item !== "id" || client.channels.get(item).guild) {
+          try {
         await array.push(client.channels.get(item).guild.name);
-          console.log(array)
-      }
-        
+          } catch (e) {}
+      } 
       }
       console.log(array)
-      message.channel.send(array.join("\n"));
+      message.channel.send(array.join("\n")); */
+      message.channel.send("開発中")
     } else if (args[0] === "id") {
       /* 
          "サーバーの名前" : message.guild.name,
