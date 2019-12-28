@@ -38,6 +38,8 @@ function formatDate(date) {
 }
 function AIrequest(content, message) {
   const request = require("request");
+  const ransuu = Math.floor(Math.random() * 100) + 1;
+  console.log(ransuu)
   request(
     {
       url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
@@ -48,8 +50,19 @@ function AIrequest(content, message) {
     },
     (err, response, body) => {
       if (response.statusCode !== 200 || err) throw new Error();
-      else if((Math.floor(Math.random() * 100) + 1) === 1) {
-        message.channel.send("うんぱかぱっかんよっこいしょらぁああああｗｗｗｗｗｗｗｗ^\nどんちきどんちき！\n脱糞")
+      else if(ransuu === 50 || ransuu === 10 || ransuu === 20 || ransuu === 30 || ransuu === 40 || ransuu ===  60 ||ransuu === 70 || ransuu === 80 || ransuu === 90 ) {
+        message.channel.send("とんかつ大合戦ーーーーあだお＠いｄｈじゃおｐどあｐｈだおｆはｆぺんちきｗｗｗｗｗうんぱかぱっかんよっこいしょらぁああああｗｗｗｗｗｗｗｗ^\nどんちきどんちき！\nあああああああああああああああああああああああああああああああ！！！！！！！！！！！（ﾌﾞﾘﾌﾞﾘﾌﾞﾘﾌﾞﾘｭﾘｭﾘｭﾘｭﾘｭﾘｭ！！！！！！ﾌ ﾞﾂﾁﾁﾌﾞﾌﾞﾌﾞﾁﾁﾁﾁﾌﾞﾘﾘｲﾘﾌﾞﾌﾞﾌﾞ!\nあ❗️ スーモ❗️🌚ダン💥ダン💥ダン💥シャーン🎶スモ🌝スモ🌚スモ🌝スモ🌚スモ🌝スモ🌚ス〜〜〜モ⤴スモ🌚スモ🌝スモ🌚スモ🌝スモ🌚スモ🌝ス～～～モ⤵🌞 \nごめんね～ｗｗｗ\nとんとんとんとんヒノノニトン\n")
+        message.channel.send(`
+代用千手観音MODOKI
+:left_facing_fist: :expressionless: :hugging: :expressionless: :right_facing_fist: 
+:left_facing_fist: :point_left: :radioactive: :point_right: :right_facing_fist: 
+:raised_hand: :point_left: :handshake: :point_right: :raised_back_of_hand: 
+:point_left: :raised_hand: :handshake: :raised_back_of_hand: :point_right: 
+:left_facing_fist: :open_hands: :pray: :open_hands: :right_facing_fist: 
+:left_facing_fist: :raised_hand: :vibration_mode: :ok_hand: :right_facing_fist: 
+そして元祖
+:raised_hand: :expressionless: :ok_hand:
+`)
       }
       else {
         message.channel.send(body.text);
@@ -70,7 +83,7 @@ client.on("message", async message => {
   }
 });
 
-
+ 
 client.on("guildCreate", guild => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
