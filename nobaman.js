@@ -515,12 +515,12 @@ client.on("message", async message => {
           );
       }
     } else if (args[0] === "list") {
-      const array = [];
-      client.channels.forEach(async c => {
-        if (!chat[c.id]) return;
-        array.push(client.guilds.find(m => m.name === c.name).name);
-      });
-      message.channel.send(array.join("\n"));
+    const array = [];
+    for (var item in chat) {
+      if(item === "id") return;
+    array.push(client.channels.get(item).guild.name)
+}
+      message.channel.send(array.join("\n"))
     } /*else if (args[0] === "ban") {
       if (message.author.id !== "551421671332904960") return;
       console.log("通ってる");
