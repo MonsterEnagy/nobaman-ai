@@ -82,7 +82,7 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
-        } else message.channel.send(body.text + "いつもの のばまんAI");
+        } else message.channel.send(body.text );
       }
     }
   );
