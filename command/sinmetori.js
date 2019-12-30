@@ -1,7 +1,7 @@
 
 var fs = require('fs');
 var Canvas = require('canvas');
-    
+const Discord = require("discord.js")
 module.exports.run = (client , message) => {
      /*   function draw(canvasName, source, reverse) {
             var canvas = document.getElementById(canvasName);
@@ -35,8 +35,15 @@ module.exports.run = (client , message) => {
     var img = new Image;
     img.src = message.attachments.first().url;
   
-    var canvas = new Canvas(img.width, img.height);
+    var canvas = Canvas.createCanvas(img.width, img.height);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
-  
+    const w = img.width
+    const h = img.height
+    const rate = 0.5
+                    
+                    ctx.drawImage(img, w * rate, 0, w * (1 - rate), h, w * (1 - rate), 0, w * (1 - rate), h);
+                    ctx.scale(-1, 1);
+                    ctx.drawImage(img, w * rate, 0, w * (1 - rate), h, -w * (1 - rate), 0, w * (1 - rate), h);
+    const attachment = new Discord.Attachment(canvas.toBuffer(), 'Symmetry.png');
 }
