@@ -593,7 +593,15 @@ ID : ${chat["id"][args[1]]["ID"]}
 } if(command === "emoji") {
   if(!kekka) return message.channel.send("文字を指定してください")
   require("./command/emojicreate.js").run(client , message , kekka)
-}
+} if(command === "moji") {
+  const text = ":regional_indicator_";
+  const hairetu = kekka.trim().split("")
+  const array = [];
+  for(var i = 0; hairetu.length > i; i++) {
+    array.push(`${text}${hairetu[i]}:`)
+  }
+  message.channel.send(array.join(" "))
+  }
 });
 
 client.login(process.env.token);
