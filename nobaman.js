@@ -82,6 +82,8 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
+        } else if(ransuu == 1) {
+        message.channel.send("人間って、愚かだ。")
         } else message.channel.send(body.text );
       }
     }
