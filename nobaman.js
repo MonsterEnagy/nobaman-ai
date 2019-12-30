@@ -254,7 +254,8 @@ client.on("message", async message => {
         .addField("クイズ", "!n quiz`と言うとクイズができます。")
         .addField("天気", "`!n weather (場所)`で天気を確認できます。")
         .addField("ニュース", "`!n news`ニュースが見れます")
-        .addField("new!画像検索", "`!n img (キーワード)`で画像を検索できます。")
+        .addField("画像検索", "`!n img (キーワード)`で画像を検索できます。")
+        .addField("new!シンメトリー" , "`!n sin (画像のurlまたは画像ファイルの添付)`でシンメトリーにできます ")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
@@ -582,8 +583,12 @@ ID : ${chat["id"][args[1]]["ID"]}
   }
   if (command === "img") {
     require("./command/img.js").run(client, message, kekka);
-  } if(command === "test") {
-   require("./command/sinmetori.js").run(client,message)
+  } if(command === "sin") {
+    if(!args[0] && !message.attachments.size === 0) return message.channel.send("画像を指定してください");
+   require("./command/sinmetori.js").run(client,message, args)
+} if(command === "color") {
+  if(!args[0] && !message.attachments.size === 0) return message.channel.send("画像を指定してください");
+   require("./command/hanntenn.js").run(client,message, args)
 }
 });
 

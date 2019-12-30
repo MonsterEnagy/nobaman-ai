@@ -2,7 +2,7 @@
 var fs = require('fs');
 var Canvas = require('canvas');
 const Discord = require("discord.js")
-module.exports.run = (client , message) => {
+module.exports.run = (client , message ,args) => {
      /*   function draw(canvasName, source, reverse) {
             var canvas = document.getElementById(canvasName);
             if (!canvas || !canvas.getContext) { return false; }
@@ -33,8 +33,12 @@ module.exports.run = (client , message) => {
     var Image = Canvas.Image;
     
     var img = new Image;
+  if(!args[0]) {
     img.src = message.attachments.first().url;
-  
+  } else {
+    img.src = args[0]
+  }
+    img.onload = function(){    
     var canvas = Canvas.createCanvas(img.width, img.height);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
@@ -46,4 +50,7 @@ module.exports.run = (client , message) => {
                     ctx.scale(-1, 1);
                     ctx.drawImage(img, w * rate, 0, w * (1 - rate), h, -w * (1 - rate), 0, w * (1 - rate), h);
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'Symmetry.png');
+      
+      message.channel.send("シンメトリー" , attachment)
+    }
 }
