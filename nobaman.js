@@ -23,7 +23,7 @@ function koukoku(message) {
     );
   });
 }
-setInterval(koukoku, 3600000 * 4);
+setInterval(koukoku, 3600000 * 24);
 
 function formatDate(date) {
   const y = date.getFullYear();
