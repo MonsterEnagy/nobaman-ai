@@ -591,7 +591,8 @@ ID : ${chat["id"][args[1]]["ID"]}
   if(!args[0] && !message.attachments.size === 0) return message.channel.send("画像を指定してください");
    require("./command/hanntenn.js").run(client,message, args)
 } if(command === "emoji") {
-  require("./command/emojicreate.js").run(client , message ,args)
+  if(!kekka) return message.channel.send("文字を指定してください")
+  require("./command/emojicreate.js").run(client , message , kekka)
 }
 });
 
