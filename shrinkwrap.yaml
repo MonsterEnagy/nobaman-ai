@@ -9,6 +9,7 @@ dependencies:
   g-i-s: 2.1.3
   kuromoji: 0.1.2
   node-fetch: 2.6.0
+  node-gyp: 6.0.1
   node-opus: 0.3.3
   opusscript: 0.0.7
   request: 2.88.0
@@ -599,6 +600,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
+  /env-paths/2.2.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-6u0VYSCo/OW6IoD5WCLLy9JUGARbamfSavcNXry/eu8aHVFei6CD3Sw+VGX5alea1i9pgPHW0mbu6Xj0uBh7gA==
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -1037,6 +1044,10 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-zKqkK+O+dGqevc93KNsbZ/TqTUFd46MwWjYOoMrjIMZ51eU7DtQG3Wmd9SQQT7i7RVnuTPEiYEWHU3MSbxC1Tg==
+  /isexe/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   /isstream/0.1.2:
     dev: false
     resolution:
@@ -1249,6 +1260,25 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  /node-gyp/6.0.1:
+    dependencies:
+      env-paths: 2.2.0
+      glob: 7.1.6
+      graceful-fs: 4.2.3
+      mkdirp: 0.5.1
+      nopt: 4.0.1
+      npmlog: 4.1.2
+      request: 2.88.0
+      rimraf: 2.7.1
+      semver: 5.7.1
+      tar: 4.4.13
+      which: 1.3.1
+    dev: false
+    engines:
+      node: '>= 6.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-udHG4hGe3Ji97AYJbJhaRwuSOuQO7KHnE4ZPH3Sox3tjRZ+bkBsDvfZ7eYA1qwD8eLWr//193x806ss3HFTPRw==
   /node-opus/0.3.3:
     dependencies:
       bindings: 1.2.1
@@ -1935,6 +1965,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
+  /which/1.3.1:
+    dependencies:
+      isexe: 2.0.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
   /wide-align/1.1.3:
     dependencies:
       string-width: 2.1.1
@@ -2020,6 +2057,7 @@ specifiers:
   g-i-s: ^2.1.3
   kuromoji: ^0.1.2
   node-fetch: ^2.6.0
+  node-gyp: ^6.0.1
   node-opus: ^0.3.2
   opusscript: ^0.0.7
   request: ^2.88.0

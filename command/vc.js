@@ -38,9 +38,9 @@ if (!message.member.voiceChannel) {
         var connection = await message.guild.me.voiceChannel.connection
         }
 
-          const dispatcher = connection.playFile(`./${now}.mp3`);
+          const dispatcher = connection.playFile(`./${now}.wav`);
           dispatcher.on("end", reason => {
-            fs.unlinkSync(`./${now}.mp3`, err => {
+            fs.unlinkSync(`./${now}.wav`, err => {
               if (err) console.log(err);
             });
           });
