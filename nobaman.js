@@ -221,7 +221,7 @@ client.on("message", async message => {
     require("./command/nobamanchat.js").run(client, message);
   }
   
-    if (vc[message.channel.id]) {
+    if (vc[message.channel.id] || message.content.startsWith()) {
     require("./command/vc.js").run(client, message);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;
@@ -608,6 +608,7 @@ ID : ${chat["id"][args[1]]["ID"]}
   }
   message.channel.send(array.join(" "))
   } if(command === "vc") {
+    if(!args[0]) {
     const chat = require("./database/vc.json");
           if (!message.member.hasPermission("MANAGE_CHANNELS"))
         return message.channel.send(
@@ -623,6 +624,12 @@ ID : ${chat["id"][args[1]]["ID"]}
         fs.writeFile("./database/vc.json", JSON.stringify(chat), err => {
       if (err) console.log(err);
     });
+    } else if(args[0] === "left") {
+      const vc = message.guild.me.voiceChannel
+      if(!vc) return message.channel.send("VCに入っていません");
+      vc.leave()
+      message.channel.send("vcから降りました")
+    }
   }
 });
 
