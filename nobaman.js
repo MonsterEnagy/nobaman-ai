@@ -5,6 +5,7 @@ const fs = require("fs");
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
+const cooldown = new Set();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
@@ -220,9 +221,14 @@ client.on("message", async message => {
   if (chat[message.channel.id]) {
     require("./command/nobamanchat.js").run(client, message);
   }
-  
-    if (vc[message.channel.id] || message.content.startsWith("!nv")) {
-    require("./command/vc.js").run(client, message);
+
+    if (vc[message.channel.id] || message.content.startsWith("!vn") && !message.content.startsWith("!n")) {
+  if(message.content.startsWith("!vn")) {
+  var yomiage = message.content.slice(3)
+  } else {
+  var yomiage = message.content
+  }
+    require("./command/vc.js").run(client, message , cooldown , yomiage);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;
 
