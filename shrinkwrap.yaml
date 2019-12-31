@@ -8,6 +8,7 @@ dependencies:
   kuromoji: 0.1.2
   node-fetch: 2.6.0
   request: 2.88.0
+  voicetext: 0.0.7
   weather-js: 2.0.0
   wikijs: 6.0.1
   xml2json: 0.12.0
@@ -87,6 +88,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
+  /async/0.9.2:
+    dev: false
+    resolution:
+      integrity: sha1-rqdNXmHB+JlhO/ZL2mbUx48v0X0=
   /async/2.6.3:
     dependencies:
       lodash: 4.17.15
@@ -199,6 +204,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+  /combined-stream/0.0.7:
+    dependencies:
+      delayed-stream: 0.0.5
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-ATfmV7qlp1QcV6w3rF/AfXO03B8=
   /combined-stream/1.0.8:
     dependencies:
       delayed-stream: 1.0.0
@@ -207,6 +220,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
+  /component-emitter/1.1.2:
+    dev: false
+    resolution:
+      integrity: sha1-KWWU8nU9qmOZbSrwjRWpURbJrsM=
   /concat-map/0.0.1:
     dev: false
     resolution:
@@ -239,6 +256,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
+  /cookiejar/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-PRJ1L2rfaKiS8zJDNJK9WBK7Zo8=
   /core-util-is/1.0.2:
     dev: false
     resolution:
@@ -271,6 +292,12 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
+  /debug/1.0.5:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha1-9yQSF0MPmd7EwrRz6rkiKOh0wqw=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -297,6 +324,12 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
+  /delayed-stream/0.0.5:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-1LH0OpPoKW3+AmlPRoC8N6MTxz8=
   /delayed-stream/1.0.0:
     dev: false
     engines:
@@ -462,6 +495,10 @@ packages:
       node: '>= 0.10.0'
     resolution:
       integrity: sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g==
+  /extend/1.2.1:
+    dev: false
+    resolution:
+      integrity: sha1-oPX9bPyDpf5J72mNYOyKYk3UV2w=
   /extend/3.0.2:
     dev: false
     resolution:
@@ -508,6 +545,16 @@ packages:
     dev: false
     resolution:
       integrity: sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
+  /form-data/0.1.3:
+    dependencies:
+      async: 0.9.2
+      combined-stream: 0.0.7
+      mime: 1.2.11
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-TuQ0bm61Ni6DRKAgdb2NvYxzc+o=
   /form-data/2.3.3:
     dependencies:
       asynckit: 0.4.0
@@ -528,6 +575,12 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==
+  /formidable/1.0.14:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-Kz9MQRy7X91pXESEPiojUUpDIxo=
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -734,6 +787,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
+  /isarray/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
   /isarray/1.0.0:
     dev: false
     resolution:
@@ -814,6 +871,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
+  /methods/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-dbyRlD3/19oDfPPusO1zoAN80Us=
   /methods/1.1.2:
     dev: false
     engines:
@@ -834,6 +895,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-5KhStqB5xpTAeGqKBAMgwaYMnQik7teQN4IAzC7npDv6kzeU6prfkR67bc87J1kWMPGkoaZSq1npmexMgkmEVg==
+  /mime/1.2.11:
+    dev: false
+    resolution:
+      integrity: sha1-WCA+7Ybjpe8XrtK32evUfwpg3RA=
   /mime/1.6.0:
     dev: false
     engines:
@@ -1090,6 +1155,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+  /qs/0.6.6:
+    dev: false
+    resolution:
+      integrity: sha1-bgFQmP9RlouKPIGQAdXyyJvEsQc=
   /qs/6.5.2:
     dev: false
     engines:
@@ -1129,6 +1198,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==
+  /readable-stream/1.0.27-1:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.4
+      isarray: 0.0.1
+      string_decoder: 0.10.31
+    dev: false
+    resolution:
+      integrity: sha1-a2eYPCA1fO/QfwFlABoW1xDZEHg=
   /readable-stream/2.3.6:
     dependencies:
       core-util-is: 1.0.2
@@ -1151,6 +1229,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
+  /reduce-component/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-4Mk1QsV0UhvqE98PlIjtgqt3xdo=
   /request/2.88.0:
     dependencies:
       aws-sign2: 0.7.0
@@ -1308,6 +1390,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==
+  /string_decoder/0.10.31:
+    dev: false
+    resolution:
+      integrity: sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
   /string_decoder/1.1.1:
     dependencies:
       safe-buffer: 5.1.2
@@ -1342,6 +1428,23 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+  /superagent/0.18.2:
+    dependencies:
+      component-emitter: 1.1.2
+      cookiejar: 2.0.1
+      debug: 1.0.5
+      extend: 1.2.1
+      form-data: 0.1.3
+      formidable: 1.0.14
+      methods: 1.0.1
+      mime: 1.2.11
+      qs: 0.6.6
+      readable-stream: 1.0.27-1
+      reduce-component: 1.0.1
+    deprecated: 'Please note that v5.0.1+ of superagent removes User-Agent header by default, therefore you may need to add it yourself (e.g. GitHub blocks requests without a User-Agent header).  This notice will go away with v5.0.2+ once it is released.'
+    dev: false
+    resolution:
+      integrity: sha1-mvxidqlHX0vc1TWsagaF68S1YOs=
   /tar/4.4.13:
     dependencies:
       chownr: 1.1.3
@@ -1444,6 +1547,13 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
+  /voicetext/0.0.7:
+    dependencies:
+      debug: 1.0.5
+      superagent: 0.18.2
+    dev: false
+    resolution:
+      integrity: sha1-LzX3p6v1Y2VfdbpmXfN6Di5B7FU=
   /weather-js/2.0.0:
     dependencies:
       request: 2.88.0
@@ -1526,6 +1636,7 @@ specifiers:
   kuromoji: ^0.1.2
   node-fetch: ^2.6.0
   request: ^2.88.0
+  voicetext: ^0.0.7
   weather-js: ^2.0.0
   wikijs: ^6.0.0
   xml2json: ^0.12.0

@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
-
+const vc = require("./database/vc.json");
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 
@@ -219,6 +219,10 @@ client.on("message", async message => {
 
   if (chat[message.channel.id]) {
     require("./command/nobamanchat.js").run(client, message);
+  }
+  
+    if (vc[message.channel.id]) {
+    require("./command/vc.js").run(client, message);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;
 
@@ -603,6 +607,22 @@ ID : ${chat["id"][args[1]]["ID"]}
     array.push(`${text}${hairetu[i]}:`)
   }
   message.channel.send(array.join(" "))
+  } if(command === "vc") {
+    const chat = require("./database/vc.json");
+          if (!message.member.hasPermission("MANAGE_CHANNELS"))
+        return message.channel.send(
+          "チャンネル管理の権限を持っていない人はこのコマンドを使用できません"
+        );
+      if (!chat[message.channel.id]) {
+        chat[message.channel.id] = {};
+        message.channel.send("登録しました");
+      } else {
+        delete chat[message.channel.id];
+        message.channel.send("登録を解除しました");
+      }
+        fs.writeFile("./database/vc.json", JSON.stringify(chat), err => {
+      if (err) console.log(err);
+    });
   }
 });
 
