@@ -18,14 +18,14 @@ module.exports.run = (client, message) => {
     .speaker(voice.SPEAKER.SHOW)
     .emotion(voice.EMOTION.HAPPINESS)
     .emotion_level(voice.EMOTION_LEVEL.HIGH)
-    .volume(75)
+    .volume(100)
     .speak(message.content, (e, buf) => {
       if (e) {
         console.error(e);
         return;
       }
 
-      fs.writeFile(`./aaa.wav`, buf, "binary", e => {
+      fs.writeFile(`./${now}.wav`, buf, "binary", e => {
         if (e) {
           console.error(e);
           return;
@@ -36,9 +36,9 @@ module.exports.run = (client, message) => {
             console.error(e);
             return;
           }
-          const dispatcher = connection.playFile(`./aaa.wav`);
+          const dispatcher = connection.playFile(`./${now}.wav`);
           dispatcher.on("end", reason => {
-            fs.unlinkSync(`./aaa.wav`, err => {
+            fs.unlinkSync(`./${now}.wav`, err => {
               if (err) console.log(err);
             });
           });
