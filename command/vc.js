@@ -1,7 +1,7 @@
 var fs = require("fs");
 var Discord = require("discord.js");
-module.exports.run = (client, message, yomiage) => {
-  if (!message.member.voice.channel) {
+module.exports.run = (client, message) => {
+  if (!message.member.voiceChannel) {
     message.channel.send("まずボイスチャンネルに入りましょう");
     return;
   }
@@ -19,26 +19,26 @@ module.exports.run = (client, message, yomiage) => {
     .emotion(voice.EMOTION.HAPPINESS)
     .emotion_level(voice.EMOTION_LEVEL.HIGH)
     .volume(75)
-    .speak(yomiage, (e, buf) => {
+    .speak(message.content, (e, buf) => {
       if (e) {
         console.error(e);
         return;
       }
 
-      fs.writeFile(`./vc/${now}.wav`, buf, "binary", e => {
+      fs.writeFile(`./aaa.wav`, buf, "binary", e => {
         if (e) {
           console.error(e);
           return;
         }
-        const vc = message.member.voice.channel;
+        const vc = message.member.voiceChannel;
         vc.join().then(connection => {
           if (e) {
             console.error(e);
             return;
           }
-          const dispatcher = connection.play(`./vc/${now}.wav`);
-          dispatcher.on("finish", reason => {
-            fs.unlinkSync(`./vc/${now}.wav`, err => {
+          const dispatcher = connection.playFile(`./aaa.wav`);
+          dispatcher.on("end", reason => {
+            fs.unlinkSync(`./aaa.wav`, err => {
               if (err) console.log(err);
             });
           });

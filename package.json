@@ -22,6 +22,7 @@
     "node-fetch": "^2.6.0",
     "form-data": "^3.0.0",
     "canvas": "^2.6.1",
-    "voicetext": "^0.0.7"
+    "voicetext": "^0.0.7",
+    "node-opus": "^0.3.2"
   }
 }
