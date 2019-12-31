@@ -35,16 +35,16 @@ if (!message.member.voiceChannel) {
          if(message.guild.me.voiceChannel != vc) {
         var connection = await vc.join()
         } else {
-        var connection = await message.guild.me.voiceChannel.connection
+        var connection = message.guild.me.voiceChannel.connection
         }
-
-          const dispatcher = connection.playFile(`./${now}.wav`);
-        /*dispatcher.on("end", reason => {
+        const dispatcher = connection.playFile(`./${now}.wav`);
+         console.log(dispatcher.time);
+        dispatcher.on("finish", reason => {
             message.channel.send("終わり")
-            fs.unlinkSync(`./${now}.wav`, err => {
+            fs.unlink(`./${now}.wav`, err => {
               if (err) console.log(err);
             });
-          });*/
+          });
         });
        });
   cooldown.delete(message.author.id);
