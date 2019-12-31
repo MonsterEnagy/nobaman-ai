@@ -221,7 +221,7 @@ client.on("message", async message => {
     require("./command/nobamanchat.js").run(client, message);
   }
   
-    if (vc[message.channel.id] || message.content.startsWith()) {
+    if (vc[message.channel.id] || message.content.startsWith("!nv")) {
     require("./command/vc.js").run(client, message);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;

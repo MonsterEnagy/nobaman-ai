@@ -18,6 +18,7 @@ module.exports.run = (client, message) => {
     .speaker(voice.SPEAKER.SHOW)
     .emotion(voice.EMOTION.HAPPINESS)
     .emotion_level(voice.EMOTION_LEVEL.HIGH)
+    .speed(400)
     .volume(100)
     .speak(message.content, (e, buf) => {
       if (e) {
