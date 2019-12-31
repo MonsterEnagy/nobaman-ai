@@ -39,11 +39,12 @@ if (!message.member.voiceChannel) {
         }
 
           const dispatcher = connection.playFile(`./${now}.wav`);
-          dispatcher.on("end", reason => {
+        /*dispatcher.on("end", reason => {
+            message.channel.send("終わり")
             fs.unlinkSync(`./${now}.wav`, err => {
               if (err) console.log(err);
             });
-          });
+          });*/
         });
        });
   cooldown.delete(message.author.id);
