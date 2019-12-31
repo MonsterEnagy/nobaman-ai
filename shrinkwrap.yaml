@@ -1,4 +1,5 @@
 dependencies:
+  '@shooontan/voicetext': 0.0.2
   array-shuffle: 1.0.1
   canvas: 2.6.1
   discord.js: 11.5.1
@@ -9,12 +10,19 @@ dependencies:
   kuromoji: 0.1.2
   node-fetch: 2.6.0
   node-opus: 0.3.3
+  opusscript: 0.0.7
   request: 2.88.0
   voicetext: 0.0.7
   weather-js: 2.0.0
   wikijs: 6.0.1
   xml2json: 0.12.0
 packages:
+  /@shooontan/voicetext/0.0.2:
+    dependencies:
+      axios: 0.18.1
+    dev: false
+    resolution:
+      integrity: sha512-uaaiZRiIeLM5v6zEV1zYPG83yJlC7x5DVxw7kJhHQVQaaju/XRsXeYfRllq6eKSB/UTCj0D51nsDGcnIMQXULg==
   /@types/node/12.12.20:
     dev: false
     resolution:
@@ -112,6 +120,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==
+  /axios/0.18.1:
+    dependencies:
+      follow-redirects: 1.5.10
+      is-buffer: 2.0.4
+    dev: false
+    resolution:
+      integrity: sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
   /balanced-match/1.0.0:
     dev: false
     resolution:
@@ -359,6 +374,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /debug/3.1.0:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   /debug/3.2.6:
     dependencies:
       ms: 2.1.2
@@ -705,6 +726,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA==
+  /follow-redirects/1.5.10:
+    dependencies:
+      debug: 3.1.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    resolution:
+      integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   /forever-agent/0.6.1:
     dev: false
     resolution:
@@ -958,6 +987,12 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-M4Sjn6N/+O6/IXSJseKqHoFc+5FdGJ22sXqnjTpdZweHK64MzEPAyQZyEU3R/KRv2GLoa7nNtg/C2Ev6m7z+eA==
+  /is-buffer/2.0.4:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
   /is-fullwidth-code-point/1.0.0:
     dependencies:
       number-is-nan: 1.0.1
@@ -1320,6 +1355,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
+  /opusscript/0.0.7:
+    dev: false
+    resolution:
+      integrity: sha512-DcBadTdYTUuH9zQtepsLjQn4Ll6rs3dmeFvN+SD0ThPnxRBRm/WC1zXWPg+wgAJimB784gdZvUMA57gDP7FdVg==
   /os-homedir/1.0.2:
     dev: false
     engines:
@@ -1971,6 +2010,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@shooontan/voicetext': ^0.0.2
   array-shuffle: ^1.0.1
   canvas: ^2.6.1
   discord.js: ^11.5.1
@@ -1981,6 +2021,7 @@ specifiers:
   kuromoji: ^0.1.2
   node-fetch: ^2.6.0
   node-opus: ^0.3.2
+  opusscript: ^0.0.7
   request: ^2.88.0
   voicetext: ^0.0.7
   weather-js: ^2.0.0
