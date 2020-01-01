@@ -723,8 +723,7 @@ ID : ${chat["id"][args[1]]["ID"]}
         db.get("omikuji").find({
           id: message.author.id
         })
-          .assign({ omikujinaiyou: omikujikekka })
-          .assign({ nobaman: dbarray.nobaman + 1 })
+          .assign({ omikujinaiyou: omikujikekka , nobaman: dbarray.nobaman + 1 })
           .write();
         return;
       }
