@@ -717,7 +717,7 @@ ID : ${chat["id"][args[1]]["ID"]}
         var omikujikekka = "小吉";
       } else if (dice > 43 && dice < 69) {
         var omikujikekka = "末吉";
-      } else if (dice == 1) {
+      } else if (dice > 69 && dice < 89) {
         var omikujikekka = "のばまん吉";
       } else {
         var omikujikekka = "凶";
@@ -747,11 +747,11 @@ ID : ${chat["id"][args[1]]["ID"]}
       function compareFunc(a, b) {
           return b - a;
       }
+
       for (var i = 0; i < json.omikuji.length; i++) {
-        console.log(json.omikuji[i]);
-        array.push([json.omikuji[i].nobaman , db
+        array.push([json.omikuji[i].nobaman , client.users.get(db
       .get("omikuji")
-      .find({ nobaman : array[i] })])
+      .find({ nobaman : json.omikuji[i].nobaman }).value().id).username])
       }
       array.sort(compareFunc);
       
