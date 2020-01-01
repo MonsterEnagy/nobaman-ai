@@ -75,12 +75,13 @@ module.exports.run = (client , message, db , args) => {
       const json = require("../database/db.json");
       const array = [];
       function compareFunc(a, b) {
-          return b - a;
+          return b[0] - a[0];
       }
 const namearray = [];
-      for (var i = 0; i <= json.omikuji.length; i++) {
+      for (var i = 0; i < json.omikuji.length; i++) {
         array.push([json.omikuji[i].nobaman , client.users.get(json.omikuji[i].id).username])
       }
+      
       array.sort(compareFunc);
       
       var name = [];
