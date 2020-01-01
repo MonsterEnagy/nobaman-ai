@@ -720,7 +720,7 @@ ID : ${chat["id"][args[1]]["ID"]}
         message.channel.send(
           `あなたはなんと！！！！！！${omikujikekka}です。！！！！！\n${message.author.name}が100分の１の確率ののばまん吉を獲得しました！！`
         );
-        db.find({
+        db.get("omikuji").find({
           id: message.author.id
         })
           .assign({ omikujinaiyou: omikujikekka })
@@ -729,17 +729,12 @@ ID : ${chat["id"][args[1]]["ID"]}
         return;
       }
       message.channel.send(`あなたは${omikujikekka}です。`);
-      db.find({
+      db.get("omikuji").find({
         id: message.author.id
       })
         .assign({ omikujinaiyou: omikujikekka })
         .write();
-      var dbarray = db
-        .get("omikuji")
-        .find({ id: message.author.id })
-        .value();
-      console.log(dbarray);
-      console.log(dbarray.time);
+
     } else if (args[0] === "ranking") {
       for (var item in dbarray) {
         console.log(item);
