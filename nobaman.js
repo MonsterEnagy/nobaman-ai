@@ -739,26 +739,30 @@ ID : ${chat["id"][args[1]]["ID"]}
       const json = require("./database/db.json");
       const array = [];
       function compareFunc(a, b) {
-          return a - b;
+          return b - a;
       }
       for (var i = 0; i < json.omikuji.length; i++) {
         console.log(json.omikuji[i]);
-        array.push(json.omikuji[i].nobaman)
+        array.push([json.omikuji[i].nobaman , db
+      .get("omikuji")
+      .find({ nobaman : array[i] })])
       }
       array.sort(compareFunc);
+      
+      var name = [];
       let embed = new Discord.RichEmbed()
       .setTitle("のばまん吉獲得数ランキング")
-      .addField("1位" , array[0])
-      .addField("2位" , array[1])
-      .addField("3位" , array[2])
-      .addField("4位" , array[3])
-      .addField("5位" , array[4])
-      .addField("6位" , array[5])
-      .addField("7位" , array[6])
-      .addField("8位" , array[7])
-      .addField("9位" , array[8])
-      .addField("10位" , array[9])
-      message.channel.send(array)
+      .addField("1位:" , array[0][0])
+      .addField("2位:" , array[1][0])
+      .addField("3位:" , array[2][0])
+      .addField("4位:" , array[3][0])
+      .addField("5位:" , array[4][0])
+      .addField("6位:" , array[5][0])
+      .addField("7位:" , array[6][0])
+      .addField("8位:" , array[7][0])
+      .addField("9位:" , array[8][0])
+      .addField("10位:", array[9][0])
+      message.channel.send(embed)
     }
   }
 });
