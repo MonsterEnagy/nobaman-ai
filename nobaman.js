@@ -10,6 +10,9 @@ const FileSync = require("lowdb/adapters/FileSync");
 
 const adapter = new FileSync("database/db.json");
 const db = low(adapter);
+db.defaults({
+    "omikuji" : {}
+}).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
@@ -660,7 +663,11 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
   }
   if (command === "omikuji") {
-    const dbarray = db.get("omikuji").value();
+    const dbarray = db.get('omikuji')
+  .find({ id: message.author.id })
+  .value()
+    console.log(dbarray)
+    if(dbarray) return message.channel.send("あなたはすでにおみくじを引きました。")
 /*
 大吉・・・約22％
 中吉・・・約7％
@@ -674,11 +681,17 @@ if(dice < 22) {
   var omikujikekka = "大吉"
 } else if(dice > 22 && dice < 30) {
   var omikujikekka = "中吉"
-} else if(dice > && dice)
-    /*
+} else if(dice > 30 && dice < 43) {
+  var omikujikekka = "小吉"
+} else if(dice > 43 && dice < 69) {
+  var omikujikekka = "末吉"
+} else {
+  var omikujikekka = "凶"
+}
+ message.channel.send(`あなたは${omikujikekka}です。`)   
      db.get('omikuji')
       .push(`{id : ${message.author.id}, omikujikekka : ${omikujikekka}}`)
-      .write() */
+      .write()
       
   } 
 });
