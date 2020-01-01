@@ -12,7 +12,7 @@ const adapter = new FileSync("database/db.json");
 
 const db = low(adapter);
 db.defaults({
-  omikuji: {}
+  omikuji: []
 }).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ

@@ -21,7 +21,7 @@ module.exports.run = (client , message, db , args) => {
         db.get("omikuji")
           .push({ id: message.author.id, time: `${y}/${m}/${d}`, nobaman: 0 , omikujinaiyou:"デフォルト"})
           .write();
-         db.set(`${message.guild.id}.omikuji` , [])
+         db.get(`${message.guild.id}.omikuji`)
           .push({ id: message.author.id, time: `${y}/${m}/${d}`, nobaman: 0 , omikujinaiyou:"デフォルト"})
           .write();
       }
@@ -63,10 +63,10 @@ module.exports.run = (client , message, db , args) => {
         })
           .assign({ omikujinaiyou: omikujikekka , nobaman: dbarray.nobaman + 1 })
           .write();
-                db.get(message.guild.id).get("omikuji").find({
+                db.get(`${message.guild.id}.omikuji`).find({
           id: message.author.id
         })
-          .assign({ omikujinaiyou: omikujikekka , nobaman: dbarray.nobaman + 1 })
+          .assign({ omikujinaiyou: omikujikekka , nobaman: dbarray.nobaman + 1 , time : `${y}/${m}/${d}` })
           .write();
         return;
       }
@@ -77,7 +77,7 @@ module.exports.run = (client , message, db , args) => {
         .assign({ omikujinaiyou: omikujikekka })
         .write();
 
-            db.get(message.guild.id).get("omikuji").find({
+            db.get(`${message.guild.id}.omikuji`).find({
         id: message.author.id
       })
         .assign({ omikujinaiyou: omikujikekka })
