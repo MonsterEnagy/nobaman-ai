@@ -682,7 +682,7 @@ ID : ${chat["id"][args[1]]["ID"]}
           );
       } else {
         db.get("omikuji")
-          .push({ id: message.author.id, time: `${y}/${m}/${d}`, nobaman: 0 })
+          .push({ id: message.author.id, time: `${y}/${m}/${d}`, nobaman: 0 , omikujinaiyou:"開発中"})
           .write();
       }
       var dbarray = db
@@ -732,7 +732,7 @@ ID : ${chat["id"][args[1]]["ID"]}
       db.find({
         id: message.author.id
       })
-        .push({ omikujinaiyou: omikujikekka })
+        .assign({ omikujinaiyou: omikujikekka })
         .write();
       var dbarray = db
         .get("omikuji")
