@@ -5,6 +5,11 @@ const fs = require("fs");
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+
+const adapter = new FileSync("db.json");
+const db = low(adapter);
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
@@ -83,9 +88,9 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
-        } else if(ransuu == 1) {
-        message.channel.send("人間って、愚かだ。")
-        } else message.channel.send(body.text );
+        } else if (ransuu == 1) {
+          message.channel.send("人間って、愚かだ。");
+        } else message.channel.send(body.text);
       }
     }
   );
@@ -102,10 +107,11 @@ client.on("message", async message => {
     AIrequest(message.content, message);
   }
 });
-client.on('ready', () => {
-  console.log('I am ready!');
-    client.user
-    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
+client.on("ready", () => {
+  console.log("I am ready!");
+  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, {
+    type: "WATCHING"
+  });
 });
 client.on("guildCreate", guild => {
   client.user
@@ -222,13 +228,16 @@ client.on("message", async message => {
     require("./command/nobamanchat.js").run(client, message);
   }
 
-    if (vc[message.channel.id] || message.content.startsWith("!vn") && !message.content.startsWith("!n")) {
-  if(message.content.startsWith("!vn")) {
-  var yomiage = message.content.slice(3)
-  } else {
-  var yomiage = message.content
-  }
-    require("./command/vc.js").run(client, message , cooldown , yomiage);
+  if (
+    vc[message.channel.id] ||
+    (message.content.startsWith("!vn") && !message.content.startsWith("!n"))
+  ) {
+    if (message.content.startsWith("!vn")) {
+      var yomiage = message.content.slice(3);
+    } else {
+      var yomiage = message.content;
+    }
+    require("./command/vc.js").run(client, message, cooldown, yomiage);
   }
   if (message.content.indexOf(prefix.trim()) !== 0) return;
 
@@ -267,8 +276,14 @@ client.on("message", async message => {
         .addField("天気", "`!n weather (場所)`で天気を確認できます。")
         .addField("ニュース", "`!n news`ニュースが見れます")
         .addField("画像検索", "`!n img (キーワード)`で画像を検索できます。")
-        .addField("シンメトリー" , "`!n sin (画像のurlまたは画像ファイルの添付)`でシンメトリーにできます ")
-        .addField("色反転" , "`!n color (画像のurlまたは画像ファイルの添付)`で色を反転させることが出来ます")
+        .addField(
+          "シンメトリー",
+          "`!n sin (画像のurlまたは画像ファイルの添付)`でシンメトリーにできます "
+        )
+        .addField(
+          "色反転",
+          "`!n color (画像のurlまたは画像ファイルの添付)`で色を反転させることが出来ます"
+        )
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
@@ -532,7 +547,7 @@ client.on("message", async message => {
           );
       }
     } else if (args[0] === "list") {
-     /* const array = [];
+      /* const array = [];
       for (var item in chat) {
         if (item !== "id" || client.channels.get(item).guild) {
           try {
@@ -542,7 +557,7 @@ client.on("message", async message => {
       }
       console.log(array)
       message.channel.send(array.join("\n")); */
-      message.channel.send("開発中")
+      message.channel.send("開発中");
     } else if (args[0] === "id") {
       /* 
          "サーバーの名前" : message.guild.name,
@@ -596,27 +611,34 @@ ID : ${chat["id"][args[1]]["ID"]}
   }
   if (command === "img") {
     require("./command/img.js").run(client, message, kekka);
-  } if(command === "sin") {
-    if(!args[0] && !message.attachments.size === 0) return message.channel.send("画像を指定してください");
-   require("./command/sinmetori.js").run(client,message, args)
-} if(command === "color") {
-  if(!args[0] && !message.attachments.size === 0) return message.channel.send("画像を指定してください");
-   require("./command/hanntenn.js").run(client,message, args)
-} if(command === "emoji") {
-  if(!kekka) return message.channel.send("文字を指定してください")
-  require("./command/emojicreate.js").run(client , message , kekka)
-} if(command === "moji") {
-  const text = ":regional_indicator_";
-  const hairetu = kekka.trim().split("")
-  const array = [];
-  for(var i = 0; hairetu.length > i; i++) {
-    array.push(`${text}${hairetu[i]}:`)
   }
-  message.channel.send(array.join(" "))
-  } if(command === "vc") {
-    if(!args[0]) {
-    const chat = require("./database/vc.json");
-          if (!message.member.hasPermission("MANAGE_CHANNELS"))
+  if (command === "sin") {
+    if (!args[0] && !message.attachments.size === 0)
+      return message.channel.send("画像を指定してください");
+    require("./command/sinmetori.js").run(client, message, args);
+  }
+  if (command === "color") {
+    if (!args[0] && !message.attachments.size === 0)
+      return message.channel.send("画像を指定してください");
+    require("./command/hanntenn.js").run(client, message, args);
+  }
+  if (command === "emoji") {
+    if (!kekka) return message.channel.send("文字を指定してください");
+    require("./command/emojicreate.js").run(client, message, kekka);
+  }
+  if (command === "moji") {
+    const text = ":regional_indicator_";
+    const hairetu = kekka.trim().split("");
+    const array = [];
+    for (var i = 0; hairetu.length > i; i++) {
+      array.push(`${text}${hairetu[i]}:`);
+    }
+    message.channel.send(array.join(" "));
+  }
+  if (command === "vc") {
+    if (!args[0]) {
+      const chat = require("./database/vc.json");
+      if (!message.member.hasPermission("MANAGE_CHANNELS"))
         return message.channel.send(
           "チャンネル管理の権限を持っていない人はこのコマンドを使用できません"
         );
@@ -627,15 +649,19 @@ ID : ${chat["id"][args[1]]["ID"]}
         delete chat[message.channel.id];
         message.channel.send("登録を解除しました");
       }
-        fs.writeFile("./database/vc.json", JSON.stringify(chat), err => {
-      if (err) console.log(err);
-    });
-    } else if(args[0] === "left") {
-      const vc = message.guild.me.voiceChannel
-      if(!vc) return message.channel.send("VCに入っていません");
-      vc.leave()
-      message.channel.send("vcから降りました")
+      fs.writeFile("./database/vc.json", JSON.stringify(chat), err => {
+        if (err) console.log(err);
+      });
+    } else if (args[0] === "left") {
+      const vc = message.guild.me.voiceChannel;
+      if (!vc) return message.channel.send("VCに入っていません");
+      vc.leave();
+      message.channel.send("vcから降りました");
     }
+  }
+  if (command === "omikuji") {
+    const dbarray = db.get("omikuji").value();
+    console.log(dbarray);
   }
 });
 
