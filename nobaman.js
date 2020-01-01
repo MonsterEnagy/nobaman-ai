@@ -736,9 +736,29 @@ ID : ${chat["id"][args[1]]["ID"]}
         .write();
 
     } else if (args[0] === "ranking") {
-      for (var item in dbarray) {
-        console.log(item);
+      const json = require("./database/db.json");
+      const array = [];
+      function compareFunc(a, b) {
+          return a - b;
       }
+      for (var i = 0; i < json.omikuji.length; i++) {
+        console.log(json.omikuji[i]);
+        array.push(json.omikuji[i].nobaman)
+      }
+      array.sort(compareFunc);
+      let embed = new Discord.RichEmbed()
+      .setTitle("のばまん吉獲得数ランキング")
+      .addField("1位" , array[0])
+      .addField("2位" , array[1])
+      .addField("3位" , array[2])
+      .addField("4位" , array[3])
+      .addField("5位" , array[4])
+      .addField("6位" , array[5])
+      .addField("7位" , array[6])
+      .addField("8位" , array[7])
+      .addField("9位" , array[8])
+      .addField("10位" , array[9])
+      message.channel.send(array)
     }
   }
 });
