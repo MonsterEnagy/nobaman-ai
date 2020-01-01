@@ -710,7 +710,7 @@ ID : ${chat["id"][args[1]]["ID"]}
 
       const dice = Math.floor(Math.random() * 100) + 1;
       if (dice < 22) {
-        var omikujikekka = "大吉";
+        var omikujikekka = "のばまん吉";
       } else if (dice > 22 && dice < 30) {
         var omikujikekka = "中吉";
       } else if (dice > 30 && dice < 43) {
@@ -749,12 +749,13 @@ ID : ${chat["id"][args[1]]["ID"]}
       }
 const namearray = [];
       for (var i = 0; i < json.omikuji.length; i++) {
-        const name = client.users.get(db
+       /* const name = client.users.get(db
       .get("omikuji")
-      .find({ nobaman : json.omikuji[i].nobaman }).value().id).username
-        
-        namearray.push(name)
-        array.push([json.omikuji[i].nobaman , name])
+      .find({ nobaman : json.omikuji[i].nobaman }).value().id).username 
+      
+       namearray.push(name)
+       array.push([json.omikuji[i].nobaman , name]) */
+        array.push([json.omikuji[i].nobaman , client.users.get(json.omikuji[i].id).username])
       }
       array.sort(compareFunc);
       
