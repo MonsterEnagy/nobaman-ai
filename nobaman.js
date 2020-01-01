@@ -9,6 +9,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
 const adapter = new FileSync("database/db.json");
+
 const db = low(adapter);
 db.defaults({
   omikuji: {}
@@ -35,6 +36,7 @@ function koukoku(message) {
 setInterval(koukoku, 3600000 * 24);
 
 function formatDate(date) {
+  date.setTime(date.getTime() + 1000*60*60*9);
   const y = date.getFullYear();
   const m = date.getMonth() + 1;
   const d = date.getDate();
@@ -224,7 +226,12 @@ client.on("message", async message => {
       message.content.slice(5, -4)
     );
   }
-
+  if (
+    message.content.indexOf("何時？") != "-1" &&
+    message.content.indexOf("のばまん、") != "-1"
+  ) {
+   message.channel.send(formatDate(new Date())) 
+  }
   const prefix = "!n";
 
   if (chat[message.channel.id]) {
