@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-console.log("起動")
+console.log("起動");
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
@@ -11,7 +11,7 @@ const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("database/db.json");
 const db = low(adapter);
 db.defaults({
-    "omikuji" : {}
+  omikuji: {}
 }).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
@@ -663,31 +663,36 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
   }
   if (command === "omikuji") {
-  let dbarray = db.get('omikuji')
-  .find({ id: message.author.id })
-  .value()
-    if(!args[0]) {
-    const date = new Date();
-    const y = date.getFullYear();
-    const m = date.getMonth() + 1;
-    const d = date.getDate();
-  
-      if(dbarray) {
-    console.log(dbarray)
-    console.log(dbarray.time)
-    if(dbarray.time === `${y}/${m}/${d}`) return message.channel.send(`あなたはすでにおみくじを引きました。結果は${dbarray.omikujinaiyou}です。\nのばまん吉獲得数は${dbarray.nobaman}\nまたあした。`)
-      } else {
-      db.get('omikuji')
-      .push({id : message.author.id , time : `${y}/${m}/${d}` , nobaman : 0})
-      .write()
-      }
-  let dbarray = db.get('omikuji')
-  .find({ id: message.author.id })
-  .value()
-          console.log(dbarray)
-    console.log(dbarray.time)
+    var dbarray = db
+      .get("omikuji")
+      .find({ id: message.author.id })
+      .value();
+    if (!args[0]) {
+      const date = new Date();
+      const y = date.getFullYear();
+      const m = date.getMonth() + 1;
+      const d = date.getDate();
 
-/*
+      if (dbarray) {
+        console.log(dbarray);
+        console.log(dbarray.time);
+        if (dbarray.time === `${y}/${m}/${d}`)
+          return message.channel.send(
+            `あなたはすでにおみくじを引きました。結果は${dbarray.omikujinaiyou}です。\nのばまん吉獲得数は${dbarray.nobaman}\nまたあした。`
+          );
+      } else {
+        db.get("omikuji")
+          .push({ id: message.author.id, time: `${y}/${m}/${d}`, nobaman: 0 })
+          .write();
+      }
+      var dbarray = db
+        .get("omikuji")
+        .find({ id: message.author.id })
+        .value();
+      console.log(dbarray);
+      console.log(dbarray.time);
+
+      /*
 大吉・・・約22％
 中吉・・・約7％
 小吉・・・約12％
@@ -696,38 +701,51 @@ ID : ${chat["id"][args[1]]["ID"]}
 凶・・・約11％
 */
 
-const dice = Math.floor(Math.random() * 100) + 1
-if(dice < 22) {
-  var omikujikekka = "大吉"
-} else if(dice > 22 && dice < 30) {
-  var omikujikekka = "中吉"
-} else if(dice > 30 && dice < 43) {
-  var omikujikekka = "小吉"
-} else if(dice > 43 && dice < 69) {
-  var omikujikekka = "末吉"
-} else if (dice == 1) {
-  var omikujikekka = "のばまん吉"
-} else {
-  var omikujikekka = "凶"
-} //.assign({
+      const dice = Math.floor(Math.random() * 100) + 1;
+      if (dice < 22) {
+        var omikujikekka = "大吉";
+      } else if (dice > 22 && dice < 30) {
+        var omikujikekka = "中吉";
+      } else if (dice > 30 && dice < 43) {
+        var omikujikekka = "小吉";
+      } else if (dice > 43 && dice < 69) {
+        var omikujikekka = "末吉";
+      } else if (dice == 1) {
+        var omikujikekka = "のばまん吉";
+      } else {
+        var omikujikekka = "凶";
+      } //.assign({
 
-    if(omikujikekka === "のばまん吉") {
-       message.channel.send(`あなたはなんと！！！！！！${omikujikekka}です。！！！！！\n${message.author.name}が100分の１の確率ののばまん吉を獲得しました！！`) 
-      db.get('omikuji')
-      .assign({omikujinaiyou : omikujikekka ,nobaman : dbarray.nobaman + 1 })
-      .write()
-      return;
-    }
- message.channel.send(`あなたは${omikujikekka}です。`)   
-     db.get('omikuji')
-      .assign({omikujinaiyou : omikujikekka})
-      .write()
-    } else if(args[0] === "ranking") {
+      if (omikujikekka === "のばまん吉") {
+        message.channel.send(
+          `あなたはなんと！！！！！！${omikujikekka}です。！！！！！\n${message.author.name}が100分の１の確率ののばまん吉を獲得しました！！`
+        );
+        db.find({
+          id: message.author.id
+        })
+          .assign({ omikujinaiyou: omikujikekka })
+          .assign({ nobaman: dbarray.nobaman + 1 })
+          .write();
+        return;
+      }
+      message.channel.send(`あなたは${omikujikekka}です。`);
+      db.find({
+        id: message.author.id
+      })
+        .push({ omikujinaiyou: omikujikekka })
+        .write();
+      var dbarray = db
+        .get("omikuji")
+        .find({ id: message.author.id })
+        .value();
+      console.log(dbarray);
+      console.log(dbarray.time);
+    } else if (args[0] === "ranking") {
       for (var item in dbarray) {
-        console.log(item)
+        console.log(item);
       }
     }
-  } 
+  }
 });
 
 client.login(process.env.token);
