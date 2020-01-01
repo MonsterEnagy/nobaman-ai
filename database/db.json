@@ -1,10 +1,9 @@
 {
   "omikuji": [
-    "{id : 551421671332904960, omikujikekka : 末吉}",
-    "{id : 551421671332904960, omikujikekka : 大吉}",
     {
       "id": "551421671332904960",
-      "omikujinaiyou": "末吉"
+      "omikujinaiyou": "大吉",
+      "time": "2020/1/1"
     }
   ]
 }

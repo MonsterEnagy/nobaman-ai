@@ -663,6 +663,7 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
   }
   if (command === "omikuji") {
+    if(!args[0]) {
     const date = new Date();
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
@@ -672,9 +673,12 @@ ID : ${chat["id"][args[1]]["ID"]}
   .find({ id: message.author.id })
   .value()
     console.log(dbarray)
+    console.log(dbarray.time)
     if(dbarray.time === `${y}/${m}/${d}`) return message.channel.send(`あなたはすでにおみくじを引きました。結果は${dbarray.omikujinaiyou}です。\nまたあした。`)
     else {
-      
+      db.remove({
+        id : message.author.id, omikujinaiyou : omikujikekka , time : `${y}/${m}/${d}`
+      }).write()
     }
 /*
 大吉・・・約22％
@@ -694,14 +698,25 @@ if(dice < 22) {
   var omikujikekka = "小吉"
 } else if(dice > 43 && dice < 69) {
   var omikujikekka = "末吉"
+} else if (dice == 1) {
+  var omikujikekka = "のばまん吉"
 } else {
   var omikujikekka = "凶"
 }
+    if(omikujikekka === "のばまん吉") {
+       message.channel.send(`あなたはなんと！！！！！！${omikujikekka}です。！！！！！\n${message.author.name}が100分の１の確率ののばまん吉を獲得しました！！`) 
+      db.get('omikuji')
+      .push({id : message.author.id, omikujinaiyou : omikujikekka , time : `${y}/${m}/${d}` , nobaman : (dbarray.nobaman + 1)})
+      .write()
+      return;
+    }
  message.channel.send(`あなたは${omikujikekka}です。`)   
      db.get('omikuji')
-      .push({id : message.author.id, omikujinaiyou : omikujikekka , time : `${y}/${m}/${d}`})
+      .push({id : message.author.id, omikujinaiyou : omikujikekka , time : `${y}/${m}/${d}` , nobaman : dbarray.nobaman})
       .write()
+    } else if(args[0] === "ranking") {
       
+    }
   } 
 });
 
