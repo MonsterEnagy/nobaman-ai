@@ -2,9 +2,9 @@
   "omikuji": [
     {
       "id": "551421671332904960",
-      "time": "2020/1/1",
+      "time": "2020/12/31",
       "nobaman": 1,
-      "omikujinaiyou": "大吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "525366344137572358",
@@ -73,16 +73,10 @@
       "omikujinaiyou": "のばまん吉"
     },
     {
-      "id": "497368265514024960",
+      "id": "415796405727133699",
       "time": "2020/1/1",
       "nobaman": 0,
-      "omikujinaiyou": "中吉"
-    },
-    {
-      "id": "411157378633826324",
-      "time": "2020/1/1",
-      "nobaman": 1,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "末吉"
     }
   ]
 }
