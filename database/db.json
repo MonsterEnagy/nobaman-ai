@@ -1,6 +1,10 @@
 {
-  "omikuji": [],
-  "ngword": [],
-  "guild": [],
-  "user": []
+  "omikuji": [
+    "{id : 551421671332904960, omikujikekka : 末吉}",
+    "{id : 551421671332904960, omikujikekka : 大吉}",
+    {
+      "id": "551421671332904960",
+      "omikujinaiyou": "末吉"
+    }
+  ]
 }

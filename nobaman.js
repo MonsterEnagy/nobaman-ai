@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-
+console.log("起動")
 const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
@@ -663,11 +663,19 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
   }
   if (command === "omikuji") {
+    const date = new Date();
+    const y = date.getFullYear();
+    const m = date.getMonth() + 1;
+    const d = date.getDate();
+    
     const dbarray = db.get('omikuji')
   .find({ id: message.author.id })
   .value()
     console.log(dbarray)
-    if(dbarray) return message.channel.send("あなたはすでにおみくじを引きました。")
+    if(dbarray.time === `${y}/${m}/${d}`) return message.channel.send(`あなたはすでにおみくじを引きました。結果は${dbarray.omikujinaiyou}です。\nまたあした。`)
+    else {
+      
+    }
 /*
 大吉・・・約22％
 中吉・・・約7％
@@ -676,6 +684,7 @@ ID : ${chat["id"][args[1]]["ID"]}
 末吉・・・約14％
 凶・・・約11％
 */
+
 const dice = Math.floor(Math.random() * 100) + 1
 if(dice < 22) {
   var omikujikekka = "大吉"
@@ -690,7 +699,7 @@ if(dice < 22) {
 }
  message.channel.send(`あなたは${omikujikekka}です。`)   
      db.get('omikuji')
-      .push(`{id : ${message.author.id}, omikujikekka : ${omikujikekka}}`)
+      .push({id : message.author.id, omikujinaiyou : omikujikekka , time : `${y}/${m}/${d}`})
       .write()
       
   } 
