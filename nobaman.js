@@ -747,11 +747,14 @@ ID : ${chat["id"][args[1]]["ID"]}
       function compareFunc(a, b) {
           return b - a;
       }
-
+const namearray = [];
       for (var i = 0; i < json.omikuji.length; i++) {
-        array.push([json.omikuji[i].nobaman , client.users.get(db
+        const name = client.users.get(db
       .get("omikuji")
-      .find({ nobaman : json.omikuji[i].nobaman }).value().id).username])
+      .find({ nobaman : json.omikuji[i].nobaman }).value().id).username
+        
+        namearray.push(name)
+        array.push([json.omikuji[i].nobaman , name])
       }
       array.sort(compareFunc);
       
