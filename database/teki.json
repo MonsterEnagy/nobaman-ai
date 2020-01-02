@@ -7,6 +7,14 @@
   {
   "name" : "ドラゴンブースト",
   "url" : "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png"
-  }
+  },
+   {
+     "name" : "モンスターエナジー",
+     "url" : "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png"
+   },
+   {
+     "name" : "モンスターエナジー亜種",
+     "url" : "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png"
+   }
 ]
 }

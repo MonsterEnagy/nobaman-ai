@@ -130,12 +130,12 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "レッドブル",
-      "tekihp": 97,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 19,
-      "level": 13,
-      "hp": 93,
+      "teki": "ドラゴンブースト",
+      "tekihp": 4,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 21,
+      "level": 15,
+      "hp": 23,
       "tekideath": false,
       "death": false
     }

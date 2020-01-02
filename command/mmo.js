@@ -250,15 +250,15 @@ module.exports.run = async (client, message, db, args) => {
           return b[0] - a[0];
       }
 const namearray = [];
-      for (var i = 0; i < json.omikuji.length; i++) {
-        array.push([json.omikuji[i].nobaman , client.users.get(json.omikuji[i].id).username])
+      for (var i = 0; i < json.mmo.length; i++) {
+        array.push([json.mmo[i].level , client.users.get(json.mmo[i].id).username])
       }
       
       array.sort(compareFunc);
       
       var name = [];
       let embed = new Discord.RichEmbed()
-      .setTitle("のばまん吉獲得数ランキング")
+      .setTitle("レベルランキング")
       .addField("1位:" +array[0][1], array[0][0])
       .addField("2位:" +array[1][1], array[1][0])
       .addField("3位:" +array[2][1], array[2][0])
@@ -270,6 +270,13 @@ const namearray = [];
       .addField("9位:" +array[8][1], array[8][0])
       .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
+  } else if(!args[0]) {
+    let embed = new Discord.RichEmbed()
+    .setTitle("**ゲームを始めようーー**")
+    .addField("ランキング" , "`!n game ranking`でレベルのランキングが見られるよ。")
+    .addField("ゲームを始める" , "`!n game attack`でゲームを始める/敵に攻撃することができるよ！")
+    .addField("ステータス" , "自分のHP、攻撃力、レベルが見られるよ")
+    message.channel.send(embed)
   }
   db.write();
 };
