@@ -127,5 +127,15 @@
       "omikujinaiyou": "小吉"
     }
   ],
-  "mmo": []
+  "mmo": [
+    {
+      "id": "551421671332904960",
+      "teki": "レッドブル",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 1,
+      "level": 1,
+      "hp": null
+    }
+  ]
 }
