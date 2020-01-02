@@ -97,12 +97,14 @@ module.exports.run = (client, message, db, args) => {
           `倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
       }
-    } else if (!json.teki) {
+    } else if (!json.value().teki) {
+      console.log("!json.tekiでーす")
       var strong = json.level + json.strong - Math.floor(Math.random() * 8);
     } else {
+      console.log("else通りでーす！")
       var strong = json.level + json.strong - Math.floor(Math.random() * 8);
-      tekidb.get("teki").find({ name: json.value().teki });
             json.assign({ tekihp: json.value().tekihp - json.strong }).write(); //tekihp - json.strong
+      console.log(json.value())
       message.channel.send(
         `攻撃しました！敵ののこりHPは${json.value().tekihp}です。`
       );
@@ -113,7 +115,7 @@ module.exports.run = (client, message, db, args) => {
             level: json.value().level + 1,
             hp: json.value().level + 5
           })
-          .remove({ teki: teki.name, url: teki.url })
+          .remove({ teki: json.value().teki, url: json.value().url })
           .write();
         return message.channel.send(
           `倒しました！Lvが${json.value().level}にあがります！`
@@ -133,8 +135,8 @@ module.exports.run = (client, message, db, args) => {
             hp: json.value().level - 5
           })
           .remove({
-            teki: teki.name,
-            url: teki.url,
+            teki: json.value().teki,
+            url: json.value().url,
             tekihp: json.value().tekihp,
             tekistrong: json.value().strong
           })
