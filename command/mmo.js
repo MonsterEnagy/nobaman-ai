@@ -114,7 +114,7 @@ module.exports.run = (client, message, db, args) => {
       json.assign({
         teki : teki.name,
         url : teki.url,
-        tekihp: json.value().hp -5
+        tekihp: json.value().hp + json.value().strong * 5
       }).assign({
           tekideath:false,
         death:false
@@ -199,7 +199,7 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong + 1,
             level: json.value().level + 1,
-            hp: json.value().level + 5,
+            hp: json.value().level + json.value().strong *6,
             tekideath : true
           })
           .remove({
@@ -223,7 +223,7 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong - 1,
             level: json.value().level - 1,
-            hp: json.value().level - 5,
+            hp: json.value().level + json.value().strong / 3,
           death:true
           })
           .remove({
@@ -237,6 +237,13 @@ module.exports.run = (client, message, db, args) => {
         );
       }
     }
+  } else if(args[0] === "status") {
+    let embed = new Discord.RichEmbed()
+    .setTitle(`${message.author.username}のステータス`)
+    .addField("HP" , json.value().hp)
+    .addField("攻撃力" , json.value().strong)
+    .addField("レベル" , json.value().level)
+    message.channel.send(embed)
   }
   db.write();
 };

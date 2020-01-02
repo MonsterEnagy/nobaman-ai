@@ -131,13 +131,13 @@
     {
       "id": "551421671332904960",
       "teki": "レッドブル",
-      "tekihp": -122,
+      "tekihp": 72,
       "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 15,
-      "level": 10,
-      "hp": 14,
-      "tekideath": true,
-      "death": false
+      "strong": 17,
+      "level": 12,
+      "hp": 8,
+      "tekideath": false,
+      "death": true
     }
   ]
 }
