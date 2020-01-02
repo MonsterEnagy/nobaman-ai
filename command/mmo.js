@@ -114,12 +114,12 @@ module.exports.run = (client, message, db, args) => {
       json.assign({
         teki : teki.name,
         url : teki.url,
-        tekihp: json.value().hp + json.value().strong * 5,
+        tekihp: Math.floor(json.value().hp /1.001),
         tekideath:false,
         death:false
 }).write()
       console.log(json.value());
-      message.channel.send(
+    await  message.channel.send(
         new Discord.RichEmbed()
           .setTitle(`${teki.name}がやってきた！`)
           .addField("HP", json.value().tekihp)
@@ -132,7 +132,7 @@ module.exports.run = (client, message, db, args) => {
         Math.floor(Math.random() * 8);
       var tekistrong =
         json.value().level +
-        json.value().strong - 4 -
+        json.value().strong -2 -
         Math.floor(Math.random() * 8);
             json
         .assign({ tekihp: json.value().tekihp - strong })
@@ -198,7 +198,7 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong + 1,
             level: json.value().level + 1,
-            hp: json.value().level + json.value().strong *6,
+            hp: json.value().level + json.value().strong * 6,
             tekideath : true
           })
           .remove({
@@ -222,7 +222,7 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong - 1,
             level: json.value().level - 1,
-            hp: json.value().level + json.value().strong,
+            hp: json.value().level + json.value().strong *4,
           death:true
           })
           .remove({
