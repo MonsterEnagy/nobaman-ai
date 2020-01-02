@@ -6,7 +6,7 @@ mmo : [
   "id" : "id",
   "strong" : "1"
   "teki" : "teki",
-  "url" :
+  "url" : "tekiのurl"
   "level" : "1"
   },
 {
@@ -33,6 +33,8 @@ module.exports.run = (client , message, db , args) => {
       message.channel.send(Discord.RichEmbed()
                           .setTitle(`${teki.name}がやってきた！`)
                           .setImage(teki.url));
+    const tekihp = json.level + 3
+    const tekistrong = json.strong - 6
     } else if(!json.teki){
       var strong = json.level + json.strong - Math.floor( Math.random() * 8 );
     } else {
