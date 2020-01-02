@@ -108,7 +108,7 @@ module.exports.run = async (client, message, db, args) => {
       json.assign({
         teki : teki.name,
         url : teki.url,
-        tekihp: Math.floor(json.value().hp /1.001),
+        tekihp: Math.floor(json.value().hp /1.001) + json.value().strong / 1.001,
         tekideath:false,
         death:false
 }).write()
@@ -239,7 +239,7 @@ module.exports.run = async (client, message, db, args) => {
     .addField("レベル" , json.value().level)
     message.channel.send(embed)
   } else if(args[0] === "ranking") {
-          const json = require("../database/db.json");
+          const json = db.get("mmo").value()
     
     
       const array = [];
@@ -247,8 +247,8 @@ module.exports.run = async (client, message, db, args) => {
           return b[0] - a[0];
       }
 const namearray = [];
-      for (var i = 0; i < json.mmo.length; i++) {
-        array.push([json.mmo[i].level , client.users.get(json.mmo[i].id).username])
+      for (var i = 0; i < json.length; i++) {
+        array.push([json[i].level , client.users.get(json[i].id).username])
       }
       
       array.sort(compareFunc);

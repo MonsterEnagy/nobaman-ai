@@ -142,25 +142,25 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": 1424,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 286,
-      "level": 281,
-      "hp": 1424,
-      "tekideath": false,
+      "teki": "ドラゴンブースト",
+      "tekihp": -368.39660339660327,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 398,
+      "level": 392,
+      "hp": 2773,
+      "tekideath": true,
       "death": false
     },
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジー",
-      "tekihp": 2606,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 375,
-      "level": 366,
-      "hp": 2609,
-      "tekideath": false,
-      "death": false
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -776.4175824175823,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 418,
+      "level": 409,
+      "hp": 413,
+      "tekideath": true,
+      "death": true
     },
     {
       "id": "545954241970307089",
@@ -175,23 +175,23 @@
     },
     {
       "id": "616285021560635413",
-      "teki": "レッドブル",
-      "tekihp": 33,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 18,
-      "level": 9,
-      "hp": 31,
-      "tekideath": false,
+      "teki": "ドラゴンブースト",
+      "tekihp": -172,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 51,
+      "level": 41,
+      "hp": 45,
+      "tekideath": true,
       "death": false
     },
     {
       "id": "550265737449570314",
-      "teki": "モンスターエナジー",
-      "tekihp": -11,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 19,
-      "level": 10,
-      "hp": 117,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -8.021978021978015,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 23,
+      "level": 14,
+      "hp": 145,
       "tekideath": true,
       "death": false
     },
@@ -247,6 +247,17 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "565486055726252042",
+      "teki": "レッドブル",
+      "tekihp": -4,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 13,
+      "level": 4,
+      "hp": 75,
+      "tekideath": true,
+      "death": false
     }
   ]
 }
