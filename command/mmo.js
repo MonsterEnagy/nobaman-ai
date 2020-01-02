@@ -269,7 +269,7 @@ const namearray = [];
     .setTitle("**ゲームを始めようーー**")
     .addField("ランキング" , "`!n game ranking`でレベルのランキングが見られるよ。")
     .addField("ゲームを始める" , "`!n game attack`でゲームを始める/敵に攻撃することができるよ！")
-    .addField("ステータス" , "自分のHP、攻撃力、レベルが見られるよ")
+    .addField("ステータス" , "`!n game status`自分のHP、攻撃力、レベルが見られるよ")
     message.channel.send(embed)
   } else if(args[0] === "create") {
     const json = require("./database/teki.json");
