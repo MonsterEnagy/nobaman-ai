@@ -1,4 +1,10 @@
 const Discord = require("discord.js")
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+
+const adapter = new FileSync("database/teki.json");
+
+const tekidb = low(adapter);
 /*
 db {
 mmo : [
@@ -6,8 +12,10 @@ mmo : [
   "id" : "id",
   "hp" : 10
   "strong" : "1"
-  "teki" : "teki",
-  "url" : "tekiのurl"
+  "teki" : "tekiの名前",
+  "url" : "tekiのurl",
+  "tekihp" : "敵のHP"
+  "tekistrong" : "敵の強さ"
   "level" : "1"
   },
 {
@@ -21,30 +29,30 @@ module.exports.run = (client , message, db , args) => {
      var json = db
       .get("mmo")
       .find({ id: message.author.id })
+
      var tekijson = require("../database/teki.json");
   if(args[0] === "attack") {
-
+console.log("通ってる")
     if(!json) {
       
       const tekidice = Math.floor( Math.random() * tekijson.length );
       const teki = tekijson[tekidice]
       json
       .push({id : message.author.id , teki : teki.name, url : teki.url, strong:1 , level: 1}).write()
-          const tekihp = json.level + 3
-    const tekistrong = json.strong - 6
+
       message.channel.send(Discord.RichEmbed()
                           .setTitle(`${teki.name}がやってきた！`)
-                           .addField("HP" , tekihp)
-                           .addField("攻撃力" , tekistrong)
+                           .addField("HP" , json.value().tekihp)
+                           .addField("攻撃力" , json.value().tekistrong)
                           .setImage(teki.url));
-      tekihp - json.strong
-      if(tekihp < 0) {
+      json.assign({tekihp : json.value().tekihp - json.strong}).write() //tekihp - json.strong
+      if(json.value().tekihp < 0) {
       json
-      .assign({strong: json.strong + 1 , level: json.strong + 1 , hp : json.level + 5})
+      .assign({strong: json.value().strong + 1 , level: json.value().level + 1 , hp : json.value().level + 5})
       .remove({teki : teki.name , url:teki.url}).write()
-        return message.channel.send("倒しました！Lvがあがります!")
+        return message.channel.send(`倒しました！Lvが${json.value().level}にあがります！`)
       }
-      json.assign({hp : json.hp - tekistrong}).write()
+      json.assign({hp : json.value().hp - json.value().tekistrong}).write()
       message.channel.send(`攻撃しました！敵ののこりHPは${tekihp}です。`)
       message.channel.send(`攻撃されました！あなたの残りHPは${json.hp}です。`)
 
@@ -52,6 +60,7 @@ module.exports.run = (client , message, db , args) => {
       var strong = json.level + json.strong - Math.floor( Math.random() * 8 );
     } else {
       var strong = json.level + json.strong - Math.floor( Math.random() * 8 );
+      tekidb.get("teki").find({ name : json.value().teki})
     }
   }
   db.write()
