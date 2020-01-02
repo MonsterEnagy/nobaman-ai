@@ -613,7 +613,7 @@ ID : ${chat["id"][args[1]]["ID"]}
     require("./command/weather.js").run(client, message, kekka);
   }
   if (command === "quiz") {
-    require("./command/quiz.js").run(client, message);
+    require("./command/quiz.js").run(client, message , db);
   }
   if (command === "icon") {
     require("./command/icon.js").run(client, message, args);

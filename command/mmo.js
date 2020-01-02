@@ -25,7 +25,7 @@ mmo : [
 }
 
 */
-module.exports.run = (client, message, db, args) => {
+module.exports.run = async (client, message, db, args) => {
   var json = db.get("mmo").find({ id: message.author.id });
 
   var tekijson = require("../database/teki.json");
@@ -129,11 +129,11 @@ module.exports.run = (client, message, db, args) => {
        var strong =
         json.value().level +
         json.value().strong -
-        Math.floor(Math.random() * 8);
+        Math.floor(Math.random() * 15);
       var tekistrong =
         json.value().level +
         json.value().strong -2 -
-        Math.floor(Math.random() * 8);
+        Math.floor(Math.random() * 15);
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
@@ -183,11 +183,11 @@ module.exports.run = (client, message, db, args) => {
       var strong =
         json.value().level +
         json.value().strong -
-        Math.floor(Math.random() * 8);
+        Math.floor(Math.random() * 15);
       var tekistrong =
         json.value().level +
-        json.value().strong - 4 -
-        Math.floor(Math.random() * 8);
+        json.value().strong - 1 -
+        Math.floor(Math.random() * 15);
       json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
       console.log(json.value());
       message.channel.send(
@@ -243,6 +243,33 @@ module.exports.run = (client, message, db, args) => {
     .addField("攻撃力" , json.value().strong)
     .addField("レベル" , json.value().level)
     message.channel.send(embed)
+  } else if(args[0] === "ranking") {
+          const json = require("../database/db.json");
+      const array = [];
+      function compareFunc(a, b) {
+          return b[0] - a[0];
+      }
+const namearray = [];
+      for (var i = 0; i < json.omikuji.length; i++) {
+        array.push([json.omikuji[i].nobaman , client.users.get(json.omikuji[i].id).username])
+      }
+      
+      array.sort(compareFunc);
+      
+      var name = [];
+      let embed = new Discord.RichEmbed()
+      .setTitle("のばまん吉獲得数ランキング")
+      .addField("1位:" +array[0][1], array[0][0])
+      .addField("2位:" +array[1][1], array[1][0])
+      .addField("3位:" +array[2][1], array[2][0])
+      .addField("4位:" +array[3][1], array[3][0])
+      .addField("5位:" +array[4][1], array[4][0])
+      .addField("6位:" +array[5][1], array[5][0])
+      .addField("7位:" +array[6][1], array[6][0])
+      .addField("8位:" +array[7][1], array[7][0])
+      .addField("9位:" +array[8][1], array[8][0])
+      .addField("10位:"+array[9][1], array[9][0])
+      message.channel.send(embed)
   }
   db.write();
 };
