@@ -108,7 +108,7 @@ module.exports.run = async (client, message, db, args) => {
       json.assign({
         teki : teki.name,
         url : teki.url,
-        tekihp: Math.floor(json.value().hp /1.001) + json.value().strong / 1.001,
+        tekihp: Math.floor(json.value().hp /1.001) + Math.floor(json.value().strong / 1.001),
         tekideath:false,
         death:false
 }).write()
@@ -120,6 +120,7 @@ module.exports.run = async (client, message, db, args) => {
           .addField("攻撃力", json.value().strong - 4)
           .setImage(teki.url)
       );
+      if(json.value().level < 300) {
        var strong =
         json.value().level +
         json.value().strong -
@@ -128,6 +129,16 @@ module.exports.run = async (client, message, db, args) => {
         json.value().level +
         json.value().strong -2 -
         Math.floor(Math.random() * 15);
+      } else {
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 200);
+      var tekistrong =
+        json.value().level +
+        json.value().strong -50 -
+        Math.floor(Math.random() * 200);
+      }
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
@@ -174,14 +185,25 @@ module.exports.run = async (client, message, db, args) => {
       }
     } else { //------------------------------------------------------------------------------------------------------------------------------------
      // console.log("else通りでーす！");
-      var strong =
+       if(json.value().level < 300) {
+       var strong =
         json.value().level +
         json.value().strong -
         Math.floor(Math.random() * 15);
       var tekistrong =
         json.value().level +
-        json.value().strong - 1 -
+        json.value().strong -2 -
         Math.floor(Math.random() * 15);
+      } else {
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 120);
+      var tekistrong =
+        json.value().level +
+        json.value().strong -50 -
+        Math.floor(Math.random() * 200);
+      }
       json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
      // console.log(json.value());
       message.channel.send(
@@ -275,7 +297,8 @@ const namearray = [];
     .addField("ステータス" , "`!n game status`自分のHP、攻撃力、レベルが見られるよ")
     message.channel.send(embed)
   } else if(args[0] === "create") {
-    const json = require("./database/teki.json");
+    if(message.author.id !== "551421671332904960") return;
+    const json = require("../database/teki.json");
     const fs = require("fs")
 json["teki"].push({
 "name" : args[1],
@@ -284,6 +307,7 @@ json["teki"].push({
     fs.writeFile("./database/teki.json", JSON.stringify(json), err => {
       if (err) console.log(err);
     });
+    message.channel.send("作りました。" + `名前:${args[1]} 写真:${args[2]}`);
   }
   db.write();
 };
