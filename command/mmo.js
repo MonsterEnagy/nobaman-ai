@@ -56,7 +56,7 @@ module.exports.run = (client, message, db, args) => {
           .addField("攻撃力", json.value().tekistrong)
           .setImage(teki.url)
       );
-      json.assign({ tekihp: json.value().tekihp - json.strong }).write(); //tekihp - json.strong
+      json.assign({ tekihp: json.value().tekihp - json.value().strong }).write(); //tekihp - json.strong
       message.channel.send(
         `攻撃しました！敵ののこりHPは${json.value().tekihp}です。`
       );
@@ -99,11 +99,13 @@ module.exports.run = (client, message, db, args) => {
       }
     } else if (!json.value().teki) {
       console.log("!json.tekiでーす")
-      var strong = json.level + json.strong - Math.floor(Math.random() * 8);
+      const tekidice = Math.floor(Math.random() * tekijson.teki.length);
+      const teki = tekijson.teki[tekidice];
+
     } else {
       console.log("else通りでーす！")
-      var strong = json.level + json.strong - Math.floor(Math.random() * 8);
-            json.assign({ tekihp: json.value().tekihp - json.strong }).write(); //tekihp - json.strong
+      var strong = json.value().level + json.value().strong - Math.floor(Math.random() * 8);
+            json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
       console.log(json.value())
       message.channel.send(
         `攻撃しました！敵ののこりHPは${json.value().tekihp}です。`
@@ -115,7 +117,7 @@ module.exports.run = (client, message, db, args) => {
             level: json.value().level + 1,
             hp: json.value().level + 5
           })
-          .remove({ teki: json.value().teki, url: json.value().url })
+          .remove({ teki: json.value().teki, url: json.value().url,"tekihp" :json.value().tekihp,"tekistrong" : json.value().tekistrong })
           .write();
         return message.channel.send(
           `倒しました！Lvが${json.value().level}にあがります！`
