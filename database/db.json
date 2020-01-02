@@ -125,28 +125,47 @@
       "time": "2020/1/2",
       "nobaman": 0,
       "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "605990379321425923",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
     }
   ],
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "ドラゴンブースト",
-      "tekihp": 57,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 30,
-      "level": 24,
-      "hp": 60,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": 12,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 8,
+      "level": 3,
+      "hp": 26,
       "tekideath": false,
       "death": false
     },
     {
+      "id": "331393654612688897",
+      "teki": "レッドブル",
+      "tekihp": -15,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 15,
+      "level": 6,
+      "hp": 89,
+      "tekideath": true,
+      "death": false
+    },
+    {
       "id": "545954241970307089",
-      "teki": "モンスターエナジー",
-      "tekihp": 1,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 1,
-      "level": 1,
-      "hp": 6
+      "teki": "モンスターエナジー亜種",
+      "tekihp": 6,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 12,
+      "level": 3,
+      "hp": 56,
+      "tekideath": false,
+      "death": true
     }
   ]
 }

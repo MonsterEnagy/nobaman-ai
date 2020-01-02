@@ -42,26 +42,20 @@ module.exports.run = async (client, message, db, args) => {
           teki: teki.name,
           tekihp: 5 - 4,
           url: teki.url,
-          strong: 1,
+          strong: 10,
           level: 1,
           hp: 1 + 5
         })
         .write();
       var json = db.get("mmo").find({ id: message.author.id });
-            var strong =
-        json.value().level +
-        json.value().strong -
-        Math.floor(Math.random() * 8);
-      var tekistrong =
-        json.value().level +
-        json.value().strong - 4 -
-        Math.floor(Math.random() * 8);
+            var strong =15
+      var tekistrong = 10
     //  console.log(json.value());
       message.channel.send(
         new Discord.RichEmbed()
-          .setTitle(`${teki.value().name}がやってきた！`)
+          .setTitle(`${teki.name}がやってきた！`)
           .addField("HP", json.value().tekihp)
-          .addField("攻撃力", json.value().strong -4)
+          .addField("攻撃力", json.value().strong)
           .setImage(teki.url)
       );
       json
@@ -277,6 +271,16 @@ const namearray = [];
     .addField("ゲームを始める" , "`!n game attack`でゲームを始める/敵に攻撃することができるよ！")
     .addField("ステータス" , "自分のHP、攻撃力、レベルが見られるよ")
     message.channel.send(embed)
+  } else if(args[0] === "create") {
+    const json = require("./database/teki.json");
+    const fs = require("fs")
+json["teki"].push({
+"name" : args[1],
+"url" : args[2]
+})
+    fs.writeFile("./database/teki.json", JSON.stringify(json), err => {
+      if (err) console.log(err);
+    });
   }
   db.write();
 };
