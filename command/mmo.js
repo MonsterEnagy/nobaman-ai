@@ -106,24 +106,79 @@ module.exports.run = (client, message, db, args) => {
           `倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
       }
-    } else if (!json.value().teki) {//------------------------------------------------------------------------------------------------------------------------------------
+    } else if (json.value().death || json.value().tekideath) {//------------------------------------------------------------------------------------------------------------------------------------
       console.log("!json.tekiでーす");
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
       const teki = tekijson.teki[tekidice];
       var json = db.get("mmo").find({ id: message.author.id });
-      json.push({
+      json.assign({
         teki : teki.name,
         url : teki.url,
         tekihp: json.value().hp -5
-      }).write()
+      }).assign({
+          tekideath:false,
+        death:false
+}).write()
       console.log(json.value());
       message.channel.send(
         new Discord.RichEmbed()
-          .setTitle(`${teki.value().name}がやってきた！`)
+          .setTitle(`${teki.name}がやってきた！`)
           .addField("HP", json.value().tekihp)
           .addField("攻撃力", json.value().strong - 4)
           .setImage(teki.url)
       );
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 8);
+      var tekistrong =
+        json.value().level +
+        json.value().strong - 4 -
+        Math.floor(Math.random() * 8);
+            json
+        .assign({ tekihp: json.value().tekihp - strong })
+        .write(); //tekihp - json.strong
+      message.channel.send(
+        `攻撃しました！敵ののこりHPは${json.value().tekihp}です。`
+      );
+      if (json.value().tekihp < 0) {
+        json
+          .assign({
+            strong: json.value().strong + 1,
+            level: json.value().level + 1,
+            hp: json.value().level + 5,
+            tekideath : true
+          })
+          .remove({ teki: teki.name, url: teki.url })
+          .write();
+        return message.channel.send(
+          `倒しました！Lvが${json.value().level}にあがります！`
+        );
+      }
+      json.assign({ hp: json.value().hp - tekistrong }).write();
+
+      message.channel.send(
+        `攻撃されました！あなたの残りHPは${json.value().hp}です。`
+      );
+
+      if (json.value().hp < 0) {
+        json
+          .assign({
+            strong: json.value().strong - 1,
+            level: json.value().level - 1,
+            hp: json.value().level - 5,
+            death : true
+          })
+          .remove({
+            teki: teki.name,
+            url: teki.url,
+            tekihp: json.value().tekihp,
+          })
+          .write();
+        return message.channel.send(
+          `倒されてしまいました！！Lvが${json.value().level}に下がります！`
+        );
+      }
     } else { //------------------------------------------------------------------------------------------------------------------------------------
       console.log("else通りでーす！");
       var strong =
@@ -144,13 +199,13 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong + 1,
             level: json.value().level + 1,
-            hp: json.value().level + 5
+            hp: json.value().level + 5,
+            tekideath : true
           })
           .remove({
             teki: json.value().teki,
             url: json.value().url,
             tekihp: json.value().tekihp,
-            tekistrong: json.value().tekistrong
           })
           .write();
         return message.channel.send(
@@ -168,13 +223,13 @@ module.exports.run = (client, message, db, args) => {
           .assign({
             strong: json.value().strong - 1,
             level: json.value().level - 1,
-            hp: json.value().level - 5
+            hp: json.value().level - 5,
+          death:true
           })
           .remove({
             teki: json.value().teki,
             url: json.value().url,
             tekihp: json.value().tekihp,
-            tekistrong: json.value().strong
           })
           .write();
         return message.channel.send(
