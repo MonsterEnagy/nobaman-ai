@@ -300,14 +300,19 @@ const namearray = [];
     if(message.author.id !== "551421671332904960") return;
     const json = require("../database/teki.json");
     const fs = require("fs")
+    if(message.attachments.first()){
+      var url = message.attachments.first().url
+    } else {
+      var url = args[2]
+    }
 json["teki"].push({
 "name" : args[1],
-"url" : args[2]
+"url" : url
 })
     fs.writeFile("./database/teki.json", JSON.stringify(json), err => {
       if (err) console.log(err);
     });
-    message.channel.send("作りました。" + `名前:${args[1]} 写真:${args[2]}`);
+    message.channel.send("作りました。" + `名前:${args[1]} 写真:${url}`);
   }
   db.write();
 };
