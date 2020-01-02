@@ -30,12 +30,12 @@ module.exports.run = async (client, message, db, args) => {
 
   var tekijson = require("../database/teki.json");
   if (args[0] === "attack") {
-    console.log("通ってる");
+    //console.log("通ってる");
     if (!json.value()) {
-      console.log("通ってる");
+     // console.log("通ってる");
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
       const teki = tekijson.teki[tekidice];
-      console.log(tekidice);
+     // console.log(tekidice);
       db.get("mmo")
         .push({
           id: message.author.id,
@@ -56,7 +56,7 @@ module.exports.run = async (client, message, db, args) => {
         json.value().level +
         json.value().strong - 4 -
         Math.floor(Math.random() * 8);
-      console.log(json.value());
+    //  console.log(json.value());
       message.channel.send(
         new Discord.RichEmbed()
           .setTitle(`${teki.value().name}がやってきた！`)
@@ -107,7 +107,7 @@ module.exports.run = async (client, message, db, args) => {
         );
       }
     } else if (json.value().death === true || json.value().tekideath === true) {//------------------------------------------------------------------------------------------------------------------------------------
-      console.log("!json.tekiでーす");
+     // console.log("!json.tekiでーす");
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
       const teki = tekijson.teki[tekidice];
       var json = db.get("mmo").find({ id: message.author.id });
@@ -118,7 +118,7 @@ module.exports.run = async (client, message, db, args) => {
         tekideath:false,
         death:false
 }).write()
-      console.log(json.value());
+     // console.log(json.value());
     await  message.channel.send(
         new Discord.RichEmbed()
           .setTitle(`${teki.name}がやってきた！`)
@@ -179,7 +179,7 @@ module.exports.run = async (client, message, db, args) => {
         );
       }
     } else { //------------------------------------------------------------------------------------------------------------------------------------
-      console.log("else通りでーす！");
+     // console.log("else通りでーす！");
       var strong =
         json.value().level +
         json.value().strong -
@@ -189,7 +189,7 @@ module.exports.run = async (client, message, db, args) => {
         json.value().strong - 1 -
         Math.floor(Math.random() * 15);
       json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
-      console.log(json.value());
+     // console.log(json.value());
       message.channel.send(
         `攻撃しました！ダメージ${strong}　敵ののこりHPは${json.value().tekihp}です。`
       );
