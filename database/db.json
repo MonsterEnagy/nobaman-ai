@@ -147,12 +147,12 @@
     },
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジー",
-      "tekihp": -188,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 238,
-      "level": 229,
-      "hp": 233,
+      "teki": "レッドブル",
+      "tekihp": -222,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 239,
+      "level": 230,
+      "hp": 234,
       "tekideath": true,
       "death": false
     },
