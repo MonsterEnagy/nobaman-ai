@@ -262,7 +262,7 @@ const namearray = [];
       .addField("7位:" +array[6][1], array[6][0])
       .addField("8位:" +array[7][1], array[7][0])
       .addField("9位:" +array[8][1], array[8][0])
-      .addField("10位:"+array[9][1], array[9][0])
+//      .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
   } else if(!args[0]) {
     let embed = new Discord.RichEmbed()

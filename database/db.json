@@ -131,28 +131,34 @@
       "time": "2020/1/2",
       "nobaman": 0,
       "omikujinaiyou": "凶"
+    },
+    {
+      "id": "656432104745205760",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
     }
   ],
   "mmo": [
     {
       "id": "551421671332904960",
       "teki": "モンスターエナジー",
-      "tekihp": 5,
+      "tekihp": 150,
       "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 19,
-      "level": 14,
-      "hp": 14,
+      "strong": 46,
+      "level": 41,
+      "hp": 156,
       "tekideath": false,
       "death": false
     },
     {
       "id": "331393654612688897",
-      "teki": "レッドブル",
-      "tekihp": -222,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 239,
-      "level": 230,
-      "hp": 234,
+      "teki": "ドラゴンブースト",
+      "tekihp": -1405,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 295,
+      "level": 286,
+      "hp": 290,
       "tekideath": true,
       "death": false
     },
