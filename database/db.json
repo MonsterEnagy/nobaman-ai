@@ -147,12 +147,12 @@
     },
     {
       "id": "331393654612688897",
-      "teki": "レッドブル",
-      "tekihp": -621,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 224,
-      "level": 215,
-      "hp": 219,
+      "teki": "ドラゴンブースト",
+      "tekihp": -227,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 231,
+      "level": 222,
+      "hp": 226,
       "tekideath": true,
       "death": false
     },
@@ -208,6 +208,17 @@
       "strong": 12,
       "level": 3,
       "hp": 48,
+      "tekideath": false,
+      "death": false
+    },
+    {
+      "id": "560718833523097610",
+      "teki": "モンスターエナジー",
+      "tekihp": 53,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 13,
+      "level": 4,
+      "hp": 61,
       "tekideath": false,
       "death": false
     }
