@@ -71,10 +71,11 @@ module.exports.run = (client , message, db , args) => {
         return;
       }
       message.channel.send(`あなたは${omikujikekka}です。`);
+      console.log(`${y}/${m}/${d}`)
       db.get("omikuji").find({
         id: message.author.id
       })
-        .assign({ omikujinaiyou: omikujikekka })
+        .assign({ omikujinaiyou: omikujikekka,time : `${y}/${m}/${d}` })
         .write();
 
             db.get(`${message.guild.id}.omikuji`).find({
