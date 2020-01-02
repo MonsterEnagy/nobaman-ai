@@ -98,9 +98,9 @@
     },
     {
       "id": "513293197506772993",
-      "time": "2020/1/1",
+      "time": "2020/1/2",
       "nobaman": 1,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "550265737449570314",
@@ -170,11 +170,11 @@
     {
       "id": "616285021560635413",
       "teki": "ドラゴンブースト",
-      "tekihp": -2,
+      "tekihp": -11,
       "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 15,
-      "level": 6,
-      "hp": 89,
+      "strong": 16,
+      "level": 7,
+      "hp": 96,
       "tekideath": true,
       "death": false
     },
@@ -220,6 +220,17 @@
       "level": 4,
       "hp": 61,
       "tekideath": false,
+      "death": false
+    },
+    {
+      "id": "513293197506772993",
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -2,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 14,
+      "level": 5,
+      "hp": 82,
+      "tekideath": true,
       "death": false
     }
   ]
