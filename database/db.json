@@ -20,15 +20,15 @@
     },
     {
       "id": "374016703614550017",
-      "time": "2020/1/1",
+      "time": "2020/1/2",
       "nobaman": 0,
-      "omikujinaiyou": "大吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "266394971479867394",
-      "time": "2020/1/1",
+      "time": "2020/1/2",
       "nobaman": 0,
-      "omikujinaiyou": "凶"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "558223732473200641",
@@ -107,6 +107,12 @@
       "time": "2020/1/2",
       "nobaman": 0,
       "omikujinaiyou": "凶"
+    },
+    {
+      "id": "412165925144363008",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
     }
   ]
 }
