@@ -231,6 +231,7 @@ module.exports.run = async (client, message, db, args) => {
       }
     }
   } else if(args[0] === "status") {
+    if(!json) return message.channel.send("一回プレイしてからステータスを見てね")
     let embed = new Discord.RichEmbed()
     .setTitle(`${message.author.username}のステータス`)
     .addField("HP" , json.value().hp)
@@ -239,6 +240,8 @@ module.exports.run = async (client, message, db, args) => {
     message.channel.send(embed)
   } else if(args[0] === "ranking") {
           const json = require("../database/db.json");
+    
+    
       const array = [];
       function compareFunc(a, b) {
           return b[0] - a[0];
