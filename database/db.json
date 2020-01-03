@@ -10,24 +10,24 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": 3,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 344,
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": 1252,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": 345,
       "level": 300,
-      "hp": 137,
+      "hp": 446,
       "tekideath": false,
       "death": false
     },
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 32,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 333,
-      "level": 304,
-      "hp": 638,
-      "tekideath": false,
+      "teki": "レッドブル",
+      "tekihp": -533,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 327,
+      "level": 297,
+      "hp": 301,
+      "tekideath": true,
       "death": true
     },
     {
