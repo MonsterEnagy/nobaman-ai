@@ -149,12 +149,12 @@
     {
       "id": "551421671332904960",
       "teki": "UNLEADED",
-      "tekihp": -2280,
+      "tekihp": 1955,
       "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 800,
-      "level": 689,
-      "hp": 693,
-      "tekideath": true,
+      "strong": 798,
+      "level": 683,
+      "hp": 1266,
+      "tekideath": false,
       "death": false
     },
     {

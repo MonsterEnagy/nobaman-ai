@@ -26,6 +26,38 @@ mmo : [
 
 */
 module.exports.run = async (client, message, db, args) => {
+  function strong(json){
+      if(json.value().level < 300) {
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 15);
+      var tekistrong =
+        json.value().level +
+        json.value().strong -2 -
+        Math.floor(Math.random() * 15);
+      } else if(json.value().level < 470){
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 250);
+      var tekistrong =
+        json.value().level +
+        json.value().strong -2 -
+        Math.floor(Math.random() * 320);
+                } else {
+       var strong =
+        json.value().level +
+        json.value().strong -
+        Math.floor(Math.random() * 200);
+      var tekistrong =
+        json.value().level +
+        json.value().strong -50 -
+        Math.floor(Math.random() * 200);
+      }
+    return tekistrong
+    return strong;
+  }
   var json = db.get("mmo").find({ id: message.author.id });
 
   var tekijson = require("../database/teki.json");
@@ -119,34 +151,7 @@ module.exports.run = async (client, message, db, args) => {
           .addField("攻撃力", json.value().strong - 4)
           .setImage(teki.url)
       );
-      if(json.value().level < 300) {
-       var strong =
-        json.value().level +
-        json.value().strong -
-        Math.floor(Math.random() * 15);
-      var tekistrong =
-        json.value().level +
-        json.value().strong -2 -
-        Math.floor(Math.random() * 15);
-      } else if(json.value().level < 470){
-       var strong =
-        json.value().level +
-        json.value().strong -
-        Math.floor(Math.random() * 250);
-      var tekistrong =
-        json.value().level +
-        json.value().strong -2 -
-        Math.floor(Math.random() * 320);
-                } else {
-       var strong =
-        json.value().level +
-        json.value().strong -
-        Math.floor(Math.random() * 200);
-      var tekistrong =
-        json.value().level +
-        json.value().strong -50 -
-        Math.floor(Math.random() * 200);
-      }
+strong(json)
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
