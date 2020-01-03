@@ -107,12 +107,12 @@
     {
       "id": "526228166277333024",
       "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": 82,
+      "tekihp": -12,
       "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 23,
-      "level": 14,
-      "hp": 366,
-      "tekideath": false,
+      "strong": 26,
+      "level": 17,
+      "hp": 166,
+      "tekideath": true,
       "death": false
     },
     {
