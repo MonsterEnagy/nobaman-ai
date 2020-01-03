@@ -279,7 +279,7 @@ module.exports.run = async (client, message, db, args) => {
           })
           .write();
         return message.channel.send(
-          `攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。\nh倒されてしまいました！！Lvが${json.value().level}に下がります！`
+          `攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。\n倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
       }
     }
