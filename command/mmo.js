@@ -157,6 +157,38 @@ module.exports.run = async (client, message, db, args) => {
         json.value().strong -50 -
         Math.floor(Math.random() * 500);
       }
+      if(args[1]) {
+        if(json.value().level < 100) {
+            message.channel.send(`${message.author.username}はメラを放った！`)
+          var strong = strong * 2
+          } else if(json.value().level < 200) {
+                        message.channel.send(`${message.author.username}はメラミを放った！`)
+          var strong = strong * 8
+          } else if(json.value().level < 300) {
+                                    message.channel.send(`${message.author.username}はメラゾーマを放った！`)
+          var strong = strong * 16
+          } else if(json.value().level < 400) {
+          message.channel.send(`${message.author.username}はギラを放った！`)
+          var strong = strong * 32
+          } else if(json.value().level < 500) {
+          message.channel.send(`${message.author.username}はベギラマを放った！`);
+            var strong = strong * 64
+          } else if(json.value().level < 600) {
+          message.channel.send(`${message.author.username}はイオを放った！`);
+            var strong = strong * 128
+          } else if(json.value().level < 700) {
+          message.channel.send(`${message.author.username}はイオラを放った！`);
+            var strong = strong * 256
+          } else if(json.value().level < 800) {
+          message.channel.send(`${message.author.username}はイオナズンを放った！`);
+            var strong = strong * 512
+          } else if(json.value().level < 900) {
+          message.channel.send(`${message.author.username}はイオナズンを放った！`);
+            var strong = strong * 1024
+          } else if(json.value().level < 1000) {
+            
+          }
+      }
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
