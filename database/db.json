@@ -59,6 +59,17 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "550265737449570314",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": 42,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
+      "strong": 34,
+      "level": 25,
+      "hp": 306,
+      "tekideath": false,
+      "death": false
     }
   ]
 }
