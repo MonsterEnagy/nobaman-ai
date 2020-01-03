@@ -190,11 +190,28 @@ module.exports.run = async (client, message, db, args) => {
             var strong = strong * 2048
           }
       }
+      if(Math.floor(Math.random() * 7) === 1) {
+        var strong = strong * 2
+        message.channel.send("会心の一撃！")
+      }
+      if(json.value().teki === "レッドブル") {
+        var strong = strong * 50000;
+      }
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
 
       if (json.value().tekihp < 0) {
+        if(json.value().teki === "レッドブル") {
+        json
+          .assign({
+            strong: json.value().strong + 100,
+            level: json.value().level + 100,
+            hp: json.value().level + 500,
+            tekideath : true
+          })          .remove({ teki: teki.name, url: teki.url })
+          .write();
+        } else {
         json
           .assign({
             strong: json.value().strong + 1,
@@ -202,8 +219,10 @@ module.exports.run = async (client, message, db, args) => {
             hp: json.value().level + 5,
             tekideath : true
           })
+    
           .remove({ teki: teki.name, url: teki.url })
           .write();
+        }
         return message.channel.send(
           `攻撃しました！ダメージ${strong}敵ののこりHPは${json.value().tekihp}です。\n倒しました！Lvが${json.value().level}にあがります！`
         );
