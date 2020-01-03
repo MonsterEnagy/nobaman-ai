@@ -268,13 +268,13 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジー",
-      "tekihp": -24,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": 15,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
       "strong": 32,
-      "level": 15,
-      "hp": 19,
-      "tekideath": true,
+      "level": 14,
+      "hp": 47,
+      "tekideath": false,
       "death": true
     }
   ]

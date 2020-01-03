@@ -296,6 +296,7 @@ client.on("message", async message => {
           "`!n color (画像のurlまたは画像ファイルの添付)`で色を反転させることが出来ます"
         )
       .addField("おみくじ" , "`!n omikuji`でおみくじを一日一回のみ引くことが出来ます\nまた、`!n omikuji ranking`でランキングを見ることが出来ます")
+      .addField("ゲーム" , "`!n game`でゲームのhelpが見れます")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
