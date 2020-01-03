@@ -10,14 +10,14 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": 346,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
-      "strong": 339,
-      "level": 299,
-      "hp": 639,
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": 3,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 344,
+      "level": 300,
+      "hp": 137,
       "tekideath": false,
-      "death": true
+      "death": false
     },
     {
       "id": "551421671332904960",
@@ -62,12 +62,12 @@
     },
     {
       "id": "550265737449570314",
-      "teki": "UNLEADED",
-      "tekihp": -195,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 130,
-      "level": 120,
-      "hp": 893,
+      "teki": "レッドブル亜種",
+      "tekihp": -225,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 140,
+      "level": 130,
+      "hp": 963,
       "tekideath": true,
       "death": false
     },
