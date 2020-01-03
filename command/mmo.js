@@ -146,7 +146,7 @@ module.exports.run = async (client, message, db, args) => {
       var tekistrong =
         json.value().level +
         json.value().strong -25 -
-        Math.floor(Math.random() * 450);
+        Math.floor(Math.random() * 650);
                 } else {
        var strong =
         json.value().level +
@@ -155,7 +155,7 @@ module.exports.run = async (client, message, db, args) => {
       var tekistrong =
         json.value().level +
         json.value().strong -50 -
-        Math.floor(Math.random() * 200);
+        Math.floor(Math.random() * 500);
       }
             json
         .assign({ tekihp: json.value().tekihp - strong })
@@ -219,7 +219,7 @@ module.exports.run = async (client, message, db, args) => {
       var tekistrong =
         json.value().level +
         json.value().strong -2 -
-        Math.floor(Math.random() * 320);
+        Math.floor(Math.random() * 30);
       } else if(json.value().level > 650) {
              var strong =
         json.value().level +
@@ -227,8 +227,8 @@ module.exports.run = async (client, message, db, args) => {
         Math.floor(Math.random() * 320);
       var tekistrong =
         json.value().level +
-        json.value().strong -25 -
-        Math.floor(Math.random() * 450);
+        json.value().strong -205 -
+        Math.floor(Math.random() * 950);
                 } else {
        var strong =
         json.value().level +
@@ -237,9 +237,9 @@ module.exports.run = async (client, message, db, args) => {
       var tekistrong =
         json.value().level +
         json.value().strong -50 -
-        Math.floor(Math.random() * 200);
+        Math.floor(Math.random() * 500);
       }
-      json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
+      json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong 
      // console.log(json.value());
 
       if (json.value().tekihp < 0) {
