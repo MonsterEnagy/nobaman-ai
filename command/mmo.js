@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-
+const fs = require("fs")
 const adapter = new FileSync("database/teki.json");
 
 const tekidb = low(adapter);
@@ -349,7 +349,12 @@ json["teki"].push({
     message.channel.send("作りました。" + `名前:${args[1]} 写真:${url}`);
   } else if(args[0] === "reset") {
     if(message.author.id !== "551421671332904960") return;
-    db.get("mmo").remove("strong").remove("level").remove("hp")
+    const json = require("../database/db.json");
+    json.mmo = [];
+        fs.writeFile("./database/db.json", JSON.stringify(json), err => {
+      if (err) console.log(err);
+    });
+    message.channel.send("リセットしました");
             }
   db.write();
 };
