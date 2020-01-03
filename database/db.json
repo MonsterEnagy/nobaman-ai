@@ -143,18 +143,24 @@
       "time": "2020/1/2",
       "nobaman": 0,
       "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "600696671730663457",
+      "time": "2020/1/3",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
     }
   ],
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "UNLEADED",
-      "tekihp": 1955,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 798,
-      "level": 683,
-      "hp": 1266,
-      "tekideath": false,
+      "teki": "モンスターエナジーUNLEADED亜種",
+      "tekihp": -1901,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
+      "strong": 804,
+      "level": 689,
+      "hp": 693,
+      "tekideath": true,
       "death": false
     },
     {
