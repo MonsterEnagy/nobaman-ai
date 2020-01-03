@@ -157,37 +157,43 @@ module.exports.run = async (client, message, db, args) => {
         json.value().strong -50 -
         Math.floor(Math.random() * 500);
       }
-      if(args[1]) {
+          if(args[1]) {
         if(json.value().level < 100) {
             message.channel.send(`${message.author.username}はメラを放った！`)
           var strong = strong * 2
           } else if(json.value().level < 200) {
-                        message.channel.send(`${message.author.username}はメラミを放った！`)
-          var strong = strong * 8
+                 message.channel.send(`${message.author.username}はメラミを放った！`)
+         var strong = await  strong * 8
           } else if(json.value().level < 300) {
                                     message.channel.send(`${message.author.username}はメラゾーマを放った！`)
-          var strong = strong * 16
+          var strong = await strong * 16
           } else if(json.value().level < 400) {
           message.channel.send(`${message.author.username}はギラを放った！`)
-          var strong = strong * 32
+          var strong = await strong * 32
           } else if(json.value().level < 500) {
           message.channel.send(`${message.author.username}はベギラマを放った！`);
-            var strong = strong * 64
+            var strong = await strong * 64
           } else if(json.value().level < 600) {
           message.channel.send(`${message.author.username}はイオを放った！`);
-            var strong = strong * 128
+            var strong = await strong * 128
           } else if(json.value().level < 700) {
           message.channel.send(`${message.author.username}はイオラを放った！`);
-            var strong = strong * 256
+            var strong = await strong * 256
           } else if(json.value().level < 800) {
           message.channel.send(`${message.author.username}はイオナズンを放った！`);
-            var strong = strong * 512
+            var strong = await strong * 512
           } else if(json.value().level < 900) {
           message.channel.send(`${message.author.username}はヒャダルコを放った！`);
-            var strong = strong * 1024
+            var strong = await strong * 1024
           } else if(json.value().level < 1000) {
           message.channel.send(`${message.author.username}はヒャダインを放った！`);
-            var strong = strong * 2048
+            var strong = await strong * 2048
+          } else if(json.value().level < 2000) {
+                      message.channel.send(`${message.author.username}はマヒャダインを放った！`);
+            var strong = await strong * (2048 * 2)
+          } else {
+            message.channel.send(`${message.author.username}は最後の歌を歌った！`);
+            var strong = await strong * (2048 * 1000000)
           }
       }
       if(Math.floor(Math.random() * 7) === 1) {
@@ -306,25 +312,25 @@ module.exports.run = async (client, message, db, args) => {
           var strong = await strong * 32
           } else if(json.value().level < 500) {
           message.channel.send(`${message.author.username}はベギラマを放った！`);
-            var strong = strong * 64
+            var strong = await strong * 64
           } else if(json.value().level < 600) {
           message.channel.send(`${message.author.username}はイオを放った！`);
-            var strong = strong * 128
+            var strong = await strong * 128
           } else if(json.value().level < 700) {
           message.channel.send(`${message.author.username}はイオラを放った！`);
-            var strong = strong * 256
+            var strong = await strong * 256
           } else if(json.value().level < 800) {
           message.channel.send(`${message.author.username}はイオナズンを放った！`);
-            var strong = strong * 512
+            var strong = await strong * 512
           } else if(json.value().level < 900) {
           message.channel.send(`${message.author.username}はヒャダルコを放った！`);
-            var strong = strong * 1024
+            var strong = await strong * 1024
           } else if(json.value().level < 1000) {
           message.channel.send(`${message.author.username}はヒャダインを放った！`);
-            var strong = strong * 2048
+            var strong = await strong * 2048
           } else if(json.value().level < 2000) {
                       message.channel.send(`${message.author.username}はマヒャダインを放った！`);
-            var strong = strong * (2048 * 2)
+            var strong = await strong * (2048 * 2)
           }
       }
             if(json.value().teki === "レッドブル") {
