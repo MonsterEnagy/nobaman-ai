@@ -197,7 +197,7 @@ module.exports.run = async (client, message, db, args) => {
           }
       }
       if(Math.floor(Math.random() * 7) === 1) {
-        var strong = strong * 2
+        var strong = strong * 20
         message.channel.send("会心の一撃！")
       }
       if(json.value().teki === "レッドブル") {
