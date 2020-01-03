@@ -1,5 +1,12 @@
 {
-  "omikuji": [],
+  "omikuji": [
+    {
+      "id": "551421671332904960",
+      "time": "2020/1/3",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    }
+  ],
   "mmo": [
     {
       "id": "331393654612688897",
@@ -14,12 +21,12 @@
     },
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": -467,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 139,
-      "level": 128,
-      "hp": 132,
+      "teki": "レッドブル亜種",
+      "tekihp": -778,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 149,
+      "level": 137,
+      "hp": 141,
       "tekideath": true,
       "death": false
     },
