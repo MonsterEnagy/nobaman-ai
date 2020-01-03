@@ -192,14 +192,14 @@
     },
     {
       "id": "550265737449570314",
-      "teki": "レッドブル",
-      "tekihp": -313,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 32,
-      "level": 23,
-      "hp": 27,
-      "tekideath": true,
-      "death": false
+      "teki": "モンスターエナジーASSAULT",
+      "tekihp": 56,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
+      "strong": 42,
+      "level": 31,
+      "hp": 74,
+      "tekideath": false,
+      "death": true
     },
     {
       "id": "411157378633826324",
