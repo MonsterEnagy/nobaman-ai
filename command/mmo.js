@@ -347,6 +347,9 @@ json["teki"].push({
       if (err) console.log(err);
     });
     message.channel.send("作りました。" + `名前:${args[1]} 写真:${url}`);
-  }
+  } else if(args[0] === "reset") {
+    if(message.author.id !== "551421671332904960") return;
+    db.get("mmo").remove("strong").remove("level").remove("hp")
+            }
   db.write();
 };
