@@ -2,9 +2,9 @@
   "omikuji": [
     {
       "id": "551421671332904960",
-      "time": "2020/1/2",
+      "time": "2020/1/3",
       "nobaman": 6,
-      "omikujinaiyou": "小吉"
+      "omikujinaiyou": "中吉"
     },
     {
       "id": "525366344137572358",
@@ -148,13 +148,13 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 4716,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 787,
-      "level": 678,
-      "hp": 4010,
-      "tekideath": false,
+      "teki": "UNLEADED",
+      "tekihp": -2280,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 800,
+      "level": 689,
+      "hp": 693,
+      "tekideath": true,
       "death": false
     },
     {

@@ -61,9 +61,7 @@ module.exports.run = async (client, message, db, args) => {
       json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
-      message.channel.send(
-        `攻撃しました！敵ののこりHPは${json.value().tekihp}です。`
-      );
+
       if (json.value().tekihp < 0) {
         json
           .assign({
@@ -74,7 +72,7 @@ module.exports.run = async (client, message, db, args) => {
           .remove({ teki: teki.name, url: teki.url })
           .write();
         return message.channel.send(
-          `倒しました！Lvが${json.value().level}にあがります！`
+          `攻撃しました！敵ののこりHPは${json.value().tekihp}です。\n倒しました！Lvが${json.value().level}にあがります！`
         );
       }
       json.assign({ hp: json.value().hp - tekistrong }).write();
@@ -97,9 +95,10 @@ module.exports.run = async (client, message, db, args) => {
           })
           .write();
         return message.channel.send(
-          `倒されてしまいました！！Lvが${json.value().level}に下がります！`
+          `攻撃されました！あなたの残りHPは${json.value().hp}です。\n倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
       }
+      message.channel.send(`攻撃しました！敵ののこりHPは${json.value().tekihp}です。\n攻撃されました！あなたの残りHPは${json.value().hp}です。`)
     } else if (json.value().death === true || json.value().tekideath === true) {//------------------------------------------------------------------------------------------------------------------------------------
      // console.log("!json.tekiでーす");
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
@@ -151,9 +150,7 @@ module.exports.run = async (client, message, db, args) => {
             json
         .assign({ tekihp: json.value().tekihp - strong })
         .write(); //tekihp - json.strong
-      message.channel.send(
-        `攻撃しました！ダメージ${strong}敵ののこりHPは${json.value().tekihp}です。`
-      );
+
       if (json.value().tekihp < 0) {
         json
           .assign({
@@ -165,14 +162,11 @@ module.exports.run = async (client, message, db, args) => {
           .remove({ teki: teki.name, url: teki.url })
           .write();
         return message.channel.send(
-          `倒しました！Lvが${json.value().level}にあがります！`
+          `攻撃しました！ダメージ${strong}敵ののこりHPは${json.value().tekihp}です。\n倒しました！Lvが${json.value().level}にあがります！`
         );
       }
       json.assign({ hp: json.value().hp - tekistrong }).write();
 
-      message.channel.send(
-        `攻撃されました！${tekistrong}あなたの残りHPは${json.value().hp}です。`
-      );
 
       if (json.value().hp < 0) {
         json
@@ -189,9 +183,13 @@ module.exports.run = async (client, message, db, args) => {
           })
           .write();
         return message.channel.send(
-          `倒されてしまいました！！Lvが${json.value().level}に下がります！`
+          `攻撃されました！${tekistrong}あなたの残りHPは${json.value().hp}です。\n倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
+        
       }
+        message.channel.send(
+        `攻撃しました！ダメージ${strong}敵ののこりHPは${json.value().tekihp}です。\n攻撃されました！${tekistrong}あなたの残りHPは${json.value().hp}です。`
+      );
     } else { //------------------------------------------------------------------------------------------------------------------------------------
      // console.log("else通りでーす！");
        if(json.value().level < 300) {
@@ -215,9 +213,7 @@ module.exports.run = async (client, message, db, args) => {
       }
       json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong
      // console.log(json.value());
-      message.channel.send(
-        `攻撃しました！ダメージ${strong}　敵ののこりHPは${json.value().tekihp}です。`
-      );
+
       if (json.value().tekihp < 0) {
         json
           .assign({
@@ -233,14 +229,12 @@ module.exports.run = async (client, message, db, args) => {
           })
           .write();
         return message.channel.send(
-          `倒しました！Lvが${json.value().level}にあがります！`
+          `攻撃しました！ダメージ${strong}　敵ののこりHPは${json.value().tekihp}です。\n倒しました！Lvが${json.value().level}にあがります！`
         );
       }
       json.assign({ hp: json.value().hp - tekistrong }).write();
 
-      message.channel.send(
-        `攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。`
-      );
+
 
       if (json.value().hp < 0) {
         json
@@ -257,10 +251,13 @@ module.exports.run = async (client, message, db, args) => {
           })
           .write();
         return message.channel.send(
-          `倒されてしまいました！！Lvが${json.value().level}に下がります！`
+          `攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。\nh倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
       }
     }
+          message.channel.send(
+        `攻撃しました！ダメージ${strong}　敵ののこりHPは${json.value().tekihp}です。\n攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。`
+      );
   } else if(args[0] === "status") {
     if(!json) return message.channel.send("一回プレイしてからステータスを見てね")
     let embed = new Discord.RichEmbed()
