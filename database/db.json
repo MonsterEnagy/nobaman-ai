@@ -268,14 +268,14 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 15,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 32,
-      "level": 14,
-      "hp": 47,
+      "teki": "UNLEADED",
+      "tekihp": 448,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 74,
+      "level": 56,
+      "hp": 369,
       "tekideath": false,
-      "death": true
+      "death": false
     }
   ]
 }

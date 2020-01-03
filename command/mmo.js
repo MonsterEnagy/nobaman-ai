@@ -127,8 +127,8 @@ module.exports.run = async (client, message, db, args) => {
         Math.floor(Math.random() * 15);
       var tekistrong =
         json.value().level +
-        json.value().strong -2 -
-        Math.floor(Math.random() * 15);
+        json.value().strong -40 -
+        Math.floor(Math.random() * 60);
       } else if(json.value().level < 470){
        var strong =
         json.value().level +
