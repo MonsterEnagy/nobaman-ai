@@ -349,12 +349,7 @@ json["teki"].push({
     message.channel.send("作りました。" + `名前:${args[1]} 写真:${url}`);
   } else if(args[0] === "reset") {
     if(message.author.id !== "551421671332904960") return;
-    const json = require("../database/db.json");
-    json.mmo = [];
-        fs.writeFile("./database/db.json", JSON.stringify(json), err => {
-      if (err) console.log(err);
-    });
-    message.channel.send("リセットしました");
+
             }
   db.write();
 };

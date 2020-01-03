@@ -1,4 +1,220 @@
-{"omikuji":[{"id":"551421671332904960","time":"2020/1/3","nobaman":6,"omikujinaiyou":"中吉"},{"id":"525366344137572358","time":"2020/1/1","nobaman":0,"omikujinaiyou":"小吉"},{"id":"312799480913330178","time":"2020/1/1","nobaman":0,"omikujinaiyou":"凶"},{"id":"374016703614550017","time":"2020/1/2","nobaman":0,"omikujinaiyou":"末吉"},{"id":"266394971479867394","time":"2020/1/2","nobaman":0,"omikujinaiyou":"小吉"},{"id":"558223732473200641","time":"2020/1/1","nobaman":0,"omikujinaiyou":"末吉"},{"id":"544467939081060362","time":"2020/1/1","nobaman":0,"omikujinaiyou":"中吉"},{"id":"545954241970307089","time":"2020/1/2","nobaman":9,"omikujinaiyou":"中吉"},{"id":"565486055726252042","time":"2020/1/1","nobaman":0,"omikujinaiyou":"末吉"},{"id":"613624004686643201","time":"2020/1/1","nobaman":2,"omikujinaiyou":"のばまん吉"},{"id":"437524982923526144","time":"2020/1/1","nobaman":1,"omikujinaiyou":"のばまん吉"},{"id":"583219161082101779","time":"2020/1/1","nobaman":1,"omikujinaiyou":"のばまん吉"},{"id":"415796405727133699","time":"2020/1/2","nobaman":0,"omikujinaiyou":"凶"},{"id":"331393654612688897","time":"2020/1/2","nobaman":0,"omikujinaiyou":"凶"},{"id":"561551044862017537","time":"2020/1/2","nobaman":1,"omikujinaiyou":"末吉"},{"id":"616285021560635413","time":"2020/1/1","nobaman":0,"omikujinaiyou":"凶"},{"id":"513293197506772993","time":"2020/1/2","nobaman":1,"omikujinaiyou":"小吉"},{"id":"550265737449570314","time":"2020/1/2","nobaman":1,"omikujinaiyou":"のばまん吉"},{"id":"412165925144363008","time":"2020/1/2","nobaman":1,"omikujinaiyou":"のばまん吉"},{"id":"486072857634537472","time":"2020/1/2","nobaman":0,"omikujinaiyou":"小吉"},{"id":"610143288913297418","time":"2020/1/2","nobaman":0,"omikujinaiyou":"小吉"},{"id":"605990379321425923","time":"2020/1/2","nobaman":0,"omikujinaiyou":"凶"},{"id":"656432104745205760","time":"2020/1/2","nobaman":0,"omikujinaiyou":"末吉"},{"id":"526228166277333024","time":"2020/1/2","nobaman":0,"omikujinaiyou":"末吉"},{"id":"600696671730663457","time":"2020/1/3","nobaman":0,"omikujinaiyou":"末吉"}],"mmo":[]}ikujinaiyou": "小吉"
+{
+  "omikuji": [
+    {
+      "id": "551421671332904960",
+      "time": "2020/1/3",
+      "nobaman": 6,
+      "omikujinaiyou": "中吉"
+    },
+    {
+      "id": "525366344137572358",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "312799480913330178",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "374016703614550017",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "266394971479867394",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "558223732473200641",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "544467939081060362",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "中吉"
+    },
+    {
+      "id": "545954241970307089",
+      "time": "2020/1/2",
+      "nobaman": 9,
+      "omikujinaiyou": "中吉"
+    },
+    {
+      "id": "565486055726252042",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "613624004686643201",
+      "time": "2020/1/1",
+      "nobaman": 2,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "437524982923526144",
+      "time": "2020/1/1",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "583219161082101779",
+      "time": "2020/1/1",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "415796405727133699",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "331393654612688897",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "561551044862017537",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "616285021560635413",
+      "time": "2020/1/1",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "513293197506772993",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "550265737449570314",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "412165925144363008",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "486072857634537472",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "610143288913297418",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "605990379321425923",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "656432104745205760",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "526228166277333024",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "600696671730663457",
+      "time": "2020/1/3",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "550265737449570314",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "412165925144363008",
+      "time": "2020/1/2",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "486072857634537472",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "610143288913297418",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "605990379321425923",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
+    },
+    {
+      "id": "656432104745205760",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "526228166277333024",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "600696671730663457",
+      "time": "2020/1/3",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "656432104745205760",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "526228166277333024",
+      "time": "2020/1/2",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "600696671730663457",
+      "time": "2020/1/3",
+      "nobaman": 0,
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "550265737449570314",
@@ -49,158 +265,5 @@
       "omikujinaiyou": "末吉"
     }
   ],
-  "mmo": [
-    {
-      "id": "551421671332904960",
-      "teki": "レッドブル",
-      "tekihp": -251,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 810,
-      "level": 693,
-      "hp": 5546,
-      "tekideath": true,
-      "death": false
-    },
-    {
-      "id": "331393654612688897",
-      "teki": "モンスターエナジーUNLEADED亜種",
-      "tekihp": -8573,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
-      "strong": 619,
-      "level": 573,
-      "hp": 577,
-      "tekideath": true,
-      "death": true
-    },
-    {
-      "id": "545954241970307089",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": 6,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 12,
-      "level": 3,
-      "hp": 56,
-      "tekideath": false,
-      "death": true
-    },
-    {
-      "id": "616285021560635413",
-      "teki": "モンスターエナジーCUBALIMA",
-      "tekihp": 177,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
-      "strong": 68,
-      "level": 53,
-      "hp": 129,
-      "tekideath": false,
-      "death": false
-    },
-    {
-      "id": "550265737449570314",
-      "teki": "モンスターエナジーASSAULT",
-      "tekihp": -28,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
-      "strong": 54,
-      "level": 41,
-      "hp": 358,
-      "tekideath": true,
-      "death": false
-    },
-    {
-      "id": "411157378633826324",
-      "teki": "ドラゴンブースト",
-      "tekihp": 33,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 14,
-      "level": 5,
-      "hp": 33,
-      "tekideath": false,
-      "death": false
-    },
-    {
-      "id": "477810321936089098",
-      "teki": "ドラゴンブースト",
-      "tekihp": 6,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 12,
-      "level": 3,
-      "hp": 30,
-      "tekideath": false,
-      "death": false
-    },
-    {
-      "id": "560718833523097610",
-      "teki": "モンスターエナジー",
-      "tekihp": 53,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 13,
-      "level": 4,
-      "hp": 61,
-      "tekideath": false,
-      "death": false
-    },
-    {
-      "id": "513293197506772993",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -2,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 14,
-      "level": 5,
-      "hp": 82,
-      "tekideath": true,
-      "death": false
-    },
-    {
-      "id": "605990379321425923",
-      "teki": "モンスターエナジー",
-      "tekihp": -14,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 11,
-      "level": 2,
-      "hp": 6
-    },
-    {
-      "id": "565486055726252042",
-      "teki": "レッドブル",
-      "tekihp": -67,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 24,
-      "level": 13,
-      "hp": 17,
-      "tekideath": true,
-      "death": false
-    },
-    {
-      "id": "558223732473200641",
-      "teki": "モンスターエナジー",
-      "tekihp": -8,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 13,
-      "level": 4,
-      "hp": 8,
-      "tekideath": true,
-      "death": false
-    },
-    {
-      "id": "562681652292091909",
-      "teki": "ドラゴンブースト",
-      "tekihp": 20,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 12,
-      "level": 3,
-      "hp": 2,
-      "tekideath": false,
-      "death": false
-    },
-    {
-      "id": "526228166277333024",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -4,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 20,
-      "level": 11,
-      "hp": 124,
-      "tekideath": true,
-      "death": false
-    }
-  ]
+  "mmo": []
 }
