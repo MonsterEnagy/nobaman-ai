@@ -675,6 +675,7 @@ ID : ${chat["id"][args[1]]["ID"]}
 require("./command/omikuji.js").run(client , message, db , args)
   } if(command === "game") {
 require("./command/mmo.js").run(client , message , db , args)
+  
   }
 });
 
