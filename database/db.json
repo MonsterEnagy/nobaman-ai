@@ -10,14 +10,14 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": -61183999989898,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 5082,
-      "level": 5034,
-      "hp": 5038,
+      "teki": "モンスターエナジー",
+      "tekihp": -28190720013298,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 6944,
+      "level": 6896,
+      "hp": 6900,
       "tekideath": true,
-      "death": false
+      "death": true
     },
     {
       "id": "551421671332904960",
