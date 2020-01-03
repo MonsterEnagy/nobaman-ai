@@ -296,14 +296,14 @@ module.exports.run = async (client, message, db, args) => {
             message.channel.send(`${message.author.username}はメラを放った！`)
           var strong = strong * 2
           } else if(json.value().level < 200) {
-                        message.channel.send(`${message.author.username}はメラミを放った！`)
-          var strong = strong * 8
+                 message.channel.send(`${message.author.username}はメラミを放った！`)
+         var strong = await  strong * 8
           } else if(json.value().level < 300) {
                                     message.channel.send(`${message.author.username}はメラゾーマを放った！`)
-          var strong = strong * 16
+          var strong = await strong * 16
           } else if(json.value().level < 400) {
           message.channel.send(`${message.author.username}はギラを放った！`)
-          var strong = strong * 32
+          var strong = await strong * 32
           } else if(json.value().level < 500) {
           message.channel.send(`${message.author.username}はベギラマを放った！`);
             var strong = strong * 64
@@ -322,12 +322,28 @@ module.exports.run = async (client, message, db, args) => {
           } else if(json.value().level < 1000) {
           message.channel.send(`${message.author.username}はヒャダインを放った！`);
             var strong = strong * 2048
+          } else if(json.value().level < 2000) {
+                      message.channel.send(`${message.author.username}はマヒャダインを放った！`);
+            var strong = strong * (2048 * 2)
           }
+      }
+            if(json.value().teki === "レッドブル") {
+        var strong = strong * 50000;
       }
       json.assign({ tekihp: json.value().tekihp - strong }).write(); //tekihp - json.strong 
      // console.log(json.value());
 
       if (json.value().tekihp < 0) {
+              if(json.value().teki === "レッドブル"　|| json.value().teki === "レッドブル亜種" || json.value().teki === "モンスターエナジー" || json.value().teki === "モンスターエナジー亜種" || json.value().teki === "ドラゴンブースト") {
+        json
+          .assign({
+            strong: json.value().strong + 100,
+            level: json.value().level + 100,
+            hp: json.value().level + 500,
+            tekideath : true
+          })
+          .write();
+        } else {
         json
           .assign({
             strong: json.value().strong + 1,
@@ -366,6 +382,7 @@ module.exports.run = async (client, message, db, args) => {
         return message.channel.send(
           `攻撃されました！ダメージ${tekistrong}　あなたの残りHPは${json.value().hp}です。\n倒されてしまいました！！Lvが${json.value().level}に下がります！`
         );
+      }
       }
     }
           message.channel.send(
