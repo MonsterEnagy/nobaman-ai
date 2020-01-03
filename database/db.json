@@ -10,12 +10,12 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": -1041057791950730,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
-      "strong": 12252,
-      "level": 12204,
-      "hp": 12208,
+      "teki": "レッドブル亜種",
+      "tekihp": -51644415974716,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 12679,
+      "level": 12629,
+      "hp": 12633,
       "tekideath": true,
       "death": false
     },
