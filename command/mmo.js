@@ -303,8 +303,12 @@ module.exports.run = async (client, message, db, args) => {
           return b[0] - a[0];
       }
 const namearray = [];
-      for (var i = 0; i < json.length; i++) {
+      for (var i = 0; i < 10; i++) {
+        if(!json[i]) {
+          array.push(["いない" , "なし"])
+        } else {
         array.push([json[i].level , client.users.get(json[i].id).username])
+        }
       }
       
       array.sort(compareFunc);
