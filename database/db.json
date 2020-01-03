@@ -10,12 +10,12 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "レッドブル亜種",
-      "tekihp": -51644415974716,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
-      "strong": 12679,
-      "level": 12629,
-      "hp": 12633,
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": -51660799974690,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "strong": 12692,
+      "level": 12642,
+      "hp": 12646,
       "tekideath": true,
       "death": false
     },
