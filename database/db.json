@@ -1,16 +1,4 @@
 {
   "omikuji": [],
-  "mmo": [
-    {
-      "id": "551421671332904960",
-      "teki": "レッドブル亜種",
-      "tekihp": 1225,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
-      "strong": 3.05e+21,
-      "level": 999999999999,
-      "hp": 99999999999999,
-      "tekideath": false,
-      "death": false
-    }
-  ]
+  "mmo": []
 }
