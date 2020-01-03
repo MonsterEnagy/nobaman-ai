@@ -3,13 +3,24 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーLO-CARB",
-      "tekihp": 170,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
-      "strong": 64,
-      "level": 55,
-      "hp": 313,
+      "teki": "レッドブル",
+      "tekihp": 231,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 99,
+      "level": 89,
+      "hp": 355,
       "tekideath": false,
+      "death": false
+    },
+    {
+      "id": "551421671332904960",
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": -3594,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 119,
+      "level": 110,
+      "hp": 114,
+      "tekideath": true,
       "death": false
     }
   ]
