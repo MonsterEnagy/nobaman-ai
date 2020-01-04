@@ -80,14 +80,14 @@
     },
     {
       "id": "550265737449570314",
-      "teki": "ドラゴンブースト",
-      "tekihp": -1383,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 1277,
-      "level": 1260,
-      "hp": 6373,
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": -526442495994989,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 2529,
+      "level": 2512,
+      "hp": 2516,
       "tekideath": true,
-      "death": true
+      "death": false
     },
     {
       "id": "616285021560635413",
