@@ -124,13 +124,13 @@
     },
     {
       "id": "526228166277333024",
-      "teki": "モンスターエナジー",
-      "tekihp": -1721,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 136,
-      "level": 127,
-      "hp": 131,
-      "tekideath": true,
+      "teki": "UNLEADED",
+      "tekihp": 171,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 443,
+      "level": 434,
+      "hp": 0,
+      "tekideath": false,
       "death": false
     },
     {
@@ -146,13 +146,13 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": 79,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 2966,
-      "level": 2943,
-      "hp": 2947,
-      "tekideath": false,
+      "teki": "レッドブル",
+      "tekihp": -715878399999971200,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 3710,
+      "level": 3686,
+      "hp": 4086,
+      "tekideath": true,
       "death": false
     },
     {
