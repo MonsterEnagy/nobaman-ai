@@ -204,6 +204,17 @@
       "hp": 412,
       "tekideath": false,
       "death": false
+    },
+    {
+      "id": "632170937466224640",
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": 72,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 12,
+      "level": 3,
+      "hp": 102,
+      "tekideath": false,
+      "death": false
     }
   ]
 }
