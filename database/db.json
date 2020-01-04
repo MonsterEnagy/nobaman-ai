@@ -68,12 +68,12 @@
     },
     {
       "id": "550265737449570314",
-      "teki": "モンスターエナジー",
-      "tekihp": -10570,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 1168,
-      "level": 1155,
-      "hp": 1159,
+      "teki": "ドラゴンブースト",
+      "tekihp": -1383,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 1277,
+      "level": 1260,
+      "hp": 6373,
       "tekideath": true,
       "death": true
     },
@@ -135,11 +135,11 @@
     {
       "id": "656432104745205760",
       "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -8392159,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
-      "strong": 1037,
-      "level": 1021,
-      "hp": 7236,
+      "tekihp": -7857749,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": 1042,
+      "level": 1026,
+      "hp": 7271,
       "tekideath": true,
       "death": false
     }
