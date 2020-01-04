@@ -5,6 +5,12 @@
       "time": "2020/1/3",
       "nobaman": 1,
       "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "656432104745205760",
+      "time": "2020/1/4",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
     }
   ],
   "mmo": [
@@ -128,14 +134,14 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": 205,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 1028,
-      "level": 1014,
-      "hp": 2043,
-      "tekideath": false,
-      "death": true
+      "teki": "モンスターエナジーTHEDOCTOR",
+      "tekihp": -7994328,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
+      "strong": 1034,
+      "level": 1019,
+      "hp": 7216,
+      "tekideath": true,
+      "death": false
     }
   ]
 }
