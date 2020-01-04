@@ -193,6 +193,17 @@
       "hp": 209,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "600135201812643840",
+      "teki": "モンスターエナジーLO-CARB",
+      "tekihp": 121,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "strong": 313,
+      "level": 304,
+      "hp": 412,
+      "tekideath": false,
+      "death": false
     }
   ]
 }
