@@ -125,6 +125,17 @@
       "hp": 75,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "656432104745205760",
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": 205,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 1028,
+      "level": 1014,
+      "hp": 2043,
+      "tekideath": false,
+      "death": true
     }
   ]
 }
