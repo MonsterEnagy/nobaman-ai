@@ -134,12 +134,12 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -7857749,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 1042,
-      "level": 1026,
-      "hp": 7271,
+      "teki": "モンスターエナジー",
+      "tekihp": -8452694,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 1144,
+      "level": 1128,
+      "hp": 1132,
       "tekideath": true,
       "death": false
     }
