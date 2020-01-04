@@ -34,12 +34,12 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "ドラゴンブースト",
-      "tekihp": -51492863974684,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 12695,
-      "level": 12645,
-      "hp": 12649,
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": -535600,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 12810,
+      "level": 12759,
+      "hp": 12763,
       "tekideath": true,
       "death": false
     },
@@ -152,12 +152,12 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "レッドブル",
-      "tekihp": -715878399999971200,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 3710,
-      "level": 3686,
-      "hp": 4086,
+      "teki": "モンスターエナジーLO-CARB",
+      "tekihp": -52297727973758,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "strong": 4336,
+      "level": 4307,
+      "hp": 4311,
       "tekideath": true,
       "death": false
     },
