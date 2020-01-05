@@ -152,12 +152,12 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -216395775999202,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 6697,
-      "level": 6666,
-      "hp": 6670,
+      "teki": "UNLEADED",
+      "tekihp": -1175142399955921,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 7322,
+      "level": 7288,
+      "hp": 7292,
       "tekideath": true,
       "death": false
     },
