@@ -40,12 +40,12 @@
   "mmo": [
     {
       "id": "331393654612688897",
-      "teki": "ドラゴンブースト",
-      "tekihp": -168538111917271,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 13796,
-      "level": 13744,
-      "hp": 13748,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -112285695944437,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 13801,
+      "level": 13749,
+      "hp": 13753,
       "tekideath": true,
       "death": false
     },
