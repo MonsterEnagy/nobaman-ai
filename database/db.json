@@ -29,6 +29,12 @@
       "time": "2020/1/4",
       "nobaman": 1,
       "omikujinaiyou": "のばまん吉"
+    },
+    {
+      "id": "602367736609374210",
+      "time": "2020/1/5",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
     }
   ],
   "mmo": [
@@ -242,12 +248,12 @@
     },
     {
       "id": "602367736609374210",
-      "teki": "モンスターエナジーCUBALIMA",
-      "tekihp": -174,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
-      "strong": 318,
-      "level": 309,
-      "hp": 2210,
+      "teki": "レッドブル",
+      "tekihp": -36448745,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 522,
+      "level": 512,
+      "hp": 912,
       "tekideath": true,
       "death": false
     }
