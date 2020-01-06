@@ -27,7 +27,7 @@
     {
       "id": "605990379321425923",
       "time": "2020/1/4",
-      "nobaman": 1,
+      "nobaman": 2,
       "omikujinaiyou": "のばまん吉"
     },
     {
@@ -182,12 +182,12 @@
     },
     {
       "id": "605990379321425923",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": -15599,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
-      "strong": 334,
-      "level": 323,
-      "hp": 327,
+      "teki": "ドラゴンブースト",
+      "tekihp": -1258,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 543,
+      "level": 530,
+      "hp": 534,
       "tekideath": true,
       "death": false
     },
