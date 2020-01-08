@@ -38,6 +38,25 @@ module.exports.run = (client , message ,args) => {
   } else {
     img.src = args[0]
   }
+  if(args[1]) {
+    if(args[1] === "1") {
+    img.onload = function(){    
+    var canvas = Canvas.createCanvas(img.width, img.height);
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+    const w = img.width
+    const h = img.height
+    const rate = 0.5
+                    
+                    ctx.drawImage(img, 0, 0, w * rate, h, 0, 0, w * rate, h);
+                    ctx.scale(-1, 1);
+                    ctx.drawImage(img, 0, 0, w * rate, h, -w * (rate * 2), 0, w * rate, h);
+    const attachment = new Discord.Attachment(canvas.toBuffer(), 'Symmetry.png');
+      
+      message.channel.send("シンメトリー" , attachment)
+    }
+    }
+  }
     img.onload = function(){    
     var canvas = Canvas.createCanvas(img.width, img.height);
     var ctx = canvas.getContext('2d');
