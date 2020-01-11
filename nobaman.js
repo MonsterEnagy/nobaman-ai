@@ -679,6 +679,8 @@ require("./command/mmo.js").run(client , message , db , args)
   
   } if(command === "totuzenn") {
     require("./command/totuzenn.js").run(client , message , kekka)
+  } if(command === "sikaku") {
+    require("./command/sikaku.js").run(client , message, kekka)
   }
 });
 
