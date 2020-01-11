@@ -4,11 +4,11 @@ var Canvas = require('canvas');
 const Discord = require("discord.js")
 module.exports.run = (client , message ,args , cooltime) => {
   if(cooltime.includes(message.channel.id)) {
+    message.delete(2000)
     message.channel.send("クールタイム中です。")
     .then(msg => msg.delete(2000))
   } else {
     cooltime.push(message.channel.id)
-    console.log("ぷっしゅ\n" + cooltime)
      /*   function draw(canvasName, source, reverse) {
             var canvas = document.getElementById(canvasName);
             if (!canvas || !canvas.getContext) { return false; }
@@ -83,7 +83,6 @@ module.exports.run = (client , message ,args , cooltime) => {
     }
     setTimeout(function () {
       cooltime.splice(cooltime.indexOf(message.channel.id),1)
-      console.log("削除" , cooltime)
     } , 5000)
   }
 }
