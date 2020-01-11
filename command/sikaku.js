@@ -29,9 +29,9 @@ module.exports.run = (client,message , kekka) => {
 				top += sep_top;
 				bottom += sep_bottom;
 			}
-			top += "＿\r";
+			top += "\r";
 			if(cnt > 1) bottom = bottom.replace(/\^Y$/m,"");
-			bottom += "￣";
+		//	bottom += "￣";
 			str = top + str + bottom;
 			
 message.channel.send(str)
