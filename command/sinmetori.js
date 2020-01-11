@@ -3,7 +3,12 @@ var fs = require('fs');
 var Canvas = require('canvas');
 const Discord = require("discord.js")
 module.exports.run = (client , message ,args , cooltime) => {
-  if()
+  if(cooltime.includes(message.channel.id)) {
+    message.channel.send("クールタイム中です。")
+    .then(msg => msg.delete(2000))
+  } else {
+    cooltime.push(message.channel.id)
+    console.log("ぷっしゅ\n" + cooltime)
      /*   function draw(canvasName, source, reverse) {
             var canvas = document.getElementById(canvasName);
             if (!canvas || !canvas.getContext) { return false; }
@@ -34,10 +39,12 @@ module.exports.run = (client , message ,args , cooltime) => {
     var Image = Canvas.Image;
     
     var img = new Image;
-  if(!args[0]) {
+  if(!args[0] || message.attachments.first()) {
     img.src = message.attachments.first().url;
-  } else {
+  } else if(args[0]){
     img.src = args[0]
+  } else {
+    return message.channel.send("画像を確認できませんでした")
   }
   if(args[1]) {
     if(args[1] === "1") {
@@ -74,4 +81,9 @@ module.exports.run = (client , message ,args , cooltime) => {
       
       message.channel.send("シンメトリー" , attachment)
     }
+    setTimeout(function () {
+      cooltime.splice(cooltime.indexOf(message.channel.id),1)
+      console.log("削除" , cooltime)
+    } , 5000)
+  }
 }
