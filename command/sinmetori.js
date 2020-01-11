@@ -2,7 +2,8 @@
 var fs = require('fs');
 var Canvas = require('canvas');
 const Discord = require("discord.js")
-module.exports.run = (client , message ,args) => {
+module.exports.run = (client , message ,args , cooltime) => {
+  if()
      /*   function draw(canvasName, source, reverse) {
             var canvas = document.getElementById(canvasName);
             if (!canvas || !canvas.getContext) { return false; }

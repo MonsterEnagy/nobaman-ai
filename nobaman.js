@@ -9,7 +9,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
 const adapter = new FileSync("database/db.json");
-
+const cooltime = [];
 const db = low(adapter);
 db.defaults({
   omikuji: [],
@@ -628,7 +628,7 @@ ID : ${chat["id"][args[1]]["ID"]}
   if (command === "sin") {
     if (!args[0] && !message.attachments.size === 0)
       return message.channel.send("画像を指定してください");
-    require("./command/sinmetori.js").run(client, message, args);
+    require("./command/sinmetori.js").run(client, message, args ,cooltime);
   }
   if (command === "color") {
     if (!args[0] && !message.attachments.size === 0)
