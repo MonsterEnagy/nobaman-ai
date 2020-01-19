@@ -50,11 +50,12 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
-  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す"]
+  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す", "しね" , "死ね" , "氏ね" , "パンツ" , "ぱんつ" , "パンティー" , "まんこ" , "まんまん" , "まん" , "精子" , "せいし" , "ちんこ" , "人でなし" , "クズ" , "くず" , "ばか" , "ばーか" , "ばか" , "らんし" , "卵子" , "おっぱい", "胸" , "夜の営み" , "きも" ,  "雑魚"]
   
   for(var i = 0; filter.length > i; i++) {
     if(message.content.includes(filter[i])) {
-      return message.channel.send("禁止ワードを言わないでください")
+      return message.channel.send("禁止ワードを言わないでください");
+      break;
     }
   }
   request(
@@ -101,7 +102,15 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
-        }  else message.channel.send(body.text);
+        }  else {
+            for(var i = 0; filter.length > i; i++) {
+    if(message.content.includes(filter[i])) {
+      return message.channel.send("禁止ワードが入っていたので規制しました")
+      break;
+    }
+  }
+          message.channel.send(body.text);
+        }
       }
     }
   );
