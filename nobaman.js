@@ -156,8 +156,20 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
-  if(message.channel.id === "668388343016587281") {
-  AIrequest(message.content , message)
+  if(message.channel.id === "302627651036774401") {
+    const request = require("request")
+    request(
+    {
+      url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
+        process.env.nobyapi
+      }&text=${encodeURIComponent(message.content)}&study=1&persona=${Math.floor(
+        Math.random() * 4
+      )}`,
+      method: "GET",
+      json: true
+    },    (err, response, body) => {
+      console.log(body.text)
+    })
   }
   if (message.author.bot || !message.guild) return;
   console.log(
