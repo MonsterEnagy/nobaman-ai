@@ -156,6 +156,9 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
+  if(message.channel.id === "668388343016587281") {
+  AIrequest(message.content , message)
+  }
   if (message.author.bot || !message.guild) return;
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
