@@ -50,7 +50,7 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
-  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す", "しね" , "死ね" , "氏ね" , "パンツ" , "ぱんつ" , "パンティー" , "まんこ" , "まんまん" , "まん" , "精子" , "せいし" , "ちんこ" , "人でなし" , "クズ" , "くず" , "ばか" , "ばーか" , "ばか" , "らんし" , "卵子" , "おっぱい", "胸" , "夜の営み" , "きも" ,  "雑魚"]
+  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す", "しね" , "死ね" , "氏ね" , "パンツ" , "ぱんつ" , "パンティー" , "まんこ" , "まんまん" , "精子" , "せいし" , "ちんこ" , "人でなし" , "クズ" , "くず" , "ばか" , "ばーか" , "ばか" , "らんし" , "卵子" , "おっぱい", "胸" , "夜の営み" , "きも" ,  "雑魚", "ざこ" , "えっち" , "エッチ"]
   
   for(var i = 0; filter.length > i; i++) {
     if(message.content.includes(filter[i])) {
@@ -702,6 +702,8 @@ require("./command/mmo.js").run(client , message , db , args)
       message.channel.messages.get(args[0]).delete()
     message.channel.send("削除しました。")
     .then(msg => msg.delete(2500))
+  }if(command === "poll") {
+    require("./command/poll.js").run(client , message , args)
   }
 });
 
