@@ -168,7 +168,7 @@ client.on("message", async message => {
       method: "GET",
       json: true
     },    (err, response, body) => {
-      console.log(body.text)
+      client.channels.get("661139923872645150").send(body.text　+ "(chat")
     })
   }
   if (message.author.bot || !message.guild) return;
