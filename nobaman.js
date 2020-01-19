@@ -706,7 +706,8 @@ require("./command/mmo.js").run(client , message , db , args)
     require("./command/poll.js").run(client , message , args)
   } if(command === "test"){
   await message.member.voiceChannel.join()
- message.member.voiceChannel.connection.playFile("./1579420580624.wav")
+
+ message.member.voiceChannel.connection.playFile("./1579421655089.wav")
   
   }
  }
