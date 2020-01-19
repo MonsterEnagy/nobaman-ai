@@ -50,6 +50,13 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
+  const filter = ["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av"]
+  
+  for(var i = 0; filter.length > i; i++) {
+    if(message.content.includes(filter[i])) {
+      return message.channel.send("禁止ワードを言わないでください")
+    }
+  }
   request(
     {
       url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
@@ -94,9 +101,7 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
-        } else if (ransuu == 1) {
-          message.channel.send("人間って、愚かだ。");
-        } else message.channel.send(body.text);
+        }  else message.channel.send(body.text);
       }
     }
   );
