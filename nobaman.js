@@ -50,7 +50,7 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
-  const filter = ["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av"]
+  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す"]
   
   for(var i = 0; filter.length > i; i++) {
     if(message.content.includes(filter[i])) {
@@ -302,6 +302,7 @@ client.on("message", async message => {
         )
       .addField("おみくじ" , "`!n omikuji`でおみくじを一日一回のみ引くことが出来ます\nまた、`!n omikuji ranking`でランキングを見ることが出来ます")
       .addField("ゲーム" , "`!n game`でゲームのhelpが見れます")
+      .addField("誤爆用コマンド" , "imgなどで誤爆してしまった時は`!n delete (メッセージID)`でメッセージを消せます。このBOTのメッセージ限定です。")
         .setColor("#b9c42f");
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
@@ -686,6 +687,12 @@ require("./command/mmo.js").run(client , message , db , args)
     require("./command/totuzenn.js").run(client , message , kekka)
   } if(command === "sikaku") {
     require("./command/sikaku.js").run(client , message, kekka)
+  } if(command === "delete") {
+    if(!args[0] || !message.channel.messages.get(args[0])) return message.channel.send("メッセージIDがわかりませんでした");
+    if(message.channel.messages.get(args[0]).author.id !== client.user.id) return message.channel.send(`\`${client.user.username}\`のメッセージだけを削除できます。`)
+      message.channel.messages.get(args[0]).delete()
+    message.channel.send("削除しました。")
+    .then(msg => msg.delete(2500))
   }
 });
 
