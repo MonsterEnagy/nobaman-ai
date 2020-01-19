@@ -20,7 +20,7 @@ if (!message.member.voiceChannel) {
     .speaker(voice.SPEAKER.SHOW)
     .emotion(voice.EMOTION.HAPPINESS)
     .emotion_level(voice.EMOTION_LEVEL.HIGH)
-    .volume(100)
+    .volume(200)
     .speak(yomiage,   (e, buf) => {
       if (e) {
         console.error(e);
@@ -39,12 +39,12 @@ if (!message.member.voiceChannel) {
         }
         const dispatcher = connection.playFile(`./${now}.wav`);
          console.log(dispatcher.time);
-        dispatcher.on("finish", reason => {
+      /*  dispatcher.on("finish", reason => {
             message.channel.send("終わり")
             fs.unlink(`./${now}.wav`, err => {
               if (err) console.log(err);
             });
-          });
+          });*/
         });
        });
   cooldown.delete(message.author.id);
