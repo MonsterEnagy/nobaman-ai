@@ -168,6 +168,7 @@ client.on("message", async message => {
       method: "GET",
       json: true
     },    (err, response, body) => {
+      if(body.text === undefined) return;
       client.channels.get("661139923872645150").send(body.text　+ "(chat")
     })
   }
