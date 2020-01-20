@@ -720,11 +720,8 @@ require("./command/mmo.js").run(client , message , db , args)
     .then(msg => msg.delete(2500))
   }if(command === "poll") {
     require("./command/poll.js").run(client , message , args)
-  } if(command === "test"){
-  await message.member.voiceChannel.join()
-
- message.member.voiceChannel.connection.playFile("./1579421655089.wav")
-  
+  } if(command === "imgsin"){
+require("./command/imgsin.js").run(client , message , kekka,cooltime)
   }
  }
   );
