@@ -740,8 +740,8 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     const syuusyokugo = db.kotoba.syuusyokugo
     const syuusyokugo2 = db.kotoba.syuusyokugo
     
-    const str = syuusyokugo + syugo + syuusyokugo2 + jyutugo
-    message.channel.send(`${str.join()}`)
+    const str = [ syugo , jyutugo , syuusyokugo]
+    message.channel.send(`${str.join("|")}`)
     }
  }
 });
