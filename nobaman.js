@@ -734,44 +734,7 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     message.channel.send(`${str}。`)
   } else if(args[0] === "create") {
     const bun = require("./command/buncreate.js").run(client,message,db)
-    console.log("通った")
-  message.channel.send("どんな単語を教えますか？\n`主語` `述語` `修飾語`")
-      message.channel.send("単語を言ってください")
-const filter = m => message.channel.id === m.channel.id
-// Errors: ['time'] treats ending because of the time limit as an error
-message.channel.awaitMessages(filter, {
-          max: 1,
-          time: 15 * 1000,
-          errors: ["time"]})
-  .then(collected => {
-  console.log("コレクト")
-  if(collected.first().content === "主語") {
-    message.channel.send("主語モード")
-    var mode = "syugo"
-  }
-    if(collected.first().content === "述語") {
-     message.channel.send("述語モード")
-    var mode = "jyutugo"
-  }
-    if(collected.first().content === "修飾語") {
-     message.channel.send("修飾語モード")
-    var mode = "syusyokugo"
-  }
-
-  message.channel.awaitMessages(filter, { max: 1,         time: 300000000,
-          errors: ['time']})
-  .then(collected => {
-    db[mode].push(collected.first().content)
-    message.channel.send(`追加しました\`${collected.first().content}\``)
-  })  .catch(collected => message.channel.send("キャンセル"));
-/*  const kotoba = db.kotoba
-  kotoba[mode].push()*/
-})
-  .catch(collected => message.channel.send("キャンセル"));
-      fs.writeFile("./database/db.json", JSON.stringify(db), err => {
-    if (err) console.log(err);
-  });
-  }
+    }
  }
 });
 
