@@ -724,17 +724,24 @@ require("./command/mmo.js").run(client , message , db , args)
 require("./command/imgsin.js").run(client , message , kekka,cooltime)
   } if(command === "bun") {
     const db = require("./database/db.json")
-    
+    if(!args[0]) {
     const syugo = db.kotoba.syugo[Math.floor(Math.random() * db.kotoba.syugo.length)]
     const jyutugo = db.kotoba.jyutugo[Math.floor(Math.random() * db.kotoba.jyutugo.length)]
     const syuusyokugo = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
     const syuusyokugo2 = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
     
-    const str = syugo + jyutugo + syuusyokugo + syuusyokugo2
-  //  message.channel.send(`${str}。`)
+    const str = syuusyokugo + syugo + syuusyokugo2 + jyutugo
+    message.channel.send(`${str}。`)
+  } else if(args[1] === "create") {
+    // Await !vote messages
+const filter = m => message.channel.id === m.channel.id
+// Errors: ['time'] treats ending because of the time limit as an error
+message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
+  .then(collected => console.log(collected.size))
+  .catch(collected => message.channel.send("キャンセル"));
   }
  }
-  );
+});
 
 client.login(process.env.token);
 
