@@ -151,5 +151,11 @@
       "tekideath": true,
       "death": false
     }
-  ]
+  ],
+  "kotoba": {
+    "syuusyokugo": [],
+    "syugo": [],
+    "syuusyokugo2": [],
+    "jyutugo": []
+  }
 }

@@ -722,6 +722,16 @@ require("./command/mmo.js").run(client , message , db , args)
     require("./command/poll.js").run(client , message , args)
   } if(command === "imgsin"){
 require("./command/imgsin.js").run(client , message , kekka,cooltime)
+  } if(command === "bun") {
+    const db = require("./database/db.json")
+    
+    const syugo = db.kotoba.syugo[Math.floor(Math.random() * db.kotoba.syugo.length)]
+    const jyutugo = db.kotoba.jyutugo[Math.floor(Math.random() * db.kotoba.jyutugo.length)]
+    const syuusyokugo = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
+    const syuusyokugo2 = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
+    
+    const str = syugo + jyutugo + syuusyokugo + syuusyokugo2
+  //  message.channel.send(`${str}。`)
   }
  }
   );
