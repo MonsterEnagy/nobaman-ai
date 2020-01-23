@@ -734,6 +734,14 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     message.channel.send(`${str}。`)
   } else if(args[0] === "create") {
     const bun = require("./command/buncreate.js").run(client,message,db)
+    } else if(args[0] === "list") {
+    const syugo = db.kotoba.syugo
+    const jyutugo = db.kotoba.jyutugo
+    const syuusyokugo = db.kotoba.syuusyokugo
+    const syuusyokugo2 = db.kotoba.syuusyokugo
+    
+    const str = syuusyokugo + syugo + syuusyokugo2 + jyutugo
+    message.channel.send(`${str.join()}`)
     }
  }
 });
