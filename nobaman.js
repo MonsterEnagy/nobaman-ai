@@ -156,39 +156,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
-  if(message.channel.id === "302627651036774401") {
-    const request = require("request")
-    request(
-    {
-      url: `https://app.cotogoto.ai/webapi/noby.json?appkey=${
-        process.env.nobyapi
-      }&text=${encodeURIComponent(message.content)}&study=1&persona=${Math.floor(
-        Math.random() * 4
-      )}`,
-      method: "GET",
-      json: true
-    },    (err, response, body) => {
-      if(body.text === undefined) return;
-      var kuromoji = require('kuromoji');
 
-// この builder が辞書やら何やらをみて、形態素解析機を造ってくれるオブジェクトです。
-var builder = kuromoji.builder({
-  // ここで辞書があるパスを指定します。今回は kuromoji.js 標準の辞書があるディレクトリを指定
-  dicPath: 'app/node_modules/kuromoji/dist/dict'
-});
-
-// 形態素解析機を作るメソッド
-builder.build(function(err, tokenizer) {
-  // 辞書がなかったりするとここでエラーになります(´・ω・｀)
-  if(err) { throw err; }
-
-  // tokenizer.tokenize に文字列を渡すと、その文を形態素解析してくれます。
-  var tokens = tokenizer.tokenize("今日は森へ行った");
-  console.dir(tokens);
-});
-      client.channels.get("661139923872645150").send(body.text　+ "(chat")
-    })
-  }
   if (message.author.bot || !message.guild) return;
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
