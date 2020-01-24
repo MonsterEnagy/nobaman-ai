@@ -73,7 +73,7 @@ img.src = results[0].url
     }
     setTimeout(function () {
       cooltime.splice(cooltime.indexOf(message.channel.id),1)
-    } , 5000)
+    } , 20000)
   }
 }
       }
