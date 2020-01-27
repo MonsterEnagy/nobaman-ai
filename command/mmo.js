@@ -27,8 +27,7 @@ mmo : [
 */
 module.exports.run = async (client, message, db, args) => {
   var json = db.get("mmo").find({ id: message.author.id });
-  var strong = json.value().hp + json.value().level
-  var tekistrong = Math.floor(json.value().hp / json.value().level) + 9;
+
   var tekijson = require("../database/teki.json");
   if (args[0] === "attack") {
     //console.log("通ってる");
@@ -111,6 +110,8 @@ module.exports.run = async (client, message, db, args) => {
     } else if (json.value().death === true || json.value().tekideath === true) {
       //------------------------------------------------------------------------------------------------------------------------------------
       // console.log("!json.tekiでーす");
+        var strong = json.value().hp + json.value().level
+  var tekistrong = Math.floor(json.value().hp / json.value().level) + 9;
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
       const teki = tekijson.teki[tekidice];
       var json = db.get("mmo").find({ id: message.author.id });
