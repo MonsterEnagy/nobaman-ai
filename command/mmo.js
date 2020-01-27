@@ -316,7 +316,8 @@ module.exports.run = async (client, message, db, args) => {
         Math.floor(Math.random() * 500);
       }
           if(args[1]) {*/
-
+  var strong = json.value().hp + json.value().level
+  var tekistrong = Math.floor(json.value().hp / json.value().level) + 9;
       if (json.value().level < 100) {
         message.channel.send(`${message.author.username}はメラを放った！`);
         var strong = Math.floor(strong * 12);

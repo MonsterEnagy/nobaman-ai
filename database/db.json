@@ -174,6 +174,17 @@
       "hp": 173,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "656432104745205760",
+      "teki": "モンスターエナジーUNLEADED亜種",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
+      "strong": 13,
+      "level": 3,
+      "hp": null,
+      "tekideath": false,
+      "death": false
     }
   ],
   "kotoba": {
