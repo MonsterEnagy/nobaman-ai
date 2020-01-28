@@ -202,6 +202,17 @@
       "hp": null,
       "tekideath": false,
       "death": false
+    },
+    {
+      "id": "653031551616942101",
+      "teki": "ドラゴンブースト",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 13,
+      "level": 3,
+      "hp": null,
+      "tekideath": false,
+      "death": false
     }
   ],
   "kotoba": {
