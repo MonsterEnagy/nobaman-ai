@@ -205,12 +205,12 @@
     },
     {
       "id": "653031551616942101",
-      "teki": "モンスターエナジーTHEDOCTOR",
-      "tekihp": -1566,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
-      "strong": 207,
-      "level": 197,
-      "hp": 201,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -394,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 210,
+      "level": 200,
+      "hp": 204,
       "tekideath": true,
       "death": false
     }
