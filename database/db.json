@@ -211,12 +211,23 @@
     },
     {
       "id": "653031551616942101",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -20455,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 262,
-      "level": 252,
-      "hp": 256,
+      "teki": "ドラゴンブースト",
+      "tekihp": -34337,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 291,
+      "level": 281,
+      "hp": 285,
+      "tekideath": true,
+      "death": false
+    },
+    {
+      "id": "602367736609374210",
+      "teki": "モンスターエナジーLO-CARB",
+      "tekihp": -1779,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "strong": 25,
+      "level": 16,
+      "hp": 20,
       "tekideath": true,
       "death": false
     }
