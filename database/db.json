@@ -212,11 +212,11 @@
     {
       "id": "653031551616942101",
       "teki": "ドラゴンブースト",
-      "tekihp": -34337,
+      "tekihp": -54542,
       "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 291,
-      "level": 281,
-      "hp": 285,
+      "strong": 294,
+      "level": 284,
+      "hp": 288,
       "tekideath": true,
       "death": false
     },
