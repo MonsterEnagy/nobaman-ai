@@ -233,12 +233,12 @@
     },
     {
       "id": "331393654612688897",
-      "teki": "モンスターエナジーUNLEADED亜種",
-      "tekihp": -53516,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
-      "strong": 364,
-      "level": 355,
-      "hp": 359,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -587079,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 528,
+      "level": 519,
+      "hp": 523,
       "tekideath": true,
       "death": false
     }
