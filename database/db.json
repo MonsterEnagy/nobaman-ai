@@ -234,11 +234,11 @@
     {
       "id": "331393654612688897",
       "teki": "モンスターエナジー亜種",
-      "tekihp": -587079,
+      "tekihp": -709317,
       "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 528,
-      "level": 519,
-      "hp": 523,
+      "strong": 533,
+      "level": 524,
+      "hp": 528,
       "tekideath": true,
       "death": false
     }
