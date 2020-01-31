@@ -230,6 +230,17 @@
       "hp": 20,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "331393654612688897",
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -3572,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 136,
+      "level": 127,
+      "hp": 131,
+      "tekideath": true,
+      "death": false
     }
   ],
   "kotoba": {
