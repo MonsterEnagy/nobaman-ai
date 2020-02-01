@@ -189,12 +189,12 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -2958,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 107,
-      "level": 96,
-      "hp": 100,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -1093,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 206,
+      "level": 195,
+      "hp": 199,
       "tekideath": true,
       "death": false
     },
