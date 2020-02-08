@@ -12,9 +12,9 @@ const result = await customSearch.cse.list({
   safe: 'high',
   num: 1, // max:10
   start:  1,
-});
-console.log(result)
-  
+})
+  JSON.parse(result)
+  console.log(result.data.items[0])
   let embed = new Discord.RichEmbed()
-  .setImage(result.queries.item[0].link)
+  .setImage(result.data.items[0].link)
 }
