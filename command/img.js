@@ -13,8 +13,8 @@ const result = await customSearch.cse.list({
   num: 1, // max:10
   start:  1,
 })
-  JSON.parse(result)
   console.log(result.data.items[0])
   let embed = new Discord.RichEmbed()
   .setImage(result.data.items[0].link)
+  message.channel.send(embed)
 }
