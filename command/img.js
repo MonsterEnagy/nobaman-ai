@@ -5,18 +5,16 @@ module.exports.run = async (client , message , kekka) => {
 const customSearch = google.customsearch('v1');
 
 const result = await customSearch.cse.list({
-  cx: CSE_ID,
+  cx: "017747817608970459373:tm6z5slxh6g",
   q: kekka,
   auth: "AIzaSyAG0L1cTYEh-5f7puZgGGdp_XxIWBKqATE",
   searchType: 'image',
   safe: 'high',
-  num: searchNum, // max:10
-  start: startIndex + 1,
+  num: 1, // max:10
+  start:  1,
 });
-  if(results.length === 0) return message.channel.send("画像が見つかりませんでした")
-    let embed = new Discord.RichEmbed()
-    .setImage(results[0].url)
-   message.channel.send(embed)
-  }
-}
+console.log(result)
+  
+  let embed = new Discord.RichEmbed()
+  .setImage(result.queries.item[0].link)
 }
