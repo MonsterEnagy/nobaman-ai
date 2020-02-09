@@ -729,7 +729,7 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     message.channel.send(`${str.join("|")}`)
     }
  } else if(command === "youtube") {
-   require("./command/imgsin.js").run(client , message , kekka)
+   require("./command/youtube.js").run(client , message , kekka)
  }
 });
 
