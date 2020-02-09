@@ -2,7 +2,7 @@
 var fs = require('fs');
 var Canvas = require('canvas');
 const Discord = require("discord.js")
-module.exports.run = (client , message ,kekka , cooltime) => {
+module.exports.run = async (client , message ,kekka , cooltime) => {
   if(cooltime.includes(message.channel.id)) {
     message.delete(2000)
     message.channel.send("クールタイム中です。")
@@ -36,22 +36,24 @@ module.exports.run = (client , message ,kekka , cooltime) => {
         }
 */
     const Discord = require("discord.js")
-  const gis = require("g-i-s");
-  gis(kekka , logResults);
+ 
+  const { google } = require('googleapis');
+const customSearch = google.customsearch('v1');
 
-function logResults(error, results) {
-  if (error) {
-    console.log(error);
-  }
-  else {
-    if(results.length === 0) return message.channel.send("画像が見つかりませんでした")
-
-
+const result = await customSearch.cse.list({
+  cx: "017747817608970459373:tm6z5slxh6g",
+  q: kekka,
+  auth: "AIzaSyAG0L1cTYEh-5f7puZgGGdp_XxIWBKqATE",
+  searchType: 'image',
+  safe: 'high',
+  num: 1, // max:10
+  start:  1,
+})
 
     var Image = Canvas.Image;
     
     var img = new Image;
-img.src = results[0].url
+img.src = result.data.items[0].link
 
     img.onload = function(){    
     var canvas = Canvas.createCanvas(img.width, img.height);
@@ -67,14 +69,12 @@ img.src = results[0].url
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'Symmetry.png');
       let embed = new Discord.RichEmbed()
       .setTitle("通常")
-      .setImage(results[0].url)
+      .setImage(result.data.items[0].link)
       message.channel.send(embed)
       message.channel.send("シンメトリー" , attachment)
     }
     setTimeout(function () {
       cooltime.splice(cooltime.indexOf(message.channel.id),1)
-    } , 20000)
+    } , 5000)
   }
-}
-      }
 }
