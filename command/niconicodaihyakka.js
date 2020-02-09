@@ -8,7 +8,7 @@ const options = {
 };
 rp.get('https://dic.nicovideo.jp/a/' + encodeURIComponent(kekka),  options)
   .then(($) => {
-  console.log($("ul" , "article").text())
+  console.log($("title").text())
   //  return $('title').text();
   })/*.then((title) => {
     console.log(title);
