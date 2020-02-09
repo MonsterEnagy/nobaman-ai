@@ -6,7 +6,6 @@ var options = {
   json: true
 } 
   request(options, function (error, response, body) {
-    console.log(body)
     if(!body.items.length === 0) {
             message.channel.send('予期せぬエラーが発生しました。');
       return;

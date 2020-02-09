@@ -1,13 +1,20 @@
-const request = require("request")
+const rp = require('request-promise');
+const cheerio = require('cheerio');
 module.exports.run = async (client,message,kekka)=> {
-var options = {
-  url: `https://dic.nicovideo.jp/a/${encodeURIComponent(kekka)}`,
-  method: 'get',
-  json: true
-} 
- request(options, function (error, response, body) {
-    console.log(body)
+const options = {
+  transform: (body) => {
+    return cheerio.load(body);
+  }
+};
+rp.get('https://dic.nicovideo.jp/a/' + encodeURIComponent(kekka),  options)
+  .then(($) => {
+  console.log($("page-menu"))
+  //  return $('title').text();
+  })/*.then((title) => {
+    console.log(title);
+  }).catch((error) => {
+    console.error('Error:', error);
+  });*/
 
-  });
 
 }
