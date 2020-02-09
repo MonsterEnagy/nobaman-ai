@@ -730,6 +730,8 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     }
  } else if(command === "youtube") {
    require("./command/youtube.js").run(client , message , kekka)
+ } else if(command === "nico") {
+   require("./command/niconicodaihyakka").run(client,message,kekka)
  }
 });
 
