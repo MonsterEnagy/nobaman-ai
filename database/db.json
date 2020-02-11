@@ -140,9 +140,9 @@
     },
     {
       "id": "357081212688269312",
-      "time": "2020/1/25",
+      "time": "2020/2/11",
       "nobaman": 1,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "662972379953365032",
@@ -306,6 +306,17 @@
       "level": 524,
       "hp": 528,
       "tekideath": true,
+      "death": false
+    },
+    {
+      "id": "357081212688269312",
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 13,
+      "level": 3,
+      "hp": null,
+      "tekideath": false,
       "death": false
     }
   ],
