@@ -8,7 +8,7 @@
     },
     {
       "id": "656432104745205760",
-      "time": "2020/2/19",
+      "time": "2020/2/20",
       "nobaman": 1,
       "omikujinaiyou": "末吉"
     },
@@ -279,12 +279,12 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "UNLEADED",
-      "tekihp": -7251,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 615,
-      "level": 604,
-      "hp": 608,
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": -7275,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 617,
+      "level": 606,
+      "hp": 610,
       "tekideath": true,
       "death": false
     },
