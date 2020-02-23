@@ -7,13 +7,13 @@ const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-const description = [];
 const adapter = new FileSync("database/db.json");
 const cooltime = [];
 const db = low(adapter);
 db.defaults({
   omikuji: [],
-  mmo : []
+  mmo : [],
+  help : [] 
 }).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
@@ -279,7 +279,7 @@ client.on("message", async message => {
     .slice(prefix.length + command.length);
 
   if (command === "help") {
- require("./command/help.js").run(client , message, args , description)
+ require("./command/help.js").run(client , message, args , db)
   } if (command === "todo") {
     
     /*json構造
