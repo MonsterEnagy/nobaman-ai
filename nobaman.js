@@ -158,6 +158,11 @@ client.on("guildDelete", guild => {
 client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
+  if(message.guild.id === "302627651036774401") {
+    if(!db.get("point").find({ id: message.author.id })) {
+      db.get("point").push({id : message.author.id,point:0})
+    }
+  }
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
@@ -677,7 +682,47 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
 ・誕生日の話（誕生日にまつわる話など）
 ・その他好きな○○（食べ物や芸能人など）の話 `.split("・")
    message.channel.send(wadai[Math.floor(Math.random() * wadai.length)])
- }
+ }else if(command === "point") {
+  if(!message.author.id === process.env.ownerID)  return;
+   /*
+   db: {
+   point : [{
+{
+id : "monnenamonnena",
+point : "-999"
+}
+   }]
+   }
+   */
+if(!args[0]) {
+        const json = require("../database/db.json");
+      const array = [];
+      function compareFunc(a, b) {
+          return b[0] - a[0];
+      }
+const namearray = [];
+      for (var i = 0; i < json.point.length; i++) {
+        array.push([json.point[i].point , client.users.get(json.point[.id).username])
+      }
+      
+      array.sort(compareFunc);
+      
+      var name = [];
+      let embed = new Discord.RichEmbed()
+      .setTitle("ポイントランキング")
+      .addField("1位:" +array[0][1], array[0][0])
+      .addField("2位:" +array[1][1], array[1][0])
+      .addField("3位:" +array[2][1], array[2][0])
+      .addField("4位:" +array[3][1], array[3][0])
+      .addField("5位:" +array[4][1], array[4][0])
+      .addField("6位:" +array[5][1], array[5][0])
+      .addField("7位:" +array[6][1], array[6][0])
+      .addField("8位:" +array[7][1], array[7][0])
+      .addField("9位:" +array[8][1], array[8][0])
+      .addField("10位:"+array[9][1], array[9][0])
+      message.channel.send(embed)
+}
+  }
 });
 
 client.login(process.env.token);
