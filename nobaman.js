@@ -695,14 +695,14 @@ point : "-999"
    }
    */
 if(!args[0]) {
-        const json = require("../database/db.json");
+        const json = require("./database/db.json");
       const array = [];
       function compareFunc(a, b) {
           return b[0] - a[0];
       }
 const namearray = [];
       for (var i = 0; i < json.point.length; i++) {
-        array.push([json.point[i].point , client.users.get(json.point[.id).username])
+        array.push([json.point[i].point , client.users.get(json.point[i].id).username])
       }
       
       array.sort(compareFunc);
@@ -721,6 +721,15 @@ const namearray = [];
       .addField("9位:" +array[8][1], array[8][0])
       .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
+} if(args[0] === "op") {
+  if(!args[1] || !message.guild.members.get(args[1])) return message.channel.send("人物のIDを指定してください")
+  if(!args[2].startsWith("+") && !args[2].startsWith("-")) return message.channel.send("+か-から始めてください")
+  if(args[2].startsWith("+")) {
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).point.value() + Number(args[2].slice(1))})
+  } else {
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).point.value() - Number(args[2].slice(1))})
+  }
+message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).point.value()}です。`)
 }
   }
 });

@@ -383,6 +383,26 @@
       "hp": null,
       "tekideath": false,
       "death": false
+    },
+    {
+      "id": "552359526439845913",
+      "teki": "モンスターエナジーUNLEADED亜種",
+      "tekihp": -7,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
+      "strong": 13,
+      "level": 4,
+      "hp": 8,
+      "tekideath": true,
+      "death": false
+    },
+    {
+      "id": "497368265514024960",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "kotoba": {
