@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args , description) => {
 const benri = ["memo" , "todo" , "userinfo" , "news" , "weather" , "bun" , "poll" , "sikaku" , "totuzenn"]
 const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , "omikuji" , "nobamanchat" , "wadai" , "youtube" , "moji"]
      if (!args[0]) {
@@ -10,7 +10,10 @@ const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , 
         .addField("便利系", `\`${benri.join("` `")}\``)
       message.channel.send(embed);
     } else {
-const 
+let embed = new Discord.RichEmbed()
+.setTitle(`${args[0]}の機能`)
+.setDescription(description[1])
+message.channel.send(embed)
     }
   
   /*else if (args[0] === "fortnite") {

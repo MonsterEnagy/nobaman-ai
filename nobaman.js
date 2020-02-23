@@ -7,7 +7,7 @@ const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-
+const description = [];
 const adapter = new FileSync("database/db.json");
 const cooltime = [];
 const db = low(adapter);
@@ -163,7 +163,7 @@ client.on("message", async message => {
   );
   if (know.length != 0 || unknow.length != 0) {
     // console.log("通ってる" + `${know},${unknow}`);
-    if (unknow[0] === message.channel.id) {
+    if (unknow[0] === message.author.id) {
       //console.log("知らない分岐点" + `${know},${unknow}`);
       message.channel.send(`
 			へぇ~！\n\`\`\`${message.content}\`\`\`\nって意味なんだ！のばまん覚えるよ！\n\
@@ -178,7 +178,7 @@ client.on("message", async message => {
       tisikilength(message);
       unknow = []; //知らないフラグ
       know = []; //知ってるフラグ
-    } else if (know[0] === message.channel.id && know[2] === "flag") {
+    } else if (know[0] === message.author.id && know[2] === "flag") {
       //console.log("知ってる分岐点2" + `${know},${unknow}`);
       message.channel.send(`
 			へぇ~！\n\`\`\`${
@@ -195,14 +195,14 @@ client.on("message", async message => {
       tisikilength(message);
       unknow = []; //知らないフラグ
       know = []; //知ってるフラグ
-    } else if (know[0] === message.channel.id && message.content === "違うよ") {
+    } else if (know[0] === message.author.id && message.content === "違うよ") {
       //console.log("知ってる分岐点" + `${know},${unknow}`);
       message.channel.send(
         "ええええ、違ったの！？じゃあ、間違ってない知識を教えてくれませんか・・・(懇願)\n `チュートリアル:この後に意味を書くとのばまんが覚えてくれます。`"
       );
       unknow = []; //知らないフラグ
-      know = [message.channel.id, know[1], "flag"]; //知ってるフラグ
-    } else if (know[0] === message.channel.id && message.content !== "違うよ") {
+      know = [message.author.id, know[1], "flag"]; //知ってるフラグ
+    } else if (know[0] === message.author.id && message.content !== "違うよ") {
       message.channel.send("なんだ、よかった");
       unknow = []; //知らないフラグ
       know = []; //知ってるフラグ
@@ -220,12 +220,12 @@ client.on("message", async message => {
         `\`${tango}\`ってなんですか？教えてくれえぇぇぇ！(魂の解放)\n\`チュートリアル:この後に意味を書くとのばまんが覚えてくれます。\``
       );
 
-      unknow = [message.channel.id, tango, message.author.tag];
+      unknow = [message.author.id, tango, message.author.tag];
     } else {
       message.channel.send(
         `それなら知ってるよ!\`${tisiki[tango].server}\`の\`${tisiki[tango].hito}\`さんが教えてくれたんだ！\n\`\`\`${tisiki[tango].imi}\`\`\`\nだよね!\n違ったら\`違うよ\`って言ってな`
       );
-      know = [message.channel.id, tango];
+      know = [message.author.id, tango];
     }
   }
 
@@ -279,7 +279,7 @@ client.on("message", async message => {
     .slice(prefix.length + command.length);
 
   if (command === "help") {
- require("./command/help.js").run(client , message, args)
+ require("./command/help.js").run(client , message, args , description)
   } if (command === "todo") {
     /*json構造
     id : {
