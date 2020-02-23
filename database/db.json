@@ -478,72 +478,72 @@
       "description": "話題をランダムで送信してくれる機能です"
     },
     {
-      "command" : "fortnite",
-      "description" : "fortnite関連の機能\n`!n fortnite stats (人の名前)`で戦績\n`!n fortnite shop`で今日のショップが見れる（連続投稿注意）"
+      "command": "fortnite",
+      "description": "fortnite関連の機能\n`!n fortnite stats (人の名前)`で戦績\n`!n fortnite shop`で今日のショップが見れる（連続投稿注意）"
     },
     {
-      "command" : "Symmetry",
-      "description" : "画像またはURLを入れるとシンメトリーにして帰ってくる機能"
+      "command": "Symmetry",
+      "description": "画像またはURLを入れるとシンメトリーにして帰ってくる機能"
     },
     {
-      "command" : "image",
-      "description" : "`!n img 〇〇`で画像検索できる"
+      "command": "image",
+      "description": "`!n img 〇〇`で画像検索できる"
     },
     {
-      "command" : "game",
-      "description" : "`!n game`で見れます"
+      "command": "game",
+      "description": "`!n game`で見れます"
     },
     {
-      "command" : "omikuji",
-      "description" : "`!n omikuji`でおみくじが引けます。\n`!n omikuji ranking`で、のばまん吉を引いた数のランキングがあります"
+      "command": "omikuji",
+      "description": "`!n omikuji`でおみくじが引けます。\n`!n omikuji ranking`で、のばまん吉を引いた数のランキングがあります"
     },
     {
-      "command" : "nobamanchat",
-      "description" : "`!n chat`で、チャンネルをのばまんちゃんねるに登録できます。\nまた、のばまんちゃんねるでは、喋った言葉が、他ののばまんチャンネルにも共有されます。\n共有された言葉は、削除できません\n他人の不快にならないようにしましょう。\n下ネタ、SPAMは禁止です。BAN機能あるので調子に乗らない様に。"
+      "command": "nobamanchat",
+      "description": "`!n chat`で、チャンネルをのばまんちゃんねるに登録できます。\nまた、のばまんちゃんねるでは、喋った言葉が、他ののばまんチャンネルにも共有されます。\n共有された言葉は、削除できません\n他人の不快にならないようにしましょう。\n下ネタ、SPAMは禁止です。BAN機能あるので調子に乗らない様に。"
     },
     {
-      "command" : "youtube",
-      "description" : "`!n youtube 〇〇`で、Youtube動画を検索できます。URLが帰ってきます。"
+      "command": "youtube",
+      "description": "`!n youtube 〇〇`で、Youtube動画を検索できます。URLが帰ってきます。"
     },
     {
-      "command" : "memo",
-      "description" : ""
+      "command": "memo",
+      "description": "`!n memo` メモ一覧の表示ができるコマンド\n `!n memo create (名前) (内容)` メモの作成ができるコマンド `!n memo delete (消したいメモの名前)` メモの削除ができるコマンド\n`!n memo (見たいメモの名前)`メモの閲覧ができるコマンド"
     },
     {
-      "command" : "todo",
-      "description" : ""
+      "command": "todo",
+      "description": "`!n todo` Todoの作成/Todoの表示ができるコマンド\n`!n todo create`Todoの追加ができるコマンド\n `!n todo delete` Todoの初期化ができるコマンド\n`!n todo clear (消したいTodoの番号)`Todoをクリアできるコマンド"
     },
     {
-      "command" : "userinfo",
-      "description" : "`!n user`で、自分の情報が見れます。\nまた、`!n user (ID)`で他人の情報も見れます。"
+      "command": "userinfo",
+      "description": "`!n user`で、自分の情報が見れます。\nまた、`!n user (ID)`で他人の情報も見れます。"
     },
     {
-      "command" : "news",
-      "description" : "ニュースが見れます"
+      "command": "news",
+      "description": "ニュースが見れます"
     },
     {
-      "command" : "weather",
-      "description" : "`!n weather (地域の名前)`で、天気が見れます。"
+      "command": "weather",
+      "description": "`!n weather (地域の名前)`で、天気が見れます。"
     },
     {
-      "command" : "bun",
-      "description" : "文を生成できます。\nまた、`!n bun create`で、`主語` `述語` `修飾語`に分けて登録できます。"
+      "command": "bun",
+      "description": "文を生成できます。\nまた、`!n bun create`で、`主語` `述語` `修飾語`に分けて登録できます。"
     },
     {
-      "command" : "poll",
-      "description" : ""
+      "command": "poll",
+      "description": "`!n poll (タイトル) (選択肢1) (選択肢2)...`で投票ができます。\n例: !n poll のばまんは 最高 最悪 しらねｗ！"
     },
     {
-      "command" : "sikaku",
-      "description" : ""
+      "command": "sikaku",
+      "description": "`!n sikaku (文)`文の部分を線で囲みます"
     },
     {
-      "command" : "totuzenn",
-      "description" : ""
+      "command": "totuzenn",
+      "description": "`!n totuzenn (文)`文の部分を突然の死で囲みます"
     },
     {
-      "command" : "Colorinversion",
-     "description" : "画像または画像のurlを入れると色を反転させて帰ってくる機能"
+      "command": "Colorinversion",
+      "description": "画像または画像のurlを入れると色を反転させて帰ってくる機能"
     }
   ]
 }
