@@ -472,5 +472,66 @@
       "結局、さーどなんです。"
     ]
   },
-  "help": []
+  "help": [
+    {
+      "command": "wadai",
+      "description": "話題をランダムで送信してくれる機能です"
+    },
+    {
+      "command" : "fortnite",
+      "description" : ""
+    },
+    {
+      "command" : "Symmetry",
+      "description" : ""
+    },
+    {
+      "command" : "image",
+      "description" : "Colorinversion"
+    },
+    {
+      "command" : "game",
+      "description" : ""
+    },
+    {
+      "command" : "omikuji",
+      "description" : ""
+    },
+    {
+      "command" : "nobamanchat",
+      "description" : ""
+    },
+    {
+      "command" : "youtube",
+      "description" : ""
+    },
+    {
+      "command" : "moji",
+      "description" : ""
+    },
+    {
+      "command" : "memo",
+      "description" : ""
+    },
+    {
+      "command" : "todo",
+      "description" : ""
+    },
+    {
+      "command" : "userinfo",
+      "description" : ""
+    },
+    {
+      "command" : "news",
+      "description" : ""
+    },
+    {
+      "command" : "weather",
+      "description" : ""
+    },
+    {
+      "command" : "",
+      "description" : ""
+    }
+  ]
 }
