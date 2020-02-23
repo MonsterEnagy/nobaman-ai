@@ -8,6 +8,7 @@ const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , 
         .setDescription("`!n help 〇〇`で確認してね")
         .addField("お遊び" ,`\`${oasobi.join("` `")}\``)
         .addField("便利系", `\`${benri.join("` `")}\``)
+        .addField("Botがルールに違反するような発言をしたら" , "`!n delete (メッセージのID)`でメッセージを削除できます。")
       message.channel.send(embed);
     } else {
       if(!db.get("help").find({"command": args[0]}).value()) return message.channel.send("その機能のhelpはつくられていません")
