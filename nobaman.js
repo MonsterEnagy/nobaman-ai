@@ -745,10 +745,7 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
 ・よく見るテレビ番組やよく聴くラジオ番組
 ・最近起きた（世の中や身近な）出来事の話
 ・誕生日の話（誕生日にまつわる話など）
-・その他好きな○○（食べ物や芸能人など）の話 `
-   wadai.split("・")
-   console.log(wadai)
-   console.log(wadai[Math.floor(Math.random() * wadai.length)])
+・その他好きな○○（食べ物や芸能人など）の話 `.split("・")
    message.channel.send(wadai[Math.floor(Math.random() * wadai.length)])
  }
 });
