@@ -386,14 +386,14 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -1.6658430734320802e+123,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 1.1769565753850026e+77,
-      "level": -172,
-      "hp": -1.667508916505512e+123,
-      "tekideath": false,
-      "death": false
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": 6.6778386518990984e+131,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "strong": 1.9746054687854473e+84,
+      "level": -187,
+      "hp": -6.36538296112808e+133,
+      "tekideath": true,
+      "death": true
     },
     {
       "id": "552359526439845913",
