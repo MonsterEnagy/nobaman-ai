@@ -478,60 +478,76 @@
       "description": "話題をランダムで送信してくれる機能です"
     },
     {
-      "command" : "fortnite",
-      "description" : ""
+      "command": "fortnite",
+      "description": "fortnite関連の機能\n`!n fortnite stats (人の名前)`で戦績\n`!n fortnite shop`で今日のショップが見れる（連続投稿注意）"
     },
     {
-      "command" : "Symmetry",
-      "description" : ""
+      "command": "Symmetry",
+      "description": "画像またはURLを入れるとシンメトリーにして帰ってくる機能"
     },
     {
-      "command" : "image",
-      "description" : "Colorinversion"
+      "command": "image",
+      "description": "`!n img 〇〇`で画像検索できる"
     },
     {
-      "command" : "game",
-      "description" : ""
+      "command": "game",
+      "description": ""
     },
     {
-      "command" : "omikuji",
-      "description" : ""
+      "command": "omikuji",
+      "description": ""
     },
     {
-      "command" : "nobamanchat",
-      "description" : ""
+      "command": "nobamanchat",
+      "description": ""
     },
     {
-      "command" : "youtube",
-      "description" : ""
+      "command": "youtube",
+      "description": ""
     },
     {
-      "command" : "moji",
-      "description" : ""
+      "command": "moji",
+      "description": ""
     },
     {
-      "command" : "memo",
-      "description" : ""
+      "command": "memo",
+      "description": ""
     },
     {
-      "command" : "todo",
-      "description" : ""
+      "command": "todo",
+      "description": ""
     },
     {
-      "command" : "userinfo",
-      "description" : ""
+      "command": "userinfo",
+      "description": ""
     },
     {
-      "command" : "news",
-      "description" : ""
+      "command": "news",
+      "description": ""
     },
     {
-      "command" : "weather",
-      "description" : ""
+      "command": "weather",
+      "description": ""
     },
     {
-      "command" : "",
-      "description" : ""
+      "command": "bun",
+      "description": ""
+    },
+    {
+      "command": "poll",
+      "description": ""
+    },
+    {
+      "command": "sikaku",
+      "description": ""
+    },
+    {
+      "command": "totuzenn",
+      "description": ""
+    },
+    {
+      "command": "Colorinversion",
+      "description": "画像または画像のurlを入れると色を反転させて帰ってくる機能"
     }
   ]
 }
