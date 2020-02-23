@@ -13,7 +13,8 @@ const db = low(adapter);
 db.defaults({
   omikuji: [],
   mmo : [],
-  help : [] 
+  help : [],
+  point : []
 }).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
@@ -159,8 +160,8 @@ client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
   if(message.guild.id === "302627651036774401") {
-    if(!db.get("point").find({ id: message.author.id })) {
-      db.get("point").push({id : message.author.id,point:0})
+    if(!db.get("point").find({ id: message.author.id }).value()) {
+      db.get("point").push({id : message.author.id,point:0}).write()
     }
   }
   console.log(
