@@ -384,7 +384,7 @@ client.on("message", async message => {
       if (err) console.log(err);
     });
   }
-  if (command === "y") {
+  if (command === "user") {
     const member =
       message.mentions.members.first() ||
       message.guild.members.get(args[0]) ||
