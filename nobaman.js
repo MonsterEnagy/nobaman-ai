@@ -730,9 +730,9 @@ const namearray = [];
   } else {
   db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().value() - Number(args[2].slice(1))})
   }
-message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
+message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
 }　if(args[0] === "user") {
-message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
+message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
 } if(args[0] === "warui") {
         const json = require("./database/db.json");
       const array = [];

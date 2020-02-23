@@ -386,14 +386,14 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": -6.589550059415988e+103,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 3.507603929594167e+69,
-      "level": -118,
-      "hp": -6.596139609475403e+103,
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": 2.9683929622932397e+106,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 7.015207859188334e+69,
+      "level": -130,
+      "hp": -2.9765359485198834e+107,
       "tekideath": false,
-      "death": false
+      "death": true
     },
     {
       "id": "552359526439845913",
@@ -405,6 +405,15 @@
       "hp": null,
       "tekideath": false,
       "death": false
+    },
+    {
+      "id": "664497235882672152",
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "kotoba": {
