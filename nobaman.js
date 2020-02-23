@@ -730,8 +730,26 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
     }
  } else if(command === "youtube") {
    require("./command/youtube.js").run(client , message , kekka)
- } else if(command === "nico") {
-   require("./command/niconicodaihyakka").run(client,message,kekka)
+ } else if(command === "wadai") {
+   var wadai = `・出身地
+・好きな食べ物
+・嫌いな食べ物（食べ物屋で気を利かせられるのできく。）
+・自分の行った最も遠いところ
+・面白いトラブルに遭遇した話
+・芸人で好きな人の話
+・最近読んだ本
+・ペットの話
+・休みの日の使い方
+・学生時代の話
+・将来の夢（もし○○だったら、といった話）
+・よく見るテレビ番組やよく聴くラジオ番組
+・最近起きた（世の中や身近な）出来事の話
+・誕生日の話（誕生日にまつわる話など）
+・その他好きな○○（食べ物や芸能人など）の話 `
+   wadai.split("・")
+   console.log(wadai)
+   console.log(wadai[Math.floor(Math.random() * wadai.length)])
+   message.channel.send(wadai[Math.floor(Math.random() * wadai.length)])
  }
 });
 
