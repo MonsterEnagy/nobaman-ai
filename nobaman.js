@@ -281,6 +281,7 @@ client.on("message", async message => {
   if (command === "help") {
  require("./command/help.js").run(client , message, args , description)
   } if (command === "todo") {
+    
     /*json構造
     id : {
     todo : []
