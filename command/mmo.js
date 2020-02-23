@@ -229,9 +229,9 @@ module.exports.run = async (client, message, db, args) => {
       if(json.value().tekihp < 0) {
       json
         .assign({
-          strong: json.value().strong + 1,
+          strong: json.value().strong * 2,
           level: json.value().level + 1,
-          hp: json.value().level + 5,
+          hp: json.value().hp * 2,
           tekideath: true
         })
 
@@ -251,7 +251,7 @@ module.exports.run = async (client, message, db, args) => {
           .assign({
             strong: json.value().strong,
             level: json.value().level - 1,
-            hp: json.value().level + json.value.hp,
+            hp: json.value().hp * 2,
             death: true
           })
           .remove({
@@ -375,9 +375,9 @@ module.exports.run = async (client, message, db, args) => {
       if(json.value().tekihp < 0) {
       json
         .assign({
-          strong: json.value().strong + 1,
+          strong: json.value().strong * 2,
           level: json.value().level + 1,
-          hp: json.value().level + json.value().strong * 6,
+          hp: json.value().hp * 2,
           tekideath: true
         })
         .remove({
@@ -398,9 +398,9 @@ module.exports.run = async (client, message, db, args) => {
       if (json.value().hp < 0) {
         json
           .assign({
-            strong: json.value().strong - 1,
+            strong: json.value().strong * 2,
             level: json.value().level - 1,
-            hp: json.value().level + json.value().strong * 4,
+            hp: json.value().hp * 2,
             death: true
           })
           .remove({
@@ -476,7 +476,7 @@ module.exports.run = async (client, message, db, args) => {
       )
       .addField(
         "ゲームを始める",
-        "`!n game attack`でゲームを始める/敵に攻撃することができるよ！`!n game attack`に`a`でもなんでもいいから`!n game attack a`みたいにやると技が放てます。"
+        "`!n game attack`でゲームを始める/敵に攻撃することができるよ！"
       )
       .addField(
         "ステータス",
