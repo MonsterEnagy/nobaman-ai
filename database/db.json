@@ -386,12 +386,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": 6.6778386518990984e+131,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 1.9746054687854473e+84,
-      "level": -187,
-      "hp": -6.36538296112808e+133,
+      "teki": "モンスターエナジーASSAULT",
+      "tekihp": 1.138774822803559e+135,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
+      "strong": 3.1593687500567156e+85,
+      "level": -190,
+      "hp": -8.332864967294943e+135,
       "tekideath": true,
       "death": true
     },
