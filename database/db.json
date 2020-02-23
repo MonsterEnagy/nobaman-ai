@@ -426,6 +426,15 @@
       "level": 3,
       "hp": 12,
       "tekideath": true
+    },
+    {
+      "id": "474327291082833950",
+      "teki": "モンスターエナジーLO-CARB",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "kotoba": {
@@ -637,6 +646,10 @@
     },
     {
       "id": "312799480913330178",
+      "point": 0
+    },
+    {
+      "id": "474327291082833950",
       "point": 0
     }
   ]
