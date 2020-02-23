@@ -70,7 +70,7 @@ function AIrequest(content, message) {
       json: true
     },
     (err, response, body) => {
-      if (response.statusCode !== 200 || err) throw new Error();
+      if (response.statusCode !== 200 || err) return console.error(err)
       else {
         if (body.errors) {
           const comment = content;
@@ -726,13 +726,13 @@ const namearray = [];
   if(!args[1] || !message.guild.members.get(args[1])) return message.channel.send("人物のIDを指定してください")
   if(!args[2].startsWith("+") && !args[2].startsWith("-")) return message.channel.send("+か-から始めてください")
   if(args[2].startsWith("+")) {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).point.value() + Number(args[2].slice(1))})
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point+ Number(args[2].slice(1))})
   } else {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).point.value() - Number(args[2].slice(1))})
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().value() - Number(args[2].slice(1))})
   }
-message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).point.value()}です。`)
+message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
 }　if(args[0] === "user") {
-   message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイント数は${db.get("point").find({id : args[1]}).point}`)
+message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
 } if(args[0] === "warui") {
         const json = require("./database/db.json");
       const array = [];

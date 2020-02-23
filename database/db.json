@@ -8,9 +8,9 @@
     },
     {
       "id": "656432104745205760",
-      "time": "2020/2/21",
+      "time": "2020/2/23",
       "nobaman": 2,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "558223732473200641",
@@ -386,25 +386,25 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 7.65056396720944e+101,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 1.7538019647970835e+69,
-      "level": -111,
-      "hp": -4.8475337437219923e+101,
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": -6.589550059415988e+103,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "strong": 3.507603929594167e+69,
+      "level": -118,
+      "hp": -6.596139609475403e+103,
       "tekideath": false,
-      "death": true
+      "death": false
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": 17,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "teki": "UNLEADED",
+      "tekihp": 15,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
       "strong": 12,
       "level": 0,
-      "hp": -18,
+      "hp": null,
       "tekideath": false,
-      "death": true
+      "death": false
     }
   ],
   "kotoba": {
@@ -560,6 +560,10 @@
     },
     {
       "id": "202080746729373696",
+      "point": 0
+    },
+    {
+      "id": "664497235882672152",
       "point": 0
     }
   ]
