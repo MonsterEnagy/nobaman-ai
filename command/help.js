@@ -1,8 +1,13 @@
-const Discord = require("Discord.js")
+const Discord = require("discord.js")
 module.exports.run = (client, message, args) => {
+const benri = ["memo" , "todo" , "user info" , ""]
+const oasobi = []
      if (!args[0]) {
       let embed = new Discord.RichEmbed()
-        .setTitle("nobaman aiにできること")
+        .setTitle("nobaman aiの機能")
+        .addField("お遊び" ,`\`${oasobi.join("` `")}\``)
+        .addField("便利系", `\`${benri.join("` `")}\``)
+      /*
         .addField(
           "知識の蓄え",
           "`のばまん、〇〇って知ってる？`と聞くと、〇〇の部分に当たるところの情報をnobaman aiに保存させることができます"
@@ -35,6 +40,7 @@ module.exports.run = (client, message, args) => {
       .addField("ゲーム" , "`!n game`でゲームのhelpが見れます")
       .addField("誤爆用コマンド" , "imgなどで誤爆してしまった時は`!n delete (メッセージID)`でメッセージを消せます。このBOTのメッセージ限定です。")
         .setColor("#b9c42f");
+        */
       message.channel.send(embed);
     } else if (args[0] === "fortnite") {
       let embed = new Discord.RichEmbed()
