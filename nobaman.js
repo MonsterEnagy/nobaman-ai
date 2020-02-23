@@ -720,15 +720,15 @@ const namearray = [];
       .addField("7位:" +array[6][1], array[6][0])
       .addField("8位:" +array[7][1], array[7][0])
       .addField("9位:" +array[8][1], array[8][0])
-      .addField("10位:"+array[9][1], array[9][0])
+ //     .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
 } if(args[0] === "op") {
   if(!args[1] || !message.guild.members.get(args[1])) return message.channel.send("人物のIDを指定してください")
   if(!args[2].startsWith("+") && !args[2].startsWith("-")) return message.channel.send("+か-から始めてください")
   if(args[2].startsWith("+")) {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point+ Number(args[2].slice(1))})
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point+ Number(args[2].slice(1))}).write()
   } else {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().value() - Number(args[2].slice(1))})
+  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point - Number(args[2].slice(1))}).write()
   }
 message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
 }　if(args[0] === "user") {
