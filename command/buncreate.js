@@ -23,7 +23,7 @@ message.channel.awaitMessages(filter, {
     await  message.channel.send("修飾語モード")
     var mode = "syuusyokugo"
   }
-   await   message.channel.send("単語を言ってください")
+   await   message.channel.send("単語を言ってください（身内ネタは控えてね）")
   message.channel.awaitMessages(filter, { max: 1,         time: 60 * 1000,
           errors: ['time']})
   .then(collected => {
