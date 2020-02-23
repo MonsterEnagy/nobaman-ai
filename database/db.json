@@ -298,13 +298,13 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "UNLEADED",
-      "tekihp": -336,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 27,
-      "level": 18,
-      "hp": 173,
-      "tekideath": true,
+      "teki": "モンスターエナジーLO-CARB",
+      "tekihp": 2.3502083309791076e+112,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "strong": 2.3525585393100864e+112,
+      "level": 65,
+      "hp": 18057835905101852,
+      "tekideath": false,
       "death": false
     },
     {
@@ -386,23 +386,23 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーLO-CARB",
-      "tekihp": 2.565193228537022e+21,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
-      "strong": 245760,
-      "level": -58,
-      "hp": -2.597223474284164e+22,
-      "tekideath": false,
-      "death": true
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": -3.1164777846912755e+70,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 2.90142196707511e+45,
+      "level": -100,
+      "hp": -2.1070090828532542e+72,
+      "tekideath": true,
+      "death": false
     },
     {
       "id": "552359526439845913",
-      "teki": "ドラゴンブースト",
-      "tekihp": 12,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": 17,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
       "strong": 12,
-      "level": 1,
-      "hp": -32,
+      "level": 0,
+      "hp": -18,
       "tekideath": false,
       "death": true
     }
@@ -540,6 +540,18 @@
     },
     {
       "id": "551421671332904960",
+      "point": 0
+    },
+    {
+      "id": "552359526439845913",
+      "point": 0
+    },
+    {
+      "id": "558223732473200641",
+      "point": 0
+    },
+    {
+      "id": "610757164843139082",
       "point": 0
     }
   ]
