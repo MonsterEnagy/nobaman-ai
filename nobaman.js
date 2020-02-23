@@ -733,6 +733,33 @@ const namearray = [];
 message.channel.send(`${message.guild.members.get(args[1]).user.username}}のポイントは現在${db.get("point").find({id : args[1]}).point.value()}です。`)
 }　if(args[0] === "user") {
    message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイント数は${db.get("point").find({id : args[1]}).point}`)
+} if(args[0] === "warui") {
+        const json = require("./database/db.json");
+      const array = [];
+      function compareFunc(a, b) {
+          return a[0] - b[0];
+      }
+const namearray = [];
+      for (var i = 0; i < json.point.length; i++) {
+        array.push([json.point[i].point , client.users.get(json.point[i].id).username])
+      }
+      
+      array.sort(compareFunc);
+      
+      var name = [];
+      let embed = new Discord.RichEmbed()
+      .setTitle("ポイントランキング")
+      .addField("1位:" +array[0][1], array[0][0])
+      .addField("2位:" +array[1][1], array[1][0])
+      .addField("3位:" +array[2][1], array[2][0])
+      .addField("4位:" +array[3][1], array[3][0])
+      .addField("5位:" +array[4][1], array[4][0])
+      .addField("6位:" +array[5][1], array[5][0])
+      .addField("7位:" +array[6][1], array[6][0])
+      .addField("8位:" +array[7][1], array[7][0])
+      .addField("9位:" +array[8][1], array[8][0])
+      .addField("10位:"+array[9][1], array[9][0])
+      message.channel.send(embed)
 }
   }
 });
