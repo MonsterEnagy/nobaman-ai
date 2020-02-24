@@ -404,7 +404,7 @@
     {
       "id": "552359526439845913",
       "teki": "UNLEADED",
-      "tekihp": 15,
+      "tekihp": null,
       "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
       "strong": 12,
       "level": 0,
@@ -685,6 +685,10 @@
     },
     {
       "id": "532064939846664192",
+      "point": 0
+    },
+    {
+      "id": "576740452737220628",
       "point": 0
     }
   ]
