@@ -765,7 +765,7 @@ const namearray = [];
     if(message.author.id == "551421671332904960") {
       console.log(kekka)
       try {
-        message.channel.send(eval(kekka))
+        message.channel.send(eval(message.content.slice(6).trim()))
         message.react("✅ ")
       } catch(e) { 
         message.react("❌")
