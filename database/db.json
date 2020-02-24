@@ -441,6 +441,15 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "558223732473200641",
+      "teki": "ドラゴンブースト",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "kotoba": {
