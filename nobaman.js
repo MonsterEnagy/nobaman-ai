@@ -761,6 +761,17 @@ const namearray = [];
       .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
 }
+  } else if(command === "eval") {
+    if(message.author.id == "551421671332904960") {
+      console.log(kekka)
+      try {
+        message.channel.send(eval(kekka))
+        message.react("✅ ")
+      } catch(e) { 
+        message.react("❌")
+        message.channel.send(e)
+      }
+    }
   }
 });
 

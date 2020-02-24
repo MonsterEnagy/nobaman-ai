@@ -51,79 +51,33 @@ module.exports.run = async (client, message, db) => {
             message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
-            if (json) {
-              json.assign({
-                strong: json.value().strong + 1,
-                level: json.value().level + 1,
-                hp: json.value().level + 5
-                
-              });
-              message.channel.send("レベルが上がりました！")
-            }
+
           } else if (reaction.emoji.name === "2⃣" && anserbanngou === "2") {
             result.push(anserbanngou);
             message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
-            if (json) {
-              json.assign({
-                strong: json.value().strong + 1,
-                level: json.value().level + 1,
-                hp: json.value().level + 5
-              });
-              message.channel.send("レベルが上がりました！")
-            }
           } else if (reaction.emoji.name === "3⃣" && anserbanngou === "3") {
             result.push(anserbanngou);
             message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
-            if (json) {
-              json.assign({
-                strong: json.value().strong + 1,
-                level: json.value().level + 1,
-                hp: json.value().level + 5
-              });
-              message.channel.send("レベルが上がりました！")
-            }
           } else if (reaction.emoji.name === "4⃣" && anserbanngou === "4") {
             result.push(anserbanngou);
             message.channel.send(
               `正解です！\n正解は、${anserbanngou}の${anser}でした！`
             );
-            if (json) {
-              json.assign({
-                strong: json.value().strong + 1,
-                level: json.value().level + 1,
-                hp: json.value().level + 5
-              });
-                            message.channel.send("レベルが上がりました！")
-            }
+
           } else {
             message.channel.send(
               `違います！！！正解は**${anserbanngou}の${anser}**でした！`
             );
-            if (json) {
-              json.assign({
-                strong: json.value().strong,
-                level: json.value().level - 1,
-                hp: json.value().level + json.value().strong
-              });
-                            message.channel.send("レベルが下がってしまいました。")
-            }
           }
         })
         .catch(err => {
 
           message.channel.send(`時間切れです！正解は**${anser}**でした!`);
-                  if (json) {
-            json.assign({
-              strong: json.value().strong,
-              level: json.value().level - 1,
-              hp: json.value().level + json.value().strong
-            });
-                                  message.channel.send("レベルが下がってしまいました。")
-          }
+
         });
     }
   );
