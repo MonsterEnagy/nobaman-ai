@@ -392,12 +392,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "ドラゴンブースト",
-      "tekihp": 9.92146865629625e+153,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": 3.894895592287533e+154,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
       "strong": 3.3128382464594706e+91,
-      "level": -240,
-      "hp": -4.8043850383810645e+154,
+      "level": -243,
+      "hp": -3.8915518810886625e+155,
       "tekideath": false,
       "death": true
     },
