@@ -684,7 +684,7 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
 ・その他好きな○○（食べ物や芸能人など）の話 `.split("・")
    message.channel.send(wadai[Math.floor(Math.random() * wadai.length)])
  }else if(command === "point") {
-  if(!message.author.id === process.env.ownerID)  return;
+  if(!message.channel.id === "338667165744103424")  return;
    /*
    db: {
    point : [{
@@ -720,7 +720,7 @@ const namearray = [];
       .addField("7位:" +array[6][1], array[6][0])
       .addField("8位:" +array[7][1], array[7][0])
       .addField("9位:" +array[8][1], array[8][0])
- //     .addField("10位:"+array[9][1], array[9][0])
+      .addField("10位:"+array[9][1], array[9][0])
       message.channel.send(embed)
 } if(args[0] === "op") {
   if(!args[1] || !message.guild.members.get(args[1])) return message.channel.send("人物のIDを指定してください")
