@@ -3,7 +3,7 @@
   const Discord = require("discord.js")
   
 module.exports.run = (client , message , args) => {
-  if(args[0]) {
+  if(!args[0]) {
   var options = {
     url: `http://www3.nhk.or.jp/rss/news/cat0.xml`,
     method: 'GET'
@@ -28,18 +28,18 @@ $("item").each(function(i, el) {
     method: 'GET'
 }
   request(options, function (error, response, body) { 
+    
  $ = che.load(body);
-$("item").each(function(i, el) {
+$("item").each(async function(i, el) {
   if(i  >=  3) return false;
+  console.log("a")
   var name = $(this).children("title").text();
   var description = $(this).children("description").text()
   var link = $(this).children("link")
- let embed = new Discord.RichEmbed()
+ await message.channel.send(new Discord.RichEmbed()
  .setAuthor('ギズモード・ジャパン')
  .setURL(link)
- .setTitle(name)
- .setDescription(description)
-  message.channel.send(embed);
+ .addField(name , description));
 });
   })
   }
