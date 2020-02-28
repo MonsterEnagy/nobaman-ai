@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const request = require("request")
+const { Attachment } = require('discord.js');
 module.exports.run = (client,message,args) => {
   const option = {
     "url" : `https://api.mojang.com/users/profiles/minecraft/${args[0]}`,
@@ -33,12 +34,13 @@ module.exports.server = (client,message,args) => {
   json : true
   } , (error , response , body) => {
   if(Object.keys(body) == 1) return message.channel.send("見つかりませんでした");
+    console.log(Buffer.from(body.icon, 'base64'))
     let embed = new Discord.RichEmbed()
     .setTitle(`${body.motd.text} : ${body.serverStatus}`)
     .setDescription(`IP:${body.serverip} | ${body.version}`)
     .addField("players" , `${body.players} / ${body.maxplayers}`)
     .addField("protocol" , body.protocol)
-    .setThumbnail(body.icon)
+    .attachFile(new Attachment(Buffer.from(body.icon, 'base64')))
     message.channel.send(embed)
   })
 }
