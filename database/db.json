@@ -594,6 +594,10 @@
     {
       "command": "minecraft",
       "description": "minecraft関連の機能。\n`!n mc (playername)`でUUIDとスキンが引き出せる\n`!n mcserver (serverIP)`でサーバーの情報が引き出せる"
+    },
+    {
+      "command": "wiki",
+      "description": "`のばまん、〇〇って何？`と言うと、博識なのばまんがWIKIPEDIAで覚えたことを話してくれます。"
     }
   ],
   "point": [

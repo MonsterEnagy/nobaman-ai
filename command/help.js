@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports.run = (client, message, args , db) => {
-const benri = ["memo" , "todo" , "userinfo" , "news" , "weather" , "bun" , "poll" , "sikaku" , "totuzenn" , "minecraft"]
+const benri = ["memo" , "todo" , "userinfo" , "news" , "weather" , "bun" , "poll" , "sikaku" , "totuzenn" , "minecraft" , "wiki"]
 const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , "omikuji" , "nobamanchat" , "wadai" , "youtube" , "moji"]
      if (!args[0]) {
       let embed = new Discord.RichEmbed()
@@ -9,7 +9,7 @@ const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , 
         .addField("お遊び" ,`\`${oasobi.join("` `")}\``)
         .addField("便利系", `\`${benri.join("` `")}\``)
         .addField("Botがルールに違反するような発言をしたら" , "`!n delete (メッセージのID)`でメッセージを削除できます。")
-        .setURL()
+        .setURL("https://discordapp.com/api/oauth2/authorize?client_id=647048542145478658&permissions=536871936&scope=bot")
       message.channel.send(embed);
     } else {
       if(!db.get("help").find({"command": args[0]}).value()) return message.channel.send("その機能のhelpはつくられていません")
