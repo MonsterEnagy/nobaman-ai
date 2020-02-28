@@ -774,6 +774,9 @@ const namearray = [];
     }
   } else if(command === "taiko") {
     require("./command/taikowiki.js").run(client,message , kekka)
+  } else if (command === "mc") {
+    if(!args[0]) return message.channel.send("情報が足りません");
+    require("./command/minecraft.js").run(client,message,args)
   }
 });
 
