@@ -56,9 +56,9 @@
     },
     {
       "id": "497368265514024960",
-      "time": "2020/2/28",
+      "time": "2020/2/27",
       "nobaman": 2,
-      "omikujinaiyou": "中吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "497396337411751936",
@@ -68,7 +68,7 @@
     },
     {
       "id": "550265737449570314",
-      "time": "2020/2/28",
+      "time": "2020/2/27",
       "nobaman": 17,
       "omikujinaiyou": "凶"
     },
@@ -248,9 +248,9 @@
     },
     {
       "id": "563347508164820992",
-      "time": "2020/2/28",
+      "time": "2020/2/27",
       "nobaman": 5,
-      "omikujinaiyou": "末吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "653031551616942101",
@@ -284,9 +284,9 @@
     },
     {
       "id": "678605695192662036",
-      "time": "2020/2/28",
+      "time": "2020/2/25",
       "nobaman": 1,
-      "omikujinaiyou": "凶"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "202080746729373696",
@@ -590,6 +590,10 @@
     {
       "command": "Colorinversion",
       "description": "画像または画像のurlを入れると色を反転させて帰ってくる機能"
+    },
+    {
+      "command": "minecraft",
+      "description": "minecraft関連の機能。\n`!n mc (playername)`でUUIDとスキンが引き出せる\n`!n mcserver (serverIP)`でサーバーの情報が引き出せる"
     }
   ],
   "point": [
