@@ -777,6 +777,9 @@ const namearray = [];
   } else if (command === "mc") {
     if(!args[0]) return message.channel.send("情報が足りません");
     require("./command/minecraft.js").run(client,message,args)
+  } else if(command === "mcserver") {
+    if(!args[0]) return message.channel.send("情報が足りません");
+    require("./command/minecraft.js").server(client,message,args)
   }
 });
 

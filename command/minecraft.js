@@ -1,11 +1,11 @@
 const Discord = require("discord.js")
+const request = require("request")
 module.exports.run = (client,message,args) => {
   const option = {
     "url" : `https://api.mojang.com/users/profiles/minecraft/${args[0]}`,
     "method" : "get",
     json:true
   }
-  const request = require("request")
   request(option , (error , response , body) => {
     if(response)
       if(response.statusCode == 204) return message.channel.send("プレイヤーが見つかりませんでした")
@@ -19,9 +19,13 @@ module.exports.run = (client,message,args) => {
       console.log(body)
       let embed = new Discord.RichEmbed()
       .setTitle(`${name}の情報`)
-      .setImage(Buffer.alloc(body.properties[0].value,'base64'))
+      .addField("uuid" , uuid)
+      .setImage(JSON.parse(Buffer.from(body.properties[0].value,'base64').toString()).textures.SKIN.url)
       message.channel.send(embed)
     })
-    console.log(body)
   })
+}
+
+module.exports.server = (client,message,args) => {
+  
 }
