@@ -34,6 +34,7 @@
     "ffmpeg": "^0.0.4",
     "googleapis": "^47.0.0",
     "cheerio": "^0.22.0",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "cheerio-httpcli": "^0.7.3"
   }
 }
