@@ -20,12 +20,25 @@ module.exports.run = (client,message,args) => {
       let embed = new Discord.RichEmbed()
       .setTitle(`${name}の情報`)
       .addField("uuid" , uuid)
-      .setImage(JSON.parse(Buffer.from(body.properties[0].value,'base64').toString()).textures.SKIN.url)
+      .setThumbnail(JSON.parse(Buffer.from(body.properties[0].value,'base64').toString()).textures.SKIN.url)
       message.channel.send(embed)
     })
   })
 }
 
 module.exports.server = (client,message,args) => {
-  
+  request({
+  url : `https://mcapi.xdefcon.com/server/${args}/full/json`,
+  method : "get",
+  json : true
+  } , (error , response , body) => {
+  if(Object.keys(body) == 1) return message.channel.send("見つかりませんでした");
+    let embed = new Discord.RichEmbed()
+    .setTitle(`${body.motd.text} : ${body.serverStatus}`)
+    .setDescription(`IP:${body.serverip} | ${body.version}`)
+    .addField("players" , `${body.players} / ${body.maxplayers}`)
+    .addField("protocol" , body.protocol)
+    .setThumbnail(body.icon)
+    message.channel.send(embed)
+  })
 }
