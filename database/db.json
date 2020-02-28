@@ -404,13 +404,13 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": 3.0318475733854667e+168,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 1.7785664906851768e+100,
-      "level": -258,
-      "hp": -1.5169673086676362e+169,
-      "tekideath": true,
+      "teki": "ドラゴンブースト",
+      "tekihp": 2.7275760493279525e+175,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 2.9140033383385936e+104,
+      "level": -279,
+      "hp": -2.146888279598962e+177,
+      "tekideath": false,
       "death": true
     },
     {
