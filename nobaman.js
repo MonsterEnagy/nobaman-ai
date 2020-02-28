@@ -772,6 +772,8 @@ const namearray = [];
         message.channel.send(e)
       }
     }
+  } else if(command === "taiko") {
+    require("./command/taikowiki.js").run(client,message , kekka)
   }
 });
 
