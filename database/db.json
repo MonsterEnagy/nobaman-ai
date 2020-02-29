@@ -410,12 +410,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "ドラゴンブースト",
-      "tekihp": 2.7156240199199416e+226,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 5.910300929459172e+135,
-      "level": -368,
-      "hp": -1.3013398595042368e+227,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": 1.4681175419434368e+232,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 3.026074075883096e+138,
+      "level": -387,
+      "hp": -2.8193959536370925e+233,
       "tekideath": false,
       "death": true
     },
