@@ -803,6 +803,23 @@ const cheerio = require('cheerio');
 message.channel.send(embed)
   } else if(command === "haikei") {
     const request = require('request');
+    const util = require('util');
+      if(!args[0] || message.attachments.first()) {
+    var imageUrl = message.attachments.first().url;
+  } else if(args[0]){
+    var imageUrl = args[0]
+  } else {
+    return message.channel.send("画像を確認できませんでした")
+  }
+      const { statusCode, headers, error, body } =
+    await util.promisify(request.defaults({ encoding: null }))(imageUrl);
+
+  if (error || statusCode !== 200) return null;
+
+  const contentType = headers['content-type'];
+  const base64Str = new Buffer(body).toString('base64');
+
+`data:${contentType};base64,${base64Str}`;
 request.post({
   url: 'https://api.remove.bg/v1.0/removebg',
   formData: {
@@ -816,7 +833,7 @@ request.post({
 }, function(error, response, body) {
   if(error) return console.error('Request failed:', error);
   if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-  fs.writeFileSync("no-bg.png", body);
+  message.channel.send(new Discord.Attachment(body))
 });
   }
 });
