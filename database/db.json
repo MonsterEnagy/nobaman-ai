@@ -9,7 +9,7 @@
     {
       "id": "656432104745205760",
       "time": "2020/2/24",
-      "nobaman": 4,
+      "nobaman": 5,
       "omikujinaiyou": "のばまん吉"
     },
     {
@@ -333,24 +333,24 @@
     },
     {
       "id": "656432104745205760",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": -7275,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 617,
-      "level": 606,
-      "hp": 610,
+      "teki": "ドラゴンブースト",
+      "tekihp": -9.183323905544651e+26,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 3.729536153511131e+26,
+      "level": 685,
+      "hp": 3.681463394774684e+26,
       "tekideath": true,
       "death": false
     },
     {
       "id": "550265737449570314",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 8134245301474701000,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
-      "strong": 2810246167479189500,
-      "level": 199,
-      "hp": 5332133379296985000,
-      "tekideath": false,
+      "teki": "モンスターエナジーASSAULT",
+      "tekihp": -6.549595447305694e+25,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
+      "strong": 4.714810696497054e+25,
+      "level": 223,
+      "hp": 8.90020009086523e+25,
+      "tekideath": true,
       "death": false
     },
     {
