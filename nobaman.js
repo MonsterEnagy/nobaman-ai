@@ -823,7 +823,7 @@ message.channel.send(embed)
 request.post({
   url: 'https://api.remove.bg/v1.0/removebg',
   formData: {
-    image_file: fs.createReadStream('/path/to/file.jpg'),
+    image_file: fs.createReadStream(base64Str, {encoding: 'base64'}),
     size: 'auto',
   },
   headers: {
