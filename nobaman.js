@@ -783,6 +783,22 @@ const namearray = [];
   } else if(command === "hosii") {
     client.users.get(process.env.ownerID).send(kekka)
     message.channel.send("送りました")
+  } else if (command === "today") {
+   const rp = require('request-promise');
+const cheerio = require('cheerio');
+    const response = await rp({
+      "uri":"https://ja.wikipedia.org/wiki/Wikipedia:%E4%BB%8A%E6%97%A5%E3%81%AF%E4%BD%95%E3%81%AE%E6%97%A5",
+      gzip: true,
+      encoding:null
+    });
+    let $ = cheerio.load(response);
+    console.log("yeah")
+    // 取得したいデータのタグを指定する
+    let title = $('ul' , '.mw-parser-output').text();
+    let embed = new Discord.RichEmbed()
+    .setTitle(`今日は何の日？`)
+    .setDescription(title.split("\n").splice(-1 , 1).join("\n・"))
+message.channel.send(embed)
   }
 });
 
