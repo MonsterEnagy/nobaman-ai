@@ -801,6 +801,23 @@ const cheerio = require('cheerio');
     .setTitle(`今日は何の日？`)
     .setDescription(title.split("\n").slice(1 , -1).join("\n・"))
 message.channel.send(embed)
+  } else if(command === "haikei") {
+    const request = require('request');
+request.post({
+  url: 'https://api.remove.bg/v1.0/removebg',
+  formData: {
+    image_file: fs.createReadStream('/path/to/file.jpg'),
+    size: 'auto',
+  },
+  headers: {
+    'X-Api-Key': process.env.removeapikey
+  },
+  encoding: null
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  fs.writeFileSync("no-bg.png", body);
+});
   }
 });
 
