@@ -795,9 +795,11 @@ const cheerio = require('cheerio');
     console.log("yeah")
     // 取得したいデータのタグを指定する
     let title = $('ul' , '.mw-parser-output').text();
+  
+    console.log(title)
     let embed = new Discord.RichEmbed()
     .setTitle(`今日は何の日？`)
-    .setDescription(title.split("\n").splice(-1 , 1).join("\n・"))
+    .setDescription(title.split("\n").slice(1 , -1).join("\n・"))
 message.channel.send(embed)
   }
 });
