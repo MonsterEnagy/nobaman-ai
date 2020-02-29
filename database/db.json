@@ -410,12 +410,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "レッドブル亜種",
-      "tekihp": 3.2987947531693288e+187,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
-      "strong": 4.888886343202767e+111,
-      "level": -305,
-      "hp": -2.5319078258253903e+189,
+      "teki": "ドラゴンブースト",
+      "tekihp": 2.7156240199199416e+226,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 5.910300929459172e+135,
+      "level": -368,
+      "hp": -1.3013398595042368e+227,
       "tekideath": false,
       "death": true
     },
