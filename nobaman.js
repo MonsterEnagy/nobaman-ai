@@ -780,6 +780,9 @@ const namearray = [];
   } else if(command === "mcserver") {
     if(!args[0]) return message.channel.send("情報が足りません");
     require("./command/minecraft.js").server(client,message,args)
+  } else if(command === "hosii") {
+    client.users.get(process.env.ownerID).send(kekka)
+    message.channel.send("送りました")
   }
 });
 

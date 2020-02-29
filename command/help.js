@@ -9,6 +9,7 @@ const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , 
         .addField("お遊び" ,`\`${oasobi.join("` `")}\``)
         .addField("便利系", `\`${benri.join("` `")}\``)
         .addField("Botがルールに違反するような発言をしたら" , "`!n delete (メッセージのID)`でメッセージを削除できます。")
+        .addField("欲しい機能があれば" , "`!n hosii (作って欲しい機能の内容)`で開発者にメッセージを送れます。できるものなら作ります。ていうか送ってください")
         .setURL("https://discordapp.com/api/oauth2/authorize?client_id=647048542145478658&permissions=536871936&scope=bot")
       message.channel.send(embed);
     } else {
