@@ -2,9 +2,7 @@ const aki = require('aki-api');
 const {
     RichEmbed
 } = require("discord.js");
-const {
-    region
-} = "ja"
+const region = "jp"
 const lang =  {
         "openGame": "**あなたはすでにゲームを始めています。**",
         "noGame": "**エラー**",
@@ -29,7 +27,7 @@ let oldCollects = {};
 async function startAki(message, akiMsg) {
     try {
         /////////////////// Game Start ///////////////////////////////
-        const data = await aki.start(region); // Start Game
+        const data = await aki.start("jp"); // Start Game
         let session = data.session;
         let signature = data.signature;
         //////////////////////////////////////////////////////////////
@@ -100,7 +98,7 @@ async function collectors(author, akiMsg, collector, session, signature, step, o
                 .addField(text.name, oldWin.name, true)
                 .addField(text.dis, oldWin.dis, true)
                 .addField(text.rank, oldWin.rank, true)
-                .setFooter(`Made By: MS6RB#1101`, akiMsg.guild.iconURl)
+                .setFooter(``, akiMsg.guild.iconURl)
                 .setThumbnail('https://ar.akinator.com/bundles/elokencesite/images/akitudes_670x1096/triomphe.png?v95')
                 .setTimestamp()
                 .setImage(oldWin.img)
@@ -146,7 +144,7 @@ async function Next(author, akiMsg, session, signature, answerId, step, enter) {
     oldCollects[author.id].c.map(async c => await c.stop());
     oldCollects[author.id].c = [];
 
-    const nextInfo = await aki.step(region, session, signature, answerId, step);
+    const nextInfo = await aki.step("jp", session, signature, answerId, step);
     //////////////////////////////////////////////////////////////
 
     if (enter == true) oldCollects[author.id].wait--
