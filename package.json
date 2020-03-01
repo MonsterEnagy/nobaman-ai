@@ -36,6 +36,7 @@
     "cheerio": "^0.22.0",
     "request-promise": "^4.2.5",
     "cheerio-httpcli": "^0.7.3",
-    "iconv": "^2.3.5"
+    "iconv": "^2.3.5",
+    "aki-api": "^3.2.1"
   }
 }

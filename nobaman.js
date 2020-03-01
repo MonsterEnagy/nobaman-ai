@@ -9,6 +9,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("database/db.json");
 const cooltime = [];
+const coolDownList = new Set();
 const db = low(adapter);
 db.defaults({
   omikuji: [],
@@ -829,6 +830,50 @@ request.post({
   if(response.statusCode != 200) return message.channel.send('Error:' + response.statusCode + body.toString('utf8'));
   message.channel.send(new Discord.Attachment(body))
 });
+  } else if(command === "aki") {
+    const {
+    startAki,
+    endGame,
+    checkTime,
+    oldCollects,
+    text
+} = require("./command/function.js")
+const msg = message
+            if (args[0] == 'start') {
+const msg = message
+            if (coolDownList.has(msg.author.id)) return;
+            else {
+                coolDownList.add(msg.author.id);
+                if (oldCollects[msg.author.id]) {
+                    msg.reply(text.openGame);
+                    return coolDownList.delete(msg.author.id);
+                } 
+
+                if (!msg.channel.memberPermissions(msg.guild.me).has(['ADD_REACTIONS', 'SEND_MESSAGES'])) {
+                    coolDownList.delete(msg.author.id);
+                    try {
+                        msg.channel.send(text.noPerm);
+                        msg.author.send(text.noPerm)
+                    } catch (err) {
+                        //lol
+                    };
+                    return;
+                }
+
+
+                var akiMsg = await msg.channel.send(text.wait)
+                startAki(msg, akiMsg);
+
+                setTimeout(() => {
+                    coolDownList.delete(msg.author.id);
+                }, 5000);
+            }
+
+        } else if (args[0] == 'stop') {
+            if (!oldCollects[msg.author.id]) return msg.reply(text.noGame);
+            endGame(msg.author.id, oldCollects[msg.author.id].akiMsg)
+        }
+
   }
 });
 

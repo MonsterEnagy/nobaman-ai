@@ -1,5 +1,6 @@
 dependencies:
   '@shooontan/voicetext': 0.0.2
+  aki-api: 3.2.1
   array-shuffle: 1.0.1
   canvas: 2.6.1
   cheerio: 0.22.0
@@ -83,6 +84,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-TXtUUEYHuaTEbLZWIKUr5pmBuhDLy+8KYtPYdcV8qC+pOZL+NKqYwvWSRrVXHn+ZmRRAu8vJTAznH7Oag6RVRw==
+  /aki-api/3.2.1:
+    dependencies:
+      request: 2.88.2
+      request-promise: /request-promise/4.2.5/request@2.88.2
+    dev: false
+    resolution:
+      integrity: sha512-T/9+GO82BeUf5frAObwAqR+8k70M699m7wt1JGOjhZvJfqGOiHYbvYlLMSvh1xn2LlK92d2gJYRowihw4BWx4Q==
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -2161,6 +2169,18 @@ packages:
       request: ^2.34
     resolution:
       integrity: sha512-QIs2+ArIGQVp5ZYbWD5ZLCY29D5CfWizP8eWnm8FoGD1TX61veauETVQbrV60662V0oFBkrDOuaBI8XgtuyYAQ==
+  /request-promise-core/1.1.3/request@2.88.2:
+    dependencies:
+      lodash: 4.17.15
+      request: 2.88.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    id: registry.npmjs.org/request-promise-core/1.1.3
+    peerDependencies:
+      request: ^2.34
+    resolution:
+      integrity: sha512-QIs2+ArIGQVp5ZYbWD5ZLCY29D5CfWizP8eWnm8FoGD1TX61veauETVQbrV60662V0oFBkrDOuaBI8XgtuyYAQ==
   /request-promise/4.2.5:
     dependencies:
       bluebird: 3.7.2
@@ -2170,6 +2190,21 @@ packages:
     dev: false
     engines:
       node: '>=0.10.0'
+    peerDependencies:
+      request: ^2.34
+    resolution:
+      integrity: sha512-ZgnepCykFdmpq86fKGwqntyTiUrHycALuGggpyCZwMvGaZWgxW6yagT0FHkgo5LzYvOaCNvxYwWYIjevSH1EDg==
+  /request-promise/4.2.5/request@2.88.2:
+    dependencies:
+      bluebird: 3.7.2
+      request: 2.88.2
+      request-promise-core: /request-promise-core/1.1.3/request@2.88.2
+      stealthy-require: 1.1.1
+      tough-cookie: 2.5.0
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    id: registry.npmjs.org/request-promise/4.2.5
     peerDependencies:
       request: ^2.34
     resolution:
@@ -2747,6 +2782,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@shooontan/voicetext': ^0.0.2
+  aki-api: ^3.2.1
   array-shuffle: ^1.0.1
   canvas: ^2.6.1
   cheerio: ^0.22.0
