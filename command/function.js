@@ -17,7 +17,7 @@ const lang =  {
         "giveUp": "ギブアップ...",
         "gameClosed": "**ゲームオーバー**",
         "gameClosedTimeOut": "**タイムアウトです。, ゲームを終了します!!**",
-        "noPerm": "**権限がありません。** ``SEND_MESSAGES``, ``ADD_REACTIONS``"
+        "noPerm": "**権限がありません。** ``SEND_MESSAGES``, ``ADD_REACTIONS`` , ``MANAGE_EMOJIS``"
     }
 
 let text = lang;
