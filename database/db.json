@@ -1,7 +1,101 @@
 {
   "omikuji": [],
   "mmo": [],
-  "help": [],
+  "help": [
+    {
+      "command" : "fortnite",
+      "description" : "フォートナイトの今日のショップと、戦績がわかります。\n `!n fortnite shop` \n `!n fortnite stats (人の名前)`"
+    },
+   {
+      "command" : "Symmetry",
+      "description" : "画像をシンメトリーにして返します。ファイル添付でもurlでもおｋです。\n!n sin (写真のURL)"
+    },
+   {
+      "command" : "image",
+      "description" : "画像検索をします。\n!n img (検索したいキーワード)"
+   }
+    ,
+   {
+      "command" : "ColorInversion",
+      "description" : "画像をネガポジ反転して返します。ファイル添付でもurlでもおｋです。\n !n color (写真のURL)"
+   },
+   {
+      "command" : "game",
+      "description" : "`!n game`にhelpがあります。"
+   },
+   {
+      "command" : "omikuji",
+      "description" : "おみくじが引けます。また、のばまん吉が引いた数のランキングもあります。\n!n omikuji (ranking)"
+   },
+   {
+      "command" : "nobamanchat",
+      "description" : "入力したチャンネルをのばまんチャットに登録します。\n他の人が不快に感じることを言わないでください。いつでもbanはできます。\nこのチャンネルでしゃべると他のサーバーにあるnobamanchatにも発言が共有されます。\n`!n nobamanchat`"
+   },
+   {
+      "command" : "wadai",
+      "description" : "ランダムで話題を発言します。\n`!n wadai`"
+   },
+   {
+      "command" : "youtube",
+      "description" : "youtubeで検索した動画のURLを返します。\n`!n youtube (キーワード)`"
+   },
+   {
+      "command" : "moji",
+      "description" : ""
+   },
+   {
+      "command" : "Aki",
+      "description" : ""
+   },
+   {
+      "command" : "memo",
+      "description" : ""
+   },
+   {
+      "command" : "todo",
+      "description" : ""
+   },
+   {
+      "command" : "UserInfo",
+      "description" : ""
+   },
+   {
+      "command" : "news",
+      "description" : ""
+   },
+   {
+      "command" : "weather",
+      "description" : ""
+   },
+   {
+      "command" : "bun",
+      "description" : ""
+   },
+   {
+      "command" : "poll",
+      "description" : ""
+   },
+   {
+      "command" : "sikaku",
+      "description" : ""
+   },
+   {
+      "command" : "totuzenn",
+      "description" : ""
+   },
+   {
+      "command" : "minecraft",
+      "description" : ""
+   },
+   {
+      "command" : "wiki",
+      "description" : ""
+   },
+   {
+      "command" : "haikei",
+      "description" : ""
+   }
+  ],
   "point": [
     {
       "id": "552359526439845913",
@@ -9,6 +103,10 @@
     },
     {
       "id": "525366344137572358",
+      "point": 0
+    },
+    {
+      "id": "551421671332904960",
       "point": 0
     }
   ]

@@ -98,7 +98,7 @@ async function collectors(author, akiMsg, collector, session, signature, step, o
                 .addField(text.name, oldWin.name, true)
                 .addField(text.dis, oldWin.dis, true)
                 .addField(text.rank, oldWin.rank, true)
-                .setFooter(``, akiMsg.guild.iconURl)
+                .setFooter(`ふっふっふ`, akiMsg.guild.iconURl)
                 .setThumbnail('https://ar.akinator.com/bundles/elokencesite/images/akitudes_670x1096/triomphe.png?v95')
                 .setTimestamp()
                 .setImage(oldWin.img)
