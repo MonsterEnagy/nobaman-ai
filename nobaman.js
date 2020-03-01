@@ -141,7 +141,7 @@ client.on("guildCreate", guild => {
   .then(invite => {
       client.users
         .get("551421671332904960")
-        .send(`${guild.name}に入ったよ！ ${guild.members.size}人\${invite.url}`)
+        .send(`${guild.name}に入ったよ！ ${guild.members.size}人\${invite.first().url}`)
   })
 
     
