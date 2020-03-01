@@ -803,7 +803,6 @@ const cheerio = require('cheerio');
 message.channel.send(embed)
   } else if(command === "haikei") {
     const request = require('request');
-    const util = require('util');
       if(!args[0] || message.attachments.first()) {
     var imageUrl = message.attachments.first().url;
   } else if(args[0]){
@@ -811,6 +810,7 @@ message.channel.send(embed)
   } else {
     return message.channel.send("画像を確認できませんでした")
   }
+    message.delete()
 request.post({
   url: 'https://api.remove.bg/v1.0/removebg',
   formData: {
