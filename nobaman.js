@@ -849,7 +849,7 @@ const msg = message
                     return coolDownList.delete(msg.author.id);
                 } 
 
-                if (!msg.channel.memberPermissions(msg.guild.me).has(['ADD_REACTIONS', 'SEND_MESSAGES' , 'MANAGE_EMOJIS'])) {
+                if (!msg.channel.memberPermissions(msg.guild.me).has(['ADD_REACTIONS', 'SEND_MESSAGES' , 'MANAGE_MESSAGES'])) {
                     coolDownList.delete(msg.author.id);
                     try {
                         msg.channel.send(text.noPerm);
