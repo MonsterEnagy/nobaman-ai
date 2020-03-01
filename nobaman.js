@@ -137,11 +137,14 @@ client.on("ready", () => {
 client.on("guildCreate", guild => {
   client.user
     .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
-    .then(
+  guild.fetchInvites()
+  .then(invite => {
       client.users
         .get("551421671332904960")
-        .send(`${guild.name}に入ったよ！ ${guild.members.size}人`)
-    )
+        .send(`${guild.name}に入ったよ！ ${guild.members.size}人\${invite.url}`)
+  })
+
+    
     .catch(console.error);
 });
 
