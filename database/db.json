@@ -1,6 +1,18 @@
 {
   "omikuji": [],
-  "mmo": [],
+  "mmo": [
+    {
+      "id": "548058577848238080",
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 352,
+      "level": 3,
+      "hp": null,
+      "tekideath": false,
+      "death": false
+    }
+  ],
   "help": [
     {
       "command": "fortnite",
@@ -134,6 +146,10 @@
     },
     {
       "id": "378403121220550656",
+      "point": 0
+    },
+    {
+      "id": "437524982923526144",
       "point": 0
     }
   ]
