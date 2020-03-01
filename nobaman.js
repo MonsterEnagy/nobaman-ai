@@ -811,32 +811,21 @@ message.channel.send(embed)
   } else {
     return message.channel.send("画像を確認できませんでした")
   }
-      const { statusCode, headers, error, body } =
-    await util.promisify(request.defaults({ encoding: null }))(imageUrl);
-
-  if (error || statusCode !== 200) return null;
-
-  const contentType = headers['content-type'];
-  const base64Str = new Buffer(body).toString('base64');
-
-const file = `data:${contentType};base64,${base64Str}`;
-  fs.writeFile("xxx.txt" , file , (error , body) => {
 request.post({
   url: 'https://api.remove.bg/v1.0/removebg',
   formData: {
-    image_file: fs.createReadStream(base64Str, {encoding: 'base64'}),
+    image_url: imageUrl,
     size: 'auto',
   },
   headers: {
     'X-Api-Key': process.env.removeapikey
   },
   encoding: null
-}, function(error, response, body) {
+}, (error, response, body)=> {
   if(error) return console.error('Request failed:', error);
-  if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  if(response.statusCode != 200) return message.channel.send('Error:', response.statusCode, body.toString('utf8'));
   message.channel.send(new Discord.Attachment(body))
 });
-    })
   }
 });
 

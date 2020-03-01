@@ -604,6 +604,10 @@
     {
       "command": "wiki",
       "description": "`のばまん、〇〇って何？`と言うと、博識なのばまんがWIKIPEDIAで覚えたことを話してくれます。"
+    },
+    {
+      "command": "haikei",
+      "description": "`!n haikei (URLまたは写真添付)`で背景を透過させた写真を送ります。"
     }
   ],
   "point": [
