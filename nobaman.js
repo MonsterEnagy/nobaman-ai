@@ -819,7 +819,8 @@ message.channel.send(embed)
   const contentType = headers['content-type'];
   const base64Str = new Buffer(body).toString('base64');
 
-`data:${contentType};base64,${base64Str}`;
+const file = `data:${contentType};base64,${base64Str}`;
+  fs.writeFile("xxx.txt" , file , (error , body) => {
 request.post({
   url: 'https://api.remove.bg/v1.0/removebg',
   formData: {
@@ -835,6 +836,7 @@ request.post({
   if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
   message.channel.send(new Discord.Attachment(body))
 });
+    })
   }
 });
 
