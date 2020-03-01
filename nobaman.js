@@ -822,7 +822,7 @@ request.post({
   },
   encoding: null
 }, (error, response, body)=> {
-  if(error) return console.error('Request failed:', error);
+  if(error) return message.channel.send('Request failed:', error);
   if(response.statusCode != 200) return message.channel.send('Error:', response.statusCode, body.toString('utf8'));
   message.channel.send(new Discord.Attachment(body))
 });
