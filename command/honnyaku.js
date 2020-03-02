@@ -27,7 +27,7 @@ module.exports.en = (client , message, text) => {
 module.exports.channeltrans = (client , message) => {
   const text = message.content
     request({
-    url : `https://api.apitore.com/api/22/langdetect/get?access_token=${process.env.apitore}&text=` + encodeURIComponent(message.content),
+    url : "",
     method : "get",
     json : true
   } , (err , res , body) => {
