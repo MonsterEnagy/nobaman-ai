@@ -20,7 +20,9 @@ db.defaults({
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
- 
+low(new FileSync("database/nobaman.json")).defaults({
+  
+}).write()
 function tisikilength(message) {
   if (Object.keys(tisiki).length % 2 == 0) {
     message.channel.send(
