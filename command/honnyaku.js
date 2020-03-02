@@ -2,41 +2,39 @@ const request = require("request");
 const Discord = require("discord.js");
 const honnyaku = require("./honnyaku.js");
 const LanguageTranslatorV3 = require("watson-developer-cloud/language-translator/v3");
-module.exports.ja = (client, message, text) => {
+module.exports.ja = function(client, message, text){
   //
   request(
     {
-      url: `https://script.google.com/macros/s/AKfycbzZtvOvf14TaMdRIYzocRcf3mktzGgXvlFvyczo/exec?text=${encodeURIComponent(
-        text
-      )}&source=en&target=ja`,
+      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(text)}&source=en&target=ja`,
       method: "get",
       json: true
     },
     (err, res, body) => {
       if (err) return console.error(err);
-      console.log(body)
-      return body.text;
+      console.log(body + "japanese")
+      return body;
     }
   );
 };
 
-module.exports.en = (client, message, text) => {
+module.exports.en = function(client, message, text) {
   request(
     {
-      url: `https://script.google.com/macros/s/AKfycbzZtvOvf14TaMdRIYzocRcf3mktzGgXvlFvyczo/exec?text=${encodeURIComponent(
-        text
-      )}&source=ja&target=en`,
+      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(text)}&source=ja&target=en`,
       method: "get",
       json: true
     },
     (err, res, body) => {
       if (err) return console.error(err);
-      return body.text;
+         console.log(body + "english")
+      return body;
     }
   );
 };
 
 module.exports.channeltrans = (client, message) => {
+  console.log(honnyaku.en(client , message , "これはペンです"))
   const languageTranslator = new LanguageTranslatorV3({
     iam_apikey: process.env.IBMapikey,
     url: "https://gateway.watsonplatform.net/language-translator/api/",
@@ -52,7 +50,7 @@ module.exports.channeltrans = (client, message) => {
       } else {
        const lang = JSON.stringify(language, null, 2)
        message.delete()
-       if(lang[0].language === "ja") {
+       if(language.languages[0].language === "ja") {
         var eng = honnyaku.en(client , message , message.content)
         var jap = message.content
        } else {
@@ -63,7 +61,7 @@ module.exports.channeltrans = (client, message) => {
         .setAuthor(message.author.tag , message.author.avatarURL)
         .addField("English(英語)" , eng)
         .addField("Japanese(日本)" , jap)
-        .setFooter("Translate(翻訳)")
+        .setFooter("原文" + language.languages[0].language)
         .setTimestamp()
         message.channel.send(embed);
      }
