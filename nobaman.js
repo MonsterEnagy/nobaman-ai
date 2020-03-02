@@ -171,7 +171,7 @@ client.on("message", async message => {
       db.get("point").push({id : message.author.id,point:0}).write()
     }
   }
-  if(db.get("transcha").find({id : message.channel.id})) {
+  if(db.get("transcha").find({id : message.channel.id}).value()) {
     require("./command/honnyaku.js").channeltrans(client , message)
   }
   console.log(
@@ -882,11 +882,11 @@ const msg = message
 
   } else if(command === "transcha") {
     const channel = db.get("transcha").find({id : message.channel.id})
-    if(!channel) {
+    if(!channel.value()) {
       db.get("transcha").push({id : message.channel.id}).write()
       message.channel.send("登録しました。")
     } else {
-      channel.delete().write()
+      channel.remove({id : message.channel.id}).write()
       message.channel.send("登録を解除しました。")
     }
   }
