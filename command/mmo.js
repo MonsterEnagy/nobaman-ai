@@ -111,7 +111,7 @@ module.exports.run = async (client, message, db, args) => {
       //------------------------------------------------------------------------------------------------------------------------------------
       // console.log("!json.tekiでーす");
         var strong = json.value().hp + json.value().level
-  var tekistrong = Math.floor(json.value().hp / json.value().level) + 9;
+  var tekistrong = Math.floor(json.value().hp / json.value().level) + 3;
       const tekidice = Math.floor(Math.random() * tekijson.teki.length);
       const teki = tekijson.teki[tekidice];
       var json = db.get("mmo").find({ id: message.author.id });
@@ -172,9 +172,9 @@ module.exports.run = async (client, message, db, args) => {
         Math.floor(Math.random() * 500);
       } */
 
-      if (json.value().level < 100) {
+       if (json.value().level < 100) {
         message.channel.send(`${message.author.username}はメラを放った！`);
-        var strong = Math.floor(strong * 1.2)
+        var strong = Math.floor(strong * 12);
       } else if (json.value().level < 200) {
         message.channel.send(`${message.author.username}はメラミを放った！`);
         var strong = (await strong) * 2;

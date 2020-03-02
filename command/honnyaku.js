@@ -64,16 +64,15 @@ async function channeltrans(client, message) {
             },
             (err, res, body) => {
               if (err) return console.error(err);
-                     var embed = new Discord.RichEmbed()
-          .setAuthor(message.author.tag, message.author.avatarURL)
-          .addField("English(英語)", body)
-          .addField("Japanese(日本)", jap)
-          .setFooter("原文" + language.languages[0].language)
-          .setTimestamp();
-        message.channel.send(embed);
+              var embed = new Discord.RichEmbed()
+                .setAuthor(message.author.tag, message.author.avatarURL)
+                .addField("English(英語)", body)
+                .addField("Japanese(日本)", jap)
+                .setFooter("原文" + language.languages[0].language)
+                .setTimestamp();
+              message.channel.send(embed);
             }
           );
-          
         } else {
           var eng = message.content;
           request(
@@ -86,13 +85,13 @@ async function channeltrans(client, message) {
             },
             (err, res, body) => {
               if (err) return console.error(err);
-                   var embed = new Discord.RichEmbed()
-          .setAuthor(message.author.tag, message.author.avatarURL)
-          .addField("English(英語)", eng)
-          .addField("Japanese(日本)", body)
-          .setFooter("原文" + language.languages[0].language)
-          .setTimestamp();
-        message.channel.send(embed);
+              var embed = new Discord.RichEmbed()
+                .setAuthor(message.author.tag, message.author.avatarURL)
+                .addField("English(英語)", eng)
+                .addField("Japanese(日本)", body)
+                .setFooter("原文" + language.languages[0].language)
+                .setTimestamp();
+              message.channel.send(embed);
             }
           );
         }
