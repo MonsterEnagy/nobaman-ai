@@ -2,8 +2,8 @@ const request = require("request");
 const Discord = require("discord.js");
 const honnyaku = require("./honnyaku.js");
 const LanguageTranslatorV3 = require("watson-developer-cloud/language-translator/v3");
-module.exports.ja = function(client, message, text){
-  //
+function ja(client, message, text){
+  var body1;
   request(
     {
       url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(text)}&source=en&target=ja`,
@@ -13,12 +13,13 @@ module.exports.ja = function(client, message, text){
     (err, res, body) => {
       if (err) return console.error(err);
       console.log(body + "japanese")
-      return body;
+      var body1 = body;
     }
   );
+  return body1;
 };
 
-module.exports.en = function(client, message, text) {
+async function en(client, message, text) {
   request(
     {
       url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(text)}&source=ja&target=en`,
@@ -33,8 +34,8 @@ module.exports.en = function(client, message, text) {
   );
 };
 
-module.exports.channeltrans = (client, message) => {
-  console.log(honnyaku.en(client , message , "これはペンです"))
+async function channeltrans(client, message) {
+  console.log(en(client , message , "これはペンです"))
   const languageTranslator = new LanguageTranslatorV3({
     iam_apikey: process.env.IBMapikey,
     url: "https://gateway.watsonplatform.net/language-translator/api/",
@@ -51,11 +52,11 @@ module.exports.channeltrans = (client, message) => {
        const lang = JSON.stringify(language, null, 2)
        message.delete()
        if(language.languages[0].language === "ja") {
-        var eng = honnyaku.en(client , message , message.content)
+        var eng = en(client , message , message.content)
         var jap = message.content
        } else {
         var eng = message.content
-        var jap = honnyaku.ja(client , message , message.content)
+        var jap = ja(client , message , message.content)
        }
         var embed = new Discord.RichEmbed()
         .setAuthor(message.author.tag , message.author.avatarURL)
@@ -68,3 +69,9 @@ module.exports.channeltrans = (client, message) => {
     }
   );
 };
+
+module.exports = {
+  en,
+  ja,
+  channeltrans
+}
