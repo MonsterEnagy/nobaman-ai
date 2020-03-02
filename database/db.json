@@ -79,6 +79,17 @@
       "hp": null,
       "tekideath": false,
       "death": false
+    },
+    {
+      "id": "629237363847069715",
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": null,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "strong": 44,
+      "level": 1,
+      "hp": null,
+      "tekideath": false,
+      "death": false
     }
   ],
   "help": [

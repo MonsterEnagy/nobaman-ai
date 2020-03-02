@@ -172,7 +172,7 @@ client.on("message", async message => {
     }
   }
   if(db.get("transcha").find({id : message.channel.id})) {
-    require("./command/honnyaku.js").channneltrans(client , message)
+    require("./command/honnyaku.js").channeltrans(client , message)
   }
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
