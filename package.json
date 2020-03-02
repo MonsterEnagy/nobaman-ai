@@ -37,6 +37,7 @@
     "request-promise": "^4.2.5",
     "cheerio-httpcli": "^0.7.3",
     "iconv": "^2.3.5",
-    "aki-api": "^3.2.1"
+    "aki-api": "^3.2.1",
+    "ibm-watson": "^5.4.0"
   }
 }
