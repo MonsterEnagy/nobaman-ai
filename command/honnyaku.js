@@ -1,7 +1,7 @@
 const request = require("request")
 const Discord = require("discord.js")
 const honnyaku = require("./honnyaku.js")
-var LanguageTranslatorV2 = require('watson-developer-cloud/language-translator/v2');
+const LanguageTranslatorV3 = require('watson-developer-cloud/language-translator/v3');
 module.exports.ja = (client , message, text) => {
 //
   request({
@@ -26,17 +26,16 @@ module.exports.en = (client , message, text) => {
 }
 
 module.exports.channeltrans = (client , message) => {
-var languageTranslator = new LanguageTranslatorV2({
-  username: '{username}',
-  password: '{password}',
-  url: 'https://gateway.watsonplatform.net/language-translator/api/'
+const languageTranslator = new LanguageTranslatorV3({
+  iam_apikey: process.env.IBMapikey,
+  url: 'https://gateway.watsonplatform.net/language-translator/api/',
+  version: 'YYYY-MM-DD',
 });
 
-
 }languageTranslator.identify(
-  {
+   {
     text:
-      'The language translator service takes text input and identifies the language used.'
+    message.content.'
   },
   function(err, language) {
     if (err)  {
