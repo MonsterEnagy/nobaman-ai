@@ -2,12 +2,30 @@
   "omikuji": [],
   "mmo": [
     {
-      "id": "551421671332904960",
-      "teki": "ドラゴンブースト",
-      "tekihp": -365329,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "id": null,
+      "teki": null,
+      "tekihp": 1,
+      "url": null,
       "strong": 10,
-      "level": 18269,
+      "level": 1,
+      "hp": 10
+    },
+    {
+      "id": null,
+      "teki": null,
+      "tekihp": 1,
+      "url": null,
+      "strong": 10,
+      "level": 1,
+      "hp": 10
+    },
+    {
+      "id": null,
+      "teki": null,
+      "tekihp": 1,
+      "url": null,
+      "strong": 10,
+      "level": 1,
       "hp": 10
     }
   ],
@@ -18,7 +36,7 @@
       "point": 0
     },
     {
-      "id": "552359526439845913",
+      "id": "277342996104740864",
       "point": 0
     }
   ],

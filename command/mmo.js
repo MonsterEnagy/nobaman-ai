@@ -4,10 +4,17 @@ const FileSync = require("lowdb/adapters/FileSync");
 const fs = require("fs");
 const adapter = new FileSync("database/teki.json");
 
+  var tekijson = require("../database/teki.json");
 const tekidb = low(adapter);
 
 function teki(message , json){
        const teki = tekijson.teki[Math.floor(Math.random() * tekijson.teki.length)];
+        json
+        .assign({
+          teki: teki.name,
+          tekihp: 1,
+          url: teki.url,
+        }).write()
       message.channel.send(
         new Discord.RichEmbed()
           .setTitle(`${teki.name}がやってきた！`)
@@ -86,13 +93,12 @@ module.exports.run = async (client, message, db, args) => {
   var tekijson = require("../database/teki.json");
   if (args[0] === "attack") {
 if(!json.value()) { 
-      const teki = tekijson.teki[Math.floor(Math.random() * tekijson.teki.length)];
       db.get("mmo")
         .push({
-          id: message.author.id,
-          teki: teki.name,
+          id: null,
+          teki: null,
           tekihp: 1,
-          url: teki.url,
+          url: null,
           strong: 10,
           level: 1,
           hp: 10
@@ -100,12 +106,15 @@ if(!json.value()) {
         .write();
   message.channel.send("登録完了")
 } 
-    const strong = 5 * json.value().level
-    const tekistrong = 5 * json.value().level
   teki(message , json)
+    const strong = 10 * json.value().level
+    const tekistrong = 1 * json.value().level
+
 json.assign({ tekihp: json.value().tekihp - strong }).write();
   if(tekijudge(message , json)) return;
- /* while(1){
+         json.assign({ hp: json.value().hp - tekistrong }).write();
+    if(judge(message , json)) return;
+ /*while(1){
         json.assign({ hp: json.value().hp - tekistrong}).write();
     if(judge(message , json)) {
       break;
