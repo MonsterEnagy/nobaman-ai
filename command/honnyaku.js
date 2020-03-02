@@ -14,7 +14,8 @@ module.exports.ja = (client, message, text) => {
     },
     (err, res, body) => {
       if (err) return console.error(err);
-      return body;
+      console.log(body)
+      return body.text;
     }
   );
 };
@@ -30,7 +31,7 @@ module.exports.en = (client, message, text) => {
     },
     (err, res, body) => {
       if (err) return console.error(err);
-      return body;
+      return body.text;
     }
   );
 };
@@ -50,11 +51,22 @@ module.exports.channeltrans = (client, message) => {
         console.log("error:", err);
       } else {
        const lang = JSON.stringify(language, null, 2)
+       message.delete()
        if(lang[0].language === "ja") {
         var eng = honnyaku.en(client , message , message.content)
+        var jap = message.content
+       } else {
+        var eng = message.content
         var jap = honnyaku.ja(client , message , message.content)
        }
-       }
+        var embed = new Discord.RichEmbed()
+        .setAuthor(message.author.tag , message.author.avatarURL)
+        .addField("English(英語)" , eng)
+        .addField("Japanese(日本)" , jap)
+        .setFooter("Translate(翻訳)")
+        .setTimestamp()
+        message.channel.send(embed);
+     }
     }
   );
 };
