@@ -5,6 +5,60 @@ const fs = require("fs");
 const adapter = new FileSync("database/teki.json");
 
 const tekidb = low(adapter);
+
+function teki(message , json){
+      message.channel.send(
+        new Discord.RichEmbed()
+          .setTitle(`${teki.name}がやってきた！`)
+          .addField("HP", json.value().tekihp)
+          .addField("攻撃力", json.value().strong)
+          .setImage(teki.url)
+      );
+}
+function tekijudge(message , json) {
+      if (json.value().tekihp < 0) {
+        json
+          .assign({
+            strong: 10 ,
+            level: json.value().level + 1,
+            hp: 10
+          })
+          .write();
+        message.channel.send(
+          `攻撃しました！敵ののこりHPは${
+            json.value().tekihp
+          }です。\n倒しました！Lvが${json.value().level}にあがります！`
+        );
+        return false;
+      } else {
+        message.channel.send(
+          `攻撃しました！敵ののこりHPは${
+            json.value().tekihp
+          }です。`)
+      }
+}
+function judge(message ,json) {
+      if (json.value().hp < 0) {
+        json
+          .assign({
+            strong: 10,
+            level: json.value().level - 1,
+            hp: 10
+          })
+          .write();
+        message.channel.send(
+          `攻撃しました！敵ののこりHPは${
+            json.value().tekihp
+          }です。\n倒しました！Lvが${json.value().level}にあがります！`
+        );
+        return false;
+      } else {
+        message.channel.send(
+          `攻撃しました！敵ののこりHPは${
+            json.value().tekihp
+          }です。`)
+      }
+}
 /*
 db {
 mmo : [
@@ -44,8 +98,20 @@ if(!json.value()) {
           hp: 10
         })
         .write();
- var json = db.get("mmo").find({ id: message.author.id });
+  message.channel.send("登録完了")
 }
+    const strong = 5 * json.value().level
+    const tekistrong = 5 * json.value().level
+  teki(message , json)
+json.assign({ tekihp: json.value().tekihp - strong }).write();
+  if(tekijudge(message , json)) return;
+  while(1){
+        json.assign({ hp: json.value().hp - tekistrong}).write();
+        json.assign({ tekihp: json.value().tekihp - strong }).write();
+  if(tekijudge(message , json)) {
+    break;
+      }
+  }
   } else if (args[0] === "status") {
     if (!json)
       return message.channel.send("一回プレイしてからステータスを見てね");
