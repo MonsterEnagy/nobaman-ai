@@ -15,7 +15,8 @@ db.defaults({
   omikuji: [],
   mmo : [],
   help : [],
-  point : []
+  point : [],
+  transcha : []
 }).write();
 const cooldown = new Set();
 var unknow = []; //知らないフラグ
@@ -169,6 +170,9 @@ client.on("message", async message => {
     if(!db.get("point").find({ id: message.author.id }).value()) {
       db.get("point").push({id : message.author.id,point:0}).write()
     }
+  }
+  if(db.get("transcha").find({id : message.channel.id})) {
+    require("./command/honnyaku.js").channneltrans(client , message)
   }
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
@@ -876,6 +880,15 @@ const msg = message
             endGame(msg.author.id, oldCollects[msg.author.id].akiMsg)
         }
 
+  } else if(command === "transcha") {
+    const channel = db.get("transcha").find({id : message.channel.id})
+    if(!channel) {
+      db.get("transcha").push({id : message.channel.id}).write()
+      message.channel.send("登録しました。")
+    } else {
+      channel.delete().write()
+      message.channel.send("登録を解除しました。")
+    }
   }
 });
 
