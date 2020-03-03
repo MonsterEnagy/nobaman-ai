@@ -18,7 +18,7 @@ module.exports.run = (client, message, kekka) => {
   ctx.font = 'bold 45px ' + setting.fontFamily
   ctx.textAlign = 'center'
   ctx.fillStyle = setting.color
-  ctx.fillText(text_n, 1280, 56)
+  ctx.fillText(text_n)
 
     const attachment = new Discord.Attachment(c.toBuffer(), "Emoji.png");
 
