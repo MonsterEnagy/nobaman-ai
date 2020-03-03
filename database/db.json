@@ -45,12 +45,12 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジー",
-      "tekihp": -4.9859646305042167e+210,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 3.616343432314507e+210,
-      "level": 5630,
-      "hp": 1.38560029456184e+210,
+      "teki": "モンスターエナジーGRONK",
+      "tekihp": -4.43773424738037e+224,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "strong": 4.853773991529749e+218,
+      "level": 5783,
+      "hp": 1.859668072033116e+218,
       "tekideath": true,
       "death": false
     },
