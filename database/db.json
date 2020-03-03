@@ -63,12 +63,12 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "ドラゴンブースト",
-      "tekihp": -1.3768894106387405e+73,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 9.717658856281114e+72,
-      "level": 1690,
-      "hp": 3.724201863676826e+72,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -1.3426922498623633e+83,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 8.34740539628243e+82,
+      "level": 2020,
+      "hp": 3.1990650416388435e+82,
       "tekideath": true,
       "death": false
     }
