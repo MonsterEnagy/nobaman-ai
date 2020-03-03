@@ -894,6 +894,7 @@ const msg = message
       message.channel.send("登録を解除しました。")
     }
   } else if(command === "trans") {
+    /*
     const request = require("request")
       request(
     {
@@ -907,7 +908,8 @@ const msg = message
       if (err) return console.error(err);
       message.channel.send(body)
     }
-  );
+  );*/
+    require("./command/honnyaku.js").run(client , message , kekka)
   }
 });
 

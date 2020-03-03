@@ -100,8 +100,27 @@ async function channeltrans(client, message) {
   );
 }
 
+async function run(client , message ,kekka){
+  const languageTranslator = new LanguageTranslatorV3({
+    iam_apikey: process.env.IBMapikey,
+    url: "https://gateway.watsonplatform.net/language-translator/api/",
+    version: "2020-03-02"
+  });
+  languageTranslator.identify(
+    {
+      text: message.content
+    },
+    function(err, language) {
+      if (err) {
+        console.log("error:", err);
+      } else {
+        
+      }
+})
+
 module.exports = {
   en,
   ja,
-  channeltrans
+  channeltrans,
+  run
 };

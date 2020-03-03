@@ -63,12 +63,12 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "レッドブル亜種",
-      "tekihp": -1.0682313682024165e+171,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
-      "strong": 6.642173867685913e+170,
-      "level": 4670,
-      "hp": 2.545238454331483e+170,
+      "teki": "UNLEADED",
+      "tekihp": -1.750190273662839e+175,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 1.08825376648166e+175,
+      "level": 4810,
+      "hp": 4.1701186835767015e+174,
       "tekideath": true,
       "death": false
     },
@@ -186,6 +186,10 @@
     {
       "command": "haikei",
       "description": "`!n haikei (写真のURL)`で写真の背景を透過させます。\n※写真のURLじゃなくても写真を添付すればできます。"
+    },
+    {
+      "command": "translate",
+      "description": "翻訳に関する機能一覧です。\n `!n trans (文)`で文を英語に翻訳。\n`!n transcha`で、翻訳チャンネルに登録。\n翻訳チャンネルでは、喋ったことが日本語<==>英語に翻訳されます。"
     }
   ],
   "point": [
@@ -286,5 +290,9 @@
       "point": 0
     }
   ],
-  "transcha": []
+  "transcha": [
+    {
+      "id": "684283926507945984"
+    }
+  ]
 }
