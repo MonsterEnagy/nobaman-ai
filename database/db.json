@@ -45,13 +45,13 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーキューバリブレ",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
       "tekihp": null,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 1.2359140302178422e+308,
-      "level": 7313,
-      "hp": 4.733809155105977e+307,
-      "tekideath": true,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": null,
+      "level": 7323,
+      "hp": 9.452115629650665e+307,
+      "tekideath": false,
       "death": false
     },
     {
