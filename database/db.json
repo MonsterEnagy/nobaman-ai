@@ -33,24 +33,6 @@
   ],
   "mmo": [
     {
-      "id": null,
-      "teki": null,
-      "tekihp": 1,
-      "url": null,
-      "strong": 10,
-      "level": 1,
-      "hp": 10
-    },
-    {
-      "id": null,
-      "teki": null,
-      "tekihp": 1,
-      "url": null,
-      "strong": 10,
-      "level": 1,
-      "hp": 10
-    },
-    {
       "id": "551421671332904960",
       "teki": "レッドブル",
       "tekihp": -343542695116568,
@@ -295,6 +277,10 @@
     },
     {
       "id": "532064939846664192",
+      "point": 0
+    },
+    {
+      "id": "541216428033048576",
       "point": 0
     }
   ],
