@@ -52,12 +52,12 @@
     },
     {
       "id": "551421671332904960",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": -9037336430652,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
-      "strong": 6192449487634432,
-      "level": 213,
-      "hp": 3263272953292800,
+      "teki": "レッドブル",
+      "tekihp": -343542695116568,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 12384898975268864,
+      "level": 223,
+      "hp": 6526545906585600,
       "tekideath": true,
       "death": false
     },
@@ -287,6 +287,14 @@
     },
     {
       "id": "497368265514024960",
+      "point": 0
+    },
+    {
+      "id": "474327291082833950",
+      "point": 0
+    },
+    {
+      "id": "532064939846664192",
       "point": 0
     }
   ],

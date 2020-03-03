@@ -22,11 +22,7 @@ const cooldown = new Set();
 var unknow = []; //知らないフラグ
 var know = []; //知ってるフラグ
 low(new FileSync("database/nobaman.json")).defaults({
-  "あいうえお": {
-    "imi": "50音の最初の部分",
-    "hito": "ンョ゛ハー゛に売ってるMonsterEnergy#9261",
-    "server": "KotlinBOTTESTing Server"
-  }
+"adadoahouahoaduahahhdaoadshosahuashuahusadhuasdhuashud" : []
 } ).write()
 function tisikilength(message) {
   if (Object.keys(tisiki).length % 2 == 0) {
