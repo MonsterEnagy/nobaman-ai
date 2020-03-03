@@ -113,11 +113,47 @@ async function run(client , message ,kekka){
     function(err, language) {
       if (err) {
         console.log("error:", err);
+      } else if(language.languages[0].language != "ja"){
+  request(
+    {
+      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
+       kekka
+      )}&source=${language.languages[0].language}&target=ja`,
+      method: "get",
+      json: true
+    },
+    (err, res, body) => {
+      if (err) return console.error(err);
+              var embed = new Discord.RichEmbed()
+                .setAuthor(message.author.tag, message.author.avatarURL)
+                .addField("日本語", body)
+                .setFooter("原文語" + language.languages[0].language)
+                .setTimestamp();
+              message.channel.send(embed);
+    }
+  );
       } else {
-        
-      }
+  request(
+    {
+      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
+       kekka
+      )}&source=ja&target=en`,
+      method: "get",
+      json: true
+    },
+    (err, res, body) => {
+      if (err) return console.error(err);
+              var embed = new Discord.RichEmbed()
+                .setAuthor(message.author.tag, message.author.avatarURL)
+                .addField("英語", body)
+                .setFooter("原文語" + language.languages[0].language)
+                .setTimestamp();
+              message.channel.send(embed);
+    }
+  );
+ }
 })
-
+}
 module.exports = {
   en,
   ja,

@@ -63,12 +63,12 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "UNLEADED",
-      "tekihp": -1.750190273662839e+175,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 1.08825376648166e+175,
-      "level": 4810,
-      "hp": 4.1701186835767015e+174,
+      "teki": "モンスターエナジー",
+      "tekihp": -9.176037581981426e+180,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 5.705583907211365e+180,
+      "level": 5000,
+      "hp": 2.1863431843750617e+180,
       "tekideath": true,
       "death": false
     },
