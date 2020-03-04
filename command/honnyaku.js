@@ -100,7 +100,8 @@ async function channeltrans(client, message) {
   );
 }
 
-async function run(client , message ,kekka){
+async function run(client , message ,kekka , args){
+if(!args[1]) {
   const languageTranslator = new LanguageTranslatorV3({
     iam_apikey: process.env.IBMapikey,
     url: "https://gateway.watsonplatform.net/language-translator/api/",
@@ -153,6 +154,19 @@ async function run(client , message ,kekka){
   );
  }
 })
+} else {
+  request(
+    {
+      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
+       args.slice(2).trim()
+      )}&source=${args[0]}&target=${args[1]}`,
+      method: "get",
+      json: true
+    },
+    (err, res, body) => {
+      
+    })
+}
 }
 module.exports = {
   en,
