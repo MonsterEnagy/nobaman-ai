@@ -51,11 +51,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーTHEDOCTOR",
-      "tekihp": -145320,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
+      "teki": "ドラゴンブースト",
+      "tekihp": -156600,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
       "strong": 0,
-      "level": 12120,
+      "level": 13060,
       "hp": 0,
       "tekideath": true,
       "death": false
