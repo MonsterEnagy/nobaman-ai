@@ -810,22 +810,7 @@ const msg = message
       message.channel.send("登録を解除しました。")
     }
   } else if(command === "trans") {
-    /*
-    const request = require("request")
-      request(
-    {
-      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
-        kekka
-      )}&source=en&target=ja`,
-      method: "get",
-      json: true
-    },
-    (err, res, body) => {
-      if (err) return console.error(err);
-      message.channel.send(body)
-    }
-  );*/
-    require("./command/honnyaku.js").run(client , message , kekka)
+    require("./command/honnyaku.js").run(client , message , kekka , args)
   }
 });
 

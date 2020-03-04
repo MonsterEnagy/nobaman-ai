@@ -157,14 +157,19 @@ if(!args[1]) {
 } else {
   request(
     {
-      url: ` https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
-       args.slice(2).trim()
+      url: `https://script.google.com/macros/s/AKfycbweJFfBqKUs5gGNnkV2xwTZtZPptI6ebEhcCU2_JvOmHwM2TCk/exec?text=${encodeURIComponent(
+       args.slice(1)
       )}&source=${args[0]}&target=${args[1]}`,
       method: "get",
       json: true
     },
     (err, res, body) => {
-      
+  message.channel.send(
+  new Discord.RichEmbed()
+  .setTitle(`${args[0]}→${args[1]}`)
+  .setDescription(body)
+  .setTimestamp()
+  )
     })
 }
 }
