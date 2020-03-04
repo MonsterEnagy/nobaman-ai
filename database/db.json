@@ -57,11 +57,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "ドラゴンブースト",
-      "tekihp": -157800,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "teki": "モンスターエナジー",
+      "tekihp": -158520,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
       "strong": 0,
-      "level": 13160,
+      "level": 13220,
       "hp": 0,
       "tekideath": true,
       "death": false
