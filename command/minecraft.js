@@ -36,17 +36,17 @@ module.exports.server = (client,message,args) => {
   } , (error , response , body) => {
   if(Object.keys(body) == 1) return message.channel.send("見つかりませんでした");
     
-  if(body.icon) {
+
     const base64 = body.icon.split(',')[1];
     var decode = new Buffer.from(base64,'base64');
 
-  }
+
     let embed = new Discord.RichEmbed()
-    .setTitle(`${body.motd.text : "詳細なし"} : ${body.serverStatus}`)
+    .setTitle(`${body.motd.text || "詳細なし"} : ${body.serverStatus}`)
     .setDescription(`IP:${body.serverip} | ${body.version}`)
     .addField("players" , `${body.players} / ${body.maxplayers}`)
     .addField("protocol" , body.protocol)
-    .attachFile(new Attachment(typeof decode != undefined ? decode : "なし"))
+    .attachFile(new Attachment(decode))
     message.channel.send(embed)
   })
 }
