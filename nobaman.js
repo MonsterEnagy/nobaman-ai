@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 console.log("起動");
-const tisiki = require("./database/nobaman.json");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
 const low = require("lowdb");
@@ -24,13 +23,7 @@ var know = []; //知ってるフラグ
 low(new FileSync("database/nobaman.json")).defaults({
 "adadoahouahoaduahahhdaoadshosahuashuahusadhuasdhuashud" : []
 } ).write()
-function tisikilength(message) {
-  if (Object.keys(tisiki).length % 2 == 0) {
-    message.channel.send(
-      "のばまんくんの知識が" + Object.keys(tisiki).length + "を超えたよ！"
-    );
-  }
-}
+
 function koukoku(message) {
   client.channels.forEach(async c => {
     if (!chat[c.id]) return;
@@ -177,77 +170,9 @@ client.on("message", async message => {
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
-  if (know.length != 0 || unknow.length != 0) {
-    // console.log("通ってる" + `${know},${unknow}`);
-    if (unknow[0] === message.author.id) {
-      //console.log("知らない分岐点" + `${know},${unknow}`);
-      message.channel.send(`
-			へぇ~！\n\`\`\`${message.content}\`\`\`\nって意味なんだ！のばまん覚えるよ！\n\
-			\`チュートリアル:のばまんは${unknow[1]}を覚えました。\`
-			`);
 
-      tisiki[unknow[1]] = {
-        imi: message.content,
-        hito: message.author.tag,
-        server: message.guild.name
-      };
-      tisikilength(message);
-      unknow = []; //知らないフラグ
-      know = []; //知ってるフラグ
-    } else if (know[0] === message.author.id && know[2] === "flag") {
-      //console.log("知ってる分岐点2" + `${know},${unknow}`);
-      message.channel.send(`
-			へぇ~！\n\`\`\`${
-        message.content
-      }\`\`\`\nって意味なんだ！のばまんまた覚えるよ！\n\
-			\`チュートリアル:のばまんは${know[1]}を覚えました。\`
-			`);
 
-      tisiki[know[1]] = {
-        imi: message.content,
-        hito: message.author.tag,
-        server: message.guild.name
-      };
-      tisikilength(message);
-      unknow = []; //知らないフラグ
-      know = []; //知ってるフラグ
-    } else if (know[0] === message.author.id && message.content === "違うよ") {
-      //console.log("知ってる分岐点" + `${know},${unknow}`);
-      message.channel.send(
-        "ええええ、違ったの！？じゃあ、間違ってない知識を教えてくれませんか・・・(懇願)\n `チュートリアル:この後に意味を書くとのばまんが覚えてくれます。`"
-      );
-      unknow = []; //知らないフラグ
-      know = [message.author.id, know[1], "flag"]; //知ってるフラグ
-    } else if (know[0] === message.author.id && message.content !== "違うよ") {
-      message.channel.send("なんだ、よかった");
-      unknow = []; //知らないフラグ
-      know = []; //知ってるフラグ
-    }
-  }
-
-  if (
-    message.content.indexOf("って知ってる？") != "-1" &&
-    message.content.indexOf("のばまん、") != "-1"
-  ) {
-    var tango = message.content.slice(5, -7);
-
-    if (!tisiki[tango]) {
-      message.channel.send(
-        `\`${tango}\`ってなんですか？教えてくれえぇぇぇ！(魂の解放)\n\`チュートリアル:この後に意味を書くとのばまんが覚えてくれます。\``
-      );
-
-      unknow = [message.author.id, tango, message.author.tag];
-    } else {
-      message.channel.send(
-        `それなら知ってるよ!\`${tisiki[tango].server}\`の\`${tisiki[tango].hito}\`さんが教えてくれたんだ！\n\`\`\`${tisiki[tango].imi}\`\`\`\nだよね!\n違ったら\`違うよ\`って言ってな`
-      );
-      know = [message.author.id, tango];
-    }
-  }
-
-  fs.writeFile("./database/nobaman.json", JSON.stringify(tisiki), err => {
-    if (err) console.log(err);
-  });
+ 
   if (
     message.content.indexOf("って何？") != "-1" &&
     message.content.indexOf("のばまん、") != "-1"
