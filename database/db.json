@@ -45,13 +45,13 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": 0,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": -106536,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
       "strong": 0,
-      "level": 8618,
+      "level": 8888,
       "hp": 0,
-      "tekideath": false,
+      "tekideath": true,
       "death": false
     },
     {
