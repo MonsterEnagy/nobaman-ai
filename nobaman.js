@@ -751,9 +751,9 @@ request.post({
     'X-Api-Key': process.env.removeapikey
   },
   encoding: null
-}, (error, response, body)=> {
-  if(error) return message.channel.send('Request failed:', error);
-  if(response.statusCode != 200) return message.channel.send('Error:' + response.statusCode + body.toString('utf8'));
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
   message.channel.send(new Discord.Attachment(body))
 });
   } else if(command === "aki") {
