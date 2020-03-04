@@ -34,12 +34,12 @@
   "mmo": [
     {
       "id": "551421671332904960",
-      "teki": "ドラゴンブースト",
-      "tekihp": -3.284425880096475e+27,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 8.715097876569077e+29,
-      "level": 476,
-      "hp": 4.5926483926430225e+29,
+      "teki": "モンスターエナジー",
+      "tekihp": -3.8424219545621494e+38,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 2.2310650564016837e+32,
+      "level": 520,
+      "hp": 1.1745084021086749e+32,
       "tekideath": true,
       "death": false
     },
