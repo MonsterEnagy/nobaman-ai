@@ -18,11 +18,6 @@ db.defaults({
   transcha : []
 }).write();
 const cooldown = new Set();
-var unknow = []; //知らないフラグ
-var know = []; //知ってるフラグ
-low(new FileSync("database/nobaman.json")).defaults({
-"adadoahouahoaduahahhdaoadshosahuashuahusadhuasdhuashud" : []
-} ).write()
 
 function koukoku(message) {
   client.channels.forEach(async c => {
