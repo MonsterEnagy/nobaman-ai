@@ -121,13 +121,14 @@
       "death": false
     },
     {
-      "id": "592159613969891338",
-      "teki": "レッドブル亜種",
-      "tekihp": -14,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
-      "strong": 11,
-      "level": 2,
-      "hp": 6
+      "id": "507837054785290240",
+      "teki": "モンスターエナジーASSAULT",
+      "tekihp": -110,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
+      "strong": 22,
+      "level": 3,
+      "hp": 12,
+      "tekideath": true
     }
   ],
   "help": [
@@ -225,7 +226,7 @@
     },
     {
       "command": "translate",
-      "description": "翻訳に関する機能一覧です。\n `!n trans (文)`で文を英語<=>日本語に翻訳。\nまた、国を指定すれば、どんな言語でもちゃちゃっと翻訳できます。\n例:``\n`!n transcha`で、翻訳チャンネルに登録。\n翻訳チャンネルでは、喋ったことが日本語<==>英語に翻訳されます。"
+      "description": "翻訳に関する機能一覧です。\n `!n trans (文)`で文を英語<=>日本語に翻訳。\nまた、国を指定すれば、どんな言語間でもちゃちゃっと翻訳できます。\n例:`!n trans ja de こんにちわ` => Hallo\n`!n transcha`で、翻訳チャンネルに登録。\n翻訳チャンネルでは、喋ったことが日本語<==>英語に翻訳されます。"
     }
   ],
   "point": [
