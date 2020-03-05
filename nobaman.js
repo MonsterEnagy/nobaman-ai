@@ -158,7 +158,6 @@ client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
   
- $('#messageList').append('<li>' + `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}` + '</li>');
   if(message.guild.id === "302627651036774401") {
     if(!db.get("point").find({ id: message.author.id }).value()) {
       db.get("point").push({id : message.author.id,point:0}).write()
@@ -175,9 +174,8 @@ client.on("message", async message => {
  
   if (
     message.content.indexOf("って何？") != "-1" &&
-    message.content.indexOf("のばまん、") != "-1"
-  ) {
-    require("./command/wiki.js").run(
+
+        require("./command/wiki.js").run(
       client,
       message,
       message.content.slice(5, -4)
