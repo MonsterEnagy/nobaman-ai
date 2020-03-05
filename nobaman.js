@@ -154,6 +154,7 @@ client.on("guildDelete", guild => {
 client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
+  app.get("/", (req, res) => res.send(`${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`));
   if(message.guild.id === "302627651036774401") {
     if(!db.get("point").find({ id: message.author.id }).value()) {
       db.get("point").push({id : message.author.id,point:0}).write()
@@ -819,6 +820,6 @@ client.login(process.env.token);
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser")
-app.get("/", (req, res) => res.send("Hello World!"));
+
 
 app.listen(3000);
