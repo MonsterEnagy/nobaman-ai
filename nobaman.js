@@ -10,6 +10,7 @@ const adapter = new FileSync("database/db.json");
 const cooltime = [];
 const coolDownList = new Set();
 const db = low(adapter);
+const $ = require("jquery")
 db.defaults({
   omikuji: [],
   mmo : [],
@@ -155,9 +156,7 @@ client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
   
-  app.get("/", (req, res) => {
-    res.send(`\n${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`)
-  });
+ $('#messageList').append('<li>' + `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}` + '</li>');
   if(message.guild.id === "302627651036774401") {
     if(!db.get("point").find({ id: message.author.id }).value()) {
       db.get("point").push({id : message.author.id,point:0}).write()

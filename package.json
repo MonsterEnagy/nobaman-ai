@@ -39,6 +39,7 @@
     "iconv": "^2.3.5",
     "aki-api": "^3.2.1",
     "ibm-watson": "^5.4.0",
-    "watson-developer-cloud": "^4.0.1"
+    "watson-developer-cloud": "^4.0.1",
+    "jquery": "^3.4.1"
   }
 }

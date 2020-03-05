@@ -16,6 +16,7 @@ dependencies:
   googleapis: 47.0.0
   ibm-watson: 5.4.0
   iconv: 2.3.5
+  jquery: 3.4.1
   kuromoji: 0.1.2
   lowdb: 1.0.0
   node-fetch: 2.6.0
@@ -4077,6 +4078,10 @@ packages:
       node: '>=8.9.0'
     resolution:
       integrity: sha512-xuY5VkHfeOYK3Hdi91ulocfuFopwgbSORmIwzcwHKESQhC7w1kD5jaVSPnqDxS2I8t3RZ9omCKAxNwXN5zG1/Q==
+  /jquery/3.4.1:
+    dev: false
+    resolution:
+      integrity: sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
   /js-tokens/4.0.0:
     dev: false
     resolution:
@@ -7473,6 +7478,7 @@ specifiers:
   googleapis: ^47.0.0
   ibm-watson: ^5.4.0
   iconv: ^2.3.5
+  jquery: ^3.4.1
   kuromoji: ^0.1.2
   lowdb: ^1.0.0
   node-fetch: ^2.6.0
