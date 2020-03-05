@@ -10,7 +10,9 @@ const adapter = new FileSync("database/db.json");
 const cooltime = [];
 const coolDownList = new Set();
 const db = low(adapter);
-const $ = require("jquery")
+const JSDOM = require("jsdom").JSDOM
+const myJSDom = new JSDOM("./public/nobaman.html");
+const $ = require('jquery')
 db.defaults({
   omikuji: [],
   mmo : [],
