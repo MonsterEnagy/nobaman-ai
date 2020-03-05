@@ -824,7 +824,7 @@ const msg = message
       "最初はのばのば\nじゃんけん....."
       );
     for(var i = 0; hairetu.length > i; i++){
-      await message.react(hairetu[i])
+      await msg.react(hairetu[i])
     }
        const filter = (reaction, user) => {
 
