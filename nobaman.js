@@ -816,21 +816,18 @@ const msg = message
     }
   } else if(command === "trans") {
     require("./command/honnyaku.js").run(client , message , kekka , args)
-  } else if(command = "suumo"){
+  } else if(command === "suumo"){
     message.channel.send("あ❗️ スーモ❗️:new_moon_with_face:ダン:boom:ダン:boom:ダン:boom:シャーン:notes:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:ス〜〜〜モ:arrow_heading_up:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:ス～～～モ:arrow_heading_down::sun_with_face:")
   } else if (command === "janken") {
     const hairetu = ["✊" , "✌️" , "🖐️"]
       const msg = await message.channel.send(
-      "最初はのばのば\nじゃんけんぽん！"
+      "最初はのばのば\nじゃんけん....."
       );
     for(var i = 0; hairetu.length > i; i++){
       await message.react(hairetu[i])
     }
        const filter = (reaction, user) => {
-        return (
-          hairetu.includes(reaction.emoji.name) &&
-          user.id === message.author.id
-        );
+
       };
         msg
         .awaitReactions(filter, {
@@ -843,8 +840,16 @@ const msg = message
             const emoji = reaction.emoji.name
             const te = hairetu[Math.floor() * hairetu.length]
           if(emoji === te) {
-            msg.edit(new Discord.RichEmbed().setTitle("じゃんけん".setDescription("あいこです！引き分け！")))
-          } else if(emoji === hairetu[2] && te === "")
+            msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あいこです！引き分け！"))
+          } else if(emoji === hairetu[2] && te === hairetu[1]) {
+            msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
+          }　else if(emoji === hairetu[1] && te === hairetu[3]) {
+             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
+          } else if(emoji === hairetu[3] && te ===  hairetu[2]) {
+             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
+          } else {
+             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あちゃー！\nあなたの勝ち！！"))
+          }
         }).catch(err => {
          msg.edit(`タイムアウト！つまりのばまんの勝ち`);
 
