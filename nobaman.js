@@ -823,9 +823,8 @@ const msg = message
     for(var i = 0; hairetu.length > i; i++){
       await msg.react(hairetu[i])
     }
-       const filter = (reaction, user) => {
-        user.id === message.author.id
-      };
+       const filter = (reaction, user) => user.id === message.author.id && hairetu.includes(reaction.emoji.name)
+
         msg
         .awaitReactions(filter, {
           max: 1,
@@ -835,8 +834,7 @@ const msg = message
         .then(collected => {
             const reaction = collected.first();
             const emoji = reaction.emoji.name
-            const te = hairetu[Math.floor() * hairetu.length]
-            console.log("あ")
+            const te = hairetu[Math.floor( Math.random() * hairetu.length)]
           if(emoji === te) {
             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あいこです！引き分け！"))
           } else if(emoji === hairetu[2] && te === hairetu[1]) {
