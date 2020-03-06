@@ -75,11 +75,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーLO-CARB",
-      "tekihp": -202680,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": -202800,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
       "strong": 0,
-      "level": 16900,
+      "level": 16910,
       "hp": 0,
       "tekideath": true,
       "death": false
@@ -148,6 +148,17 @@
       "level": 3,
       "hp": 12,
       "tekideath": true
+    },
+    {
+      "id": "576740452737220628",
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": -774543,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": 2883584,
+      "level": 110,
+      "hp": 1471268,
+      "tekideath": true,
+      "death": false
     }
   ],
   "help": [
