@@ -10,9 +10,7 @@ const adapter = new FileSync("database/db.json");
 const cooltime = [];
 const coolDownList = new Set();
 const db = low(adapter);
-const {JSDOM} = require("jsdom");
-const {window} = new JSDOM("./public/nobaman.html");
-const $ = require('jquery')(window)
+
 db.defaults({
   omikuji: [],
   mmo : [],
@@ -157,8 +155,7 @@ client.on("guildDelete", guild => {
 client.on("message", async message => {
 
   if (message.author.bot || !message.guild) return;
-  
- $('#messageList').append('<li>' + `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}` + '</li>');
+
   if(message.guild.id === "302627651036774401") {
     if(!db.get("point").find({ id: message.author.id }).value()) {
       db.get("point").push({id : message.author.id,point:0}).write()
@@ -827,7 +824,7 @@ const msg = message
       await msg.react(hairetu[i])
     }
        const filter = (reaction, user) => {
-
+        user.id === message.author.id
       };
         msg
         .awaitReactions(filter, {
@@ -839,6 +836,7 @@ const msg = message
             const reaction = collected.first();
             const emoji = reaction.emoji.name
             const te = hairetu[Math.floor() * hairetu.length]
+            console.log("あ")
           if(emoji === te) {
             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あいこです！引き分け！"))
           } else if(emoji === hairetu[2] && te === hairetu[1]) {
@@ -861,7 +859,6 @@ client.login(process.env.token);
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser")
-app.use(express.static('public'));
+
 
 app.listen(3000);
