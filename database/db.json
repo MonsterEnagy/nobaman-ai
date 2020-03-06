@@ -186,6 +186,17 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "471556451664658453",
+      "teki": "モンスターエナジー亜種",
+      "tekihp": 7.416364839479738e+22,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 5.19460313115661e+22,
+      "level": 326,
+      "hp": 2.2291780731626066e+22,
+      "tekideath": false,
+      "death": false
     }
   ],
   "help": [
