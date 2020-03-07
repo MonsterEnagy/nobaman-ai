@@ -212,6 +212,17 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "266394971479867394",
+      "teki": "ドラゴンブースト",
+      "tekihp": -148,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 44,
+      "level": 13,
+      "hp": 24,
+      "tekideath": true,
+      "death": false
     }
   ],
   "help": [
@@ -483,6 +494,10 @@
     },
     {
       "id": "437541619139346462",
+      "point": 0
+    },
+    {
+      "id": "312799480913330178",
       "point": 0
     }
   ],
