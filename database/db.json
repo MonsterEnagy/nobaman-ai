@@ -50,9 +50,9 @@
     },
     {
       "id": "471556451664658453",
-      "time": "2020/3/5",
+      "time": "2020/3/7",
       "nobaman": 2,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "507837054785290240",
@@ -195,12 +195,12 @@
     },
     {
       "id": "471556451664658453",
-      "teki": "ドラゴンブースト",
-      "tekihp": -2.5273480565175736e+102,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 1.5398245102472404e+102,
-      "level": 1823,
-      "hp": 6.592323763255841e+101,
+      "teki": "モンスターエナジーTHEDOCTOR",
+      "tekihp": -7.243264879171324e+132,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
+      "strong": 3.9039189293221073e+132,
+      "level": 2374,
+      "hp": 1.6713526350729295e+132,
       "tekideath": true,
       "death": false
     },
