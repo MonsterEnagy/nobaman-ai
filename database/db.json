@@ -27,7 +27,7 @@
     {
       "id": "552359526439845913",
       "time": "2020/3/5",
-      "nobaman": 3,
+      "nobaman": 4,
       "omikujinaiyou": "のばまん吉"
     },
     {
@@ -95,6 +95,12 @@
       "time": "2020/3/7",
       "nobaman": 0,
       "omikujinaiyou": "末吉"
+    },
+    {
+      "id": "583219161082101779",
+      "time": "2020/3/7",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
     }
   ],
   "mmo": [
@@ -111,11 +117,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -203880,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
+      "teki": "ドラゴンブースト",
+      "tekihp": -204120,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
       "strong": 0,
-      "level": 17000,
+      "level": 17020,
       "hp": 0,
       "tekideath": true,
       "death": false
