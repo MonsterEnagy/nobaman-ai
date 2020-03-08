@@ -60,32 +60,6 @@ kakunin(playBoard)
   }
 }
 
-
-function kakunin(ban_ar , db , message){
-var check_reverse_cnt = 0
-  var white_cnt = 0
-var black_cnt = 0
-for (var x = 1; x < 9; x++) {
-for (var y = 1; y < 9; y++) {
-// 空白マスのみおけるのでチェック
-// それ以外は石の数を加算
-switch( ban_ar[x][y] ) {
-case 0:
-check_reverse_cnt = check_reverse_cnt + check_reverse(x,y)
-// バックアップから元に戻す
-for (var i = 1; i < 9; i++) {
-for (var ii = 1; ii < 9; ii++) {
-ban_ar[i][ii] = db.get("osero").find({ id :message.channel.id}).value().playBoard
-}
-}
-break;
-case -1:
-white_cnt++
-break
-case 1:
-black_cnt++
-break
-}
-}
-}
+function kakunin(playBoard){
+  
 }
