@@ -28,21 +28,22 @@ module.exports.run = (client , message , db , args) => {
       [":seven:",0,0,0,0,0,0,0,0],
       [":eight:",0,0,0,0,0,0,0,0]
     ] 
-  json.push({id : message.author.id, board : playBoard})
+  json.push({id : message.author.id, board : playBoard , flg:Math.floor(Math.random() * 2 + 1)})
+  const ban = json.value().flg.replace(/1/ , "白").replace(/2/ , "黒")
   let embed = Discord.RichEmbed()
     .setTitle("オセロがスタート！")
     .setDescription(str(playBoard))
+    .setFooter("先攻:" + ban)
   message.channel.send(embed)
   } else {
-  if(!args[2]) return message.channel.send("石または座標を指定してください。\n例:`!n osero b 1 1`")
-    if(args[0] === "b") {
-      args[0] = "2"
-    } else {
-      args[0] = "1"
-    }
+  if(!args[2]) return message.channel.send("石または座標を指定してください。\n例:`!n osero 1 1`")
+  if(json.value().flg === "1") {
+    message.channel.send("黒の晩")
+  }
     const playBoard = json.value().board
     if(playBoard[args[1][args[2]]] !==　0) return message.channel.send("そこはすでに配置されています。")
     playBoard[args[1]][args[2]] === args[0]
   json.assigin({board : playBoard})
   }
 }
+
