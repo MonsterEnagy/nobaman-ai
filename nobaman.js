@@ -877,6 +877,10 @@ async      function checkMembers(guild) {
   .setFooter('サーバー作成日:')
   .setTimestamp(message.guild.createdAt)
   return message.channel.send(embed)
+  } else if(command === "maze") {
+require("./command/maze.js").run(client , message)
+  } else if(command === "osero") {
+    require("./command/osero.js").run(client , message , d)
   }
 });
 
