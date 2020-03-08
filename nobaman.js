@@ -881,6 +881,7 @@ async      function checkMembers(guild) {
   } else if(command === "maze") {
 require("./command/maze.js").run(client , message)
   } else if(command === "osero") {
+    return message.channel.send("開発止まり")
     require("./command/osero.js").run(client , message , db , args)
   }
 });

@@ -190,12 +190,12 @@
     },
     {
       "id": "583219161082101779",
-      "teki": "モンスターエナジーCUBALIMA",
-      "tekihp": -233056238565,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
-      "strong": 1511828488192,
-      "level": 129,
-      "hp": 656865699588,
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": -871253634249,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
+      "strong": 6047313952768,
+      "level": 131,
+      "hp": 2587040293746,
       "tekideath": true,
       "death": false
     },
@@ -288,6 +288,17 @@
       "strong": 6047313952768,
       "level": 203,
       "hp": 2946868697890,
+      "tekideath": true,
+      "death": false
+    },
+    {
+      "id": "297566836923564042",
+      "teki": "モンスターエナジーTHEDOCTOR",
+      "tekihp": -1508255,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
+      "strong": 5767168,
+      "level": 111,
+      "hp": 2915780,
       "tekideath": true,
       "death": false
     }
