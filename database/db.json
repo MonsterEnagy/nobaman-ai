@@ -161,12 +161,12 @@
     },
     {
       "id": "647419457215397918",
-      "teki": "モンスターエナジーUNLEADED亜種",
-      "tekihp": -1.5509823927534184e+130,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
-      "strong": 7.624841658832241e+129,
-      "level": 2149,
-      "hp": 3.512123970373745e+129,
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": -5.759392245483522e+146,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 5.1169446190410725e+137,
+      "level": 2256,
+      "hp": 2.3567645575204324e+137,
       "tekideath": true,
       "death": false
     },
