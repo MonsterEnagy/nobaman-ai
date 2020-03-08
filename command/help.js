@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 module.exports.run = (client, message, args , db) => {
 const benri = ["memo" , "todo" , "userinfo" , "news" , "weather" , "bun" , "poll" , "sikaku" , "totuzenn" , "minecraft" , "wiki" , "haikei" , "translate"]
-const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , "omikuji" , "nobamanchat" , "wadai" , "youtube" , "moji", "Aki"]
+const oasobi = ["fortnite" , "Symmetry" , "image" , "Colorinversion" , "game" , "omikuji" , "nobamanchat" , "wadai" , "youtube" , "moji", "Aki","janken"]
      if (!args[0]) {
       let embed = new Discord.RichEmbed()
         .setTitle("nobaman aiの機能")

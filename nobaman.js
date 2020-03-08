@@ -417,13 +417,6 @@ client.on("message", async message => {
       });
     }
   }
-  if (command === "server") {
-    message.channel.send(
-      client.guilds
-        .find(m => m.name === "𝑌𝐸𝑁𝐵𝑈𝑂𝑈/𝗰𝗵𝗮𝘁")
-        .members.map(m => m.user.username)
-    );
-  }
   if (command === "chat") {
     if (!args[0]) {
       if (!message.member.hasPermission("MANAGE_CHANNELS"))
@@ -850,6 +843,40 @@ const msg = message
          msg.edit(`タイムアウト！つまりのばまんの勝ち`);
 
         });
+  } else if(command === "server") {
+  async  function checkBots(guild) {
+        let botCount = 0
+        guild.members.forEach(member => {
+          if(member.user.bot) botCount++
+        })
+        return botCount
+      }
+async      function checkMembers(guild) {
+        let memberCount = 0
+        guild.members.forEach(member => {
+          if(!member.user.bot) memberCount++
+        })
+        return memberCount
+      } 
+  let embed = new Discord.RichEmbed()
+  .setAuthor(`${message.guild.name} - Info`, message.guild.iconURL)
+  .addField('サーバーの所有者', message.guild.owner, true)
+  .addField('サーバー領域', message.guild.region, true)
+  .addField('チャンネルの数', message.guild.channels.size, true)
+  .addField('メンバー数', message.guild.memberCount)
+  .addField('BOTなしメンバー数', checkMembers(message.guild), true)
+  .addField('ボットの数', checkBots(message.guild), true)
+  .addField('確認レベル', message.guild.verificationLevel, true)
+  .addField('AFKチャンネル',message.guild.afkChannel,true)
+  .addField('システムチャンネル',message.guild.systemChannel,true)
+  .addField('サーバーの名前の略称',message.guild.nameAcronym,true)
+  .addField('不適切なコンテンツフィルターレベル',message.guild.explicitContentFilter,true)
+  .addField('役職の数',message.guild.roles.size,true)
+  .addField('絵文字の数',message.guild.emojis.size,true)
+  .setImage(message.guild.iconURL)
+  .setFooter('サーバー作成日:')
+  .setTimestamp(message.guild.createdAt)
+  return message.channel.send(embed)
   }
 });
 

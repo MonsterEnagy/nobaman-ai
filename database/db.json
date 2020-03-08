@@ -388,6 +388,14 @@
     {
       "command": "translate",
       "description": "翻訳に関する機能一覧です。\n `!n trans (文)`で文を英語<=>日本語に翻訳。\nまた、国を指定すれば、どんな言語間でもちゃちゃっと翻訳できます。\n例:`!n trans ja de こんにちわ` => Hallo\n`!n transcha`で、翻訳チャンネルに登録。\n翻訳チャンネルでは、喋ったことが日本語<==>英語に翻訳されます。"
+    },
+    {
+      "command": "janken",
+      "description": "じゃんけんができます。 \n`!n janken`"
+    },
+    {
+      "command": "server",
+      "description": "サーバー情報がわかります。\n`!n server`"
     }
   ],
   "point": [
