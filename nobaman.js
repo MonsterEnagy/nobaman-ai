@@ -16,7 +16,8 @@ db.defaults({
   mmo : [],
   help : [],
   point : [],
-  transcha : []
+  transcha : [],
+  osero : []
 }).write();
 const cooldown = new Set();
 
