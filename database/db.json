@@ -146,13 +146,13 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジー",
-      "tekihp": 2.4848436291384432e+30,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 1.7430195753138154e+30,
-      "level": 441,
-      "hp": 7.443088974537658e+29,
-      "tekideath": false,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -2.4734017162607709e+30,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 6.972078301255262e+30,
+      "level": 461,
+      "hp": 2.977235589815063e+30,
+      "tekideath": true,
       "death": false
     },
     {
