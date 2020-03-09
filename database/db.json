@@ -26,9 +26,9 @@
     },
     {
       "id": "552359526439845913",
-      "time": "2020/3/8",
+      "time": "2020/3/9",
       "nobaman": 4,
-      "omikujinaiyou": "小吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "550265737449570314",
@@ -135,11 +135,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーLO-CARB",
-      "tekihp": -205080,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
+      "teki": "モンスターエナジー",
+      "tekihp": -205320,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
       "strong": 0,
-      "level": 17100,
+      "level": 17120,
       "hp": 0,
       "tekideath": true,
       "death": false
