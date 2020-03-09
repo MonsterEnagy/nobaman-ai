@@ -304,12 +304,12 @@
     },
     {
       "id": "561551044862017537",
-      "teki": "UNLEADED",
-      "tekihp": -6.265591621315511e+59,
-      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
-      "strong": 5.523849527140279e+59,
-      "level": 863,
-      "hp": 2.255907598078903e+59,
+      "teki": "モンスターエナジーCUBA-LIMA亜種",
+      "tekihp": -5.012473297052409e+60,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "strong": 4.419079621712223e+60,
+      "level": 893,
+      "hp": 1.8047260784631222e+60,
       "tekideath": true,
       "death": false
     },
