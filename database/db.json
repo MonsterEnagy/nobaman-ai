@@ -50,9 +50,9 @@
     },
     {
       "id": "471556451664658453",
-      "time": "2020/3/8",
+      "time": "2020/3/11",
       "nobaman": 3,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "507837054785290240",
@@ -117,8 +117,8 @@
     {
       "id": "510551739661942784",
       "time": "2020/3/8",
-      "nobaman": 0,
-      "omikujinaiyou": "小吉"
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
     },
     {
       "id": "684530909478780969",
@@ -147,11 +147,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -231480,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": -232680,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
       "strong": 0,
-      "level": 19300,
+      "level": 19400,
       "hp": 0,
       "tekideath": true,
       "death": false
@@ -316,12 +316,12 @@
     },
     {
       "id": "561551044862017537",
-      "teki": "モンスターエナジーASSAULT",
-      "tekihp": -1.3821615345426853e+127,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
-      "strong": 2.219120988980937e+119,
-      "level": 2096,
-      "hp": 9.050091615515107e+118,
+      "teki": "モンスターエナジーUNLEADED亜種",
+      "tekihp": -2.869174411415366e+161,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
+      "strong": 9.217867951835536e+153,
+      "level": 2904,
+      "hp": 3.7573453585335095e+153,
       "tekideath": true,
       "death": false
     },
