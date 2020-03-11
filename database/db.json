@@ -338,6 +338,15 @@
       "hp": 24332,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "667971798155001876",
+      "teki": "レッドブル亜種",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "help": [
