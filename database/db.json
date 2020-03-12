@@ -281,12 +281,12 @@
     },
     {
       "id": "266394971479867394",
-      "teki": "レッドブル",
-      "tekihp": -411826,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 1441792,
-      "level": 118,
-      "hp": 751940,
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": -1569587,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "strong": 5767168,
+      "level": 120,
+      "hp": 2957194,
       "tekideath": true,
       "death": false
     },
