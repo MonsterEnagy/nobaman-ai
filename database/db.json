@@ -473,6 +473,16 @@
       "hp": 1458694910,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "584308626118672416",
+      "teki": "ドラゴンブースト",
+      "tekihp": -110,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 22,
+      "level": 3,
+      "hp": 12,
+      "tekideath": true
     }
   ],
   "help": [
