@@ -471,13 +471,13 @@
     },
     {
       "id": "477810321936089098",
-      "teki": "モンスターエナジーASSAULT",
-      "tekihp": -718330550,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
-      "strong": 2952790016,
-      "level": 165,
-      "hp": 1458694910,
-      "tekideath": true,
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": 7190694796,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": 188978561024,
+      "level": 207,
+      "hp": 90315780027,
+      "tekideath": false,
       "death": false
     },
     {
