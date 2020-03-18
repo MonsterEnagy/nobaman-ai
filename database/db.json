@@ -472,12 +472,12 @@
     {
       "id": "477810321936089098",
       "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": 7190694796,
+      "tekihp": -29164806320786,
       "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
-      "strong": 188978561024,
-      "level": 207,
-      "hp": 90315780027,
-      "tekideath": false,
+      "strong": 377957122048,
+      "level": 208,
+      "hp": 180631560054,
+      "tekideath": true,
       "death": false
     },
     {
