@@ -91,7 +91,11 @@ module.exports.run = (client , message, db , args) => {
       }
 const namearray = [];
       for (var i = 0; i < json.omikuji.length; i++) {
+        if(!client.users.get(json.omikuji[i].id)) {
+          array.push("いない" , "いない")
+        } else {
         array.push([json.omikuji[i].nobaman , client.users.get(json.omikuji[i].id).username])
+      }
       }
       
       array.sort(compareFunc);

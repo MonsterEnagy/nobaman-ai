@@ -6,8 +6,14 @@ module.exports.run = (client , message , kekka) => {
     } ,(res , body) => {
     const json = JSON.parse(parser.toJson(body.body)).ResultSet.Result.SegmentList.Segment
     const result = [];
+    const rei = [];
     for(var i = 0; json.length > i; i++) {
-     result.push(`${json[i].SegmentText} => ${json[i].CandidateList["Candidate"].join(",")}`)
+    console.dir(json[i].CandidateList["Candidate"])
+      if(typeof json[i].CandidateList["Candidate"] === "string") {
+        json[i].CandidateList["Candidate"] = [json[i].CandidateList["Candidate"]]
+      } else if()
+     result.push(`${json[i].SegmentText} => ${json[i].CandidateList["Candidate"].join(",")}\n`)
+     rei.push()
    }
    message.channel.send(`\`${result.join("` `")}\`\n`)
   })
