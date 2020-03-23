@@ -4,8 +4,11 @@ module.exports.run = (client , message , kekka) => {
   request({
       url : `https://jlp.yahooapis.jp/JIMService/V1/conversion?appid=${process.env.yahooclientID}&sentence=${encodeURIComponent(kekka.trim())}`
     } ,(res , body) => {
-    console.log(body.body)
-    const json = JSON.parse(parser.toJson(body))
-   console.log(json.Result)
+    const json = JSON.parse(parser.toJson(body.body)).ResultSet.Result.SegmentList.Segment
+    const result = [];
+   json.forEach(i => {
+     result.push(`${json[i].SegmentText} => ${json[i].CandidateList}`)
+   })
+   message.channel.send(`\`${result.join("` `")}\`\n`)
   })
 }
