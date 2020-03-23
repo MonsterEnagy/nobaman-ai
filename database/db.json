@@ -641,6 +641,10 @@
     {
       "command": "server",
       "description": "サーバー情報がわかります。\n`!n server`"
+    },
+    {
+      "command": "hiragana",
+      "description": "ひらがなから漢字に変換します。変換できなかったらエラー吐きます。`!nhira (文)`"
     }
   ],
   "point": [
