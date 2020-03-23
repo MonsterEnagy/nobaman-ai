@@ -329,12 +329,12 @@
     },
     {
       "id": "647419457215397918",
-      "teki": "モンスターエナジーGRONK",
-      "tekihp": -2.0814931756617313e+138,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512632548294656/monster_energy_gronk_thumbnail.png",
-      "strong": 1.0233889238082145e+138,
-      "level": 2266,
-      "hp": 4.713529115040865e+137,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -4.1629863513234626e+138,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 2.046777847616429e+138,
+      "level": 2276,
+      "hp": 9.42705823008173e+137,
       "tekideath": true,
       "death": false
     },
@@ -381,12 +381,12 @@
     },
     {
       "id": "471556451664658453",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -9.62273834044085e+168,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 5.189198334129619e+168,
-      "level": 3214,
-      "hp": 2.220661141635689e+168,
+      "teki": "レッドブル",
+      "tekihp": -1.92454766808817e+169,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 1.0378396668259239e+169,
+      "level": 3224,
+      "hp": 4.441322283271378e+168,
       "tekideath": true,
       "death": false
     },
@@ -535,6 +535,17 @@
       "strong": 11,
       "level": 2,
       "hp": 6
+    },
+    {
+      "id": "401553901540605983",
+      "teki": "レッドブル",
+      "tekihp": -718,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 176,
+      "level": 33,
+      "hp": 96,
+      "tekideath": true,
+      "death": false
     }
   ],
   "help": [
