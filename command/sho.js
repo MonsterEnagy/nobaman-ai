@@ -12,6 +12,7 @@ module.exports.run = async (client, message, db, args) => {
     avatarURL: message.author.avatarURL
   };
   const json = db.get("sho").find({ id: message.author.id });
+  console.log(json.value())
   if (!json.value()[args[0]]) {
     message.channel.send("存在しません").then(msg => msg.delete(5000));
   } else {

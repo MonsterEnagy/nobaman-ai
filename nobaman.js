@@ -887,15 +887,19 @@ require("./command/maze.js").run(client , message)
   } else if(command === "hira") {
     require("./command/hiragana.js").run(client , message ,kekka)
   } else if(command === "sho") {
-    if(!args[0]) {
+    if(!args[1]) {
   require("./command/sho.js").run(client , message, db ,args)
     } else if(args[0] === "create") {
-      if(!args[1]) return message.channel.send("引数が足りません。\n例 : ``")
-  const json = db.get("sho").find({id : message.author.id})
+      if(!args[2]) return message.channel.send("引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`")
+  var json = db.get("sho").find({id : message.author.id})
   if(!json) {
-    db.get("sho").push({id : message.author.id})
+    db.get("sho").push({id : message.author.id}).write()
   }
   message.channel.send("データベースを作成しました。")
+  var json = db.get("sho").push({id : message.author.id}).write()
+  const args1 = args[1]
+  json.push({id : message.author.id , args1: args[2]}).write()
+  message.channel.send(`${args[1]}で${args[2]}が呼び出せるようになりました。`)
     }
   }
 });
