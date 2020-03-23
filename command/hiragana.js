@@ -6,9 +6,9 @@ module.exports.run = (client , message , kekka) => {
     } ,(res , body) => {
     const json = JSON.parse(parser.toJson(body.body)).ResultSet.Result.SegmentList.Segment
     const result = [];
-   json.forEach(i => {
-     result.push(`${json[i].SegmentText} => ${json[i].CandidateList}`)
-   })
+    for(var i = 0; json.length > i; i++) {
+     result.push(`${json[i].SegmentText} => ${json[i].CandidateList["Candidate"].join(",")}`)
+   }
    message.channel.send(`\`${result.join("` `")}\`\n`)
   })
 }
