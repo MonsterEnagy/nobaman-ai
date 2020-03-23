@@ -886,6 +886,17 @@ require("./command/maze.js").run(client , message)
     require("./command/osero.js").run(client , message , db , args)
   } else if(command === "hira") {
     require("./command/hiragana.js").run(client , message ,kekka)
+  } else if(command === "sho") {
+    if(!args[0]) {
+  require("./command/sho.js").run(client , message, db ,args)
+    } else if(args[0] === "create") {
+      if(!args[1]) return message.channel.send("引数が足りません。\n例 : ``")
+  const json = db.get("sho").find({id : message.author.id})
+  if(!json) {
+    db.get("sho").push({id : message.author.id})
+  }
+  message.channel.send("データベースを作成しました。")
+    }
   }
 });
 

@@ -42,7 +42,7 @@ module.exports.run = (client, message) => {
     const hook = await c.fetchWebhooks();
     if (hook.size === 0) {
       if (c.id === message.channel.id) {
-        c.createWebhook("のばまんchat用webhook").then(hook => {
+        c.createWebhook("のばまん用webhook").then(hook => {
           message.channel.send("あ、つながっちゃった");
           if (c.id !== message.channel.id) {
             hook.send(message.content, option);
