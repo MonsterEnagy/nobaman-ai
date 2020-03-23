@@ -10,7 +10,6 @@ module.exports.run = (client , message , kekka) => {
     const result = [];
     const rei = [];
     for(var i = 0; json.length > i; i++) {
-    console.dir(json[i].CandidateList["Candidate"])
       if(typeof json[i].CandidateList["Candidate"] === "string") {
         json[i].CandidateList["Candidate"] = [json[i].CandidateList["Candidate"]]
       } 
