@@ -883,6 +883,8 @@ require("./command/maze.js").run(client , message)
   } else if(command === "osero") {
     return message.channel.send("開発止まり")
     require("./command/osero.js").run(client , message , db , args)
+  } else if(command === "hira") {
+    require("./command/hiragana.js").run(client , message ,kekka)
   }
 });
 
