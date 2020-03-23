@@ -895,10 +895,12 @@ require("./command/maze.js").run(client , message)
   if(!json) {
     db.get("sho").push({id : message.author.id}).write()
   }
-  message.channel.send("データベースを作成しました。")
-  var json = db.get("sho").push({id : message.author.id}).write()
-  const args1 = args[1]
-  json.set({id : message.author.id , args1: args[2]}).write()
+  var json = db.get("sho").find({id : message.author.id})
+  if(message.attachments.first()) {
+  json.set(args[1] , args[2] +"\n" +message.attachments.first().url).write()
+  } else {
+  json.set(args[1] , args[2]).write()
+  }
   message.channel.send(`${args[1]}で${args[2]}が呼び出せるようになりました。`)
     }
   }
