@@ -26,9 +26,9 @@
     },
     {
       "id": "552359526439845913",
-      "time": "2020/3/22",
+      "time": "2020/3/25",
       "nobaman": 6,
-      "omikujinaiyou": "凶"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "550265737449570314",
@@ -297,11 +297,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": -247080,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
+      "teki": "モンスターエナジーキューバリブレ",
+      "tekihp": -247320,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
       "strong": 0,
-      "level": 20600,
+      "level": 20620,
       "hp": 0,
       "tekideath": true,
       "death": false
