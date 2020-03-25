@@ -254,9 +254,9 @@
     },
     {
       "id": "401553901540605983",
-      "time": "2020/3/23",
+      "time": "2020/3/25",
       "nobaman": 1,
-      "omikujinaiyou": "小吉"
+      "omikujinaiyou": "中吉"
     },
     {
       "id": "528460762474217474",
@@ -297,11 +297,11 @@
     },
     {
       "id": "552359526439845913",
-      "teki": "モンスターエナジーキューバリブレ",
-      "tekihp": -247320,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662511929922813952/monster_energy_cubalibre_thumbnail.png",
+      "teki": "モンスターエナジーUNLEADED亜種",
+      "tekihp": -248280,
+      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662295551211077643/Color_Inversion.png",
       "strong": 0,
-      "level": 20620,
+      "level": 20700,
       "hp": 0,
       "tekideath": true,
       "death": false
