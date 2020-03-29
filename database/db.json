@@ -27,7 +27,7 @@
     {
       "id": "552359526439845913",
       "time": "2020/3/26",
-      "nobaman": 7,
+      "nobaman": 8,
       "omikujinaiyou": "のばまん吉"
     },
     {
@@ -320,12 +320,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジー亜種",
-      "tekihp": -7.038356490044919e+71,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
-      "strong": 4.7449506134185126e+69,
-      "level": 1265,
-      "hp": 2.020107290234164e+69,
+      "teki": "ドラゴンブースト",
+      "tekihp": -2.474060894164348e+71,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
+      "strong": 1.518384196293924e+71,
+      "level": 1315,
+      "hp": 6.464343328749325e+70,
       "tekideath": true,
       "death": false
     },
