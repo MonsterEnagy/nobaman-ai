@@ -50,15 +50,15 @@
     },
     {
       "id": "471556451664658453",
-      "time": "2020/3/26",
-      "nobaman": 7,
-      "omikujinaiyou": "のばまん吉"
+      "time": "2020/3/29",
+      "nobaman": 11,
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "507837054785290240",
-      "time": "2020/3/28",
-      "nobaman": 6,
-      "omikujinaiyou": "中吉"
+      "time": "2020/3/29",
+      "nobaman": 7,
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "656432104745205760",
@@ -92,9 +92,9 @@
     },
     {
       "id": "571324348082683925",
-      "time": "2020/3/25",
+      "time": "2020/3/29",
       "nobaman": 3,
-      "omikujinaiyou": "小吉"
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "583219161082101779",
@@ -287,6 +287,12 @@
       "time": "2020/3/28",
       "nobaman": 0,
       "omikujinaiyou": "凶"
+    },
+    {
+      "id": "501713643419729942",
+      "time": "2020/3/29",
+      "nobaman": 1,
+      "omikujinaiyou": "のばまん吉"
     }
   ],
   "mmo": [
