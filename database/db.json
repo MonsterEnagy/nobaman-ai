@@ -80,9 +80,9 @@
     },
     {
       "id": "653031551616942101",
-      "time": "2020/3/16",
+      "time": "2020/3/30",
       "nobaman": 1,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "凶"
     },
     {
       "id": "536158260743634964",
@@ -448,12 +448,12 @@
     },
     {
       "id": "653031551616942101",
-      "teki": "モンスターエナジーASSAULT",
-      "tekihp": -806121,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
-      "strong": 2883584,
-      "level": 119,
-      "hp": 1492578,
+      "teki": "モンスターエナジーアブソリュートリーゼロ",
+      "tekihp": -1573909,
+      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662291096407375912/817KoRjLBJL.png",
+      "strong": 5767168,
+      "level": 120,
+      "hp": 2960066,
       "tekideath": true,
       "death": false
     },
