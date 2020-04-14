@@ -639,12 +639,12 @@
     },
     {
       "id": "476970489873694720",
-      "teki": "ドラゴンブースト",
-      "tekihp": -169619,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172078300200990/Z.png",
-      "strong": 90112,
-      "level": 96,
-      "hp": 49152,
+      "teki": "レッドブル亜種",
+      "tekihp": -60886433,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 184549376,
+      "level": 152,
+      "hp": 93778364,
       "tekideath": true,
       "death": false
     },
