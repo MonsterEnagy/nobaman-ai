@@ -290,9 +290,9 @@
     },
     {
       "id": "501713643419729942",
-      "time": "2020/4/14",
+      "time": "2020/4/15",
       "nobaman": 25,
-      "omikujinaiyou": "末吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "638343236745953305",
@@ -666,12 +666,12 @@
     },
     {
       "id": "501713643419729942",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": -270899135745525900,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
-      "strong": 792633534417207300,
-      "level": 193,
-      "hp": 370612155722160900,
+      "teki": "レッドブル亜種",
+      "tekihp": -2.113605965619401e+32,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 1.0893872345711346e+29,
+      "level": 356,
+      "hp": 4.939081015223037e+28,
       "tekideath": true,
       "death": false
     }
