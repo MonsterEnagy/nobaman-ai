@@ -645,12 +645,12 @@
     },
     {
       "id": "476970489873694720",
-      "teki": "モンスターエナジーLO-CARB",
-      "tekihp": -2788549226,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294255687172106/monster_energy_low_carb_thumbnail.png",
-      "strong": 11811160064,
-      "level": 167,
-      "hp": 5778542864,
+      "teki": "モンスターエナジー",
+      "tekihp": -5472837216,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 23622320128,
+      "level": 168,
+      "hp": 11487881616,
       "tekideath": true,
       "death": false
     },
