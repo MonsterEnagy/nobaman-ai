@@ -678,12 +678,12 @@
     },
     {
       "id": "501713643419729942",
-      "teki": "モンスターエナジーASSAULT",
-      "tekihp": -2.212748996367905e+132,
-      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
-      "strong": 1.9519594646610537e+132,
-      "level": 2202,
-      "hp": 8.840518159505203e+131,
+      "teki": "モンスターエナジー",
+      "tekihp": -6.442521220098713e+149,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 5.626140107321494e+149,
+      "level": 2422,
+      "hp": 2.547741639094131e+149,
       "tekideath": true,
       "death": false
     }
