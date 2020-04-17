@@ -237,7 +237,7 @@
     {
       "id": "601960187972288533",
       "time": "2020/4/15",
-      "nobaman": 10,
+      "nobaman": 11,
       "omikujinaiyou": "のばまん吉"
     },
     {
@@ -365,6 +365,12 @@
       "time": "2020/4/15",
       "nobaman": 0,
       "omikujinaiyou": "凶"
+    },
+    {
+      "id": "629616603935539220",
+      "time": "2020/4/17",
+      "nobaman": 0,
+      "omikujinaiyou": "中吉"
     }
   ],
   "mmo": [
