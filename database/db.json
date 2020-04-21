@@ -290,9 +290,9 @@
     },
     {
       "id": "501713643419729942",
-      "time": "2020/4/18",
+      "time": "2020/4/21",
       "nobaman": 28,
-      "omikujinaiyou": "のばまん吉"
+      "omikujinaiyou": "小吉"
     },
     {
       "id": "638343236745953305",
@@ -646,12 +646,12 @@
     },
     {
       "id": "401553901540605983",
-      "teki": "モンスターエナジー",
-      "tekihp": -14540,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
-      "strong": 45056,
-      "level": 104,
-      "hp": 24332,
+      "teki": "モンスターエナジーTHEDOCTOR",
+      "tekihp": -28427,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
+      "strong": 90112,
+      "level": 114,
+      "hp": 48180,
       "tekideath": true,
       "death": false
     },
@@ -678,12 +678,12 @@
     },
     {
       "id": "501713643419729942",
-      "teki": "レッドブル",
-      "tekihp": -7.705320036836437e+185,
-      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
-      "strong": 1.7829949710035517e+179,
-      "level": 2961,
-      "hp": 8.072440189653729e+178,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -5.170825069144144e+193,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 9.572381361740903e+187,
+      "level": 3116,
+      "hp": 4.333751298322855e+187,
       "tekideath": true,
       "death": false
     }
