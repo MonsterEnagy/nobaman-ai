@@ -646,13 +646,13 @@
     },
     {
       "id": "401553901540605983",
-      "teki": "モンスターエナジーTHEDOCTOR",
-      "tekihp": -28427,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
-      "strong": 90112,
-      "level": 114,
-      "hp": 48180,
-      "tekideath": true,
+      "teki": "レッドブル亜種",
+      "tekihp": 168650,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662223875219652608/Color_Inversion.png",
+      "strong": 360448,
+      "level": 125,
+      "hp": 189466,
+      "tekideath": false,
       "death": false
     },
     {
@@ -678,12 +678,12 @@
     },
     {
       "id": "501713643419729942",
-      "teki": "モンスターエナジーTHEDOCTOR",
-      "tekihp": -1.1104203611624359e+203,
-      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662512814362984449/monster_energy_the_doctor_thumbnail.png",
-      "strong": 4.1113064893517126e+197,
-      "level": 3283,
-      "hp": 1.8613221839903947e+197,
+      "teki": "モンスターエナジーASSAULT",
+      "tekihp": -1.1922984539211695e+212,
+      "url": "https://cdn.discordapp.com/attachments/557151054723022859/662294431042633729/monster_energy_assault_thumbnail.png",
+      "strong": 8.828963457799089e+206,
+      "level": 3449,
+      "hp": 3.9971377127835665e+206,
       "tekideath": true,
       "death": false
     }
