@@ -686,6 +686,17 @@
       "hp": 3.9971377127835665e+206,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "605990379321425923",
+      "teki": "モンスターエナジー",
+      "tekihp": -148,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222740920467481/9k.png",
+      "strong": 44,
+      "level": 13,
+      "hp": 24,
+      "tekideath": true,
+      "death": false
     }
   ],
   "help": [
