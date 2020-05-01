@@ -449,12 +449,12 @@
     },
     {
       "id": "647419457215397918",
-      "teki": "モンスターエナジーアブソリュートリーゼロ",
-      "tekihp": -1.0803058636935199e+172,
-      "url": "https://cdn.discordapp.com/attachments/647344509516251136/662291546766442496/Color_Inversion.png",
-      "strong": 5.31373909414873e+171,
-      "level": 3107,
-      "hp": 2.4465548933248275e+171,
+      "teki": "モンスターエナジーCUBALIMA",
+      "tekihp": -4.424932817688657e+175,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295842023145492/monster_energy_cuba_lima_thumbnail.png",
+      "strong": 2.17650753296332e+175,
+      "level": 3200,
+      "hp": 1.0021088843058493e+175,
       "tekideath": true,
       "death": false
     },
