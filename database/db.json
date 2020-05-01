@@ -416,12 +416,12 @@
     },
     {
       "id": "497368265514024960",
-      "teki": "モンスターエナジーCUBA-LIMA亜種",
-      "tekihp": -1.0036883257287305e+117,
-      "url": "https://cdn.discordapp.com/attachments/662283800595922985/662295898621083648/Color_Inversion.png",
-      "strong": 6.772219815005301e+114,
-      "level": 2036,
-      "hp": 2.881122770778093e+114,
+      "teki": "モンスターエナジー亜種",
+      "tekihp": -8.149145916421034e+131,
+      "url": "https://cdn.discordapp.com/attachments/397353198907817986/662222987130437655/Color_Inversion.png",
+      "strong": 2.908646262677094e+124,
+      "level": 2221,
+      "hp": 1.2372306077035291e+124,
       "tekideath": true,
       "death": false
     },
