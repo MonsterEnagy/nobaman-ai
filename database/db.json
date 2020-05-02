@@ -710,6 +710,15 @@
       "hp": 24,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "594379177520660491",
+      "teki": "レッドブル",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/302627651036774401/662172330977656842/2Q.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "help": [
