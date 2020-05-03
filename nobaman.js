@@ -481,10 +481,11 @@ client.on("message", async message => {
   }
   if (command === "chat") {
     if (!args[0]) {
-      if (!message.member.hasPermission("MANAGE_CHANNELS"))
+      if (!message.member.hasPermission("MANAGE_CHANNELS")) {
         return message.channel.send(
           "チャンネル管理の権限を持っていない人はこのコマンドを使用できません"
         );
+      }
       if (!chat[message.channel.id]) {
         chat[message.channel.id] = {};
         message.channel.createWebhook("のばまんchat用webhook");
@@ -1079,8 +1080,11 @@ point : "-999"
       );
     }
   } else if(command === "switch") {
-    
+     if (message.member.hasPermission("ADMINISTRATOR")) {
     require("command/switch.js").run(client , message , args , db)
+  } else {
+    message.reply("管理者権限を持っていない人は使用できません。")
+  }
   }
 });
 
