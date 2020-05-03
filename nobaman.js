@@ -13,12 +13,12 @@ const db = low(adapter);
 
 db.defaults({
   omikuji: [],
-  mmo : [],
-  help : [],
-  point : [],
-  transcha : [],
-  osero : [],
-  sho : []
+  mmo: [],
+  help: [],
+  point: [],
+  transcha: [],
+  osero: [],
+  sho: []
 }).write();
 const cooldown = new Set();
 
@@ -33,7 +33,7 @@ function koukoku(message) {
 setInterval(koukoku, 3600000 * 24);
 
 function formatDate(date) {
-  date.setTime(date.getTime() + 1000*60*60*9);
+  date.setTime(date.getTime() + 1000 * 60 * 60 * 9);
   const y = date.getFullYear();
   const m = date.getMonth() + 1;
   const d = date.getDate();
@@ -46,10 +46,56 @@ function formatDate(date) {
 function AIrequest(content, message) {
   const request = require("request");
   const ransuu = Math.floor(Math.random() * 100) + 1;
-  const filter = 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　["ちんちん","うんこ" ,"うんち" , "う/ん/ち" , "う　んち" , "う　ん　ち" , "う　んち", "う/んち" , "うん/ち" , "セックス" , "エロ" , "AV" , "av","工口" , "せっくす" , "せっく　す", "しね" , "死ね" , "氏ね" , "パンツ" , "ぱんつ" , "パンティー" , "まんこ" , "まんまん" , "精子" , "せいし" , "ちんこ" , "人でなし" , "クズ" , "くず" , "ばか" , "ばーか" , "ばか" , "らんし" , "卵子" , "おっぱい", "胸" , "夜の営み" , "きも" ,  "雑魚", "ざこ" , "えっち" , "エッチ","初めて成功したbot", "オナニー"]
-  
-  for(var i = 0; filter.length > i; i++) {
-    if(message.content.includes(filter[i])) {
+  const filter = [
+    "ちんちん",
+    "うんこ",
+    "うんち",
+    "う/ん/ち",
+    "う　んち",
+    "う　ん　ち",
+    "う　んち",
+    "う/んち",
+    "うん/ち",
+    "セックス",
+    "エロ",
+    "AV",
+    "av",
+    "工口",
+    "せっくす",
+    "せっく　す",
+    "しね",
+    "死ね",
+    "氏ね",
+    "パンツ",
+    "ぱんつ",
+    "パンティー",
+    "まんこ",
+    "まんまん",
+    "精子",
+    "せいし",
+    "ちんこ",
+    "人でなし",
+    "クズ",
+    "くず",
+    "ばか",
+    "ばーか",
+    "ばか",
+    "らんし",
+    "卵子",
+    "おっぱい",
+    "胸",
+    "夜の営み",
+    "きも",
+    "雑魚",
+    "ざこ",
+    "えっち",
+    "エッチ",
+    "初めて成功したbot",
+    "オナニー"
+  ];
+
+  for (var i = 0; filter.length > i; i++) {
+    if (message.content.includes(filter[i])) {
       return message.channel.send("禁止ワードを言わないでください");
       break;
     }
@@ -65,7 +111,7 @@ function AIrequest(content, message) {
       json: true
     },
     (err, response, body) => {
-      if (response.statusCode !== 200 || err) return console.error(err)
+      if (response.statusCode !== 200 || err) return console.error(err);
       else {
         if (body.errors) {
           const comment = content;
@@ -98,13 +144,15 @@ function AIrequest(content, message) {
               message.channel.send(reply + "(A3RTのばまん)");
             });
           });
-        }  else {
-            for(var i = 0; filter.length > i; i++) {
-    if(message.content.includes(filter[i])) {
-      return message.channel.send("禁止ワードが入っていたので規制しました")
-      break;
-    }
-  }
+        } else {
+          for (var i = 0; filter.length > i; i++) {
+            if (message.content.includes(filter[i])) {
+              return message.channel.send(
+                "禁止ワードが入っていたので規制しました"
+              );
+              break;
+            }
+          }
           message.channel.send(body.text);
         }
       }
@@ -130,16 +178,19 @@ client.on("ready", () => {
   });
 });
 client.on("guildCreate", guild => {
-  client.user
-    .setActivity(`!n help|${client.guilds.size}サーバー`, { type: "WATCHING" })
-  guild.fetchInvites()
-  .then(invite => {
+  client.user.setActivity(`!n help|${client.guilds.size}サーバー`, {
+    type: "WATCHING"
+  });
+  guild
+    .fetchInvites()
+    .then(invite => {
       client.users
         .get("551421671332904960")
-        .send(`${guild.name}に入ったよ！ ${guild.members.size}人\${invite.first().url}`)
-  })
+        .send(
+          `${guild.name}に入ったよ！ ${guild.members.size}人\${invite.first().url}`
+        );
+    })
 
-    
     .catch(console.error);
 });
 
@@ -155,23 +206,32 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
-
   if (message.author.bot || !message.guild) return;
 
-  if(message.guild.id === "302627651036774401") {
-    if(!db.get("point").find({ id: message.author.id }).value()) {
-      db.get("point").push({id : message.author.id,point:0}).write()
+  if (message.guild.id === "302627651036774401") {
+    if (
+      !db
+        .get("point")
+        .find({ id: message.author.id })
+        .value()
+    ) {
+      db.get("point")
+        .push({ id: message.author.id, point: 0 })
+        .write();
     }
   }
-  if(db.get("transcha").find({id : message.channel.id}).value()) {
-    require("./command/honnyaku.js").channeltrans(client , message)
+  if (
+    db
+      .get("transcha")
+      .find({ id: message.channel.id })
+      .value()
+  ) {
+    require("./command/honnyaku.js").channeltrans(client, message);
   }
   console.log(
     `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
   );
 
-
- 
   if (
     message.content.indexOf("って何？") != "-1" &&
     message.content.indexOf("のばまん、") != "-1"
@@ -186,7 +246,7 @@ client.on("message", async message => {
     message.content.indexOf("何時？") != "-1" &&
     message.content.indexOf("のばまん、") != "-1"
   ) {
-   message.channel.send(formatDate(new Date())) 
+    message.channel.send(formatDate(new Date()));
   }
   const prefix = "!n";
 
@@ -219,9 +279,9 @@ client.on("message", async message => {
     .slice(prefix.length + command.length);
 
   if (command === "help") {
- require("./command/help.js").run(client , message, args , db)
-  } if (command === "todo") {
-    
+    require("./command/help.js").run(client, message, args, db);
+  }
+  if (command === "todo") {
     /*json構造
     id : {
     todo : []
@@ -493,7 +553,7 @@ ID : ${chat["id"][args[1]]["ID"]}
     require("./command/weather.js").run(client, message, kekka);
   }
   if (command === "quiz") {
-    require("./command/quiz.js").run(client, message , db);
+    require("./command/quiz.js").run(client, message, db);
   }
   if (command === "icon") {
     require("./command/icon.js").run(client, message, args);
@@ -507,7 +567,7 @@ ID : ${chat["id"][args[1]]["ID"]}
   if (command === "sin") {
     if (!args[0] && !message.attachments.size === 0)
       return message.channel.send("画像を指定してください");
-    require("./command/sinmetori.js").run(client, message, args ,cooltime);
+    require("./command/sinmetori.js").run(client, message, args, cooltime);
   }
   if (command === "color") {
     if (!args[0] && !message.attachments.size === 0)
@@ -552,49 +612,66 @@ ID : ${chat["id"][args[1]]["ID"]}
     }
   }
   if (command === "omikuji") {
-require("./command/omikuji.js").run(client , message, db , args)
-  } if(command === "game") {
-require("./command/mmo.js").run(client , message , db , args)
-  
-  } if(command === "totuzenn") {
-    require("./command/totuzenn.js").run(client , message , kekka)
-  } if(command === "sikaku") {
-    require("./command/sikaku.js").run(client , message, kekka)
-  } if(command === "delete") {
-    if(!args[0] || !message.channel.messages.get(args[0])) return message.channel.send("メッセージIDがわかりませんでした");
-    if(message.channel.messages.get(args[0]).author.id !== client.user.id) return message.channel.send(`\`${client.user.username}\`のメッセージだけを削除できます。`)
-      message.channel.messages.get(args[0]).delete()
-    message.channel.send("削除しました。")
-    .then(msg => msg.delete(2500))
-  }if(command === "poll") {
-    require("./command/poll.js").run(client , message , args)
-  } if(command === "imgsin"){
-require("./command/imgsin.js").run(client , message , kekka,cooltime)
-  } if(command === "bun") {
-    const db = require("./database/db.json")
-    if(!args[0]) {
-    const syugo = db.kotoba.syugo[Math.floor(Math.random() * db.kotoba.syugo.length)]
-    const jyutugo = db.kotoba.jyutugo[Math.floor(Math.random() * db.kotoba.jyutugo.length)]
-    const syuusyokugo = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
-    const syuusyokugo2 = db.kotoba.syuusyokugo[Math.floor(Math.random() * db.kotoba.syuusyokugo.length)]
-    
-    const str = syuusyokugo + syugo + syuusyokugo2 + jyutugo
-    message.channel.send(`${str}。`)
-  } else if(args[0] === "create") {
-    const bun = require("./command/buncreate.js").run(client,message,db)
-    } else if(args[0] === "list") {
-    const syugo = db.kotoba.syugo
-    const jyutugo = db.kotoba.jyutugo
-    const syuusyokugo = db.kotoba.syuusyokugo
-    const syuusyokugo2 = db.kotoba.syuusyokugo
-    
-    const str = [ syugo , jyutugo , syuusyokugo]
-    message.channel.send(`${str.join("|")}`)
+    require("./command/omikuji.js").run(client, message, db, args);
+  }
+  if (command === "game") {
+    require("./command/mmo.js").run(client, message, db, args);
+  }
+  if (command === "totuzenn") {
+    require("./command/totuzenn.js").run(client, message, kekka);
+  }
+  if (command === "sikaku") {
+    require("./command/sikaku.js").run(client, message, kekka);
+  }
+  if (command === "delete") {
+    if (!args[0] || !message.channel.messages.get(args[0]))
+      return message.channel.send("メッセージIDがわかりませんでした");
+    if (message.channel.messages.get(args[0]).author.id !== client.user.id)
+      return message.channel.send(
+        `\`${client.user.username}\`のメッセージだけを削除できます。`
+      );
+    message.channel.messages.get(args[0]).delete();
+    message.channel.send("削除しました。").then(msg => msg.delete(2500));
+  }
+  if (command === "poll") {
+    require("./command/poll.js").run(client, message, args);
+  }
+  if (command === "imgsin") {
+    require("./command/imgsin.js").run(client, message, kekka, cooltime);
+  }
+  if (command === "bun") {
+    const db = require("./database/db.json");
+    if (!args[0]) {
+      const syugo =
+        db.kotoba.syugo[Math.floor(Math.random() * db.kotoba.syugo.length)];
+      const jyutugo =
+        db.kotoba.jyutugo[Math.floor(Math.random() * db.kotoba.jyutugo.length)];
+      const syuusyokugo =
+        db.kotoba.syuusyokugo[
+          Math.floor(Math.random() * db.kotoba.syuusyokugo.length)
+        ];
+      const syuusyokugo2 =
+        db.kotoba.syuusyokugo[
+          Math.floor(Math.random() * db.kotoba.syuusyokugo.length)
+        ];
+
+      const str = syuusyokugo + syugo + syuusyokugo2 + jyutugo;
+      message.channel.send(`${str}。`);
+    } else if (args[0] === "create") {
+      const bun = require("./command/buncreate.js").run(client, message, db);
+    } else if (args[0] === "list") {
+      const syugo = db.kotoba.syugo;
+      const jyutugo = db.kotoba.jyutugo;
+      const syuusyokugo = db.kotoba.syuusyokugo;
+      const syuusyokugo2 = db.kotoba.syuusyokugo;
+
+      const str = [syugo, jyutugo, syuusyokugo];
+      message.channel.send(`${str.join("|")}`);
     }
- } else if(command === "youtube") {
-   require("./command/youtube.js").run(client , message , kekka)
- } else if(command === "wadai") {
-   var wadai = `・出身地
+  } else if (command === "youtube") {
+    require("./command/youtube.js").run(client, message, kekka);
+  } else if (command === "wadai") {
+    var wadai = `・出身地
 ・好きな食べ物
 ・嫌いな食べ物
 ・自分の行った最も遠いところ
@@ -608,11 +685,11 @@ require("./command/imgsin.js").run(client , message , kekka,cooltime)
 ・よく見るテレビ番組やよく聴くラジオ番組
 ・最近起きた（世の中や身近な）出来事の話
 ・誕生日の話（誕生日にまつわる話など）
-・その他好きな○○（食べ物や芸能人など）の話 `.split("・")
-   message.channel.send(wadai[Math.floor(Math.random() * wadai.length)])
- }else if(command === "point") {
-  if(!message.channel.id === "338667165744103424")  return;
-   /*
+・その他好きな○○（食べ物や芸能人など）の話 `.split("・");
+    message.channel.send(wadai[Math.floor(Math.random() * wadai.length)]);
+  } else if (command === "point") {
+    if (!message.channel.id === "338667165744103424") return;
+    /*
    db: {
    point : [{
 {
@@ -622,287 +699,388 @@ point : "-999"
    }]
    }
    */
-if(!args[0]) {
-        const json = require("./database/db.json");
+    if (!args[0]) {
+      const json = require("./database/db.json");
       const array = [];
       function compareFunc(a, b) {
-          return b[0] - a[0];
+        return b[0] - a[0];
       }
-const namearray = [];
+      const namearray = [];
       for (var i = 0; i < json.point.length; i++) {
-        array.push([json.point[i].point , client.users.get(json.point[i].id).username])
+        array.push([
+          json.point[i].point,
+          client.users.get(json.point[i].id).username
+        ]);
       }
-      
+
       array.sort(compareFunc);
-      
+
       var name = [];
       let embed = new Discord.RichEmbed()
-      .setTitle("ポイントランキング")
-      .addField("1位:" +array[0][1], array[0][0])
-      .addField("2位:" +array[1][1], array[1][0])
-      .addField("3位:" +array[2][1], array[2][0])
-      .addField("4位:" +array[3][1], array[3][0])
-      .addField("5位:" +array[4][1], array[4][0])
-      .addField("6位:" +array[5][1], array[5][0])
-      .addField("7位:" +array[6][1], array[6][0])
-      .addField("8位:" +array[7][1], array[7][0])
-      .addField("9位:" +array[8][1], array[8][0])
-      .addField("10位:"+array[9][1], array[9][0])
-      message.channel.send(embed)
-} if(args[0] === "op") {
-  if(!args[1] || !message.guild.members.get(args[1])) return message.channel.send("人物のIDを指定してください")
-  if(!args[2].startsWith("+") && !args[2].startsWith("-")) return message.channel.send("+か-から始めてください")
-  if(args[2].startsWith("+")) {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point+ Number(args[2].slice(1))}).write()
-  } else {
-  db.get("point").find({id : args[1]}).assign({id : args[1] , point : db.get("point").find({id : args[1]}).value().point - Number(args[2].slice(1))}).write()
-  }
-message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
-}　if(args[0] === "user") {
-message.channel.send(`${message.guild.members.get(args[1]).user.username}のポイントは現在${db.get("point").find({id : args[1]}).value().point}です。`)
-} if(args[0] === "warui") {
-        const json = require("./database/db.json");
+        .setTitle("ポイントランキング")
+        .addField("1位:" + array[0][1], array[0][0])
+        .addField("2位:" + array[1][1], array[1][0])
+        .addField("3位:" + array[2][1], array[2][0])
+        .addField("4位:" + array[3][1], array[3][0])
+        .addField("5位:" + array[4][1], array[4][0])
+        .addField("6位:" + array[5][1], array[5][0])
+        .addField("7位:" + array[6][1], array[6][0])
+        .addField("8位:" + array[7][1], array[7][0])
+        .addField("9位:" + array[8][1], array[8][0])
+        .addField("10位:" + array[9][1], array[9][0]);
+      message.channel.send(embed);
+    }
+    if (args[0] === "op") {
+      if (!args[1] || !message.guild.members.get(args[1]))
+        return message.channel.send("人物のIDを指定してください");
+      if (!args[2].startsWith("+") && !args[2].startsWith("-"))
+        return message.channel.send("+か-から始めてください");
+      if (args[2].startsWith("+")) {
+        db.get("point")
+          .find({ id: args[1] })
+          .assign({
+            id: args[1],
+            point:
+              db
+                .get("point")
+                .find({ id: args[1] })
+                .value().point + Number(args[2].slice(1))
+          })
+          .write();
+      } else {
+        db.get("point")
+          .find({ id: args[1] })
+          .assign({
+            id: args[1],
+            point:
+              db
+                .get("point")
+                .find({ id: args[1] })
+                .value().point - Number(args[2].slice(1))
+          })
+          .write();
+      }
+      message.channel.send(
+        `${message.guild.members.get(args[1]).user.username}のポイントは現在${
+          db
+            .get("point")
+            .find({ id: args[1] })
+            .value().point
+        }です。`
+      );
+    }
+    if (args[0] === "user") {
+      message.channel.send(
+        `${message.guild.members.get(args[1]).user.username}のポイントは現在${
+          db
+            .get("point")
+            .find({ id: args[1] })
+            .value().point
+        }です。`
+      );
+    }
+    if (args[0] === "warui") {
+      const json = require("./database/db.json");
       const array = [];
       function compareFunc(a, b) {
-          return a[0] - b[0];
+        return a[0] - b[0];
       }
-const namearray = [];
+      const namearray = [];
       for (var i = 0; i < json.point.length; i++) {
-        array.push([json.point[i].point , client.users.get(json.point[i].id).username])
+        array.push([
+          json.point[i].point,
+          client.users.get(json.point[i].id).username
+        ]);
       }
-      
+
       array.sort(compareFunc);
-      
+
       var name = [];
       let embed = new Discord.RichEmbed()
-      .setTitle("ポイントランキング")
-      .addField("1位:" +array[0][1], array[0][0])
-      .addField("2位:" +array[1][1], array[1][0])
-      .addField("3位:" +array[2][1], array[2][0])
-      .addField("4位:" +array[3][1], array[3][0])
-      .addField("5位:" +array[4][1], array[4][0])
-      .addField("6位:" +array[5][1], array[5][0])
-      .addField("7位:" +array[6][1], array[6][0])
-      .addField("8位:" +array[7][1], array[7][0])
-      .addField("9位:" +array[8][1], array[8][0])
-      .addField("10位:"+array[9][1], array[9][0])
-      message.channel.send(embed)
-}
-  } else if(command === "eval") {
-    if(message.author.id == "551421671332904960") {
-      console.log(kekka)
+        .setTitle("ポイントランキング")
+        .addField("1位:" + array[0][1], array[0][0])
+        .addField("2位:" + array[1][1], array[1][0])
+        .addField("3位:" + array[2][1], array[2][0])
+        .addField("4位:" + array[3][1], array[3][0])
+        .addField("5位:" + array[4][1], array[4][0])
+        .addField("6位:" + array[5][1], array[5][0])
+        .addField("7位:" + array[6][1], array[6][0])
+        .addField("8位:" + array[7][1], array[7][0])
+        .addField("9位:" + array[8][1], array[8][0])
+        .addField("10位:" + array[9][1], array[9][0]);
+      message.channel.send(embed);
+    }
+  } else if (command === "eval") {
+    if (message.author.id == "551421671332904960") {
+      console.log(kekka);
       try {
-        message.channel.send(eval(message.content.slice(6).trim()))
-        message.react("✅ ")
-      } catch(e) { 
-        message.react("❌")
-        message.channel.send(e)
+        message.channel.send(eval(message.content.slice(6).trim()));
+        message.react("✅ ");
+      } catch (e) {
+        message.react("❌");
+        message.channel.send(e);
       }
     }
-  } else if(command === "taiko") {
-    require("./command/donder.js").run(client,message , kekka)
+  } else if (command === "taiko") {
+    require("./command/donder.js").run(client, message, kekka);
   } else if (command === "mc") {
-    if(!args[0]) return message.channel.send("情報が足りません");
-    require("./command/minecraft.js").run(client,message,args)
-  } else if(command === "mcserver") {
-    if(!args[0]) return message.channel.send("情報が足りません");
-    require("./command/minecraft.js").server(client,message,args)
-  } else if(command === "hosii") {
-    client.users.get(process.env.ownerID).send(kekka)
-    message.channel.send("送りました")
+    if (!args[0]) return message.channel.send("情報が足りません");
+    require("./command/minecraft.js").run(client, message, args);
+  } else if (command === "mcserver") {
+    if (!args[0]) return message.channel.send("情報が足りません");
+    require("./command/minecraft.js").server(client, message, args);
+  } else if (command === "hosii") {
+    client.users.get(process.env.ownerID).send(kekka);
+    message.channel.send("送りました");
   } else if (command === "today") {
-   const rp = require('request-promise');
-const cheerio = require('cheerio');
+    const rp = require("request-promise");
+    const cheerio = require("cheerio");
     const response = await rp({
-      "uri":"https://ja.wikipedia.org/wiki/Wikipedia:%E4%BB%8A%E6%97%A5%E3%81%AF%E4%BD%95%E3%81%AE%E6%97%A5",
+      uri:
+        "https://ja.wikipedia.org/wiki/Wikipedia:%E4%BB%8A%E6%97%A5%E3%81%AF%E4%BD%95%E3%81%AE%E6%97%A5",
       gzip: true,
-      encoding:null
+      encoding: null
     });
     let $ = cheerio.load(response);
-    console.log("yeah")
+    console.log("yeah");
     // 取得したいデータのタグを指定する
-    let title = $('ul' , '.mw-parser-output').text();
-  
-    console.log(title)
+    let title = $("ul", ".mw-parser-output").text();
+
+    console.log(title);
     let embed = new Discord.RichEmbed()
-    .setTitle(`今日は何の日？`)
-    .setDescription(title.split("\n").slice(1 , -1).join("\n・"))
-message.channel.send(embed)
-  } else if(command === "haikei") {
-    const request = require('request');
-      if(!args[0] || message.attachments.first()) {
-    var imageUrl = message.attachments.first().url;
-  } else if(args[0]){
-    var imageUrl = args[0]
-  } else {
-    return message.channel.send("画像を確認できませんでした")
-  }
-    message.delete()
-request.post({
-  url: 'https://api.remove.bg/v1.0/removebg',
-  formData: {
-    image_url: imageUrl,
-    size: 'auto',
-  },
-  headers: {
-    'X-Api-Key': process.env.removeapikey
-  },
-  encoding: null
-}, function(error, response, body) {
-  if(error) return console.error('Request failed:', error);
-  if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-  message.channel.send(new Discord.Attachment(body))
-});
-  } else if(command === "aki") {
+      .setTitle(`今日は何の日？`)
+      .setDescription(
+        title
+          .split("\n")
+          .slice(1, -1)
+          .join("\n・")
+      );
+    message.channel.send(embed);
+  } else if (command === "haikei") {
+    const request = require("request");
+    if (!args[0] || message.attachments.first()) {
+      var imageUrl = message.attachments.first().url;
+    } else if (args[0]) {
+      var imageUrl = args[0];
+    } else {
+      return message.channel.send("画像を確認できませんでした");
+    }
+    message.delete();
+    request.post(
+      {
+        url: "https://api.remove.bg/v1.0/removebg",
+        formData: {
+          image_url: imageUrl,
+          size: "auto"
+        },
+        headers: {
+          "X-Api-Key": process.env.removeapikey
+        },
+        encoding: null
+      },
+      function(error, response, body) {
+        if (error) return console.error("Request failed:", error);
+        if (response.statusCode != 200)
+          return console.error(
+            "Error:",
+            response.statusCode,
+            body.toString("utf8")
+          );
+        message.channel.send(new Discord.Attachment(body));
+      }
+    );
+  } else if (command === "aki") {
     const {
-    startAki,
-    endGame,
-    checkTime,
-    oldCollects,
-    text
-} = require("./command/function.js")
-const msg = message
-            if (args[0] == 'start') {
-const msg = message
-            if (coolDownList.has(msg.author.id)) return;
-            else {
-                coolDownList.add(msg.author.id);
-                if (oldCollects[msg.author.id]) {
-                    msg.reply(text.openGame);
-                    return coolDownList.delete(msg.author.id);
-                } 
-
-                if (!msg.channel.memberPermissions(msg.guild.me).has(['ADD_REACTIONS', 'SEND_MESSAGES' , 'MANAGE_MESSAGES'])) {
-                    coolDownList.delete(msg.author.id);
-                    try {
-                        msg.channel.send(text.noPerm);
-                        msg.author.send(text.noPerm)
-                    } catch (err) {
-                        //lol
-                    };
-                    return;
-                }
-
-
-                var akiMsg = await msg.channel.send(text.wait)
-                startAki(msg, akiMsg);
-
-                setTimeout(() => {
-                    coolDownList.delete(msg.author.id);
-                }, 5000);
-            }
-
-        } else if (args[0] == 'stop') {
-            if (!oldCollects[msg.author.id]) return msg.reply(text.noGame);
-            endGame(msg.author.id, oldCollects[msg.author.id].akiMsg)
+      startAki,
+      endGame,
+      checkTime,
+      oldCollects,
+      text
+    } = require("./command/function.js");
+    const msg = message;
+    if (args[0] == "start") {
+      const msg = message;
+      if (coolDownList.has(msg.author.id)) return;
+      else {
+        coolDownList.add(msg.author.id);
+        if (oldCollects[msg.author.id]) {
+          msg.reply(text.openGame);
+          return coolDownList.delete(msg.author.id);
         }
 
-  } else if(command === "transcha") {
-    const channel = db.get("transcha").find({id : message.channel.id})
-    if(!channel.value()) {
-      db.get("transcha").push({id : message.channel.id}).write()
-      message.channel.send("登録しました。")
-    } else {
-      db.get("transcha").remove({id : message.channel.id}).write()
-      message.channel.send("登録を解除しました。")
-    }
-  } else if(command === "trans") {
-    require("./command/honnyaku.js").run(client , message , kekka , args)
-  } else if(command === "suumo"){
-    message.channel.send("あ❗️ スーモ❗️:new_moon_with_face:ダン:boom:ダン:boom:ダン:boom:シャーン:notes:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:ス〜〜〜モ:arrow_heading_up:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:ス～～～モ:arrow_heading_down::sun_with_face:")
-  } else if (command === "janken") {
-    const hairetu = ["✊" , "✌️" , "🖐️"]
-      const msg = await message.channel.send(
-      "最初はのばのば\nじゃんけん....."
-      );
-    for(var i = 0; hairetu.length > i; i++){
-      await msg.react(hairetu[i])
-    }
-       const filter = (reaction, user) => user.id === message.author.id && hairetu.includes(reaction.emoji.name)
-
-        msg
-        .awaitReactions(filter, {
-          max: 1,
-          time: 15 * 1000,
-          errors: ["time"]
-        })
-        .then(collected => {
-            const reaction = collected.first();
-            const emoji = reaction.emoji.name
-            const te = hairetu[Math.floor( Math.random() * hairetu.length)]
-          if(emoji === te) {
-            msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あいこです！引き分け！"))
-          } else if(emoji === hairetu[2] && te === hairetu[1]) {
-            msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
-          }　else if(emoji === hairetu[1] && te === hairetu[3]) {
-             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
-          } else if(emoji === hairetu[3] && te ===  hairetu[2]) {
-             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あなたの負け！www"))
-          } else {
-             msg.edit(new Discord.RichEmbed().setTitle(`ぽん${te}`).setDescription("あちゃー！\nあなたの勝ち！！"))
+        if (
+          !msg.channel
+            .memberPermissions(msg.guild.me)
+            .has(["ADD_REACTIONS", "SEND_MESSAGES", "MANAGE_MESSAGES"])
+        ) {
+          coolDownList.delete(msg.author.id);
+          try {
+            msg.channel.send(text.noPerm);
+            msg.author.send(text.noPerm);
+          } catch (err) {
+            //lol
           }
-        }).catch(err => {
-         msg.edit(`タイムアウト！つまりのばまんの勝ち`);
+          return;
+        }
 
-        });
-  } else if(command === "server") {
-  async  function checkBots(guild) {
-        let botCount = 0
-        guild.members.forEach(member => {
-          if(member.user.bot) botCount++
-        })
-        return botCount
+        var akiMsg = await msg.channel.send(text.wait);
+        startAki(msg, akiMsg);
+
+        setTimeout(() => {
+          coolDownList.delete(msg.author.id);
+        }, 5000);
       }
-async      function checkMembers(guild) {
-        let memberCount = 0
-        guild.members.forEach(member => {
-          if(!member.user.bot) memberCount++
-        })
-        return memberCount
-      } 
-  let embed = new Discord.RichEmbed()
-  .setAuthor(`${message.guild.name} - Info`, message.guild.iconURL)
-  .addField('サーバーの所有者', message.guild.owner, true)
-  .addField('サーバー領域', message.guild.region, true)
-  .addField('チャンネルの数', message.guild.channels.size, true)
-  .addField('メンバー数', message.guild.memberCount)
-  .addField('BOTなしメンバー数', checkMembers(message.guild), true)
-  .addField('ボットの数', checkBots(message.guild), true)
-  .addField('確認レベル', message.guild.verificationLevel, true)
-  .addField('AFKチャンネル',message.guild.afkChannel,true)
-  .addField('システムチャンネル',message.guild.systemChannel,true)
-  .addField('サーバーの名前の略称',message.guild.nameAcronym,true)
-  .addField('不適切なコンテンツフィルターレベル',message.guild.explicitContentFilter,true)
-  .addField('役職の数',message.guild.roles.size,true)
-  .addField('絵文字の数',message.guild.emojis.size,true)
-  .setImage(message.guild.iconURL)
-  .setFooter('サーバー作成日:')
-  .setTimestamp(message.guild.createdAt)
-  return message.channel.send(embed)
-  } else if(command === "maze") {
-require("./command/maze.js").run(client , message)
-  } else if(command === "osero") {
-    return message.channel.send("開発止まり")
-    require("./command/osero.js").run(client , message , db , args)
-  } else if(command === "hira") {
-    require("./command/hiragana.js").run(client , message ,kekka)
-  } else if(command === "sho") {
-    if(!args[1]) {
-  require("./command/sho.js").run(client , message, db ,args)
-    } else if(args[0] === "create") {
-      if(!args[2]) return message.channel.send("引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`")
-  var json = db.get("sho").find({id : message.author.id})
-  if(!json) {
-    db.get("sho").push({id : message.author.id}).write()
-  }
-  var json = db.get("sho").find({id : message.author.id})
-  if(message.attachments.first()) {
-  json.set(args[1] , args[2] +"\n" +message.attachments.first().url).write()
-  } else {
-  json.set(args[1] , args[2]).write()
-  }
-  message.channel.send(`${args[1]}で${args[2]}が呼び出せるようになりました。`)
+    } else if (args[0] == "stop") {
+      if (!oldCollects[msg.author.id]) return msg.reply(text.noGame);
+      endGame(msg.author.id, oldCollects[msg.author.id].akiMsg);
     }
+  } else if (command === "transcha") {
+    const channel = db.get("transcha").find({ id: message.channel.id });
+    if (!channel.value()) {
+      db.get("transcha")
+        .push({ id: message.channel.id })
+        .write();
+      message.channel.send("登録しました。");
+    } else {
+      db.get("transcha")
+        .remove({ id: message.channel.id })
+        .write();
+      message.channel.send("登録を解除しました。");
+    }
+  } else if (command === "trans") {
+    require("./command/honnyaku.js").run(client, message, kekka, args);
+  } else if (command === "suumo") {
+    message.channel.send(
+      "あ❗️ スーモ❗️:new_moon_with_face:ダン:boom:ダン:boom:ダン:boom:シャーン:notes:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:ス〜〜〜モ:arrow_heading_up:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:スモ:new_moon_with_face:スモ:full_moon_with_face:ス～～～モ:arrow_heading_down::sun_with_face:"
+    );
+  } else if (command === "janken") {
+    const hairetu = ["✊", "✌️", "🖐️"];
+    const msg = await message.channel.send("最初はのばのば\nじゃんけん.....");
+    for (var i = 0; hairetu.length > i; i++) {
+      await msg.react(hairetu[i]);
+    }
+    const filter = (reaction, user) =>
+      user.id === message.author.id && hairetu.includes(reaction.emoji.name);
+
+    msg
+      .awaitReactions(filter, {
+        max: 1,
+        time: 15 * 1000,
+        errors: ["time"]
+      })
+      .then(collected => {
+        const reaction = collected.first();
+        const emoji = reaction.emoji.name;
+        const te = hairetu[Math.floor(Math.random() * hairetu.length)];
+        if (emoji === te) {
+          msg.edit(
+            new Discord.RichEmbed()
+              .setTitle(`ぽん${te}`)
+              .setDescription("あいこです！引き分け！")
+          );
+        } else if (emoji === hairetu[2] && te === hairetu[1]) {
+          msg.edit(
+            new Discord.RichEmbed()
+              .setTitle(`ぽん${te}`)
+              .setDescription("あなたの負け！www")
+          );
+        } else if (emoji === hairetu[1] && te === hairetu[3]) {
+          msg.edit(
+            new Discord.RichEmbed()
+              .setTitle(`ぽん${te}`)
+              .setDescription("あなたの負け！www")
+          );
+        } else if (emoji === hairetu[3] && te === hairetu[2]) {
+          msg.edit(
+            new Discord.RichEmbed()
+              .setTitle(`ぽん${te}`)
+              .setDescription("あなたの負け！www")
+          );
+        } else {
+          msg.edit(
+            new Discord.RichEmbed()
+              .setTitle(`ぽん${te}`)
+              .setDescription("あちゃー！\nあなたの勝ち！！")
+          );
+        }
+      })
+      .catch(err => {
+        msg.edit(`タイムアウト！つまりのばまんの勝ち`);
+      });
+  } else if (command === "server") {
+    async function checkBots(guild) {
+      let botCount = 0;
+      guild.members.forEach(member => {
+        if (member.user.bot) botCount++;
+      });
+      return botCount;
+    }
+    async function checkMembers(guild) {
+      let memberCount = 0;
+      guild.members.forEach(member => {
+        if (!member.user.bot) memberCount++;
+      });
+      return memberCount;
+    }
+    let embed = new Discord.RichEmbed()
+      .setAuthor(`${message.guild.name} - Info`, message.guild.iconURL)
+      .addField("サーバーの所有者", message.guild.owner, true)
+      .addField("サーバー領域", message.guild.region, true)
+      .addField("チャンネルの数", message.guild.channels.size, true)
+      .addField("メンバー数", message.guild.memberCount)
+      .addField("BOTなしメンバー数", checkMembers(message.guild), true)
+      .addField("ボットの数", checkBots(message.guild), true)
+      .addField("確認レベル", message.guild.verificationLevel, true)
+      .addField("AFKチャンネル", message.guild.afkChannel, true)
+      .addField("システムチャンネル", message.guild.systemChannel, true)
+      .addField("サーバーの名前の略称", message.guild.nameAcronym, true)
+      .addField(
+        "不適切なコンテンツフィルターレベル",
+        message.guild.explicitContentFilter,
+        true
+      )
+      .addField("役職の数", message.guild.roles.size, true)
+      .addField("絵文字の数", message.guild.emojis.size, true)
+      .setImage(message.guild.iconURL)
+      .setFooter("サーバー作成日:")
+      .setTimestamp(message.guild.createdAt);
+    return message.channel.send(embed);
+  } else if (command === "maze") {
+    require("./command/maze.js").run(client, message);
+  } else if (command === "osero") {
+    return message.channel.send("開発止まり");
+    require("./command/osero.js").run(client, message, db, args);
+  } else if (command === "hira") {
+    require("./command/hiragana.js").run(client, message, kekka);
+  } else if (command === "sho") {
+    if (!args[1]) {
+      require("./command/sho.js").run(client, message, db, args);
+    } else if (args[0] === "create") {
+      if (!args[2])
+        return message.channel.send(
+          "引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`"
+        );
+      var json = db.get("sho").find({ id: message.author.id });
+      if (!json) {
+        db.get("sho")
+          .push({ id: message.author.id })
+          .write();
+      }
+      var json = db.get("sho").find({ id: message.author.id });
+      if (message.attachments.first()) {
+        json
+          .set(args[1], args[2] + "\n" + message.attachments.first().url)
+          .write();
+      } else {
+        json.set(args[1], args[2]).write();
+      }
+      message.channel.send(
+        `${args[1]}で${args[2]}が呼び出せるようになりました。`
+      );
+    }
+  } else if(command === "switch") {
+    
+    require("command/switch.js").run(client , message , args , db)
   }
 });
 
@@ -910,6 +1088,6 @@ client.login(process.env.token);
 
 const express = require("express");
 const app = express();
-app.get("/" , (req,res) => res.send("hello,world"))
+app.get("/", (req, res) => res.send("hello,world"));
 
 app.listen(3000);
