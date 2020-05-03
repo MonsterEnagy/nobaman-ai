@@ -21,6 +21,9 @@ message.channel.send(new Discord.RichEmbed()
     
     const json = db.get("switch").find({id : message.channnel.id})
     if(!json) {
+      const result = [];
+      const command = db.get("help").value().forEach((j , i)=> result.push(j.command))
+      const command = result.split("\n")
       db.get("switch").push({
         id : message.author.id,
         
