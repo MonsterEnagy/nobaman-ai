@@ -1082,7 +1082,7 @@ point : "-999"
     }
   } else if(command === "switch") {
      if (message.member.hasPermission("ADMINISTRATOR")) {
-    require("command/switch.js").run(client , message , args , db)
+    require("./command/switch.js").run(client , message , args , db)
   } else {
     message.reply("管理者権限を持っていない人は使用できません。")
   }
