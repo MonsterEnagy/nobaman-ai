@@ -229,7 +229,7 @@ client.on("message", async message => {
     require("./command/honnyaku.js").channeltrans(client, message);
   }
   console.log(
-    `${message.guild.name}:${message.channel.name}:${message.author.username}:${message.content}`
+    `${message.guild.name}:${message.channel.name}(${message.channel.id}):${message.author.username}:${message.content}`
   );
 
   if (
