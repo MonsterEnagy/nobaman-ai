@@ -1064,13 +1064,21 @@ point : "-999"
       .setDescription("`" + Object.keys(json).join("`,`") + "`")
       message.channel.send(embed)
     } else if(args[0] === "delete") {
-      
+      if(!args[1]) return message.channel.send("引数が指定されていません");
+      var json = db.get("sho").find({ id: message.author.id }).value()
+      const db1 = require("./database/db.json");
+      delete json[args[1]]
+      message.channel.send("削除しました")
+      json.write(); 
+            fs.writeFile("./database/db.json", JSON.stringify(db), err => {
+    if (err) console.log(err);
+  });
     }else if (args[0] === "create") {
       if (!args[2]) {
         return message.channel.send(
           "引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`"
         );
-      }
+      } 
       if(args[2] === "list") {
         return message.channel.send("list は使えません")
       } else if(args[2] === "delete" ) {
