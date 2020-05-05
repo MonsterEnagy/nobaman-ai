@@ -1058,9 +1058,14 @@ point : "-999"
     if (!args[1] && args[0] !== "list") {
       require("./command/sho.js").run(client, message, db, args);
     } else if(args[0] === "list") {
-     var json = db.get("sho").find({ id: message.author.id });
-      message.channel.send()
-    } else if (args[0] === "create") {
+     var json = db.get("sho").find({ id: message.author.id }).value();
+      let embed = new Discord.RichEmbed()
+      .setTitle("ショートカット一覧")
+      .setDescription("`" + Object.keys(json).join("`,`") + "`")
+      message.channel.send(embed)
+    } else if(args[0] === "delete") {
+      
+    }else if (args[0] === "create") {
       if (!args[2]) {
         return message.channel.send(
           "引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`"
@@ -1068,6 +1073,8 @@ point : "-999"
       }
       if(args[2] === "list") {
         return message.channel.send("list は使えません")
+      } else if(args[2] === "delete" ) {
+        return message.channel.send("delete は使えません")
       }
       var json = db.get("sho").find({ id: message.author.id });
       if (!json) {
