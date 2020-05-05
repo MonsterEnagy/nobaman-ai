@@ -1055,13 +1055,19 @@ point : "-999"
   } else if (command === "hira") {
     require("./command/hiragana.js").run(client, message, kekka);
   } else if (command === "sho") {
-    if (!args[1]) {
+    if (!args[1] && args[0] !== "list") {
       require("./command/sho.js").run(client, message, db, args);
+    } else if(args[0] === "list") {
+     var json = db.get("sho").find({ id: message.author.id });
+      message.channel.send()
     } else if (args[0] === "create") {
       if (!args[2]) {
         return message.channel.send(
           "引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`"
         );
+      }
+      if(args[2] === "list") {
+        return message.channel.send("list は使えません")
       }
       var json = db.get("sho").find({ id: message.author.id });
       if (!json) {
@@ -1080,7 +1086,7 @@ point : "-999"
       message.channel.send(
         `${args[1]}で${args[2]}が呼び出せるようになりました。`
       );
-    }
+    } 
   } else if(command === "switch") {
      if (message.member.hasPermission("ADMINISTRATOR")) {
     require("./command/switch.js").run(client , message , args , db)
