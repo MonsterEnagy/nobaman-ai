@@ -1058,10 +1058,11 @@ point : "-999"
     if (!args[1]) {
       require("./command/sho.js").run(client, message, db, args);
     } else if (args[0] === "create") {
-      if (!args[2])
+      if (!args[2]) {
         return message.channel.send(
           "引数が足りません。\n例 : `!n sho create oha おはよう`\n`!n sho oha` => `おはよう`"
         );
+      }
       var json = db.get("sho").find({ id: message.author.id });
       if (!json) {
         db.get("sho")
