@@ -207,6 +207,16 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
+  if(!message.guild && message.content === "お茶の間アンケート") {
+    if(!client.guilds.get("302627651036774401").members.get(message.author.id)){
+       message.channel.send("お茶の間にいない人はアンケートを作成できません")
+    } else {
+      message.channel.send("準備が完了しました。")
+      const filter = m => m.author.id === message.author.id;
+      const collected = await message.channel.awaitMessages(filter ,  { max: 1, time: 60000, errors: ['time'] })
+      client.channels.get("338667165744103424").send(collected.first().content)
+    }
+  }
   if (message.author.bot || !message.guild) return;
 
   if (message.guild.id === "302627651036774401") {
