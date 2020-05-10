@@ -211,10 +211,11 @@ client.on("message", async message => {
     if(!client.guilds.get("302627651036774401").members.get(message.author.id)){
        message.channel.send("お茶の間にいない人はアンケートを作成できません")
     } else {
-      message.channel.send("準備が完了しました。")
+      message.channel.send("準備が完了しました。アンケートの内容を送信してください。\n※完全匿名です。開発者にもわかりません。")
       const filter = m => m.author.id === message.author.id;
       const collected = await message.channel.awaitMessages(filter ,  { max: 1, time: 60000, errors: ['time'] })
       client.channels.get("338667165744103424").send(collected.first().content)
+      message.channel.send("送信しました。")
     }
   }
   if (message.author.bot || !message.guild) return;
