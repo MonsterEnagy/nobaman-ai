@@ -91,7 +91,6 @@ function AIrequest(content, message) {
     "ざこ",
     "えっち",
     "エッチ",
-    "初めて成功したbot",
     "オナニー"
   ];
 
