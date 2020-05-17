@@ -760,6 +760,15 @@
       "hp": 5850256,
       "tekideath": true,
       "death": false
+    },
+    {
+      "id": "558623109616500736",
+      "teki": "UNLEADED",
+      "tekihp": -14,
+      "url": "https://cdn.discordapp.com/attachments/662283783306870805/662295397615534105/monster_energy_unleaded_thumbnail.png",
+      "strong": 11,
+      "level": 2,
+      "hp": 6
     }
   ],
   "help": [
