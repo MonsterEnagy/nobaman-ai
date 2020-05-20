@@ -206,6 +206,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
+    console.log(4)
   if(!message.guild && message.content === "お茶の間アンケート") {
     if(!client.guilds.get("302627651036774401").members.get(message.author.id)){
        message.channel.send("お茶の間にいない人はアンケートを作成できません")
@@ -217,6 +218,7 @@ client.on("message", async message => {
       message.channel.send("送信しました。")
     }
   }
+    console.log(4)
   if (message.author.bot || !message.guild) return;
 
   if (message.guild.id === "302627651036774401") {
@@ -276,8 +278,9 @@ client.on("message", async message => {
     }
     require("./command/vc.js").run(client, message, cooldown, yomiage);
   }
+  console.log(4)
   if (message.content.indexOf(prefix.trim()) !== 0) return;
-
+console.log(2)
   const args = message.content
     .slice(prefix.length)
     .trim()
@@ -288,7 +291,7 @@ client.on("message", async message => {
   const kekka = message.content
     .replace(/\s+/, "")
     .slice(prefix.length + command.length);
-
+console.log(1)
   if (command === "help") {
     require("./command/help.js").run(client, message, args, db);
   }
