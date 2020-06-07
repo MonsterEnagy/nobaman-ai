@@ -1131,6 +1131,24 @@ point : "-999"
 
   } else if(command === "bunseki") {
     require("./command/bunseki.js").run(client,message,db,args)
+  } else if(command === "covid") {
+  // const CovidChart = require('covidchart.js');
+ 
+
+/*    const chart = await CovidChart.PieChart(kekka);
+  console.log(chart)
+  message.channel.send(new Discord.RichEmbed()
+                      .setAuthor("covid-19")
+                      .setImage(chart.link))
+  */
+    const CovidChart = require('covidchart.js');
+ 
+    async function createChart() {
+    const chart = await CovidChart.PieChart('New Zealand');
+    return chart;
+    }
+    createChart().then( m => console.log(m))
+    console.log()
   }
 });
 

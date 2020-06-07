@@ -41,6 +41,7 @@
     "ibm-watson": "^5.4.0",
     "watson-developer-cloud": "^4.0.1",
     "jquery": "^3.4.1",
-    "jsdom": "^16.1.0"
+    "jsdom": "^16.1.0",
+    "covidchart.js": "^1.2.0"
   }
 }
