@@ -19,7 +19,8 @@ db.defaults({
   transcha: [],
   osero: [],
   sho: [],
-  switch : []
+  switch : [],
+  bunseki : []
 }).write();
 const cooldown = new Set();
 
@@ -220,7 +221,9 @@ client.on("message", async message => {
   }
 
   if (message.author.bot || !message.guild) return;
+//bunseki
 
+//bunseki
   if (message.guild.id === "302627651036774401") {
     if (
       !db
@@ -1128,6 +1131,8 @@ point : "-999"
     var m = m.replace(/k/g , ":blue_circle:")
     message.channel.send(m)
 
+  } else if(command === "bunseki") {
+    require("./command/bunseki.js").run(client,message,db,args)
   }
 });
 
