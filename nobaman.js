@@ -221,9 +221,7 @@ client.on("message", async message => {
   }
 
   if (message.author.bot || !message.guild) return;
-//bunseki
 
-//bunseki
   if (message.guild.id === "302627651036774401") {
     if (
       !db
