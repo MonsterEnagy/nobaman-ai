@@ -2,9 +2,9 @@
   "omikuji": [
     {
       "id": "563347508164820992",
-      "time": "2020/4/25",
-      "nobaman": 29,
-      "omikujinaiyou": "中吉"
+      "time": "2020/6/7",
+      "nobaman": 30,
+      "omikujinaiyou": "末吉"
     },
     {
       "id": "616285021560635413",
@@ -230,9 +230,9 @@
     },
     {
       "id": "499122275706994689",
-      "time": "2020/6/1",
+      "time": "2020/6/7",
       "nobaman": 56,
-      "omikujinaiyou": "末吉"
+      "omikujinaiyou": "凶"
     },
     {
       "id": "601960187972288533",
@@ -407,6 +407,12 @@
       "time": "2020/6/7",
       "nobaman": 0,
       "omikujinaiyou": "小吉"
+    },
+    {
+      "id": "644877459816185866",
+      "time": "2020/6/7",
+      "nobaman": 0,
+      "omikujinaiyou": "凶"
     }
   ],
   "mmo": [
