@@ -29,7 +29,7 @@
     "@shooontan/voicetext": "^0.0.2",
     "node-gyp": "^6.0.1",
     "lowdb": "^1.0.0",
-    "ffmpeg-node-binaries": "^4.0.1",
+    "ffmpeg-node-binaries": "^4.0.1", 
     "ffmpeg-static": "^3.0.0",
     "ffmpeg": "^0.0.4",
     "googleapis": "^47.0.0",
