@@ -22,26 +22,12 @@
     "node-fetch": "^2.6.0",
     "form-data": "^3.0.0",
     "canvas": "^2.6.1",
-    "voicetext": "^0.0.7",
-    "node-opus": "^0.3.2",
-    "ffmpeg-binaries": "^4.0.0",
-    "opusscript": "^0.0.7",
-    "@shooontan/voicetext": "^0.0.2",
-    "node-gyp": "^6.0.1",
     "lowdb": "^1.0.0",
-    "ffmpeg-node-binaries": "^4.0.1",
-    "ffmpeg-static": "^3.0.0",
-    "ffmpeg": "^0.0.4",
     "googleapis": "^47.0.0",
     "cheerio": "^0.22.0",
     "request-promise": "^4.2.5",
     "cheerio-httpcli": "^0.7.3",
     "iconv": "^2.3.5",
-    "aki-api": "^3.2.1",
-    "ibm-watson": "^5.4.0",
-    "watson-developer-cloud": "^4.0.1",
-    "jquery": "^3.4.1",
-    "jsdom": "^16.1.0",
-    "covidchart.js": "^1.2.0"
+    "aki-api": "^3.2.1"
   }
 }
