@@ -265,7 +265,7 @@ client.on("message", async message => {
   const prefix = "!n";
 
   if (chat[message.channel.id]) {
-    if(message.mentions.users) return message.channel.send("メンションは使えません")
+    if(message.mentions.users.map(m => m.username)) return message.channel.send("メンションは使えません")
     require("./command/nobamanchat.js").run(client, message);
   }
 
