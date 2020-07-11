@@ -4,7 +4,7 @@ const fs = require("fs");
 console.log("起動");
 const chat = require("./database/chat.json");
 const vc = require("./database/vc.json");
-const low = require("lowdb");
+const low = require("lowdb"); 
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("database/db.json");
 const cooltime = [];
