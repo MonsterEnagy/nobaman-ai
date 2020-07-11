@@ -265,7 +265,7 @@ client.on("message", async message => {
   const prefix = "!n";
 
   if (chat[message.channel.id]) {
-    if(message.mentions) {
+    if(message.mentions.users.size) {
     message.channel.send("メンションは使えません")
       return;
     }
